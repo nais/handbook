@@ -1,1 +1,0 @@
- - hvilke PIGer har vi, hvorfor har vi dem og hva gjør de. (PIG repo med skill-matrix og rosa-helikopteroversikt) 

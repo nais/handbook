@@ -1,1 +1,0 @@
-- kubernetes is not just kubernetes. How did we set it up and what does nais do (nais-yaml, GitHub actions, workflows, etc.).

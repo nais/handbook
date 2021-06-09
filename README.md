@@ -9,28 +9,28 @@ So now that have you have memorized the the manifest and documentation we can ge
 
 ## New arrival - Who meets you at the gate?
 
-* [NAIS sponsor](nais-sponsor.md)
+* [NAIS sponsor](files/nais-sponsor.md)
 
 ## Administrative:
-* [Fixtures](fixtures.md)
+* [Fixtures](files/fixtures.md)
 
-* [Slack](slack.md)
+* [Slack](files/slack.md)
 
-* [PIG](pigs.md)
+* [PIG](files/pigs.md)
 
-* [Trello](trello.md)
+* [Trello](files/trello.md)
 
 ## Technical:
 
-* [Naisdevice](https://naisdevice-poster.labs.nais.io/eng.html)
+* [naisdevice](https://naisdevice-poster.labs.nais.io/eng.html)
 
-* [Clusters](Clusters.md)
+* [Clusters](files/clusters.md)
 
-* [Kubernetes](Kubernetes.md)
+* [Kubernetes](files/kubernetes.md)
 
-* [Teams](Teams.md)
+* [Teams](files/teams.md)
 
-* [Deploy](Deploy.md)
+* [Deploy](files/deploy.md)
 
 ## Social
 
