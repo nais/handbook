@@ -22,7 +22,7 @@ So now that have you have memorized the the manifest and documentation we can ge
 
 ## Technical:
 
-* [n	aisdevice](https://naisdevice-poster.labs.nais.io/eng.html)
+* [naisdevice](https://naisdevice-poster.labs.nais.io/eng.html)
 
 * [Clusters](files/clusters.md)
 
