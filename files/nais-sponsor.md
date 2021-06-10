@@ -6,7 +6,7 @@ So for your NAIS spesific onboarding you will be guided by not one sponsor but w
 
 Not only the anchors are your sponsors. Every member of the team is - and you should not be apologetic or hold back in terms of reaching out to "whomever" because we have no higher priority than that you settle in and find joy and accomplishment with us.
 
-So when you find yourself wondering about something - keep this in mind:
+So if you find yourself wondering about something - keep this in mind:
 
 ```sed -i 's/stoopid questions//g'``` 
 
