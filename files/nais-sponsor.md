@@ -1,6 +1,6 @@
 # NAIS-Sponsor
 
-##It takes a village to raise a NAIS-developer. 
+## It takes a village to raise a NAIS-developer. 
 
 So for your NAIS spesific onboarding you will be guided by not one sponsor but will be attached to the hip of every [anchor](files/pigs.md) so that you can gain insight into ~~every~~ as many aspects of NAIS as possible. When you have the general gist og things and feel ready you can either just start picking tasks off the board(s).
 
