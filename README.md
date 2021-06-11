@@ -3,7 +3,11 @@
 
 ## The parts "unique" to us and therefore weren't covered during onboarding
 
-Nais is  a complex animal - and if you are new to the team there will be quite a few things that are all but obvious and apparent. The technical [documentation](https://doc.nais.io) is comprehensive but hardly describes how we function as a team. This handbook is an attempt at bringing some of the silent knowledge to an audible frequency, and at the very least guide you through the bare essentials. To get you started we recommend that you familiarize yourself with our [manifest](files/nais-manifest-eng.md). The guiding principals that define the how, the what, and the why we do the things that we do. 
+Nais is a complex animal - and if you are new to the team there will be quite a few things that are all but obvious and apparent.
+The technical [documentation](https://doc.nais.io) is comprehensive but hardly describes how we function as a team.
+This handbook is an attempt at bringing some of the silent knowledge to an audible frequency, and at the very least guide you through the bare essentials.
+To get you started we recommend that you familiarize yourself with our [manifest](files/nais-manifest-eng.md).
+The guiding principals that define the how, the what, and the why we do the things that we do. 
 
 So now that have you have memorized the the manifest and documentation we can get into it all:
 
@@ -11,29 +15,22 @@ So now that have you have memorized the the manifest and documentation we can ge
 
 * [NAIS sponsor](files/nais-sponsor.md)
 
-## Administrative:
+## Administrative
+
 * [Fixtures](files/fixtures.md)
-
 * [Slack](files/slack.md)
-
 * [PIG](files/pigs.md)
-
 * [Trello](files/trello.md)
 
-## Technical:
+## Technical
 
 * [naisdevice](https://naisdevice-poster.labs.nais.io/eng.html)
-
 * [Clusters](files/clusters.md)
-
 * [Kubernetes](files/kubernetes.md)
-
 * [Teams](files/teams.md)
-
 * [Deploy](files/deploy.md)
 
 ## Social
-
 * Monday, Tuesday, Wednesday, [Toastday](https://github.com/nais/toast), Friday
 
 [Back](../README.md)
