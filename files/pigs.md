@@ -49,3 +49,6 @@ One should try to pick the tasks that have been prepared and prioritized, but th
 Where possible, we try to be at least two on most tasks - but sometimes it's nice to do things alone.
 
 We avoid and start new things if we can instead help to complete already ongoing tasks. This applies both to those you yourself are actively involved in, and where you see that someone on the team can benefit from your contribution. Fewer context changes and more focus.
+
+
+[Back](../README.md)

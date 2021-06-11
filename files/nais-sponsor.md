@@ -10,3 +10,7 @@ So if you find yourself wondering about something - keep this in mind:
 It is our duty (not to mention our own best interest) to make sure you have the tools and understanding that you need so imagine that this cron job is run on the team every minute. 
 
 ```sed -i 's/stoopid question//g'```
+
+
+
+[Back](../README.md)
