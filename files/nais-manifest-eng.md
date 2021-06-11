@@ -1,6 +1,6 @@
 # NAIS is a AAAA rated platform service
 
-The A's represent these qualities:
+The As represent these qualities:
 
 - **Autogenous:** _produced independently of external influence or aid_
 - **Advantageous:** _involving or creating favourable circumstances that increase the chances of success or effectiveness._
