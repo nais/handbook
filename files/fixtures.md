@@ -22,5 +22,8 @@ Any and all meetings that are deemed unnecessary due to priority or lack of subs
  
 - utvikleropplevelse (developer experience) takes place every Tuesday afternoon at 14:30. 
 
+- Kubeops is normally thursday mornings at 09:00 but not reccurring - invites sent to interested parties a few days in advance.
+
+- Aiven is a biweekly thing - friday mornings at 09:00.
 
 [Back](../README.md)
