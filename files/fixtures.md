@@ -29,6 +29,6 @@ Any and all meetings that are deemed unnecessary due to priority or lack of subs
 
 - Kubeops is normally thursday mornings at 09:00 but not reccurring - invites sent to interested parties a few days in advance.
 
-- Aiven is a biweekly thing - friday mornings at 09:00.
+- Aiven is a biweekly thing - friday mornings at 09:30.
 
 [Back](../README.md)
