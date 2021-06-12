@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "doc"
 version = "0.1.0"
-description = "nais developer documentation"
+description = "nais handbook"
 authors = []
 
 [tool.poetry.dependencies]
