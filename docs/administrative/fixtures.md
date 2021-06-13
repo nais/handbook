@@ -9,6 +9,8 @@ _The NAIS team might look disorganised to a newcomer and in a certain sense of t
 
 ## The froom
 
+![](/assets/froom.png)
+
  Thanks to COVID19 we have become "remote ~~first~~ only". And in case you are wondering; The froom is our zoom based digital workspace. Froom is the compound form of "Frode & Zoom". Popular guy, Frode so his personal Zoom space was where we all gravitated.
 
 We all hang out in the lobby and join breakout rooms for more in-depth exploration of topics that may not be of general interest.
@@ -26,7 +28,7 @@ Any and all meetings that are deemed unnecessary due to priority or lack of subs
 
 ## Friday Demo 
 
-- Friday Demo is held most fridays and invites are distributed (make some noise if you don´t get one). This is an informal "show & tell" where any new feature or initative is introduced to the larger "service platform" grouping. And when we say informal - we mean informal. A rudimentry drawing will do - the idea is to keep everyone abreast of what's going on. You can have your demo added to the agenda or you can present on the fly.
+- Friday Demo is held most Fridays and invites are distributed (make some noise if you don´t get one). This is an informal "show & tell" where any new feature or initative is introduced to the larger "service platform" grouping. And when we say informal - we mean informal. A rudimentry drawing will do - the idea is to keep everyone abreast of what's going on. You can have your demo added to the agenda or you can present on the fly.
 
 - ## Retro
  

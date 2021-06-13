@@ -57,3 +57,5 @@ nav:
     - Deploy: technical/deploy.md
     - Kubernetes: technical/kubernetes.md
     - Teams: technical/teams.md
+  - Social: 
+    - The Great Outdoors: social/the-great-outdoors.md
