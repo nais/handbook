@@ -1,0 +1,61 @@
+site_name: NAIS Handbook
+repo_url: https://github.com/nais/handbook
+site_url: https://handbook.nais.io/
+theme:
+  name: material
+  language: 'en'
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  custom_dir: custom_theme_overrides
+  palette:
+    scheme: preference
+    primary: blue grey
+    accent: deep purple
+  features:
+    - navigation.instant
+    - navigation.tabs
+extra:
+  search:
+    language: 'en'
+extra_javascript:
+  - amplitude_javascript/events.js
+extra_css:
+  - material_theme_stylesheet_overrides/uu.css
+plugins:
+  - search
+markdown_extensions:
+  - toc:
+      permalink: True
+  - admonition
+  - pymdownx.details
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.superfences:
+      preserve_tabs: true
+  - pymdownx.highlight:
+      css_class: codehilite
+      linenums_style: pymdownx-inline
+  - pymdownx.tasklist
+  - pymdownx.smartsymbols
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+nav:
+  - NAIS Onboarding: 
+    - Welcome: README.md
+    - Sponsor: welcome/nais-sponsor.md
+    - Manifest: welcome/nais-manifest-eng.md
+  - Administrative: 
+    - Fixtures: administrative/fixtures.md
+    - PIGs: administrative/pigs.md
+    - Slack: administrative/slack.md
+    - Trello: administrative/trello.md
+  - Technical: 
+    - naisdevice: technical/naisdevice.md 
+    - Clusters: technical/clusters.md
+    - Deploy: technical/deploy.md
+    - Kubernetes: technical/kubernetes.md
+    - Teams: technical/teams.md
+  - Social: 
+    - The Great Outdoors: social/the-great-outdoors.md
