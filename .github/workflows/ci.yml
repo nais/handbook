@@ -15,7 +15,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install all dependencies
-        run: apt-install mkdocs
+        run: |
+          sudo apt-get update
+          sudo apt-get install mkdocs
 
       - name: Build
         run: mkdocs build
