@@ -1,17 +1,30 @@
-name: GitHub Actions Demo
-on: [push]
+# .github/workflows/publish.yml
+name: Generate a build and push to another branch
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  Explore-GitHub-Actions:
+  build:
     runs-on: ubuntu-latest
+    name: Build and Push
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - run: apt-install mkdocs
-      - name: Check out repository code
+      - name: git-checkout
         uses: actions/checkout@v2
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: build html from contents of repo
-        run: cd ${{ github.workspace }}
+
+      - name: Install all dependencies
+        run: apt-install mkdocs
+
+      - name: Build
         run: mkdocs build
+    
+      - name: Push
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: handbook-serve # The branch name where you want to push the assets
+          FOLDER: site # The directory where your assets are generated
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
+          MESSAGE: "Build: ({sha}) {msg}" # The commit message
