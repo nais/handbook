@@ -48,8 +48,8 @@ nav:
     - PIGs: administrative/pigs.md
     - Slack: administrative/slack.md
     - Trello: administrative/trello.md
-  - Technical:
-    - technical/naisdevice.md
-    - technical/publications-media.md
   - Social: 
     - The Great Outdoors: social/the-great-outdoors.md
+  - Technical:
+    - technical/publications-media.md
+     - technical/naisdevice.md
