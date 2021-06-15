@@ -16,7 +16,7 @@ The As represent these qualities:
 The NAIS platform is there for the development teams, and aims to offer the best conditions for developing quality welfare services for the Norwegian population.
 We do this by offering solid products that solve real problems at scale.
 The products are based on technology the nais team believes are technologically sustainable.
-By using the platform's products and following the standards in the platform, the teams can focus on solving high value challenges rather than underlying nuts and bolts.
+By using the platform's products and following the platform standards, the teams can focus on solving high value challenges rather than underlying nuts and bolts.
 The two most important drivers for the further evolution of the platform are technological developments and the needs of the teams.
 
 ## What motivates us?
@@ -33,7 +33,7 @@ We have a good working environment with a positive energy consisting of colleagu
 We have a great degree of freedom both as individuals and as a team.
 Within our assignment, we as a team choose which challenges we want to focus on and how we will solve these.
 As members of the team, we choose which tasks we want to participate in.
-This gives us a varied everyday life, and ownership to the things we work on.
+This gives us a varied day to day life, and ownership of the things we work on.
 
 ### Technology
 At NAIS, we try to always choose the best tool for the job.
