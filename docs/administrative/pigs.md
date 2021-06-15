@@ -18,11 +18,11 @@ The _PIG concept_ is inspired by _[Kubernetes SIG](https://github.com/kubernetes
 ## What is an anchor?
 
 Anchors act as a product owner for the products and services included in the PIG.
-They have a conscious relationship with how the products are experienced and work for the users.
-They follow current channels, pick up on problems and wishes from users, and ensure that this is addressed in the PIG.
+They keep tabs on how the products are experienced and work for the users.
+They follow the relevant channels, pick up on problems and wishes from users, and ensure that these are addressed in the PIG.
 
-Anchors are responsible for ensuring that cases that arise are investigated and end up as short in a priority order in the column for things to be done.
-This is often done by consensus based on the PIG meetings, but can also be done by both anchors and other members where it is natural.
+Anchors are responsible for ensuring that cases that arise are investigated and end up in a priority order in the (trello board) column for things #TODO.
+This is often done by consensuses reached in the PIG meetings, but can also be done by both anchors and other members where it is natural.
 
 A prioritization of investigated tasks should take into account (but not exclusively) the following aspects:
 - How critical is it?
