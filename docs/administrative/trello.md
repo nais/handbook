@@ -1,9 +1,6 @@
 # Trelloboards 
-## "pick a task" 
 
-<p align="left">
-  <img width="50" height="50" src="/assets/trello.png">
-</p>
+###_"pick a task"_
 
 [NAIS](https://trello.com/b/v27a8xOS/nais)
 
@@ -12,7 +9,6 @@
 [sikkerhet (security)](https://trello.com/b/RD93ikLK/pig-sikkerhet)
 
 [kubeops](https://trello.com/b/AjBpUW8s/kubeops)
-
 	
 [utvikleropplevelse (developer experience)](https://trello.com/b/p6WHubIk/pig-utvikleropplevelse)
 

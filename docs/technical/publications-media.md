@@ -1,6 +1,6 @@
 # Publications & Media
 
-## Seasoned adventurers - giving back
+### _Seasoned adventurers - giving back_
 
 Our work is in large part driven by and on open source solutions and thanks to the sharing of others we enjoy a faster pace and more robust infrastructure than one might otherwise expect. 
 With that in mind, we do try to contribute with content that describe topics and experiences that have been or are of significance. 

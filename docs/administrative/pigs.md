@@ -1,6 +1,6 @@
 # PlatformInterestGroup (PIG)
 
-NAIS has organized the various areas we work with within interest groups.
+### _NAIS has organized the various areas we work with within interest groups._
 
 ## Why?
 

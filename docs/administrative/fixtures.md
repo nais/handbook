@@ -1,6 +1,6 @@
 # Fixtures
 
-_The NAIS team might look disorganised to a newcomer and in a certain sense of the word this holds true. However there are a few fixtures in place to ensure a certain degree of synchronisation, consensus and progression._
+###_The NAIS team might look disorganised to a newcomer and in a certain sense of the word this holds true. However there are a few fixtures in place to ensure a certain degree of synchronisation, consensus and progression._
 
 
 ## The froom
