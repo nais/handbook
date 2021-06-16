@@ -1,15 +1,15 @@
 # PlatformInterestGroup (PIG)
 
-### _NAIS has organized the various areas we work with within interest groups._
+### _NAIS has organized the various areas we work with in interest groups._
 
 ## Why?
 
 PIGs are a mechanism for scaling the team.
-They enable all members of the NAIS team to adapt their own degree of involvement in relation to capacity and interest, without splitting up into smaller, more static teams.
+They enable all members of the NAIS team to tune their degree of involvement adjusted to capacity and interest, without splitting up into smaller, more static teams.
 
-They ensure ownership, safe management, and further development of the products we in the NAIS team are responsible for.
+They ensure ownership, management, and further development of the products the NAIS team are responsible for.
 
-They provide us with a forum for professional discussions that is narrowed down to the PIG's domain.
+They provide us with a forum for subject matter discussions that are narrowed down to the PIG's domain.
 
 They enable people outside the NAIS team (our users) to get involved in working with their own platform.
 
