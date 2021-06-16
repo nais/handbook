@@ -1,1 +1,19 @@
 # Slack
+
+_We do not want to leave anyone out but invites and inclusion can sometimes fall between the cracks.__Here is a list of channels you might want to join. If you haven't been an invite to a private channel listed here let your sponsor know._   
+
+### Private Channels
+
+`#nais-internal`
+
+`#naisdevice-internal`
+
+
+### Public Channels
+
+[`#nais`](https://nav-it.slack.com/archives/C5KUST8N6)
+
+[`#naisdevice`](https://nav-it.slack.com/archives/C013XV66XHB)
+
+[`#nais-announcements`](https://nav-it.slack.com/archives/C01DE3M9YBV)
+
