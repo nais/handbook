@@ -2,72 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://handbook.nais.io/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/administrative/fixtures/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/administrative/pigs/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/administrative/slack/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/administrative/trello/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/social/the-great-outdoors/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/clusters/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/deploy/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/kubernetes/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/naisdevice/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/publications-media/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/teams/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/welcome/nais-manifest-eng/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/welcome/nais-sponsor/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
