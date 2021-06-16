@@ -24,7 +24,7 @@ jobs:
         run: mkdocs build
     
       - name: Push
-        uses: s0/git-publish-subdir-action@develop
+        uses: s0/git-publish-subdir-action@v2.5.0
         env:
           REPO: self
           BRANCH: handbook-serve # The branch name where you want to push the assets

@@ -1,6 +1,6 @@
 # Slack
 
-_We do not want to leave anyone out but invites and inclusion can sometimes fall between the cracks.__Here is a list of channels you might want to join. If you haven't been an invite to a private channel listed here let your sponsor know._   
+### _We do not want to leave anyone out but invites and inclusion can sometimes fall between the cracks. Here is a list of channels you might want to join. If you haven't been an invite to a private channel listed here let your sponsor know._   
 
 ### Private Channels
 

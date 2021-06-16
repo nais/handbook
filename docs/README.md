@@ -1,7 +1,7 @@
 
 # A handbook of sorts
 
-### _Where we will cover the parts "unique" to us and therefore weren't covered during onboarding_
+### _Where we will cover the parts "unique" to us and therefore weren't covered during onboarding._
 
 <p align="left">
   <img width="70" height="70" src="assets/nais-handbook.png">
