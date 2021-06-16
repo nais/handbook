@@ -49,7 +49,11 @@ nav:
     - Slack: administrative/slack.md
     - Trello: administrative/trello.md
   - Technical:
-    - Publications & Media: technical/publications-media.md
+    - Clusters: technical/clusters.md
+    - Deploy: technical/deploy.md
+    - Kubernetes: technical/kubernetes.md
     - naisdevice: technical/naisdevice.md
+    - Publications & Media: technical/publications-media.md
+    - Teams: technical/teams.md
   - Social: 
       - The Great Outdoors: social/the-great-outdoors.md
