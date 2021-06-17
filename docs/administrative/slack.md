@@ -2,7 +2,7 @@
 
 ### _We do not want to leave anyone out but invites and inclusion can sometimes fall between the cracks._ 
 
-Here is a list of Slack channels you might want to join. If you haven't been invited to a private channel listed here let your sponsor know.  
+Here is a list of Slack channels you might want to join (or in some cases should be in). If you haven't been invited to a private channel listed here let your sponsor know.  
 
 ### Private Channels
 
