@@ -17,8 +17,9 @@ Any and all meetings that are deemed unnecessary due to priority or lack of subs
 	
 ## Weekly 
 
-- The NAIS weekly takes place every Monday morning at 09:00. 
+- The NAIS weekly takes place Monday at high noon.
 
+ 
 ## Friday Demo 
 
 - Friday Demo is held most Fridays and invites are distributed (make some noise if you don´t get one). This is an informal "show & tell" where any new feature or initative is introduced to the larger "service platform" grouping. And when we say informal - we mean informal. A rudimentry drawing will do - the idea is to keep everyone abreast of what's going on. You can have your demo added to the agenda or you can present on the fly.
