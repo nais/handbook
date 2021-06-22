@@ -31,6 +31,8 @@ Any and all meetings that are deemed unnecessary due to priority or lack of subs
  
 - Utvikleropplevelse (developer experience) takes place every Tuesday afternoon at 14:30. 
 
-- Kubeops is normally thursday mornings at 09:00 but not reccurring - invites are sent to interested parties a few days in advance.
+- Kubeops is normally Thursday mornings at 09:00 but not reccurring - invites are sent to interested parties a few days in advance.
 
-- Aiven is a biweekly thing - friday mornings at 09:00.
+- Aiven is a biweekly thing - Friday mornings at 09:00.
+
+- Deploy come together Wednesdays from 12:00-13:00.
