@@ -8,8 +8,8 @@ theme:
   favicon: assets/logo.png
   palette:
     scheme: preference
-    primary: blue grey
-    accent: deep purple
+    primary: teal
+    accent: green
   features:
     - navigation.instant
     - navigation.tabs
