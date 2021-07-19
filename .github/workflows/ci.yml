@@ -13,16 +13,15 @@ jobs:
     steps:
       - name: git-checkout
         uses: actions/checkout@v2
-
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
       - name: Install all dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install mkdocs
-          sudo pip install mkdocs-material 
-
+          pip install poetry==1.1.7
+          poetry install
       - name: Build
-        run: mkdocs build
-    
+        run: poetry run mkdocs build
       - name: Push
         uses: s0/git-publish-subdir-action@v2.5.0
         env:
