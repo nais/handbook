@@ -25,6 +25,7 @@ Anchors are responsible for ensuring that cases that arise are investigated and 
 This is often done by consensuses reached in the PIG meetings, but can also be done by both anchors and other members where it is natural.
 
 A prioritization of investigated tasks should take into account (but not exclusively) the following aspects:
+
 - How critical is it?
 - Is it a low-hanging fruit with lots of value?
 - Is it in line with the roadmap?
