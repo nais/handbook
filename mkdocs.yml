@@ -49,9 +49,9 @@ nav:
     - Slack: administrative/slack.md
     - Trello: administrative/trello.md
   - Technical:
+    - What is nais?: technical/nais.md
     - Clusters: technical/clusters.md
     - Deploy: technical/deploy.md
-    - Kubernetes: technical/kubernetes.md
     - naisdevice: technical/naisdevice.md
     - Publications & Media: technical/publications-media.md
     - Teams: technical/teams.md
