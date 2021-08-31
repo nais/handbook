@@ -2,6 +2,8 @@
 
 _How to get team apps out to a/the cluster?_
 
+![deployment components](/assets/deployment.png)
+
 ## Deploy-cli
 The first (and probably only) component of the deploy system users will be aware of is the deploy-cli.
 More often than not through a [github action](https://doc.nais.io/deployment/#deploy-with-github-actions) in their pipeline.
