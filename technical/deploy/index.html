@@ -447,9 +447,59 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Deploy
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
     <a href="./" class="md-nav__link md-nav__link--active">
       Deploy
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-cli" class="md-nav__link">
+    Deploy-cli
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hookd" class="md-nav__link">
+    HookD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployd" class="md-nav__link">
+    DeployD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    Operators
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -549,6 +599,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-cli" class="md-nav__link">
+    Deploy-cli
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hookd" class="md-nav__link">
+    HookD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployd" class="md-nav__link">
+    DeployD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    Operators
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -566,6 +652,20 @@
                 
                 <h1 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h1>
 <p><em>How to get team apps out to a/the cluster?</em></p>
+<h2 id="deploy-cli">Deploy-cli<a class="headerlink" href="#deploy-cli" title="Permanent link">&para;</a></h2>
+<p>The first (and probably only) component of the deploy system users will be aware of is the deploy-cli.
+More often than not through a <a href="https://doc.nais.io/deployment/#deploy-with-github-actions">github action</a> in their pipeline.
+Users can deploy anything they want to their own namespace as long as they've got the correct deploy key, which they can fetch from <a href="https://deploy.nais.io/apikeys">deploy.nais.io</a> </p>
+<h2 id="hookd">HookD<a class="headerlink" href="#hookd" title="Permanent link">&para;</a></h2>
+<p>The deploy-cli communicates with a component called <a href="https://github.com/nais/deploy/blob/master/cmd/hookd/main.go">Hookd</a>, who validates the user's credentials and forwards the deployment request to the deploy daemon in requested cluster.</p>
+<h2 id="deployd">DeployD<a class="headerlink" href="#deployd" title="Permanent link">&para;</a></h2>
+<p>Each cluster has a Deploy Daemon which receive deployment requests from HookD and create the resource in the team's namespace.
+DeployD also report status back to HookD on what's happening with the deployment request. This information is relayed to the deployment-cli, so the end-user gets live updates on what's happening with their deployment.</p>
+<h2 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">&para;</a></h2>
+<p>When deployD have created a resource in the cluster, an operator will pick it up based on what kind of resource it is.
+I.e. <code>Application</code> types will be picked up by <a href="https://github.com/nais/naiserator">naiserator</a>, <code>AivenApplication</code> by <a href="https://github.com/nais/aivenator">Aivenator</a> and so forth.
+All resources emits events as they progress through the various stages of creating the requested resource.
+These are the events DeployD relay upstream and that in the end reach the end-user.</p>
                 
               
               
