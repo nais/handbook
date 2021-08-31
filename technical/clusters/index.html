@@ -423,9 +423,59 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Clusters
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
     <a href="./" class="md-nav__link md-nav__link--active">
       Clusters
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fss" class="md-nav__link">
+    FSS:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sbs" class="md-nav__link">
+    SBS:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nais-on-premises" class="md-nav__link">
+    NAIS on-premises
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nais-gcp" class="md-nav__link">
+    NAIS GCP
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -549,6 +599,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fss" class="md-nav__link">
+    FSS:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sbs" class="md-nav__link">
+    SBS:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nais-on-premises" class="md-nav__link">
+    NAIS on-premises
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nais-gcp" class="md-nav__link">
+    NAIS GCP
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -565,7 +651,28 @@
                 
                 
                 <h1 id="clusters">Clusters<a class="headerlink" href="#clusters" title="Permanent link">&para;</a></h1>
-<p><em>Which clusters do we have where and why is there a difference? (Historical perspective - zone model vs. Zero trust)</em></p>
+<p>In ye olde days of yore, NAVs security model was based on network segmentation and zones.</p>
+<h2 id="fss">FSS:<a class="headerlink" href="#fss" title="Permanent link">&para;</a></h2>
+<p>Many of our older systems, and systems with a high degree of sensitive content were placed in a dedicated zone with very strict restrictions: Fagsystemsone (FSS).
+Connectivity to and from this zone is very limited - no connectivity to the internet, inbound connections have to go through security gateways. However - connectivity inside this zone is not restricted in any way, shape or form. Everyone can connect with everyone else - like a true hippie community. (As many of these applications were written in the seventies, it sort of makes sense)</p>
+<h2 id="sbs">SBS:<a class="headerlink" href="#sbs" title="Permanent link">&para;</a></h2>
+<p>There came a day when NAV discovered something called "the Internet", and that this was something we could use to provide the population with services directly.
+This created the demand for a separate zone, as allowing traffic from the internet directly in to our hippie community called FSS seemed unwise.
+Thus Selvbetjeningssonen (SBS) was born.
+SBS is less restricted than FSS and applications have access to the internet (almost) - and can be exposed to the internet as well.
+However - since most of NAVs data reside in FSS, most applications in SBS rely on data from FSS to be able to do anything meaningful.
+In order to get the data they need they have to jump through several burning rings of fire, pray to the almighty DataPower-gods and perform several ancient rites and rituals.</p>
+<p><img alt="zones" src="/assets/zones.png" /></p>
+<h2 id="nais-on-premises">NAIS on-premises<a class="headerlink" href="#nais-on-premises" title="Permanent link">&para;</a></h2>
+<p>When we started building NAIS, we built it to exist in this world, and have separate clusters in each of these two zones.
+We further divided our clusters in to development and production clusters to maintain a healthy separation.
+Thus the four clusters we've got on-premises are: <code>dev-fss</code>, <code>dev-sbs</code>, <code>prod-fss</code> and <code>prod-sbs</code> (and a fifth called nais-ci, but that's just for us to test stuff)</p>
+<h2 id="nais-gcp">NAIS GCP<a class="headerlink" href="#nais-gcp" title="Permanent link">&para;</a></h2>
+<p>Luckily the world has moved on from zones and segmentation.
+When we built NAIS in GCP we wanted the applications to be able to communicate without jumping over hurdles and figured we'd adopt a <a href="https://doc.nais.io/appendix/zero-trust/">zero-trust-model</a>, where applications specify with whom they want to communicate, and who is allowed to communicate with them in their application manifest.
+And so the two GCP clusters <code>dev-gcp</code> and <code>prod-gcp</code> was born.
+There are a couple of additional clusters in GCP as well, though - <code>ci-gcp</code> for us to test changes and <code>labs-gcp</code> where the teams can experiment.</p>
+<p><img alt="clusters" src="/assets/clusters.png" /></p>
                 
               
               
