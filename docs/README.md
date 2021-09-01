@@ -13,5 +13,5 @@ This handbook is an attempt at bringing some of the silent knowledge to an audib
 To get you started we recommend that you familiarize yourself with our [manifest](welcome/nais-manifest-eng.md).
 The guiding principals that define the how, the what, and the why we do the things that we do. 
 
-So now that have you have memorized the the manifest and documentation we can get into it all:
+So now that have you have memorized the manifest and documentation we can get into it all.
 
