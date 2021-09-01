@@ -40,3 +40,4 @@ Retros are held on "a need to relieve pressure" basis. You will get an invite if
 - Kubeops is normally Thursday mornings at 09:00 but not reccurring - invites are sent to interested parties a few days in advance.
 - Aiven is a biweekly thing - Friday mornings at 09:00.
 - Deploy come together Wednesdays from 12:00-13:00.
+- Security (Sikkerhet) runs with the obscurity principle and won't say...
