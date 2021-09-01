@@ -2,11 +2,11 @@
 
 In ye olde days of yore, NAVs security model was based on network segmentation and zones.
 
-## FSS:
+## FSS
 Many of our older systems, and systems with a high degree of sensitive content were placed in a dedicated zone with very strict restrictions: Fagsystemsone (FSS).
 Connectivity to and from this zone is very limited - no connectivity to the internet, inbound connections have to go through security gateways. However - connectivity inside this zone is not restricted in any way, shape or form. Everyone can connect with everyone else - like a true hippie community. (As many of these applications were written in the seventies, it sort of makes sense)
 
-## SBS:
+## SBS
 There came a day when NAV discovered something called "the Internet", and that this was something we could use to provide the population with services directly.
 This created the demand for a separate zone, as allowing traffic from the internet directly in to our hippie community called FSS seemed unwise.
 Thus Selvbetjeningssonen (SBS) was born.
