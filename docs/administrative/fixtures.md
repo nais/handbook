@@ -42,6 +42,6 @@ Retros are held on "a need to relieve pressure" basis. You will get an invite if
 - Deploy come together Wednesdays from 12:00-13:00.
 - Security (Sikkerhet) runs with the obscurity principle and won't say...
 
-## Anker-forum
+## Anchor-forum
 
-Every Friday the big-wigs (aka "PIG-Ankers") meet up every friday for a light session of trello grooming so we have tasks ripe for the picking come "Weekly" the following monday.
+Every Friday the big-wigs (aka "PIG-Anchors") meet up every friday for a light session of trello grooming so we have tasks ripe for the picking come "Weekly" the following monday.
