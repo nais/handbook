@@ -50,6 +50,7 @@ nav:
     - Trello: administrative/trello.md
   - Technical:
     - What is nais?: technical/nais.md
+    - Production ready?: technical/production-ready.md
     - Clusters: technical/clusters.md
     - Deploy: technical/deploy.md
     - naisdevice: technical/naisdevice.md
