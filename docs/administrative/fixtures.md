@@ -44,4 +44,4 @@ Retros are held on "a need to relieve pressure" basis. You will get an invite if
 
 ## Anker-forum
 
-Every friday the big-wigs (aka "PIG-Ankers") meet up every friday for a light session of trello grooming so we have tasks ripe for the picking come "Weekly" the following monday.
+Every Friday the big-wigs (aka "PIG-Ankers") meet up every friday for a light session of trello grooming so we have tasks ripe for the picking come "Weekly" the following monday.
