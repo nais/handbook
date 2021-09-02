@@ -41,3 +41,7 @@ Retros are held on "a need to relieve pressure" basis. You will get an invite if
 - Aiven is a biweekly thing - Friday mornings at 09:00.
 - Deploy come together Wednesdays from 12:00-13:00.
 - Security (Sikkerhet) runs with the obscurity principle and won't say...
+
+## Anker-forum
+
+Every friday the big-wigs (aka "PIG-Ankers") meet up every friday for a light session of trello grooming so we have tasks ripe for the picking come "Weekly" the following monday.
