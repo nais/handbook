@@ -12,7 +12,7 @@ Each of the many components that make up Kubernetes is configured via resource d
 What we've done in NAIS, is to select what we consider to be the most relevant components and condense their configuration in to a common yaml-file: [nais.yaml](https://doc.nais.io/nais-application/example/).
 
 ## Deployment
-Through a single yaml-file, the users of the platform should be able to configure and set up everything their application needs. (see [deploy](/technical/deploy) for more info)
+Through a single yaml-file, the users of the platform should be able to configure and set up everything their application needs. (see [deploy](https://doc.nais.io/deployment/) for more info)
 
 ## Observability
 Once an application is running on the platform, the developer of that application should be equipped with everything they need to care for their application.
