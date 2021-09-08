@@ -3,7 +3,7 @@
 _Kubernetes is not just Kubernetes. How did we set it up, and what does NAIS do (nais-yaml, GitHub actions, workflows, etc.)?_
 
 Kubernetes is a Swiss army knife of tools, and each of these tools comes with its own set of instructions.
-NAIS is there to help developers utilize these tools without having to read the manual.
+NAIS is there to help developers utilize these tools without having to read (all) the manual(s).
 
 ![](../assets/nais_army_knife.png)
 
