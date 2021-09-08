@@ -7,10 +7,6 @@ The As represent these qualities:
 - **Automatic:** _working by itself with little or no direct human control._
 - **Accountable:** _required or expected to justify actions or decisions._
 
-<p align="left">
-  <img width="70" height="70" src="/assets/manifest.png">
-</p>
-
 ## What is NAIS for?
 
 The NAIS platform is there for the development teams, and aims to offer the best conditions for developing quality welfare services for the Norwegian population.
@@ -44,8 +40,8 @@ We take the advice of seasoned adventurers, but at the same time know that we ca
 
 * Development speed
  
-* Good developer experiences
- 
+* A first class developer experience
+  
 * Easy to build secure applications
  
 * Easy to operate applications
