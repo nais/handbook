@@ -555,15 +555,17 @@
                 <h1 id="how-to-delete-a-team-and-its-namespacesresources-in-the-gcpgithub-world">How to delete a team and it's namespaces/resources in the GCP/Github world<a class="headerlink" href="#how-to-delete-a-team-and-its-namespacesresources-in-the-gcpgithub-world" title="Permanent link">&para;</a></h1>
 <p>Ref. https://doc.nais.io/basics/teams/ - at the time of this writing - this list should reflect the moving parts one needs to manually delete:</p>
 <ol>
-<li>Delete team from <a href="https://github.com/navikt/teams/blob/master/teams.yml">navikt/teams</a>.<div class="admonition warning">
+<li>Delete team from <a href="https://github.com/navikt/teams/blob/master/teams.yml">navikt/teams</a>.<div class="admonition warning beware the automation">
 <p class="admonition-title">Warning</p>
 <p>The automation creating this PR can take some time, wait ~30-60 minutes.
 <em><strong>DO NOT MERGE MANUALLY, ONLY WRITE <code>/approve</code> AS MENTIONED ABOVE</strong></em></p>
 </div>
 </li>
-<li>Delete team from https://mygroups.microsoft.com/</li>
-<li>Delete team from https://github.com/orgs/navikt/teams</li>
-<li>Delete team secrets from deploy.nais.io (TBD/TODO)</li>
+<li>Delete team from [mygroups.microsoft.com]</li>
+<li>Delete team from [github.com/orgs/navikt/teams]</li>
+<li>Delete team secrets from [deploy.nais.io]
+    !!! warning Not yet implemented/documented
+        TBD/TODO</li>
 </ol>
                 
               
