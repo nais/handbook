@@ -11,4 +11,4 @@ Ref. https://doc.nais.io/basics/teams/ - at the time of this writing - this list
 1. Delete team from [github.com/orgs/navikt/teams](github.com/orgs/navikt/teams)
 1. Delete team secrets from [deploy.nais.io](deploy.nais.io)
 	!!! warning
-		TBD/TODO
+		TBD / TODO.
