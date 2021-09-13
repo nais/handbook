@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://handbook.nais.io/technical/nais/">
+        <link rel="canonical" href="https://handbook.nais.io/technical/delete-teams-and-namespaces/">
       
       
       <link rel="shortcut icon" href="../../assets/logo.png">
@@ -16,7 +16,7 @@
     
     
       
-        <title>What is nais? - NAIS Handbook</title>
+        <title>How to completely delete teams & their resources in GCP/Github world - NAIS Handbook</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-is-nais" class="md-skip">
+        <a href="#how-to-delete-a-team-and-its-namespacesresources-in-the-gcpgithub-world" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              What is nais?
+              How to completely delete teams & their resources in GCP/Github world
             
           </span>
         </div>
@@ -194,7 +194,7 @@
       
         
       
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../nais/" class="md-tabs__link md-tabs__link--active">
         Technical
       </a>
     </li>
@@ -413,70 +413,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        What is nais?
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../nais/" class="md-nav__link">
       What is nais?
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#naisyaml" class="md-nav__link">
-    nais.yaml
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment" class="md-nav__link">
-    Deployment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#observability" class="md-nav__link">
-    Observability
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operators" class="md-nav__link">
-    Operators
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -520,11 +461,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../delete-teams-and-namespaces/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       How to completely delete teams & their resources in GCP/Github world
     </a>
+    
   </li>
 
         
@@ -587,42 +537,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#naisyaml" class="md-nav__link">
-    nais.yaml
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment" class="md-nav__link">
-    Deployment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#observability" class="md-nav__link">
-    Observability
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operators" class="md-nav__link">
-    Operators
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -633,29 +547,21 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/nais/handbook/edit/master/docs/technical/nais.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/nais/handbook/edit/master/docs/technical/delete-teams-and-namespaces.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="what-is-nais">What is NAIS?<a class="headerlink" href="#what-is-nais" title="Permanent link">&para;</a></h1>
-<p><em>Kubernetes is not just Kubernetes. How did we set it up, and what does NAIS do (nais-yaml, GitHub actions, workflows, etc.)?</em></p>
-<p>Kubernetes is a Swiss army knife of tools, and each of these tools comes with its own set of instructions.
-NAIS is there to help developers utilize these tools without having to read (all) the manual(s).</p>
-<p><img alt="" src="../../assets/nais_army_knife.png" /></p>
-<h2 id="naisyaml">nais.yaml<a class="headerlink" href="#naisyaml" title="Permanent link">&para;</a></h2>
-<p>Each of the many components that make up Kubernetes is configured via resource definitions.
-What we've done in NAIS, is to select what we consider to be the most relevant components and condense their configuration in to a common yaml-file: <a href="https://doc.nais.io/nais-application/example/">nais.yaml</a>.</p>
-<h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
-<p>Through a single yaml-file, the users of the platform should be able to configure and set up everything their application needs. (see <a href="https://doc.nais.io/deployment/">deploy</a> for more info)</p>
-<h2 id="observability">Observability<a class="headerlink" href="#observability" title="Permanent link">&para;</a></h2>
-<p>Once an application is running on the platform, the developer of that application should be equipped with everything they need to care for their application.
-The primary tools for this is <a href="https://doc.nais.io/observability/logs/">logs</a>, <a href="https://doc.nais.io/observability/metrics/">metrics</a> and <a href="https://doc.nais.io/observability/alerts/">alerts</a>.</p>
-<h2 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">&para;</a></h2>
-<p>Even though Kubernetes comes with a lot of features out of the box, there are capabilities we want to add on top, such as databases, token authorization or kafka.
-We want to give our users a uniform way of expressing their application's needs, so all additional functionality is added to nais.yaml, but there are different operators in the clusters that handle different parts of the manifest.
-For most things concerning default kubernetes resources, <a href="https://github.com/nais/naiserator">naiserator</a> will handle the business, but most other features have their own dedicated operator. </p>
-<p>A "brief history" of NAIS and the current status quo is available on the fron page of our <a href="https://doc.nais.io">documentation</a>.</p>
+                <h1 id="how-to-delete-a-team-and-its-namespacesresources-in-the-gcpgithub-world">How to delete a team and it's namespaces/resources in the GCP/Github world<a class="headerlink" href="#how-to-delete-a-team-and-its-namespacesresources-in-the-gcpgithub-world" title="Permanent link">&para;</a></h1>
+<p>Ref. https://doc.nais.io/basics/teams/ - at the time of this writing - this list should reflect the moving parts one needs to manually delete:
+1. Delete team from <a href="https://github.com/navikt/teams/blob/master/teams.yml">navikt/teams</a>.
+    1. Remember to manually approve PR (by writing <code>/approve</code>, like so: https://github.com/nais/teams/pull/144#issuecomment-917988844]) in <a href="https://github.com/nais/teams">nais/teams</a> - this is by design to avoid accidental deletions.
+    !!! warning
+        The automation creating this PR can take some time, wait ~30-60 minutes.
+        <em><strong>DO NOT MERGE MANUALLY, ONLY WRITE <code>/approve</code> AS MENTIONED ABOVE</strong></em>
+1. Delete team from https://mygroups.microsoft.com/
+1. Delete team from https://github.com/orgs/navikt/teams
+1. Delete team secrets from deploy.nais.io (TBD/TODO)</p>
                 
               
               
@@ -674,7 +580,7 @@ For most things concerning default kubernetes resources, <a href="https://github
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../administrative/trello/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../publications-media/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -683,19 +589,19 @@ For most things concerning default kubernetes resources, <a href="https://github
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Trello
+                Publications & Media
               </div>
             </div>
           </a>
         
         
-          <a href="../production-ready/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../social/the-great-outdoors/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Production ready?
+                The Great Outdoors
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
