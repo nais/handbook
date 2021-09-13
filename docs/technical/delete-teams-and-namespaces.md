@@ -4,11 +4,11 @@ Ref. https://doc.nais.io/basics/teams/ - at the time of this writing - this list
 
 1. Delete team from [navikt/teams](https://github.com/navikt/teams/blob/master/teams.yml).
 	1. Remember to manually approve PR (by writing `/approve`, like so: https://github.com/nais/teams/pull/144#issuecomment-917988844]) in [nais/teams](https://github.com/nais/teams) - this is by design to avoid accidental deletions
-	!!! warning Beware the automation
+	!!! warning
 		The automation creating this PR can take some time, wait ~30-60 minutes.
 		_**DO NOT MERGE MANUALLY, ONLY WRITE `/approve` AS MENTIONED ABOVE**_
-1. Delete team from [mygroups.microsoft.com]
-1. Delete team from [github.com/orgs/navikt/teams]
-1. Delete team secrets from [deploy.nais.io]
-	!!! warning Not yet implemented/documented
+1. Delete team from [mygroups.microsoft.com](mygroups.microsoft.com)
+1. Delete team from [github.com/orgs/navikt/teams](github.com/orgs/navikt/teams)
+1. Delete team secrets from [deploy.nais.io](deploy.nais.io)
+	!!! warning
 		TBD/TODO
