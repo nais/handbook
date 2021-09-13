@@ -1,6 +1,7 @@
 # How to delete a team and it's namespaces/resources in the GCP/Github world
 
 Ref. https://doc.nais.io/basics/teams/ - at the time of this writing - this list should reflect the moving parts one needs to manually delete:
+
 1. Delete team from [navikt/teams](https://github.com/navikt/teams/blob/master/teams.yml).
 	1. Remember to manually approve PR (by writing `/approve`, like so: https://github.com/nais/teams/pull/144#issuecomment-917988844]) in [nais/teams](https://github.com/nais/teams) - this is by design to avoid accidental deletions.
 	!!! warning
