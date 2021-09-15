@@ -27,7 +27,7 @@ This is often done by consensuses reached in the PIG meetings, but can also be d
 A prioritization of investigated tasks should take into account (but not exclusively) the following aspects:
 
 - How critical is it?
-- Is it a low-hanging fruit with lots of value?
+- Is it a high value, low hanging fruit?
 - Is it in line with the roadmap?
 - How does it affect the quality of the services we offer?
 
