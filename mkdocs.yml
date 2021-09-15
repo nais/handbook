@@ -53,5 +53,6 @@ nav:
     - Production ready?: technical/production-ready.md
     - naisdevice: technical/naisdevice.md
     - Publications & Media: technical/publications-media.md
+    - How to completely delete teams & their resources in GCP/Github world: technical/delete-teams-and-namespaces.md
   - Social: 
       - The Great Outdoors: social/the-great-outdoors.md
