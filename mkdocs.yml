@@ -49,6 +49,7 @@ nav:
     - Slack: administrative/slack.md
     - Trello: administrative/trello.md
   - Technical:
+    - NaaS: technical/naas.md
     - What is nais?: technical/nais.md
     - Production ready?: technical/production-ready.md
     - naisdevice: technical/naisdevice.md
