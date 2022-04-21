@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://handbook.nais.io/administrative/fixtures/">
+        <link rel="canonical" href="https://handbook.nais.io/technical/naas/">
       
       
       <link rel="shortcut icon" href="../../assets/logo.png">
@@ -16,7 +16,7 @@
     
     
       
-        <title>Fixtures - NAIS Handbook</title>
+        <title>NaaS - NAIS Handbook</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fixtures" class="md-skip">
+        <a href="#what-is-naas-nais-as-a-service" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Fixtures
+              NaaS
             
           </span>
         </div>
@@ -179,9 +179,7 @@
     <li class="md-tabs__item">
       
       
-        
-      
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../administrative/fixtures/" class="md-tabs__link">
         Administrative
       </a>
     </li>
@@ -194,7 +192,9 @@
     <li class="md-tabs__item">
       
       
-      <a href="../../technical/naas/" class="md-tabs__link">
+        
+      
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         Technical
       </a>
     </li>
@@ -318,12 +318,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
     <label class="md-nav__link" for="nav-2">
       Administrative
       <span class="md-nav__icon md-icon"></span>
@@ -332,6 +330,81 @@
       <label class="md-nav__title" for="nav-2">
         <span class="md-nav__icon md-icon"></span>
         Administrative
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../administrative/fixtures/" class="md-nav__link">
+      Fixtures
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../administrative/pigs/" class="md-nav__link">
+      PIGs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../administrative/slack/" class="md-nav__link">
+      Slack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../administrative/trello/" class="md-nav__link">
+      Trello
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    <label class="md-nav__link" for="nav-3">
+      Technical
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Technical" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Technical
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -351,12 +424,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Fixtures
+        NaaS
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      Fixtures
+      NaaS
     </a>
     
       
@@ -373,43 +446,110 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#froom" class="md-nav__link">
-    Froom
+  <a href="#introduction" class="md-nav__link">
+    Introduction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#weekly" class="md-nav__link">
-    Weekly
+  <a href="#an-architecture-overview" class="md-nav__link">
+    An architecture overview
+  </a>
+  
+    <nav class="md-nav" aria-label="An architecture overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-nais-io-gcp-organization" class="md-nav__link">
+    The nais-io GCP organization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partner-gcp-organization" class="md-nav__link">
+    Partner GCP organization
+  </a>
+  
+    <nav class="md-nav" aria-label="Partner GCP organization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-nais-system-gcp-project" class="md-nav__link">
+    The nais-system GCP project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partner-environment-gcp-projects" class="md-nav__link">
+    Partner environment GCP projects
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#administration-and-authorization" class="md-nav__link">
+    Administration and authorization
+  </a>
+  
+    <nav class="md-nav" aria-label="Administration and authorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cluster-administrators" class="md-nav__link">
+    Cluster administrators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-users" class="md-nav__link">
+    Cluster users
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-plane-and-cluster-configuration" class="md-nav__link">
+    Control plane and cluster configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#friday-demo" class="md-nav__link">
-    Friday Demo
+  <a href="#cluster-features" class="md-nav__link">
+    Cluster features
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#retro" class="md-nav__link">
-    Retro
+  <a href="#naisdevice" class="md-nav__link">
+    Naisdevice
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pig-meetings" class="md-nav__link">
-    PIG-meetings
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#anchor-forum" class="md-nav__link">
-    Anchor-forum
+  <a href="#exposing-applications" class="md-nav__link">
+    Exposing applications
   </a>
   
 </li>
@@ -427,80 +567,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../pigs/" class="md-nav__link">
-      PIGs
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../slack/" class="md-nav__link">
-      Slack
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../trello/" class="md-nav__link">
-      Trello
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
-    <label class="md-nav__link" for="nav-3">
-      Technical
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Technical" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon"></span>
-        Technical
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../technical/naas/" class="md-nav__link">
-      NaaS
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../technical/nais/" class="md-nav__link">
+    <a href="../nais/" class="md-nav__link">
       What is nais?
     </a>
   </li>
@@ -512,7 +579,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../technical/production-ready/" class="md-nav__link">
+    <a href="../production-ready/" class="md-nav__link">
       Production ready?
     </a>
   </li>
@@ -524,7 +591,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../technical/naisdevice/" class="md-nav__link">
+    <a href="../naisdevice/" class="md-nav__link">
       naisdevice
     </a>
   </li>
@@ -536,7 +603,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../technical/publications-media/" class="md-nav__link">
+    <a href="../publications-media/" class="md-nav__link">
       Publications & Media
     </a>
   </li>
@@ -608,43 +675,110 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#froom" class="md-nav__link">
-    Froom
+  <a href="#introduction" class="md-nav__link">
+    Introduction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#weekly" class="md-nav__link">
-    Weekly
+  <a href="#an-architecture-overview" class="md-nav__link">
+    An architecture overview
+  </a>
+  
+    <nav class="md-nav" aria-label="An architecture overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-nais-io-gcp-organization" class="md-nav__link">
+    The nais-io GCP organization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partner-gcp-organization" class="md-nav__link">
+    Partner GCP organization
+  </a>
+  
+    <nav class="md-nav" aria-label="Partner GCP organization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-nais-system-gcp-project" class="md-nav__link">
+    The nais-system GCP project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partner-environment-gcp-projects" class="md-nav__link">
+    Partner environment GCP projects
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#administration-and-authorization" class="md-nav__link">
+    Administration and authorization
+  </a>
+  
+    <nav class="md-nav" aria-label="Administration and authorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cluster-administrators" class="md-nav__link">
+    Cluster administrators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-users" class="md-nav__link">
+    Cluster users
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-plane-and-cluster-configuration" class="md-nav__link">
+    Control plane and cluster configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#friday-demo" class="md-nav__link">
-    Friday Demo
+  <a href="#cluster-features" class="md-nav__link">
+    Cluster features
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#retro" class="md-nav__link">
-    Retro
+  <a href="#naisdevice" class="md-nav__link">
+    Naisdevice
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pig-meetings" class="md-nav__link">
-    PIG-meetings
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#anchor-forum" class="md-nav__link">
-    Anchor-forum
+  <a href="#exposing-applications" class="md-nav__link">
+    Exposing applications
   </a>
   
 </li>
@@ -661,42 +795,98 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/nais/handbook/edit/master/docs/administrative/fixtures.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/nais/handbook/edit/master/docs/technical/naas.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="fixtures">Fixtures<a class="headerlink" href="#fixtures" title="Permanent link">&para;</a></h1>
-<p>The NAIS team might look disorganised to a newcomer and in a certain sense of the word this holds true. However there are a few fixtures in place to ensure a certain degree of synchronisation, consensus and progression.</p>
-<h2 id="froom">Froom<a class="headerlink" href="#froom" title="Permanent link">&para;</a></h2>
-<p><img alt="Froom logo" src="/assets/froom.png" /></p>
-<p>Thanks to COVID19 we have become "remote <del>first</del> only". And in case you are wondering; The froom is our zoom based digital workspace. Froom is a portmanteau of <em>Frode</em> and <em>Zoom</em>. Frode is a popular guy, so his personal Zoom space was where we all gravitated.</p>
-<p>We all hang out in the lobby and join breakout rooms for more in-depth exploration of topics that may not be of general interest.
-Anyone is welcome anywhere but "good manners" apply.
-Make your presence known when joining and if you sense that you will be interupting trains of thought or coding flow, come back later or use Slack instead.
-The froom url is posted in the topic <a href="https://nav-it.slack.com/archives/G013UH65QQZ">here</a>. </p>
-<p>All meeting fixtures are held in The froom as well as ad-hoc and sceduled meetings with third parties.</p>
-<p>Any and all meetings that are deemed unnecessary due to priority or lack of substance are swiftly cancelled and we all go back to <em>[insert task]</em>.</p>
-<h2 id="weekly">Weekly<a class="headerlink" href="#weekly" title="Permanent link">&para;</a></h2>
-<p>The NAIS weekly takes place Monday at high noon.</p>
-<h2 id="friday-demo">Friday Demo<a class="headerlink" href="#friday-demo" title="Permanent link">&para;</a></h2>
-<p>Friday Demo is held most Fridays and invites are distributed (make some noise if you don't get one). 
-This is an informal "show &amp; tell" where any new feature or initative is introduced to the larger "service platform" grouping. 
-And when we say informal - we mean informal. 
-A rudimentry drawing will do - the idea is to keep everyone abreast of what's going on.
-You can have your demo added to the agenda or you can present on the fly.</p>
-<h2 id="retro">Retro<a class="headerlink" href="#retro" title="Permanent link">&para;</a></h2>
-<p>Retros are held on "a need to relieve pressure" basis. You will get an invite if one is scheduled. If you feel that one is needed or have topics you want to address let our esteemed product owner know. </p>
-<h2 id="pig-meetings">PIG-meetings<a class="headerlink" href="#pig-meetings" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Utvikleropplevelse (developer experience) takes place every other Thursday at 11:30. </li>
-<li>Kubeops is normally Thursday mornings at 09:00 but not reccurring - invites are sent to interested parties a few days in advance.</li>
-<li>Aiven is a biweekly thing - Friday mornings at 09:00.</li>
-<li>Deploy come together Wednesdays from 12:00-13:00.</li>
-<li>Security (Sikkerhet) runs with the obscurity principle and won't say...</li>
-</ul>
-<h2 id="anchor-forum">Anchor-forum<a class="headerlink" href="#anchor-forum" title="Permanent link">&para;</a></h2>
-<p>Every Friday the big-wigs (aka "PIG-Anchors") meet up for a light session of trello grooming so we have tasks ripe for the picking come "Weekly" the following monday.</p>
+                <h1 id="what-is-naas-nais-as-a-service">What is NaaS (Nais As A Service)?<a class="headerlink" href="#what-is-naas-nais-as-a-service" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>NaaS is a centralized system for governance of NAIS clusters and a uniform way of applying features.
+Its purpose is remaining a clear separation between partners and their configuration, whilst still remaining centralized control.</p>
+<h2 id="an-architecture-overview">An architecture overview<a class="headerlink" href="#an-architecture-overview" title="Permanent link">&para;</a></h2>
+<h3 id="the-nais-io-gcp-organization">The nais-io GCP organization<a class="headerlink" href="#the-nais-io-gcp-organization" title="Permanent link">&para;</a></h3>
+<p><span style="display:flex">
+<img src="/assets/naas-nais-io-org.png" width="350" style="margin-right:20px"/>
+<span>
+We want a clear separation between the administration of the clusters and the clusters themselves. 
+The <code>nais-io</code> GCP organization serves this purpose; this is where administrative users, configuration and control-plane components reside.
+</span>
+</span></p>
+<blockquote>
+<p><a href="https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#organizations">What is a GCP organization?</a></p>
+</blockquote>
+<h3 id="partner-gcp-organization">Partner GCP organization<a class="headerlink" href="#partner-gcp-organization" title="Permanent link">&para;</a></h3>
+<p>Each partner has its own separate GCP organization.
+As with the nais-io GCP organization, we want a clear separation between administration and workloads.
+<img alt="" src="/assets/naas-partner-org.png" /></p>
+<h4 id="the-nais-system-gcp-project">The nais-system GCP project<a class="headerlink" href="#the-nais-system-gcp-project" title="Permanent link">&para;</a></h4>
+<p>To achieve this, all partner wide services (eg. deploy, partner console, etc.) run in a separate GCP project called nais-system.
+This GCP project is fully managed and owned by the NAIS team.</p>
+<h4 id="partner-environment-gcp-projects">Partner environment GCP projects<a class="headerlink" href="#partner-environment-gcp-projects" title="Permanent link">&para;</a></h4>
+<p>The partner will have multiple clusters, typically dev and prod, and each of these clusters require a suite of NAIS components (eg. naiserator, monitoring, etc.).
+To separate NAIS components and from partner workloads, each cluster has a nais-system namespace, where all NAIS-related services reside.
+All partner workloads will run in separate team namespaces in this cluster.</p>
+<blockquote>
+<p><a href="https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#projects"> What is a GCP project?</a></p>
+</blockquote>
+<h2 id="administration-and-authorization">Administration and authorization<a class="headerlink" href="#administration-and-authorization" title="Permanent link">&para;</a></h2>
+<h3 id="cluster-administrators">Cluster administrators<a class="headerlink" href="#cluster-administrators" title="Permanent link">&para;</a></h3>
+<p>NAIS personnel has an <code>@nais.io</code> user, who initially has no permissions outside of the <code>nais-io</code> GCP organization.
+There is an administration group in the <code>nais-io</code> GCP organization that is granted access to the respective partner's GCP organization.
+This groups is normally empty, but when there is a demand, NAIS operators can grant themselves just in time access by adding their user to this group, and thus access to the partner.
+<img alt="" src="/assets/naas-admin-groups.png" /></p>
+<blockquote>
+<p><strong>Example:</strong> The group <code>nav-k8s-admins@nais.io</code> is granted administrative rights in NAV partner GCP organization.</p>
+</blockquote>
+<h3 id="cluster-users">Cluster users<a class="headerlink" href="#cluster-users" title="Permanent link">&para;</a></h3>
+<p>The partner is responisble for populating their GCP organization with users.
+This is typically done by synchronizing users from their IDP.
+Additionally we recommend configuring an IDP, so the partner remains in control of the authorization flow.
+<img alt="" src="/assets/naas-user-admin.png" /></p>
+<blockquote>
+<p><strong>Example:</strong> Nav synchronize their users from Azure AD and configure Azure AD to be the IDP.</p>
+</blockquote>
+<p>Each partner has their own <code>console</code> where they can manage users, features and access for each of their teams.
+When a user is allocated to a team, access to resources are granted according to what is configured by the partner in their console.</p>
+<h2 id="control-plane-and-cluster-configuration">Control plane and cluster configuration<a class="headerlink" href="#control-plane-and-cluster-configuration" title="Permanent link">&para;</a></h2>
+<p>The NAIS control plane consist of two primary components, <code>Fasit</code> and <code>naisd</code>.
+<code>Fasit</code> is the primary configuration database for all clusters.
+It runs in the <code>nais-io</code> cluster in the <code>nais-io</code> GCP organization.
+<code>Naisd</code> is a component that runs in each cluster and is responsible for applying and installing components.
+When a configuration is ready to be applied to a cluster, <code>Fasit</code> publish a message to a pub/sub-topic specific to the relevant cluster.
+<code>Naisd</code> picks up the message and applies the configuration.
+When the configuration is applied, <code>naisd</code> sends a status message on a central status topic.
+<code>Fasit</code> reads all statuses from all clusters and use this information to give a complete overview of the entire ecosystem.
+<img alt="" src="/assets/naas-control-plane.png" /></p>
+<h2 id="cluster-features">Cluster features<a class="headerlink" href="#cluster-features" title="Permanent link">&para;</a></h2>
+<p>All of the components that are available for deployment in a cluster are wrapped in helm-charts.
+Each component has a github workflow that builds the helm-chart (and if applicable a docker image).
+The workflow publish each of these artifacts to an artifact registry in the nais-io GCP organization (using workload identity).</p>
+<p>The chart will normally contain sane defaults for the component, but can be overridden in Fasit on a per cluster basis.
+The component definition in fasit also caters for dependencies between features.</p>
+<blockquote>
+<p><strong>Example:</strong> naiserator depends on the nais-crds availability in the cluster in order to work.</p>
+</blockquote>
+<h2 id="naisdevice">Naisdevice<a class="headerlink" href="#naisdevice" title="Permanent link">&para;</a></h2>
+<p>Every cluster is a private cluster using only private IP-addresses with no direct exposure to the public.
+In order to reach a cluster, a user is required to run <code>naisdevice</code>, which sets up a VPN tunnel to a <code>naisdevice gateway</code> in the relevant cluster.
+<img alt="" src="/assets/naas-naisdevice.png" />
+Anyone who require access to the clusters will have to install <code>naisdevice</code> on their computer.
+Based on the domain provided in the user's authorization token, the authentication server will grant access to the relevant clusters.</p>
+<h2 id="exposing-applications">Exposing applications<a class="headerlink" href="#exposing-applications" title="Permanent link">&para;</a></h2>
+<p><span style="display:flex">
+<img src="/assets/naas-loadbalancing.png" width="350" style="margin-right:20px"/>
+<span>
+Each cluster has a single load balancer and a single set of ingress controllers.
+Access to each domain on this load balancer is goverened by cloud armor policies.
+The partner can restrict which clients can access a domain by defining cloud armor policies. <br/></p>
+<blockquote>
+<p><strong>Example:</strong> app-a.x.com can be exposed globally, whilst app-b.y.com is restricted to a predefined set of source IPs.</p>
+</blockquote>
+<p>The load balancer will terminate SSL using certificates provided by the partner.
+</span>
+</span></p>
                 
               
               
@@ -715,7 +905,7 @@ You can have your demo added to the agenda or you can present on the fly.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../welcome/nais-manifest-eng/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../administrative/trello/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -724,19 +914,19 @@ You can have your demo added to the agenda or you can present on the fly.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Manifest
+                Trello
               </div>
             </div>
           </a>
         
         
-          <a href="../pigs/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../nais/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                PIGs
+                What is nais?
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
