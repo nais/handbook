@@ -21,8 +21,8 @@ Each partner has its own separate GCP organization.
 As with the nais-io GCP organization, we want a clear separation between administration and workloads.
 ![](/assets/naas-partner-org.png)
 
-#### The nais-system GCP project
-To achieve this, all partner wide services (eg. deploy, partner console, etc.) run in a separate GCP project called nais-system.
+#### The nais-management GCP project
+To achieve this, all partner wide services (eg. deploy, partner console, etc.) run in a separate GCP project called nais-management.
 This GCP project is fully managed and owned by the NAIS team.
 
 #### Partner environment GCP projects
