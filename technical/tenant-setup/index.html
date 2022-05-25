@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://handbook.nais.io/technical/production-ready/">
+        <link rel="canonical" href="https://handbook.nais.io/technical/tenant-setup/">
       
       
       <link rel="shortcut icon" href="../../assets/logo.png">
@@ -16,7 +16,7 @@
     
     
       
-        <title>Production ready? - NAIS Handbook</title>
+        <title>Tenant setup - NAIS Handbook</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-is-production-ready" class="md-skip">
+        <a href="#setting-up-a-tenant-organization" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Production ready?
+              Tenant setup
             
           </span>
         </div>
@@ -425,11 +425,116 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../tenant-setup/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Tenant setup
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Tenant setup
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#required-settings" class="md-nav__link">
+    Required settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Required settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-nais-folder" class="md-nav__link">
+    Create the nais folder
+  </a>
+  
+    <nav class="md-nav" aria-label="Create the nais folder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grant-access-to-the-nais-team-and-the-terraform-user" class="md-nav__link">
+    Grant access to the nais team and the terraform user
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console-user" class="md-nav__link">
+    Console-user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-organization-role" class="md-nav__link">
+    Custom organization role
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#highly-recommended-settings" class="md-nav__link">
+    Highly recommended settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Highly recommended settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-location" class="md-nav__link">
+    Log location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organization-policy-for-location" class="md-nav__link">
+    Organization policy for location
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -449,133 +554,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Production ready?
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../production-ready/" class="md-nav__link">
       Production ready?
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#12-factor-app" class="md-nav__link">
-    12 factor app
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#observability" class="md-nav__link">
-    Observability
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#measuring-success" class="md-nav__link">
-    Measuring success
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#alerts" class="md-nav__link">
-    Alerts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relevant-logs" class="md-nav__link">
-    Relevant logs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tests" class="md-nav__link">
-    Tests
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    Documentation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#continuous-integration" class="md-nav__link">
-    Continuous Integration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#publish-and-announce" class="md-nav__link">
-    Publish and announce
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-skill-matrix" class="md-nav__link">
-    Update skill matrix
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#decrease-bus-factor" class="md-nav__link">
-    Decrease bus factor
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-protection-impact-assessment" class="md-nav__link">
-    Data Protection Impact Assessment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-audit" class="md-nav__link">
-    Security Audit
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -669,93 +652,76 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#12-factor-app" class="md-nav__link">
-    12 factor app
+  <a href="#required-settings" class="md-nav__link">
+    Required settings
   </a>
+  
+    <nav class="md-nav" aria-label="Required settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-nais-folder" class="md-nav__link">
+    Create the nais folder
+  </a>
+  
+    <nav class="md-nav" aria-label="Create the nais folder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grant-access-to-the-nais-team-and-the-terraform-user" class="md-nav__link">
+    Grant access to the nais team and the terraform user
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console-user" class="md-nav__link">
+    Console-user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-organization-role" class="md-nav__link">
+    Custom organization role
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#observability" class="md-nav__link">
-    Observability
+  <a href="#highly-recommended-settings" class="md-nav__link">
+    Highly recommended settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Highly recommended settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-location" class="md-nav__link">
+    Log location
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#measuring-success" class="md-nav__link">
-    Measuring success
+        
+          <li class="md-nav__item">
+  <a href="#organization-policy-for-location" class="md-nav__link">
+    Organization policy for location
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#alerts" class="md-nav__link">
-    Alerts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relevant-logs" class="md-nav__link">
-    Relevant logs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tests" class="md-nav__link">
-    Tests
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    Documentation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#continuous-integration" class="md-nav__link">
-    Continuous Integration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#publish-and-announce" class="md-nav__link">
-    Publish and announce
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-skill-matrix" class="md-nav__link">
-    Update skill matrix
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#decrease-bus-factor" class="md-nav__link">
-    Decrease bus factor
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-protection-impact-assessment" class="md-nav__link">
-    Data Protection Impact Assessment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-audit" class="md-nav__link">
-    Security Audit
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -771,85 +737,156 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/nais/handbook/edit/master/docs/technical/production-ready.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/nais/handbook/edit/master/docs/technical/tenant-setup.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="what-is-production-ready">What is production ready?<a class="headerlink" href="#what-is-production-ready" title="Permanent link">&para;</a></h1>
-<p>This is the NAIS team's attempt to define what <em>production ready</em> means to us.
-Production implies quality and durability. Running a system means serving
-requests, and requests are ultimately serving users. We care about our users,
-thus we must care about our systems.</p>
-<p>At NAIS, we strive to:</p>
-<ul>
-<li>provide fully self serviced products with minimal downtime,</li>
-<li>be confident that code changes will not break existing functionality,</li>
-<li>respond quickly when systems fail,</li>
-<li>spend minimal time fixing errors,</li>
-<li>and most importantly: spend as much time possible implementing useful services for our users. (you!)</li>
-</ul>
-<p>We believe that if our systems conform to the principles in this document, we have a greater chance of achieving these goals.</p>
-<h2 id="12-factor-app">12 factor app<a class="headerlink" href="#12-factor-app" title="Permanent link">&para;</a></h2>
-<p>Write your application according to the principles of <a href="https://12factor.net/">12 factor apps</a>.</p>
-<p>Twelve factor apps:</p>
-<ul>
-<li>have declarative system requirements,</li>
-<li>are suitable for deployment in Docker containers,</li>
-<li>do not have differences between development and production, and</li>
-<li>can scale up without significant changes to tooling, architecture, or development practices.</li>
-</ul>
-<h2 id="observability">Observability<a class="headerlink" href="#observability" title="Permanent link">&para;</a></h2>
-<p>Expose a Prometheus metric endpoint to allow scraping of key application metrics.</p>
-<h2 id="measuring-success">Measuring success<a class="headerlink" href="#measuring-success" title="Permanent link">&para;</a></h2>
-<p>Figure out <em>service level indicators</em> (SLI) and <em>service level objectives</em> (SLO).</p>
-<p>Service level indicators are quantifying metrics such as <em>error rate</em>, <em>request
-latency</em>, <em>availability</em>, and <em>system throughput</em>.</p>
-<p>Service level objectives are targets values for your metrics. You might say
-that you want an uptime of 99.9%. How do you define uptime? Is it a
-sufficiently low error rate? Is it being able to serve requests within a
-reasonable amount of time?</p>
-<p>Implement SLIs in the application code. Create views in a
-<a href="https://grafana.nais.io">Grafana</a> dashboard to check up on SLOs.</p>
-<p>Recommended read: <a href="https://sre.google/sre-book/service-level-objectives/">Service Level
-Objectives</a> in the
-Google Site Reliability Engineering handbook.</p>
-<h2 id="alerts">Alerts<a class="headerlink" href="#alerts" title="Permanent link">&para;</a></h2>
-<p><a href="https://doc.nais.io/observability/alerts/">Alerts</a> should be tied to SLOs.
-Consider if alerting is at all needed. An alert should only fire if human intervention is required.
-Too many alerts going off will result in <a href="https://en.wikipedia.org/wiki/Alarm_fatigue">alarm fatigue</a>.</p>
-<h2 id="relevant-logs">Relevant logs<a class="headerlink" href="#relevant-logs" title="Permanent link">&para;</a></h2>
-<p>Ensure traceability of errors by logging sufficient amount of debug information.
-Do not include sensitive data in logs. Sensitive data include credentials and
-personally identifyable information.</p>
-<h2 id="tests">Tests<a class="headerlink" href="#tests" title="Permanent link">&para;</a></h2>
-<p>Ensure sufficient test coverage so that the next developer is not afraid of
-breaking things when updating your code.</p>
-<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Development/building</li>
-<li>End-user documentation</li>
-<li>Sysadmin/maintenance</li>
-<li>Document code where it is complex, hard to read, or otherwise obscure</li>
-</ul>
-<h2 id="continuous-integration">Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permanent link">&para;</a></h2>
-<p>Ensure that changes to the codebase are built automatically, and pushed to
-development and production environments. No manual steps other than <code>git push</code>
-should be neccessary.</p>
-<h2 id="publish-and-announce">Publish and announce<a class="headerlink" href="#publish-and-announce" title="Permanent link">&para;</a></h2>
-<p>Your system is not in production until it has users.
-Make sure all potential end users are aware of your system and can use it.
-Using a system means making requests and having access to support and documentation.</p>
-<h2 id="update-skill-matrix">Update skill matrix<a class="headerlink" href="#update-skill-matrix" title="Permanent link">&para;</a></h2>
-<p>If a system is not in the <a href="https://www.valamis.com/hub/skills-matrix#what-is-skill-matrix">skill matrix</a>, add it.
-If you worked recently on a system, add yourself to the skill matrix.</p>
-<h2 id="decrease-bus-factor">Decrease bus factor<a class="headerlink" href="#decrease-bus-factor" title="Permanent link">&para;</a></h2>
-<p>Ensure that at least two people on your team have sufficient knowledge to debug
-and work on the system, to avoid <a href="https://en.wikipedia.org/wiki/Bus_factor">bus factor</a>.</p>
-<h2 id="data-protection-impact-assessment">Data Protection Impact Assessment<a class="headerlink" href="#data-protection-impact-assessment" title="Permanent link">&para;</a></h2>
-<p>Perform, if applicable, a <em>Data Protection Impact Assessment</em> (or in Norwegian, <em>personvernskonsekvensvurdering</em> (PVK)).</p>
-<h2 id="security-audit">Security Audit<a class="headerlink" href="#security-audit" title="Permanent link">&para;</a></h2>
-<p>Perform a <a href="https://doc.nais.io/clusters/migrating-to-gcp/#ros">security audit (ROS)</a> before releasing to production.</p>
+                <h1 id="setting-up-a-tenant-organization">Setting up a tenant organization<a class="headerlink" href="#setting-up-a-tenant-organization" title="Permanent link">&para;</a></h1>
+<h2 id="required-settings">Required settings<a class="headerlink" href="#required-settings" title="Permanent link">&para;</a></h2>
+<h3 id="create-the-nais-folder">Create the nais folder<a class="headerlink" href="#create-the-nais-folder" title="Permanent link">&para;</a></h3>
+<p>Everything related to nais is contained within this folder.</p>
+<div class="codehilite"><pre><span></span><code>gcloud resource-manager folders create --display-name<span class="o">=</span>nais --organization<span class="o">=</span>&lt;your org ID&gt;
+</code></pre></div>
+<h4 id="grant-access-to-the-nais-team-and-the-terraform-user">Grant access to the nais team and the terraform user<a class="headerlink" href="#grant-access-to-the-nais-team-and-the-terraform-user" title="Permanent link">&para;</a></h4>
+<p>To allow the nais team the required permissions to operate nais, add the iam-policy below to the nais folder.</p>
+<details>
+<summary>Click to see file content</summary>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;bindings&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;serviceAccount:terraformer@nais-io.iam.gserviceaccount.com&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;roles/artifactregistry.admin&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;serviceAccount:terraformer@nais-io.iam.gserviceaccount.com&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;roles/compute.admin&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;serviceAccount:terraformer@nais-io.iam.gserviceaccount.com&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;roles/container.admin&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;serviceAccount:terraformer@nais-io.iam.gserviceaccount.com&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;roles/dns.admin&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;serviceAccount:terraformer@nais-io.iam.gserviceaccount.com&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;roles/logging.admin&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;serviceAccount:terraformer@nais-io.iam.gserviceaccount.com&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;roles/resourcemanager.folderCreator&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;serviceAccount:terraformer@nais-io.iam.gserviceaccount.com&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;roles/resourcemanager.folderIamAdmin&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;serviceAccount:terraformer@nais-io.iam.gserviceaccount.com&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;roles/resourcemanager.projectCreator&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;serviceAccount:terraformer@nais-io.iam.gserviceaccount.com&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;roles/serviceusage.serviceUsageAdmin&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+<span class="err">//</span> <span class="err">Todo</span><span class="p">:</span> <span class="kc">f</span><span class="err">i</span><span class="kc">n</span><span class="err">d</span> <span class="err">correc</span><span class="kc">t</span> <span class="err">roles</span> <span class="kc">f</span><span class="err">or</span> <span class="err">viewers</span> <span class="err">a</span><span class="kc">n</span><span class="err">d</span> <span class="err">admi</span><span class="kc">ns</span>
+<span class="mi">-</span> <span class="kc">na</span><span class="err">is</span><span class="mi">-</span><span class="err">viewers</span>
+<span class="mi">-</span> <span class="kc">na</span><span class="err">is</span><span class="mi">-</span><span class="err">admi</span><span class="kc">ns</span>
+</code></pre></div>
+</details>
+<p>Run the following command to allow the roles in the nais folder:</p>
+<div class="codehilite"><pre><span></span><code>gcloud resource-manager folders set-iam-policy &lt;nais folder ID&gt; &lt;file name&gt;.json
+</code></pre></div>
+<h3 id="console-user">Console-user<a class="headerlink" href="#console-user" title="Permanent link">&para;</a></h3>
+<p>The console user needs some permissions - we don't know which yet.</p>
+<h3 id="custom-organization-role">Custom organization role<a class="headerlink" href="#custom-organization-role" title="Permanent link">&para;</a></h3>
+<p><a href="https://cloud.google.com/config-connector/docs/overview">Config connector</a> requires a service user in each of the team projects that will be created.
+We want to restrict this user's access to a bare minimum using a custom role.
+We cannot define custom roles at the folder level. Since we need to use a custom role for every project within the nais folder, we define the custom role at the organization level.</p>
+<p>Save the content below to a .json file</p>
+<details>
+<summary>Click to see file content</summary>
+<div class="codehilite"><pre><span></span><code><span class="nt">title</span><span class="p">:</span> <span class="s">&quot;NAIS</span><span class="nv"> </span><span class="s">Custom</span><span class="nv"> </span><span class="s">CNRM</span><span class="nv"> </span><span class="s">Role&quot;</span>
+<span class="nt">description</span><span class="p">:</span> <span class="s">&quot;Custom</span><span class="nv"> </span><span class="s">role</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">namespaced</span><span class="nv"> </span><span class="s">cnrm</span><span class="nv"> </span><span class="s">users</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">allow</span><span class="nv"> </span><span class="s">creation</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">resources&quot;</span>
+<span class="nt">stage</span><span class="p">:</span> <span class="s">&quot;GA&quot;</span>
+<span class="nt">includedPermissions</span><span class="p">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudkms.cryptoKeys.create</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudkms.cryptoKeys.get</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudkms.cryptoKeys.update</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudkms.keyRings.create</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudkms.keyRings.get</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudkms.keyRings.getIamPolicy</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudkms.keyRings.setIamPolicy</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.databases.create</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.databases.delete</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.databases.get</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.databases.list</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.databases.update</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.instances.create</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.instances.delete</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.instances.get</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.instances.list</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.instances.update</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.users.create</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.users.delete</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.users.list</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.users.update</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">resourcemanager.projects.get</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">resourcemanager.projects.getIamPolicy</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">resourcemanager.projects.setIamPolicy</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">storage.buckets.create</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">storage.buckets.get</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">storage.buckets.getIamPolicy</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">storage.buckets.list</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">storage.buckets.setIamPolicy</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">storage.buckets.update</span>
+</code></pre></div>
+</details>
+
+<p>Run the following command to apply it to your organization:</p>
+<div class="codehilite"><pre><span></span><code>gcloud iam roles create CustomCNRMRole --organization<span class="o">=</span>&lt;your org ID&gt;  --file<span class="o">=</span>&lt;your file name&gt;.yaml
+</code></pre></div>
+<h2 id="highly-recommended-settings">Highly recommended settings<a class="headerlink" href="#highly-recommended-settings" title="Permanent link">&para;</a></h2>
+<h3 id="log-location">Log location<a class="headerlink" href="#log-location" title="Permanent link">&para;</a></h3>
+<p>Every project created in GCP will have a default log location for all logs. The default is Global.
+In order to keep your logs in europe, we <em>strongly</em> recommend setting the default log location to europe using the following command</p>
+<div class="codehilite"><pre><span></span><code>gcloud alpha logging settings update --organization<span class="o">=</span>&lt;your org ID&gt; --storage-location<span class="o">=</span>europe-north1
+</code></pre></div>
+<h3 id="organization-policy-for-location">Organization policy for location<a class="headerlink" href="#organization-policy-for-location" title="Permanent link">&para;</a></h3>
+<p>Although all resources created by nais is located within the EU, teams are still able to create resources anywhere unless an organizational constraint is in place.</p>
+<details>
+<summary>Click to see file content</summary>
+<div class="codehilite"><pre><span></span><code><span class="nt">constraint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">constraints/gcp.resourceLocations</span>
+<span class="nt">etag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">BwVUSr8Q7Ng=</span>
+<span class="nt">listPolicy</span><span class="p">:</span>
+  <span class="nt">allowedValues</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">in:eu-locations</span>
+</code></pre></div>
+</details>
+
+<div class="codehilite"><pre><span></span><code>gcloud beta resource-manager org-policies set-policy --organization<span class="o">=</span>&lt;your org ID&gt; &lt;file name&gt;.yaml
+</code></pre></div>
                 
               
               
@@ -868,7 +905,7 @@ and work on the system, to avoid <a href="https://en.wikipedia.org/wiki/Bus_fact
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../nais/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../naas/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -877,19 +914,19 @@ and work on the system, to avoid <a href="https://en.wikipedia.org/wiki/Bus_fact
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                What is nais?
+                NaaS
               </div>
             </div>
           </a>
         
         
-          <a href="../naisdevice/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../nais/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                naisdevice
+                What is nais?
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
