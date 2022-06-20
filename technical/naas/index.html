@@ -468,11 +468,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#partner-gcp-organization" class="md-nav__link">
-    Partner GCP organization
+  <a href="#tenant-gcp-organization" class="md-nav__link">
+    Tenant GCP organization
   </a>
   
-    <nav class="md-nav" aria-label="Partner GCP organization">
+    <nav class="md-nav" aria-label="Tenant GCP organization">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -483,8 +483,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#partner-environment-gcp-projects" class="md-nav__link">
-    Partner environment GCP projects
+  <a href="#tenant-environment-gcp-projects" class="md-nav__link">
+    Tenant environment GCP projects
   </a>
   
 </li>
@@ -709,11 +709,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#partner-gcp-organization" class="md-nav__link">
-    Partner GCP organization
+  <a href="#tenant-gcp-organization" class="md-nav__link">
+    Tenant GCP organization
   </a>
   
-    <nav class="md-nav" aria-label="Partner GCP organization">
+    <nav class="md-nav" aria-label="Tenant GCP organization">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -724,8 +724,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#partner-environment-gcp-projects" class="md-nav__link">
-    Partner environment GCP projects
+  <a href="#tenant-environment-gcp-projects" class="md-nav__link">
+    Tenant environment GCP projects
   </a>
   
 </li>
@@ -815,7 +815,7 @@
                 <h1 id="what-is-naas-nais-as-a-service">What is NaaS (Nais As A Service)?<a class="headerlink" href="#what-is-naas-nais-as-a-service" title="Permanent link">&para;</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>NaaS is a centralized system for governance of NAIS clusters and a uniform way of applying features.
-Its purpose is remaining a clear separation between partners and their configuration, whilst still remaining centralized control.</p>
+Its purpose is remaining a clear separation between tenants and their configuration, whilst still remaining centralized control.</p>
 <h2 id="an-architecture-overview">An architecture overview<a class="headerlink" href="#an-architecture-overview" title="Permanent link">&para;</a></h2>
 <h3 id="the-nais-io-gcp-organization">The nais-io GCP organization<a class="headerlink" href="#the-nais-io-gcp-organization" title="Permanent link">&para;</a></h3>
 <p><span style="display:flex">
@@ -828,39 +828,39 @@ The <code>nais-io</code> GCP organization serves this purpose; this is where adm
 <blockquote>
 <p><a href="https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#organizations">What is a GCP organization?</a></p>
 </blockquote>
-<h3 id="partner-gcp-organization">Partner GCP organization<a class="headerlink" href="#partner-gcp-organization" title="Permanent link">&para;</a></h3>
-<p>Each partner has its own separate GCP organization.
+<h3 id="tenant-gcp-organization">Tenant GCP organization<a class="headerlink" href="#tenant-gcp-organization" title="Permanent link">&para;</a></h3>
+<p>Each tenant has its own separate GCP organization.
 As with the nais-io GCP organization, we want a clear separation between administration and workloads.
 <img alt="" src="/assets/naas-partner-org.png" /></p>
 <h4 id="the-nais-management-gcp-project">The nais-management GCP project<a class="headerlink" href="#the-nais-management-gcp-project" title="Permanent link">&para;</a></h4>
-<p>To achieve this, all partner wide services (eg. deploy, partner console, etc.) run in a separate GCP project called nais-management.
+<p>To achieve this, all tenant wide services (eg. deploy, tenant console, etc.) run in a separate GCP project called nais-management.
 This GCP project is fully managed and owned by the NAIS team.</p>
-<h4 id="partner-environment-gcp-projects">Partner environment GCP projects<a class="headerlink" href="#partner-environment-gcp-projects" title="Permanent link">&para;</a></h4>
-<p>The partner will have multiple clusters, typically dev and prod, and each of these clusters require a suite of NAIS components (eg. naiserator, monitoring, etc.).
-To separate NAIS components and from partner workloads, each cluster has a nais-system namespace, where all NAIS-related services reside.
-All partner workloads will run in separate team namespaces in this cluster.</p>
+<h4 id="tenant-environment-gcp-projects">Tenant environment GCP projects<a class="headerlink" href="#tenant-environment-gcp-projects" title="Permanent link">&para;</a></h4>
+<p>The tenant will have multiple clusters, typically dev and prod, and each of these clusters require a suite of NAIS components (eg. naiserator, monitoring, etc.).
+To separate NAIS components and from tenant workloads, each cluster has a nais-system namespace, where all NAIS-related services reside.
+All tenant workloads will run in separate team namespaces in this cluster.</p>
 <blockquote>
 <p><a href="https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#projects"> What is a GCP project?</a></p>
 </blockquote>
 <h2 id="administration-and-authorization">Administration and authorization<a class="headerlink" href="#administration-and-authorization" title="Permanent link">&para;</a></h2>
 <h3 id="cluster-administrators">Cluster administrators<a class="headerlink" href="#cluster-administrators" title="Permanent link">&para;</a></h3>
 <p>NAIS personnel has an <code>@nais.io</code> user, who initially has no permissions outside of the <code>nais-io</code> GCP organization.
-There is an administration group in the <code>nais-io</code> GCP organization that is granted access to the respective partner's GCP organization.
-This groups is normally empty, but when there is a demand, NAIS operators can grant themselves just in time access by adding their user to this group, and thus access to the partner.
+There is an administration group in the <code>nais-io</code> GCP organization that is granted access to the respective tenant's GCP organization.
+This groups is normally empty, but when there is a demand, NAIS operators can grant themselves just in time access by adding their user to this group, and thus access to the tenant.
 <img alt="" src="/assets/naas-admin-groups.png" /></p>
 <blockquote>
-<p><strong>Example:</strong> The group <code>nav-k8s-admins@nais.io</code> is granted administrative rights in NAV partner GCP organization.</p>
+<p><strong>Example:</strong> The group <code>nav-k8s-admins@nais.io</code> is granted administrative rights in NAV tenant GCP organization.</p>
 </blockquote>
 <h3 id="cluster-users">Cluster users<a class="headerlink" href="#cluster-users" title="Permanent link">&para;</a></h3>
-<p>The partner is responisble for populating their GCP organization with users.
+<p>The tenant is responisble for populating their GCP organization with users.
 This is typically done by synchronizing users from their IDP.
-Additionally we recommend configuring an IDP, so the partner remains in control of the authorization flow.
+Additionally we recommend configuring an IDP, so the tenant remains in control of the authorization flow.
 <img alt="" src="/assets/naas-user-admin.png" /></p>
 <blockquote>
 <p><strong>Example:</strong> Nav synchronize their users from Azure AD and configure Azure AD to be the IDP.</p>
 </blockquote>
-<p>Each partner has their own <code>console</code> where they can manage users, features and access for each of their teams.
-When a user is allocated to a team, access to resources are granted according to what is configured by the partner in their console.</p>
+<p>Each tenant has their own <code>console</code> where they can manage users, features and access for each of their teams.
+When a user is allocated to a team, access to resources are granted according to what is configured by the tenant in their console.</p>
 <h2 id="control-plane-and-cluster-configuration">Control plane and cluster configuration<a class="headerlink" href="#control-plane-and-cluster-configuration" title="Permanent link">&para;</a></h2>
 <p>The NAIS control plane consist of two primary components, <code>Fasit</code> and <code>naisd</code>.
 <code>Fasit</code> is the primary configuration database for all clusters.
@@ -892,11 +892,11 @@ Based on the domain provided in the user's authorization token, the authenticati
 <span>
 Each cluster has a single load balancer and a single set of ingress controllers.
 Access to each domain on this load balancer is goverened by cloud armor policies.
-The partner can restrict which clients can access a domain by defining cloud armor policies. <br/></p>
+The tenant can restrict which clients can access a domain by defining cloud armor policies. <br/></p>
 <blockquote>
 <p><strong>Example:</strong> app-a.x.com can be exposed globally, whilst app-b.y.com is restricted to a predefined set of source IPs.</p>
 </blockquote>
-<p>The load balancer will terminate SSL using certificates provided by the partner.
+<p>The load balancer will terminate SSL using certificates provided by the tenant.
 </span>
 </span></p>
                 
