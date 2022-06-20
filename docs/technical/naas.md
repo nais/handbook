@@ -2,7 +2,7 @@
 
 ## Introduction
 NaaS is a centralized system for governance of NAIS clusters and a uniform way of applying features.
-Its purpose is remaining a clear separation between partners and their configuration, whilst still remaining centralized control.
+Its purpose is remaining a clear separation between tenants and their configuration, whilst still remaining centralized control.
 
 ## An architecture overview
 ### The nais-io GCP organization
@@ -16,19 +16,19 @@ The `nais-io` GCP organization serves this purpose; this is where administrative
 > [What is a GCP organization?](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#organizations)
 
 
-### Partner GCP organization
-Each partner has its own separate GCP organization.
+### Tenant GCP organization
+Each tenant has its own separate GCP organization.
 As with the nais-io GCP organization, we want a clear separation between administration and workloads.
 ![](/assets/naas-partner-org.png)
 
 #### The nais-management GCP project
-To achieve this, all partner wide services (eg. deploy, partner console, etc.) run in a separate GCP project called nais-management.
+To achieve this, all tenant wide services (eg. deploy, tenant console, etc.) run in a separate GCP project called nais-management.
 This GCP project is fully managed and owned by the NAIS team.
 
-#### Partner environment GCP projects
-The partner will have multiple clusters, typically dev and prod, and each of these clusters require a suite of NAIS components (eg. naiserator, monitoring, etc.).
-To separate NAIS components and from partner workloads, each cluster has a nais-system namespace, where all NAIS-related services reside.
-All partner workloads will run in separate team namespaces in this cluster.
+#### Tenant environment GCP projects
+The tenant will have multiple clusters, typically dev and prod, and each of these clusters require a suite of NAIS components (eg. naiserator, monitoring, etc.).
+To separate NAIS components and from tenant workloads, each cluster has a nais-system namespace, where all NAIS-related services reside.
+All tenant workloads will run in separate team namespaces in this cluster.
 
 > [ What is a GCP project?](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#projects)
 
@@ -36,20 +36,20 @@ All partner workloads will run in separate team namespaces in this cluster.
 ## Administration and authorization
 ### Cluster administrators
 NAIS personnel has an `@nais.io` user, who initially has no permissions outside of the `nais-io` GCP organization.
-There is an administration group in the `nais-io` GCP organization that is granted access to the respective partner's GCP organization.
-This groups is normally empty, but when there is a demand, NAIS operators can grant themselves just in time access by adding their user to this group, and thus access to the partner.
+There is an administration group in the `nais-io` GCP organization that is granted access to the respective tenant's GCP organization.
+This groups is normally empty, but when there is a demand, NAIS operators can grant themselves just in time access by adding their user to this group, and thus access to the tenant.
 ![](/assets/naas-admin-groups.png)
-> **Example:** The group `nav-k8s-admins@nais.io` is granted administrative rights in NAV partner GCP organization.
+> **Example:** The group `nav-k8s-admins@nais.io` is granted administrative rights in NAV tenant GCP organization.
 
 ### Cluster users
-The partner is responisble for populating their GCP organization with users.
+The tenant is responisble for populating their GCP organization with users.
 This is typically done by synchronizing users from their IDP.
-Additionally we recommend configuring an IDP, so the partner remains in control of the authorization flow.
+Additionally we recommend configuring an IDP, so the tenant remains in control of the authorization flow.
 ![](/assets/naas-user-admin.png)
 > **Example:** Nav synchronize their users from Azure AD and configure Azure AD to be the IDP.
 
-Each partner has their own `console` where they can manage users, features and access for each of their teams.
-When a user is allocated to a team, access to resources are granted according to what is configured by the partner in their console.
+Each tenant has their own `console` where they can manage users, features and access for each of their teams.
+When a user is allocated to a team, access to resources are granted according to what is configured by the tenant in their console.
 
 ## Control plane and cluster configuration
 The NAIS control plane consist of two primary components, `Fasit` and `naisd`.
@@ -84,9 +84,9 @@ Based on the domain provided in the user's authorization token, the authenticati
 <span>
 Each cluster has a single load balancer and a single set of ingress controllers.
 Access to each domain on this load balancer is goverened by cloud armor policies.
-The partner can restrict which clients can access a domain by defining cloud armor policies. <br/>
+The tenant can restrict which clients can access a domain by defining cloud armor policies. <br/>
 > **Example:** app-a.x.com can be exposed globally, whilst app-b.y.com is restricted to a predefined set of source IPs.
 
-The load balancer will terminate SSL using certificates provided by the partner.
+The load balancer will terminate SSL using certificates provided by the tenant.
 </span>
 </span>
