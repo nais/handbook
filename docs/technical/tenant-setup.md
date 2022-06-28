@@ -19,55 +19,55 @@ To allow the nais team the required permissions to operate nais, add the iam-pol
   "bindings": [
     {
       "members": [
-        "serviceAccount:terraformer@nais-io.iam.gserviceaccount.com"
+        "serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com"
       ],
       "role": "roles/artifactregistry.admin"
     },
     {
       "members": [
-        "serviceAccount:terraformer@nais-io.iam.gserviceaccount.com"
+        "serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com"
       ],
       "role": "roles/compute.admin"
     },
     {
       "members": [
-        "serviceAccount:terraformer@nais-io.iam.gserviceaccount.com"
+        "serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com"
       ],
       "role": "roles/container.admin"
     },
     {
       "members": [
-        "serviceAccount:terraformer@nais-io.iam.gserviceaccount.com"
+        "serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com"
       ],
       "role": "roles/dns.admin"
     },
     {
       "members": [
-        "serviceAccount:terraformer@nais-io.iam.gserviceaccount.com"
+        "serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com"
       ],
       "role": "roles/logging.admin"
     },
     {
       "members": [
-        "serviceAccount:terraformer@nais-io.iam.gserviceaccount.com"
+        "serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com"
       ],
       "role": "roles/resourcemanager.folderCreator"
     },
     {
       "members": [
-        "serviceAccount:terraformer@nais-io.iam.gserviceaccount.com"
+        "serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com"
       ],
       "role": "roles/resourcemanager.folderIamAdmin"
     },
     {
       "members": [
-        "serviceAccount:terraformer@nais-io.iam.gserviceaccount.com"
+        "serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com"
       ],
       "role": "roles/resourcemanager.projectCreator"
     },
     {
       "members": [
-        "serviceAccount:terraformer@nais-io.iam.gserviceaccount.com"
+        "serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com"
       ],
       "role": "roles/serviceusage.serviceUsageAdmin"
     }
