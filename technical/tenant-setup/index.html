@@ -466,6 +466,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#required-permissions" class="md-nav__link">
+    Required permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#create-the-nais-folder" class="md-nav__link">
     Create the nais folder
   </a>
@@ -488,6 +495,13 @@
           <li class="md-nav__item">
   <a href="#console-user" class="md-nav__link">
     Console-user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-group" class="md-nav__link">
+    Kubernetes group
   </a>
   
 </li>
@@ -660,6 +674,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#required-permissions" class="md-nav__link">
+    Required permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#create-the-nais-folder" class="md-nav__link">
     Create the nais folder
   </a>
@@ -682,6 +703,13 @@
           <li class="md-nav__item">
   <a href="#console-user" class="md-nav__link">
     Console-user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-group" class="md-nav__link">
+    Kubernetes group
   </a>
   
 </li>
@@ -744,12 +772,21 @@
                 
                 <h1 id="setting-up-a-tenant-organization">Setting up a tenant organization<a class="headerlink" href="#setting-up-a-tenant-organization" title="Permanent link">&para;</a></h1>
 <h2 id="required-settings">Required settings<a class="headerlink" href="#required-settings" title="Permanent link">&para;</a></h2>
+<h3 id="required-permissions">Required permissions<a class="headerlink" href="#required-permissions" title="Permanent link">&para;</a></h3>
+<p>On the user that will run the following commands, the following IAM roles are required on the organization level.</p>
+<ul>
+<li><code>Owner</code></li>
+<li><code>Organization Administrator</code></li>
+<li><code>Folder Creator</code></li>
+<li><code>Organization Policy Administrator</code></li>
+</ul>
 <h3 id="create-the-nais-folder">Create the nais folder<a class="headerlink" href="#create-the-nais-folder" title="Permanent link">&para;</a></h3>
 <p>Everything related to nais is contained within this folder.</p>
 <div class="codehilite"><pre><span></span><code>gcloud resource-manager folders create --display-name<span class="o">=</span>nais --organization<span class="o">=</span>&lt;your org ID&gt;
 </code></pre></div>
 <h4 id="grant-access-to-the-nais-team-and-the-terraform-user">Grant access to the nais team and the terraform user<a class="headerlink" href="#grant-access-to-the-nais-team-and-the-terraform-user" title="Permanent link">&para;</a></h4>
 <p>To allow the nais team the required permissions to operate nais, add the iam-policy below to the nais folder.</p>
+<p>Replace <code>${TENANTNAME}</code> with the name provided by the NAIS team.</p>
 <details>
 <summary>Click to see file content</summary>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
@@ -820,6 +857,9 @@
 </code></pre></div>
 <h3 id="console-user">Console-user<a class="headerlink" href="#console-user" title="Permanent link">&para;</a></h3>
 <p>The console user needs some permissions - we don't know which yet.</p>
+<h3 id="kubernetes-group">Kubernetes group<a class="headerlink" href="#kubernetes-group" title="Permanent link">&para;</a></h3>
+<p>In <a href="https://admin.google.com">Google Admin</a> create a group named <code>gke-security-group</code>. 
+This group is used to manage access to the kubernetes clusters, and will be managed by console.</p>
 <h3 id="custom-organization-role">Custom organization role<a class="headerlink" href="#custom-organization-role" title="Permanent link">&para;</a></h3>
 <p><a href="https://cloud.google.com/config-connector/docs/overview">Config connector</a> requires a service user in each of the team projects that will be created.
 We want to restrict this user's access to a bare minimum using a custom role.
