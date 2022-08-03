@@ -2,6 +2,14 @@
 
 ## Required settings
 
+### Required permissions
+On the user that will run the following commands, the following IAM roles are required on the organization level.
+
+- `Owner`
+- `Organization Administrator`
+- `Folder Creator`
+- `Organization Policy Administrator`
+
 ### Create the nais folder
 Everything related to nais is contained within this folder.
 
@@ -11,6 +19,8 @@ gcloud resource-manager folders create --display-name=nais --organization=<your 
 
 #### Grant access to the nais team and the terraform user
 To allow the nais team the required permissions to operate nais, add the iam-policy below to the nais folder.
+
+Replace `${TENANTNAME}` with the name provided by the NAIS team.
 
 <details>
 <summary>Click to see file content</summary>
@@ -87,6 +97,10 @@ gcloud resource-manager folders set-iam-policy <nais folder ID> <file name>.json
 
 ### Console-user
 The console user needs some permissions - we don't know which yet.
+
+### Kubernetes group
+In [Google Admin](https://admin.google.com) create a group named `gke-security-group`. 
+This group is used to manage access to the kubernetes clusters, and will be managed by console.
 
 ### Custom organization role
 [Config connector](https://cloud.google.com/config-connector/docs/overview) requires a service user in each of the team projects that will be created.
