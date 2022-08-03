@@ -42,7 +42,7 @@ This groups is normally empty, but when there is a demand, NAIS operators can gr
 > **Example:** The group `nav-k8s-admins@nais.io` is granted administrative rights in NAV tenant GCP organization.
 
 ### Cluster users
-The tenant is responisble for populating their GCP organization with users.
+The tenant is responsible for populating their GCP organization with users.
 This is typically done by synchronizing users from their IDP.
 Additionally we recommend configuring an IDP, so the tenant remains in control of the authorization flow.
 ![](/assets/naas-user-admin.png)
