@@ -93,7 +93,7 @@ The console user needs some permissions - we don't know which yet.
 We want to restrict this user's access to a bare minimum using a custom role.
 We cannot define custom roles at the folder level. Since we need to use a custom role for every project within the nais folder, we define the custom role at the organization level.
 
-Save the content below to a .json file
+Save the content below to a .yaml file
 <details>
 <summary>Click to see file content</summary>
 ``` yaml
