@@ -99,8 +99,9 @@ gcloud resource-manager folders set-iam-policy <nais folder ID> <file name>.json
 The console user needs some permissions - we don't know which yet.
 
 ### Kubernetes group
-In [Google Admin](https://admin.google.com) create a group named `gke-security-group`. 
+In [Google Admin](https://admin.google.com) create a group named `gke-security-groups`. 
 This group is used to manage access to the kubernetes clusters, and will be managed by console.
+Make sure the group has the **View Members** permission selected for **Group Members**.
 
 ### Custom organization role
 [Config connector](https://cloud.google.com/config-connector/docs/overview) requires a service user in each of the team projects that will be created.
