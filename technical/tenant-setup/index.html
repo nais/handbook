@@ -858,8 +858,9 @@
 <h3 id="console-user">Console-user<a class="headerlink" href="#console-user" title="Permanent link">&para;</a></h3>
 <p>The console user needs some permissions - we don't know which yet.</p>
 <h3 id="kubernetes-group">Kubernetes group<a class="headerlink" href="#kubernetes-group" title="Permanent link">&para;</a></h3>
-<p>In <a href="https://admin.google.com">Google Admin</a> create a group named <code>gke-security-group</code>. 
-This group is used to manage access to the kubernetes clusters, and will be managed by console.</p>
+<p>In <a href="https://admin.google.com">Google Admin</a> create a group named <code>gke-security-groups</code>. 
+This group is used to manage access to the kubernetes clusters, and will be managed by console.
+Make sure the group has the <strong>View Members</strong> permission selected for <strong>Group Members</strong>.</p>
 <h3 id="custom-organization-role">Custom organization role<a class="headerlink" href="#custom-organization-role" title="Permanent link">&para;</a></h3>
 <p><a href="https://cloud.google.com/config-connector/docs/overview">Config connector</a> requires a service user in each of the team projects that will be created.
 We want to restrict this user's access to a bare minimum using a custom role.
