@@ -928,6 +928,34 @@ In order to keep your logs in europe, we <em>strongly</em> recommend setting the
 
 <div class="codehilite"><pre><span></span><code>gcloud beta resource-manager org-policies set-policy --organization<span class="o">=</span>&lt;your org ID&gt; &lt;file name&gt;.yaml
 </code></pre></div>
+<h1 id="hookd">hookd<a class="headerlink" href="#hookd" title="Permanent link">&para;</a></h1>
+<h2 id="set-up-oauth-client">set up oauth client<a class="headerlink" href="#set-up-oauth-client" title="Permanent link">&para;</a></h2>
+<ol>
+<li>choose project nais -&gt; nais-management -&gt; nais-management</li>
+<li>if consent screen is not configured already:<ol>
+<li>go to <em>APIs ans Service</em> -&gt; <em>OAuth consent screen</em></li>
+<li><em>internal</em> -&gt; <em>create</em>
+1.
+  |config|value|
+  |---|---|
+  |App name|nais management|
+  |User support email|admin@tenant-domain.com|
+  |Developer Contact email|admin@tenant-domain.com|</li>
+<li><em>save and continue</em></li>
+<li><em>save and continue</em></li>
+</ol>
+</li>
+<li>go to <em>Credentials</em></li>
+<li>click <em>Create Credentials</em> -&gt; <em>OAuth client ID</em></li>
+<li>select type <em>Web Application</em>(</li>
+<li>name: <code>hookd</code></li>
+<li>add <em>Authorized redirect URIs</em>:<ol>
+<li><code>http://deploy.tenant-name.cloud.nais.io/oauth2/callback</code></li>
+</ol>
+</li>
+<li><em>create</em></li>
+<li>copy client id and secret into fasit feature</li>
+</ol>
                 
               
               
