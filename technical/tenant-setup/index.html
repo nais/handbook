@@ -856,7 +856,7 @@
 <div class="codehilite"><pre><span></span><code>gcloud resource-manager folders set-iam-policy &lt;nais folder ID&gt; &lt;file name&gt;.json
 </code></pre></div>
 <h3 id="console-user">Console-user<a class="headerlink" href="#console-user" title="Permanent link">&para;</a></h3>
-<p>The console user needs some permissions - we don't know which yet.</p>
+<p>The console user needs the <code>Groups Admin</code> role to be able to create and maintain groups for the teams.</p>
 <h3 id="kubernetes-group">Kubernetes group<a class="headerlink" href="#kubernetes-group" title="Permanent link">&para;</a></h3>
 <p>In <a href="https://admin.google.com">Google Admin</a> create a group named <code>gke-security-groups</code>. 
 This group is used to manage access to the kubernetes clusters, and will be managed by console.
