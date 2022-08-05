@@ -96,7 +96,7 @@ gcloud resource-manager folders set-iam-policy <nais folder ID> <file name>.json
 
 
 ### Console-user
-The console user needs some permissions - we don't know which yet.
+The console user needs the `Groups Admin` role to be able to create and maintain groups for the teams.
 
 ### Kubernetes group
 In [Google Admin](https://admin.google.com) create a group named `gke-security-groups`. 
