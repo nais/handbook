@@ -182,21 +182,18 @@ listPolicy:
 gcloud beta resource-manager org-policies set-policy --organization=<your org ID> <file name>.yaml
 ```
 
-# hookd
-## set up oauth client
+## hookd
+### set up oauth client
 
 1. choose project nais -> nais-management -> nais-management
 1. if consent screen is not configured already:
     1. go to *APIs ans Service* -> *OAuth consent screen*
     1. *internal* -> *create*
     1.
-      |config|value|
-      |---|---|
-      |App name|nais management|
-      |User support email|admin@tenant-domain.com|
-      |Developer Contact email|admin@tenant-domain.com|
-    1. *save and continue*
-    1. *save and continue*
+        1. App name: `nais management`
+        1. User support email: `admin@<tenant-domain>`
+        1. Developer Contact email: `admin@<tenant-domain>`
+    1. *save and continue* (x2)
 1. go to *Credentials*
 1. click *Create Credentials* -> *OAuth client ID*
 1. select type *Web Application*(
