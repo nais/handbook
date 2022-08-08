@@ -545,6 +545,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hookd" class="md-nav__link">
+    hookd
+  </a>
+  
+    <nav class="md-nav" aria-label="hookd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-oauth-client" class="md-nav__link">
+    set up oauth client
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -753,6 +773,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hookd" class="md-nav__link">
+    hookd
+  </a>
+  
+    <nav class="md-nav" aria-label="hookd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-oauth-client" class="md-nav__link">
+    set up oauth client
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -928,21 +968,20 @@ In order to keep your logs in europe, we <em>strongly</em> recommend setting the
 
 <div class="codehilite"><pre><span></span><code>gcloud beta resource-manager org-policies set-policy --organization<span class="o">=</span>&lt;your org ID&gt; &lt;file name&gt;.yaml
 </code></pre></div>
-<h1 id="hookd">hookd<a class="headerlink" href="#hookd" title="Permanent link">&para;</a></h1>
-<h2 id="set-up-oauth-client">set up oauth client<a class="headerlink" href="#set-up-oauth-client" title="Permanent link">&para;</a></h2>
+<h2 id="hookd">hookd<a class="headerlink" href="#hookd" title="Permanent link">&para;</a></h2>
+<h3 id="set-up-oauth-client">set up oauth client<a class="headerlink" href="#set-up-oauth-client" title="Permanent link">&para;</a></h3>
 <ol>
 <li>choose project nais -&gt; nais-management -&gt; nais-management</li>
 <li>if consent screen is not configured already:<ol>
 <li>go to <em>APIs ans Service</em> -&gt; <em>OAuth consent screen</em></li>
 <li><em>internal</em> -&gt; <em>create</em>
-1.
-  |config|value|
-  |---|---|
-  |App name|nais management|
-  |User support email|admin@tenant-domain.com|
-  |Developer Contact email|admin@tenant-domain.com|</li>
-<li><em>save and continue</em></li>
-<li><em>save and continue</em></li>
+1.<ol>
+<li>App name: <code>nais management</code></li>
+<li>User support email: <code>admin@&lt;tenant-domain&gt;</code></li>
+<li>Developer Contact email: <code>admin@&lt;tenant-domain&gt;</code></li>
+</ol>
+</li>
+<li><em>save and continue</em> (x2)</li>
 </ol>
 </li>
 <li>go to <em>Credentials</em></li>
