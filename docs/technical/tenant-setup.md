@@ -94,9 +94,21 @@ Run the following command to allow the roles in the nais folder:
 gcloud resource-manager folders set-iam-policy <nais folder ID> <file name>.json
 ```
 
+### Console
 
-### Console-user
 The console user needs the `Groups Admin` role to be able to create and maintain groups for the teams.
+
+[Set up an OAuth client](#setting-up-oauth-client) using these details:
+
+Name: `console`
+Authorized redirect URIs: `http://console.<tenant-name>.cloud.nais.io/oauth2/callback`
+
+### Hookd
+
+[Set up an OAuth client](#setting-up-oauth-client) using these details:
+
+Name: `hookd`
+Authorized redirect URIs: `http://deploy.<tenant-name>.cloud.nais.io/oauth2/callback`
 
 ### Kubernetes group
 In [Google Admin](https://admin.google.com) create a group named `gke-security-groups`. 
@@ -182,23 +194,21 @@ listPolicy:
 gcloud beta resource-manager org-policies set-policy --organization=<your org ID> <file name>.yaml
 ```
 
-## hookd
-### set up oauth client
+## Setting up oauth client
 
-1. choose project nais -> nais-management -> nais-management
-1. if consent screen is not configured already:
-    1. go to *APIs ans Service* -> *OAuth consent screen*
-    1. *internal* -> *create*
+1. Choose project nais -> nais-management -> nais-management
+1. If consent screen is not configured already:
+    1. Go to *APIs ans Service* -> *OAuth consent screen*
+    1. *Internal* -> *create*
     1.
         1. App name: `nais management`
         1. User support email: `admin@<tenant-domain>`
         1. Developer Contact email: `admin@<tenant-domain>`
-    1. *save and continue* (x2)
-1. go to *Credentials*
-1. click *Create Credentials* -> *OAuth client ID*
-1. select type *Web Application*(
-1. name: `hookd`
-1. add *Authorized redirect URIs*:
-    1. `http://deploy.tenant-name.cloud.nais.io/oauth2/callback`
-1. *create*
-1. copy client id and secret into fasit feature
+    1. *Save and continue* (x2)
+1. Go to *Credentials*
+1. Click *Create Credentials* -> *OAuth client ID*
+1. Select type *Web Application*
+1. Set Name and Authorized redirect URIs
+1. *Create*
+1. Copy client id and secret into fasit feature
+
