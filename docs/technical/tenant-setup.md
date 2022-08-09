@@ -100,15 +100,21 @@ The console user needs the `Groups Admin` role to be able to create and maintain
 
 [Set up an OAuth client](#setting-up-oauth-client) using these details:
 
-Name: `console`
-Authorized redirect URIs: `http://console.<tenant-name>.cloud.nais.io/oauth2/callback`
+Name
+: `console`
+
+Authorized redirect URIs
+: `http://console.<tenant-name>.cloud.nais.io/oauth2/callback`
 
 ### Hookd
 
 [Set up an OAuth client](#setting-up-oauth-client) using these details:
 
-Name: `hookd`
-Authorized redirect URIs: `http://deploy.<tenant-name>.cloud.nais.io/oauth2/callback`
+Name
+: `hookd`
+
+Authorized redirect URIs
+: `http://deploy.<tenant-name>.cloud.nais.io/oauth2/callback`
 
 ### Kubernetes group
 In [Google Admin](https://admin.google.com) create a group named `gke-security-groups`. 
