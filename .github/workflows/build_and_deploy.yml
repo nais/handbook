@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: git-checkout
         uses: actions/checkout@v3
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v4
         with:
           python-version-file: '.python-version'
       - name: Install all dependencies
