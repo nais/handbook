@@ -810,79 +810,80 @@
 </ul>
 <h3 id="create-the-nais-folder">Create the nais folder<a class="headerlink" href="#create-the-nais-folder" title="Permanent link">&para;</a></h3>
 <p>Everything related to nais is contained within this folder.</p>
-<div class="codehilite"><pre><span></span><code>gcloud resource-manager folders create --display-name<span class="o">=</span>nais --organization<span class="o">=</span>&lt;your org ID&gt;
-</code></pre></div>
+<p><code>bash
+gcloud resource-manager folders create --display-name=nais --organization=&lt;your org ID&gt;</code></p>
 <h4 id="grant-access-to-the-nais-team-and-the-terraform-user">Grant access to the nais team and the terraform user<a class="headerlink" href="#grant-access-to-the-nais-team-and-the-terraform-user" title="Permanent link">&para;</a></h4>
 <p>To allow the nais team the required permissions to operate nais, add the iam-policy below to the nais folder.</p>
 <p>Replace <code>${TENANTNAME}</code> with the name provided by the NAIS team.</p>
 <details>
 <summary>Click to see file content</summary>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;bindings&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com&quot;</span>
-      <span class="p">],</span>
-      <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;roles/artifactregistry.admin&quot;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com&quot;</span>
-      <span class="p">],</span>
-      <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;roles/compute.admin&quot;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com&quot;</span>
-      <span class="p">],</span>
-      <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;roles/container.admin&quot;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com&quot;</span>
-      <span class="p">],</span>
-      <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;roles/dns.admin&quot;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com&quot;</span>
-      <span class="p">],</span>
-      <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;roles/logging.admin&quot;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com&quot;</span>
-      <span class="p">],</span>
-      <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;roles/resourcemanager.folderCreator&quot;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com&quot;</span>
-      <span class="p">],</span>
-      <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;roles/resourcemanager.folderIamAdmin&quot;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com&quot;</span>
-      <span class="p">],</span>
-      <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;roles/resourcemanager.projectCreator&quot;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;members&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com&quot;</span>
-      <span class="p">],</span>
-      <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;roles/serviceusage.serviceUsageAdmin&quot;</span>
-    <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span>
-<span class="err">//</span> <span class="err">Todo</span><span class="p">:</span> <span class="kc">f</span><span class="err">i</span><span class="kc">n</span><span class="err">d</span> <span class="err">correc</span><span class="kc">t</span> <span class="err">roles</span> <span class="kc">f</span><span class="err">or</span> <span class="err">viewers</span> <span class="err">a</span><span class="kc">n</span><span class="err">d</span> <span class="err">admi</span><span class="kc">ns</span>
-<span class="mi">-</span> <span class="kc">na</span><span class="err">is</span><span class="mi">-</span><span class="err">viewers</span>
-<span class="mi">-</span> <span class="kc">na</span><span class="err">is</span><span class="mi">-</span><span class="err">admi</span><span class="kc">ns</span>
-</code></pre></div>
+```json
+{
+  "bindings": [
+    {
+      "members": [
+        "serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com"
+      ],
+      "role": "roles/artifactregistry.admin"
+    },
+    {
+      "members": [
+        "serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com"
+      ],
+      "role": "roles/compute.admin"
+    },
+    {
+      "members": [
+        "serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com"
+      ],
+      "role": "roles/container.admin"
+    },
+    {
+      "members": [
+        "serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com"
+      ],
+      "role": "roles/dns.admin"
+    },
+    {
+      "members": [
+        "serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com"
+      ],
+      "role": "roles/logging.admin"
+    },
+    {
+      "members": [
+        "serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com"
+      ],
+      "role": "roles/resourcemanager.folderCreator"
+    },
+    {
+      "members": [
+        "serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com"
+      ],
+      "role": "roles/resourcemanager.folderIamAdmin"
+    },
+    {
+      "members": [
+        "serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com"
+      ],
+      "role": "roles/resourcemanager.projectCreator"
+    },
+    {
+      "members": [
+        "serviceAccount:nais-tf-${TENANTNAME}@nais-io.iam.gserviceaccount.com"
+      ],
+      "role": "roles/serviceusage.serviceUsageAdmin"
+    }
+  ]
+}
+// Todo: find correct roles for viewers and admins
+- nais-viewers
+- nais-admins
+```
 </details>
 <p>Run the following command to allow the roles in the nais folder:</p>
-<div class="codehilite"><pre><span></span><code>gcloud resource-manager folders set-iam-policy &lt;nais folder ID&gt; &lt;file name&gt;.json
-</code></pre></div>
+<p><code>bash
+gcloud resource-manager folders set-iam-policy &lt;nais folder ID&gt; &lt;file name&gt;.json</code></p>
 <h3 id="console">Console<a class="headerlink" href="#console" title="Permanent link">&para;</a></h3>
 <p>Console manages teams and configures groups and access in other systems. </p>
 <!--- TODO: Explain what this means and how to do it, preferably with gcloud commands --->
@@ -909,66 +910,68 @@ We cannot define custom roles at the folder level. Since we need to use a custom
 <p>Save the content below to a .yaml file</p>
 <details>
 <summary>Click to see file content</summary>
-<div class="codehilite"><pre><span></span><code><span class="nt">title</span><span class="p">:</span> <span class="s">&quot;NAIS</span><span class="nv"> </span><span class="s">Custom</span><span class="nv"> </span><span class="s">CNRM</span><span class="nv"> </span><span class="s">Role&quot;</span>
-<span class="nt">description</span><span class="p">:</span> <span class="s">&quot;Custom</span><span class="nv"> </span><span class="s">role</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">namespaced</span><span class="nv"> </span><span class="s">cnrm</span><span class="nv"> </span><span class="s">users</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">allow</span><span class="nv"> </span><span class="s">creation</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">resources&quot;</span>
-<span class="nt">stage</span><span class="p">:</span> <span class="s">&quot;GA&quot;</span>
-<span class="nt">includedPermissions</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudkms.cryptoKeys.create</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudkms.cryptoKeys.get</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudkms.cryptoKeys.update</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudkms.keyRings.create</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudkms.keyRings.get</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudkms.keyRings.getIamPolicy</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudkms.keyRings.setIamPolicy</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.databases.create</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.databases.delete</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.databases.get</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.databases.list</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.databases.update</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.instances.create</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.instances.delete</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.instances.get</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.instances.list</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.instances.update</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.users.create</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.users.delete</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.users.list</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cloudsql.users.update</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">resourcemanager.projects.get</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">resourcemanager.projects.getIamPolicy</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">resourcemanager.projects.setIamPolicy</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">storage.buckets.create</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">storage.buckets.get</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">storage.buckets.getIamPolicy</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">storage.buckets.list</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">storage.buckets.setIamPolicy</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">storage.buckets.update</span>
-</code></pre></div>
+``` yaml
+title: "NAIS Custom CNRM Role"
+description: "Custom role for namespaced cnrm users to allow creation of resources"
+stage: "GA"
+includedPermissions:
+- cloudkms.cryptoKeys.create
+- cloudkms.cryptoKeys.get
+- cloudkms.cryptoKeys.update
+- cloudkms.keyRings.create
+- cloudkms.keyRings.get
+- cloudkms.keyRings.getIamPolicy
+- cloudkms.keyRings.setIamPolicy
+- cloudsql.databases.create
+- cloudsql.databases.delete
+- cloudsql.databases.get
+- cloudsql.databases.list
+- cloudsql.databases.update
+- cloudsql.instances.create
+- cloudsql.instances.delete
+- cloudsql.instances.get
+- cloudsql.instances.list
+- cloudsql.instances.update
+- cloudsql.users.create
+- cloudsql.users.delete
+- cloudsql.users.list
+- cloudsql.users.update
+- resourcemanager.projects.get
+- resourcemanager.projects.getIamPolicy
+- resourcemanager.projects.setIamPolicy
+- storage.buckets.create
+- storage.buckets.get
+- storage.buckets.getIamPolicy
+- storage.buckets.list
+- storage.buckets.setIamPolicy
+- storage.buckets.update
+```
 </details>
 
 <p>Run the following command to apply it to your organization:</p>
-<div class="codehilite"><pre><span></span><code>gcloud iam roles create CustomCNRMRole --organization<span class="o">=</span>&lt;your org ID&gt;  --file<span class="o">=</span>&lt;your file name&gt;.yaml
-</code></pre></div>
+<p><code>bash
+gcloud iam roles create CustomCNRMRole --organization=&lt;your org ID&gt;  --file=&lt;your file name&gt;.yaml</code></p>
 <h2 id="highly-recommended-settings">Highly recommended settings<a class="headerlink" href="#highly-recommended-settings" title="Permanent link">&para;</a></h2>
 <h3 id="log-location">Log location<a class="headerlink" href="#log-location" title="Permanent link">&para;</a></h3>
 <p>Every project created in GCP will have a default log location for all logs. The default is Global.
 In order to keep your logs in europe, we <em>strongly</em> recommend setting the default log location to europe using the following command</p>
-<div class="codehilite"><pre><span></span><code>gcloud alpha logging settings update --organization<span class="o">=</span>&lt;your org ID&gt; --storage-location<span class="o">=</span>europe-north1
-</code></pre></div>
+<p><code>bash 
+gcloud alpha logging settings update --organization=&lt;your org ID&gt; --storage-location=europe-north1</code></p>
 <h3 id="organization-policy-for-location">Organization policy for location<a class="headerlink" href="#organization-policy-for-location" title="Permanent link">&para;</a></h3>
 <p>Although all resources created by nais is located within the EU, teams are still able to create resources anywhere unless an organizational constraint is in place.</p>
 <details>
 <summary>Click to see file content</summary>
-<div class="codehilite"><pre><span></span><code><span class="nt">constraint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">constraints/gcp.resourceLocations</span>
-<span class="nt">etag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">BwVUSr8Q7Ng=</span>
-<span class="nt">listPolicy</span><span class="p">:</span>
-  <span class="nt">allowedValues</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">in:eu-locations</span>
-</code></pre></div>
+``` yaml
+constraint: constraints/gcp.resourceLocations
+etag: BwVUSr8Q7Ng=
+listPolicy:
+  allowedValues:
+  - in:eu-locations
+```
 </details>
 
-<div class="codehilite"><pre><span></span><code>gcloud beta resource-manager org-policies set-policy --organization<span class="o">=</span>&lt;your org ID&gt; &lt;file name&gt;.yaml
-</code></pre></div>
+<p><code>bash
+gcloud beta resource-manager org-policies set-policy --organization=&lt;your org ID&gt; &lt;file name&gt;.yaml</code></p>
 <h2 id="setting-up-oauth-client">Setting up oauth client<a class="headerlink" href="#setting-up-oauth-client" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Go to https://console.cloud.google.com</li>
