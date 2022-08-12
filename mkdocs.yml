@@ -7,10 +7,11 @@ theme:
   logo: assets/logo.png
   favicon: assets/logo.png
   palette:
-    scheme: preference
+    scheme: slate
     primary: teal
     accent: green
   features:
+    - content.code.annotate
     - navigation.instant
     - navigation.tabs
 extra:
@@ -23,37 +24,43 @@ plugins:
 markdown_extensions:
   - toc:
       permalink: True
+  - attr_list
   - admonition
   - pymdownx.details
   - pymdownx.caret
   - pymdownx.tilde
   - pymdownx.superfences:
-      preserve_tabs: true
+        preserve_tabs: true
+        custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:
-      css_class: codehilite
-      linenums_style: pymdownx-inline
+      use_pygments: true
+      anchor_linenums: true
   - pymdownx.tasklist
   - pymdownx.smartsymbols
   - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.tabbed
   - pymdownx.emoji:
-      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - tables
 nav:
-  - NAIS Onboarding: 
-    - Welcome: README.md
+  - Welcome to NAIS: README.md
+  - NAIS Onboarding:
     - Sponsor: welcome/nais-sponsor.md
     - Manifest: welcome/nais-manifest-eng.md
-  - Administrative: 
+    - Cheklist for Faddere: welcome/fadder.md
+  - Administrative:
     - Fixtures: administrative/fixtures.md
     - PIGs: administrative/pigs.md
     - Slack: administrative/slack.md
     - Trello: administrative/trello.md
   - Technical:
-    - NaaS: technical/naas.md
-    - Tenant setup: technical/tenant-setup.md
     - What is nais?: technical/nais.md
     - Production ready?: technical/production-ready.md
-    - naisdevice: technical/naisdevice.md
     - Publications & Media: technical/publications-media.md
-  - Social: 
+  - Social:
       - The Great Outdoors: social/the-great-outdoors.md
