@@ -1,5 +1,4 @@
-# .github/workflows/publish.yml
-name: Generate a build and push to another branch
+name: Build and push Poetry to GitHub Pages branch
 
 on:
   push:
@@ -9,16 +8,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Build and Push
+    name: Build and Deploy
     steps:
       - name: git-checkout
         uses: actions/checkout@v3
       - uses: actions/setup-python@v2
         with:
-          python-version: '3.9'
+          python-version-file: '.python-version'
       - name: Install all dependencies
         run: |
-          pip install poetry==1.1.7
+          pip install poetry==1.1.14
           poetry install
       - name: Build
         run: poetry run mkdocs build
