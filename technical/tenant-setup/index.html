@@ -500,8 +500,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#hookd" class="md-nav__link">
-    Hookd
+  <a href="#deploy" class="md-nav__link">
+    Deploy
   </a>
   
 </li>
@@ -722,8 +722,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#hookd" class="md-nav__link">
-    Hookd
+  <a href="#deploy" class="md-nav__link">
+    Deploy
   </a>
   
 </li>
@@ -884,13 +884,15 @@
 <div class="codehilite"><pre><span></span><code>gcloud resource-manager folders set-iam-policy &lt;nais folder ID&gt; &lt;file name&gt;.json
 </code></pre></div>
 <h3 id="console">Console<a class="headerlink" href="#console" title="Permanent link">&para;</a></h3>
+<p>Console manages teams and configures groups and access in other systems. </p>
+<!--- TODO: Explain what this means and how to do it, preferably with gcloud commands --->
 <p>The console user needs the <code>Groups Admin</code> role to be able to create and maintain groups for the teams.</p>
 <p><a href="#setting-up-oauth-client">Set up an OAuth client</a> using these details:</p>
 <p>Name
 : <code>console</code></p>
 <p>Authorized redirect URIs
 : <code>http://console.&lt;tenant-name&gt;.cloud.nais.io/oauth2/callback</code></p>
-<h3 id="hookd">Hookd<a class="headerlink" href="#hookd" title="Permanent link">&para;</a></h3>
+<h3 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h3>
 <p><a href="#setting-up-oauth-client">Set up an OAuth client</a> using these details:</p>
 <p>Name
 : <code>hookd</code></p>
@@ -969,7 +971,8 @@ In order to keep your logs in europe, we <em>strongly</em> recommend setting the
 </code></pre></div>
 <h2 id="setting-up-oauth-client">Setting up oauth client<a class="headerlink" href="#setting-up-oauth-client" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Choose project nais -&gt; nais-management -&gt; nais-management</li>
+<li>Go to https://console.cloud.google.com</li>
+<li>Choose project <tenant org> -&gt; nais-management -&gt; nais-management</li>
 <li>If consent screen is not configured already:<ol>
 <li>Go to <em>APIs ans Service</em> -&gt; <em>OAuth consent screen</em></li>
 <li><em>Internal</em> -&gt; <em>create</em>
@@ -982,12 +985,12 @@ In order to keep your logs in europe, we <em>strongly</em> recommend setting the
 <li><em>Save and continue</em> (x2)</li>
 </ol>
 </li>
-<li>Go to <em>Credentials</em></li>
+<li>Go to <em>APIs ans Service</em> -&gt; <em>Credentials</em></li>
 <li>Click <em>Create Credentials</em> -&gt; <em>OAuth client ID</em></li>
 <li>Select type <em>Web Application</em></li>
 <li>Set Name and Authorized redirect URIs</li>
 <li><em>Create</em></li>
-<li>Copy client id and secret into fasit feature</li>
+<li>Copy client id and secret and give to NAIS-team</li>
 </ol>
                 
               
