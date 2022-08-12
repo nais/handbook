@@ -31,17 +31,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://handbook.nais.io/technical/naas/</loc>
-         <lastmod>2022-08-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://handbook.nais.io/technical/nais/</loc>
-         <lastmod>2022-08-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://handbook.nais.io/technical/naisdevice/</loc>
          <lastmod>2022-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -52,11 +42,6 @@
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/publications-media/</loc>
-         <lastmod>2022-08-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://handbook.nais.io/technical/tenant-setup/</loc>
          <lastmod>2022-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
