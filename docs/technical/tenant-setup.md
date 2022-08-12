@@ -95,7 +95,9 @@ gcloud resource-manager folders set-iam-policy <nais folder ID> <file name>.json
 ```
 
 ### Console
+Console manages teams and configures groups and access in other systems. 
 
+<!--- TODO: Explain what this means and how to do it, preferably with gcloud commands --->
 The console user needs the `Groups Admin` role to be able to create and maintain groups for the teams.
 
 [Set up an OAuth client](#setting-up-oauth-client) using these details:
@@ -106,7 +108,7 @@ Name
 Authorized redirect URIs
 : `http://console.<tenant-name>.cloud.nais.io/oauth2/callback`
 
-### Hookd
+### Deploy
 
 [Set up an OAuth client](#setting-up-oauth-client) using these details:
 
@@ -115,6 +117,7 @@ Name
 
 Authorized redirect URIs
 : `http://deploy.<tenant-name>.cloud.nais.io/oauth2/callback`
+
 
 ### Kubernetes group
 In [Google Admin](https://admin.google.com) create a group named `gke-security-groups`. 
@@ -202,7 +205,8 @@ gcloud beta resource-manager org-policies set-policy --organization=<your org ID
 
 ## Setting up oauth client
 
-1. Choose project nais -> nais-management -> nais-management
+1. Go to https://console.cloud.google.com
+1. Choose project <tenant org> -> nais-management -> nais-management
 1. If consent screen is not configured already:
     1. Go to *APIs ans Service* -> *OAuth consent screen*
     1. *Internal* -> *create*
@@ -211,10 +215,9 @@ gcloud beta resource-manager org-policies set-policy --organization=<your org ID
         1. User support email: `admin@<tenant-domain>`
         1. Developer Contact email: `admin@<tenant-domain>`
     1. *Save and continue* (x2)
-1. Go to *Credentials*
+1. Go to *APIs ans Service* -> *Credentials*
 1. Click *Create Credentials* -> *OAuth client ID*
 1. Select type *Web Application*
 1. Set Name and Authorized redirect URIs
 1. *Create*
-1. Copy client id and secret into fasit feature
-
+1. Copy client id and secret and give to NAIS-team
