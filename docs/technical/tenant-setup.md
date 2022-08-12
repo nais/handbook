@@ -208,14 +208,13 @@ gcloud beta resource-manager org-policies set-policy --organization=<your org ID
 1. Go to https://console.cloud.google.com
 1. Choose project <tenant org> -> nais-management -> nais-management
 1. If consent screen is not configured already:
-    1. Go to *APIs ans Service* -> *OAuth consent screen*
+    1. Go to *APIs and Service* -> *OAuth consent screen*
     1. *Internal* -> *create*
-    1.
         1. App name: `nais management`
         1. User support email: `admin@<tenant-domain>`
         1. Developer Contact email: `admin@<tenant-domain>`
     1. *Save and continue* (x2)
-1. Go to *APIs ans Service* -> *Credentials*
+1. Go to *APIs and Service* -> *Credentials*
 1. Click *Create Credentials* -> *OAuth client ID*
 1. Select type *Web Application*
 1. Set Name and Authorized redirect URIs
