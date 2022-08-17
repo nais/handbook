@@ -9,7 +9,7 @@ The primary use case for Aiven is to provide a managed Kafka cluster for NAIS ap
 ```mermaid
 flowchart TB
     subgraph aiven
-      cluster1-->account
+      cluster1-->account[This is an <b>important</b> <a href='https://google.com'>link</a>]
       cluster2-->account
       cluster3-->account
 
