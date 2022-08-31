@@ -1,14 +1,14 @@
 version: 2
 updates:
   - package-ecosystem: "github-actions"
+    directory: "/" # must be root (ref. docs)
+    schedule:
+      interval: "weekly"
+    reviewers:
+      - "@nais/core-dependabot-reviewers"
+  - package-ecosystem: "pip" # poetry / pyproject
     directory: "/"
     schedule:
       interval: "weekly"
     reviewers:
-      - "starefossen"
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    reviewers:
-      - "starefossen"
+      - "@nais/core-dependabot-reviewers"
