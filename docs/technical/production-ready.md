@@ -75,10 +75,6 @@ Your system is not in production until it has users.
 Make sure all potential end users are aware of your system and can use it.
 Using a system means making requests and having access to support and documentation.
 
-## Update skill matrix
-If a system is not in the [skill matrix](https://www.valamis.com/hub/skills-matrix#what-is-skill-matrix), add it.
-If you worked recently on a system, add yourself to the skill matrix.
-
 ## Decrease bus factor
 Ensure that at least two people on your team have sufficient knowledge to debug
 and work on the system, to avoid [bus factor](https://en.wikipedia.org/wiki/Bus_factor).
