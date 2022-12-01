@@ -192,7 +192,7 @@ plugins = ["importlib-metadata"]
 
 [[package]]
 name = "pymdown-extensions"
-version = "9.7"
+version = "9.9"
 description = "Extension pack for Python Markdown."
 category = "main"
 optional = false
@@ -307,7 +307,7 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "979332e5745b82c8d1d48ad7266d1308b5ec8e9e203f271fcf3f3b36154c5a5b"
+content-hash = "54fb21b3a18166140cfe76368517282bb5d701d8e0a4d72d46641b4370fb5ddd"
 
 [metadata.files]
 certifi = [
@@ -413,8 +413,8 @@ pygments = [
     {file = "Pygments-2.13.0.tar.gz", hash = "sha256:56a8508ae95f98e2b9bdf93a6be5ae3f7d8af858b43e02c5a2ff083726be40c1"},
 ]
 pymdown-extensions = [
-    {file = "pymdown_extensions-9.7-py3-none-any.whl", hash = "sha256:767d07d9dead0f52f5135545c01f4ed627f9a7918ee86c646d893e24c59db87d"},
-    {file = "pymdown_extensions-9.7.tar.gz", hash = "sha256:651b0107bc9ee790aedea3673cb88832c0af27d2569cf45c2de06f1d65292e96"},
+    {file = "pymdown_extensions-9.9-py3-none-any.whl", hash = "sha256:ac698c15265680db5eb13cd4342abfcde2079ac01e5486028f47a1b41547b859"},
+    {file = "pymdown_extensions-9.9.tar.gz", hash = "sha256:0f8fb7b74a37a61cc34e90b2c91865458b713ec774894ffad64353a5fce85cfc"},
 ]
 pyparsing = [
     {file = "pyparsing-3.0.9-py3-none-any.whl", hash = "sha256:5026bae9a10eeaefb61dab2f09052b9f4307d44aee4eda64b309723d8d206bbc"},
