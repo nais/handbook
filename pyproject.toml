@@ -9,7 +9,7 @@ python = "^3.9"
 mkdocs = "^1.4.2"
 Pygments = "^2.14.0"
 pymdown-extensions = "^9.9"
-mkdocs-material = "^8.5.11"
+mkdocs-material = "^9.0.3"
 
 [tool.poetry.dev-dependencies]
 
