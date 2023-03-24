@@ -22,3 +22,11 @@ We want to give our users a uniform way of expressing their application's needs,
 For most things concerning default kubernetes resources, [naiserator](https://github.com/nais/naiserator) will handle the business, but most other features have their own dedicated operator. 
 
 A "brief history" of NAIS and the current status quo is available on the fron page of our [documentation](https://doc.nais.io).
+
+## Setup kubeconfig as a NAIS team member
+
+If you are a member of the NAIS team, you can use the following command to set up your kubeconfig:
+
+```bash
+nais naas kubeconfig --tenant '*' --include-management
+```
