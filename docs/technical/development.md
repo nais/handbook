@@ -26,11 +26,10 @@ Some namespaces are special and should not be used for NAIS components.
 | `cnrm-system` | [Cloud Native Resource Manager](https://cloud.google.com/config-connector/docs/overview) | Google |
 | `configconnector-operator-system` | [Cloud Native Resource Manager](https://cloud.google.com/config-connector/docs/overview) | Google |
 | `kyverno` | Only [Kyverno](https://kyverno.io/) is allowed in here | NAIS |
-| `naisflow` | Something Kyrre is working on | Kyrre? |
-| `nais-mac-mgmt` | Something Torbjørn is working on | Torbjør`? |
-| `nais-analyse` | Something Gøran og Vebjørn is working on | Gøran and Vebjørn? |
-| `nais-billing` | Something Gøran og Vebjørn is working on | Gøran and Vebjørn? |
-| `naisdevice` | [Naisdevice approval](https://github.com/nais/naisdevice-approval) and [JITA](https://github.com/nais/naisdevice-jita) | NAIS |
+
+### Other namespaces
+
+There are some other NAIS-related namespaces, but they are documented in [NAIS Teams](https://teams.nav.cloud.nais.io/teams?selection=all)
 
 ### Deprecated namespaces
 
