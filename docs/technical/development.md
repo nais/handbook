@@ -4,7 +4,7 @@
 
 NAIS is made up by a number of components, each has their own repository and release cycle. This document describes how we develop NAIS.
 
-## NAIS namespaces
+## General NAIS namespaces
 
 Over the years we have a number of namespaces that we use for different purposes. The most important ones are:
 
@@ -25,7 +25,12 @@ Some namespaces are special and should not be used for NAIS components.
 | `kube-public` | Kubernetes public namespace | Kubernetes |
 | `cnrm-system` | [Cloud Native Resource Manager](https://cloud.google.com/config-connector/docs/overview) | Google |
 | `configconnector-operator-system` | [Cloud Native Resource Manager](https://cloud.google.com/config-connector/docs/overview) | Google |
-| `kyverno` | Only [Kyverno](https://kyverno.io/) is allowed here | NAIS |
+| `kyverno` | Only [Kyverno](https://kyverno.io/) is allowed in here | NAIS |
+| `naisflow` | Something Kyrre is working on | Kyrre? |
+| `nais-mac-mgmt` | Something Torbjørn is working on | Torbjør`? |
+| `nais-analyse` | Something Gøran og Vebjørn is working on | Gøran and Vebjørn? |
+| `nais-billing` | Something Gøran og Vebjørn is working on | Gøran and Vebjørn? |
+| `naisdevice` | [Naisdevice approval](https://github.com/nais/naisdevice-approval) and [JITA](https://github.com/nais/naisdevice-jita) | NAIS |
 
 ### Deprecated namespaces
 
