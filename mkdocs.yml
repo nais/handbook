@@ -52,7 +52,7 @@ nav:
   - NAIS Onboarding:
     - Sponsor: welcome/nais-sponsor.md
     - Manifest: welcome/nais-manifest-eng.md
-    - Cheklist for Faddere: welcome/fadder.md
+    - Checklist for Faddere: welcome/fadder.md
   - Administrative:
     - Fixtures: administrative/fixtures.md
     - PIGs: administrative/pigs.md
@@ -60,6 +60,7 @@ nav:
     - Trello: administrative/trello.md
   - Technical:
     - What is nais?: technical/nais.md
+    - NAIS development: technical/development.md
     - Production ready?: technical/production-ready.md
     - Publications & Media: technical/publications-media.md
   - Social:
