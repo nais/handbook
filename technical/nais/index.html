@@ -14,7 +14,7 @@
         <link rel="prev" href="../../administrative/trello/">
       
       
-        <link rel="next" href="../production-ready/">
+        <link rel="next" href="../development/">
       
       <link rel="icon" href="../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.12">
@@ -372,7 +372,7 @@
   
     <li class="md-nav__item">
       <a href="../../welcome/fadder/" class="md-nav__link">
-        Cheklist for Faddere
+        Checklist for Faddere
       </a>
     </li>
   
@@ -596,6 +596,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../development/" class="md-nav__link">
+        NAIS development
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../production-ready/" class="md-nav__link">
         Production ready?
       </a>
@@ -756,7 +770,7 @@
 <p><em>Kubernetes is not just Kubernetes. How did we set it up, and what does NAIS do (nais-yaml, GitHub actions, workflows, etc.)?</em></p>
 <p>Kubernetes is a Swiss army knife of tools, and each of these tools comes with its own set of instructions.
 NAIS is there to help developers utilize these tools without having to read (all) the manual(s).
-<img alt="" src="../../assets/nais_army_knife.png" /></p>
+<img alt="NAIS Swiss Army Knife" src="../../assets/nais_army_knife.png" title="NAIS Swiss Army Knife" /></p>
 <h2 id="naisyaml">nais.yaml<a class="headerlink" href="#naisyaml" title="Permanent link">&para;</a></h2>
 <p>Each of the many components that make up Kubernetes is configured via resource definitions.
 What we've done in NAIS, is to select what we consider to be the most relevant components and condense their configuration in to a common yaml-file: <a href="https://doc.nais.io/nais-application/example/">nais.yaml</a>.</p>
@@ -768,7 +782,7 @@ The primary tools for this is <a href="https://doc.nais.io/observability/logs/">
 <h2 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">&para;</a></h2>
 <p>Even though Kubernetes comes with a lot of features out of the box, there are capabilities we want to add on top, such as databases, token authorization or kafka.
 We want to give our users a uniform way of expressing their application's needs, so all additional functionality is added to nais.yaml, but there are different operators in the clusters that handle different parts of the manifest.
-For most things concerning default kubernetes resources, <a href="https://github.com/nais/naiserator">naiserator</a> will handle the business, but most other features have their own dedicated operator. </p>
+For most things concerning default kubernetes resources, <a href="https://github.com/nais/naiserator">naiserator</a> will handle the business, but most other features have their own dedicated operator.</p>
 <p>A "brief history" of NAIS and the current status quo is available on the fron page of our <a href="https://doc.nais.io">documentation</a>.</p>
 <h2 id="setup-kubeconfig-as-a-nais-team-member">Setup kubeconfig as a NAIS team member<a class="headerlink" href="#setup-kubeconfig-as-a-nais-team-member" title="Permanent link">&para;</a></h2>
 <p>If you are a member of the NAIS team, you can use the following command to set up your kubeconfig:</p>
