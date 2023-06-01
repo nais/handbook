@@ -204,14 +204,14 @@ files = [
 
 [[package]]
 name = "mkdocs"
-version = "1.4.2"
+version = "1.4.3"
 description = "Project documentation with Markdown."
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "mkdocs-1.4.2-py3-none-any.whl", hash = "sha256:c8856a832c1e56702577023cd64cc5f84948280c1c0fcc6af4cd39006ea6aa8c"},
-    {file = "mkdocs-1.4.2.tar.gz", hash = "sha256:8947af423a6d0facf41ea1195b8e1e8c85ad94ac95ae307fe11232e0424b11c5"},
+    {file = "mkdocs-1.4.3-py3-none-any.whl", hash = "sha256:6ee46d309bda331aac915cd24aab882c179a933bd9e77b80ce7d2eaaa3f689dd"},
+    {file = "mkdocs-1.4.3.tar.gz", hash = "sha256:5955093bbd4dd2e9403c5afaf57324ad8b04f16886512a3ee6ef828956481c57"},
 ]
 
 [package.dependencies]
@@ -613,4 +613,4 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "f5502e52bfbe11d372b1ce9ea67db9fe75824697f1ec3def8f503ccebbef4dbc"
+content-hash = "fa0b4a94a67b98424f355eee679eee19e3c5e25dbd9ba32053d61b7a67a7cb4c"
