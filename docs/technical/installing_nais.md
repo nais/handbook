@@ -42,7 +42,7 @@ Documentation on each is also limited:
 * BQrator for BigQuery integration
 * Azurerator
 * Digdirator
-* Console (nais/console-frontend@main/charts and nais/console-backend@main/charts)
-* Teams (nais/teams-backend@main/charts and nais/teams-frontend@main/charts/teams-frontend)
+* Console
+* Teams
 
 This is a very quick, high-level introduction, but for now it's all we have 😅
