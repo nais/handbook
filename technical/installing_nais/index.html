@@ -8,20 +8,16 @@
       
       
       
-        <link rel="canonical" href="https://handbook.nais.io/technical/development/">
+        <link rel="canonical" href="https://handbook.nais.io/technical/installing_nais/">
       
       
-        <link rel="prev" href="../nais/">
-      
-      
-        <link rel="next" href="../production-ready/">
       
       <link rel="icon" href="../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.20">
     
     
       
-        <title>NAIS development - NAIS Handbook</title>
+        <title>Installing nais - NAIS Handbook</title>
       
     
     
@@ -69,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-we-develop-nais" class="md-skip">
+        <a href="#installing-nais" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NAIS development
+              Installing nais
             
           </span>
         </div>
@@ -219,15 +215,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../nais/" class="md-tabs__link md-tabs__link--active">
+      <a href="../nais/" class="md-tabs__link">
         Technical
       </a>
     </li>
@@ -482,16 +476,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
       
       
       
@@ -500,7 +492,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Technical
@@ -525,79 +517,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          NAIS development
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../development/" class="md-nav__link">
         NAIS development
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#general-nais-namespaces" class="md-nav__link">
-    General NAIS namespaces
-  </a>
-  
-    <nav class="md-nav" aria-label="General NAIS namespaces">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#special-namespaces" class="md-nav__link">
-    Special namespaces
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other-namespaces" class="md-nav__link">
-    Other namespaces
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deprecated-namespaces" class="md-nav__link">
-    Deprecated namespaces
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -727,36 +651,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#general-nais-namespaces" class="md-nav__link">
-    General NAIS namespaces
-  </a>
-  
-    <nav class="md-nav" aria-label="General NAIS namespaces">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#special-namespaces" class="md-nav__link">
-    Special namespaces
+  <a href="#the-absolute-minimum" class="md-nav__link">
+    The absolute minimum
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#other-namespaces" class="md-nav__link">
-    Other namespaces
+      
+        <li class="md-nav__item">
+  <a href="#deploying-applications" class="md-nav__link">
+    Deploying applications
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#deprecated-namespaces" class="md-nav__link">
-    Deprecated namespaces
+      
+        <li class="md-nav__item">
+  <a href="#integrations" class="md-nav__link">
+    Integrations
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -778,112 +689,37 @@
   
 
 
-<h1 id="how-we-develop-nais">How we develop NAIS<a class="headerlink" href="#how-we-develop-nais" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>Do one thing, and do it well - Unix philosophy</p>
-</blockquote>
-<p>NAIS is made up by a number of components, each has their own repository and release cycle. This document describes how we develop NAIS.</p>
-<h2 id="general-nais-namespaces">General NAIS namespaces<a class="headerlink" href="#general-nais-namespaces" title="Permanent link">&para;</a></h2>
-<p>Over the years we have a number of namespaces that we use for different purposes. The most important ones are:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-<th>Status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>nais</code></td>
-<td>Team namespace for NAIS (example) application</td>
-<td>Some what deprecated</td>
-</tr>
-<tr>
-<td><code>nais-system</code></td>
-<td>Current namespace for NAIS components</td>
-<td>Active</td>
-</tr>
-<tr>
-<td><code>nais-verification</code></td>
-<td>Test applications for verifying NAIS with alerts</td>
-<td>Active</td>
-</tr>
-</tbody>
-</table>
-<h3 id="special-namespaces">Special namespaces<a class="headerlink" href="#special-namespaces" title="Permanent link">&para;</a></h3>
-<p>Some namespaces are special and should not be used for NAIS components.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-<th>Owner</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>default</code></td>
-<td>Default namespace Kubernetes</td>
-<td>Kubernetes</td>
-</tr>
-<tr>
-<td><code>kube-system</code></td>
-<td>Kubernetes system namespace</td>
-<td>Kubernetes</td>
-</tr>
-<tr>
-<td><code>kube-public</code></td>
-<td>Kubernetes public namespace</td>
-<td>Kubernetes</td>
-</tr>
-<tr>
-<td><code>cnrm-system</code></td>
-<td><a href="https://cloud.google.com/config-connector/docs/overview">Cloud Native Resource Manager</a></td>
-<td>Google</td>
-</tr>
-<tr>
-<td><code>configconnector-operator-system</code></td>
-<td><a href="https://cloud.google.com/config-connector/docs/overview">Cloud Native Resource Manager</a></td>
-<td>Google</td>
-</tr>
-<tr>
-<td><code>kyverno</code></td>
-<td>Only <a href="https://kyverno.io/">Kyverno</a> is allowed in here</td>
-<td>NAIS</td>
-</tr>
-</tbody>
-</table>
-<h3 id="other-namespaces">Other namespaces<a class="headerlink" href="#other-namespaces" title="Permanent link">&para;</a></h3>
-<p>There are some other NAIS-related namespaces, but they are documented in <a href="https://teams.nav.cloud.nais.io/teams?selection=all">NAIS Teams</a></p>
-<h3 id="deprecated-namespaces">Deprecated namespaces<a class="headerlink" href="#deprecated-namespaces" title="Permanent link">&para;</a></h3>
-<p>These namespaces are deprecated and should not be used for new components.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-<th>Status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>aura</code></td>
-<td>Previous namespace for Aura components</td>
-<td>Deprecated</td>
-</tr>
-<tr>
-<td><code>nginx</code></td>
-<td>Previous namespace for nginx ingress controller</td>
-<td>Deprecated</td>
-</tr>
-<tr>
-<td><code>plattformsikkerhet</code></td>
-<td>Previous namespace for plattformsikkerhet components</td>
-<td>Deprecated</td>
-</tr>
-</tbody>
-</table>
+<h1 id="installing-nais">Installing nais<a class="headerlink" href="#installing-nais" title="Permanent link">&para;</a></h1>
+<p>Installing nais in your own cluster is a complicated process, where few or no steps are documented.
+This document is an attempt to give a short introduction and describe a few of the initial steps to get you started.</p>
+<p>Keep in mind that nais is a big ball of interconnected services and infrastructure, and as of now there isn't any clear guide for how to install and operate it on your own. </p>
+<p>Most of the required knowledge for installing nais in a cluster is tribal knowledge in the nais team, but we're a friendly bunch, so you can always ask us for more information.</p>
+<h2 id="the-absolute-minimum">The absolute minimum<a class="headerlink" href="#the-absolute-minimum" title="Permanent link">&para;</a></h2>
+<p>The bare minimum needed in a cluster would be the CRDs and Naiserator, but that alone would probably only give you a very rudimentary "nais cluster".
+CRDs are installed with the chart in the <a href="https://github.com/nais/liberator/tree/main/charts">liberator repo</a>.
+Naiserator is probably best to install using the chart in the <a href="https://github.com/nais/naiserator/tree/master/charts/naiserator?rgh-link-date=2023-09-12T11%3A16%3A47Z">naiserator repo</a>.</p>
+<p>There are quite a few values to adjust in those charts, with very little documentation on what each does.
+We don't have any better option than trying them out or tracing their use in the code to understand them more.</p>
+<h2 id="deploying-applications">Deploying applications<a class="headerlink" href="#deploying-applications" title="Permanent link">&para;</a></h2>
+<p>The next step you might want to install is the <a href="https://github.com/nais/deploy/tree/master/charts">deploy system</a>, which consists of a hookd instance available from anywhere you would like to deploy from (Github, local machine, etc), and a deployd instance running in the cluster you wish to deploy to.
+Deployd in the cluster needs to be able to reach hookd (the cluster doesn't need to be directly on the internet, as long as deployd can call out to hookd).
+Deploying is done using the deploy cli (or the deploy github actions), which takes some inputs and sends them to hookd, which forwards to deployd in the selected cluster, which applies the manifests in the cluster.</p>
+<p>See the user documentation at https://doc.nais.io for details about deploying applications.</p>
+<h2 id="integrations">Integrations<a class="headerlink" href="#integrations" title="Permanent link">&para;</a></h2>
+<p>A complete nais experience requires that all the integrated services are available, but most of these are not documented.
+Some of them also require various infrastructure to be in place and work in a certain way, which is also not documented.</p>
+<p>Here are some components you might want to look at, although some of these may contain NAV specific code that wouldn't work outside our clusters.</p>
+<p>Documentation on each is also limited:</p>
+<ul>
+<li>CNRM for integration with several GCP features</li>
+<li>Kafkarator, Aivenator and Mutilator for integration with a few Aiven services (Kafka, OpenSearch, InfluxDB and Redis)</li>
+<li>BQrator for BigQuery integration</li>
+<li>Azurerator</li>
+<li>Digdirator</li>
+<li>Console</li>
+<li>Teams</li>
+</ul>
+<p>This is a very quick, high-level introduction, but for now it's all we have 😅</p>
 
 
 
