@@ -63,5 +63,6 @@ nav:
     - NAIS development: technical/development.md
     - Production ready?: technical/production-ready.md
     - Publications & Media: technical/publications-media.md
+    - Installing nais: technical/installing-nais.md
   - Social:
       - The Great Outdoors: social/the-great-outdoors.md
