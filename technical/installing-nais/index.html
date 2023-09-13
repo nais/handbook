@@ -764,23 +764,23 @@ Naiserator is probably best to install using the chart in the <a href="https://g
 <p>There are quite a few values to adjust in those charts, with very little documentation on what each does.
 We don't have any better option than trying them out or tracing their use in the code to understand them more.</p>
 <h2 id="deploying-applications">Deploying applications<a class="headerlink" href="#deploying-applications" title="Permanent link">&para;</a></h2>
-<p>The next step you might want to install is the <a href="https://github.com/nais/deploy/tree/master/charts">deploy system</a>, which consists of a hookd instance available from anywhere you would like to deploy from (Github, local machine, etc), and a deployd instance running in the cluster you wish to deploy to.
+<p>The next step you might want to install is the <a href="https://github.com/nais/deploy/tree/master/charts">deploy system</a>, which consists of a hookd instance available from anywhere you would like to deploy from (Github, local machine, etc), and a deployd instance running in the clusters you wish to deploy to.
 Deployd in the cluster needs to be able to reach hookd (the cluster doesn't need to be directly on the internet, as long as deployd can call out to hookd).
 Deploying is done using the deploy cli (or the deploy github actions), which takes some inputs and sends them to hookd, which forwards to deployd in the selected cluster, which applies the manifests in the cluster.</p>
-<p>See the user documentation at https://doc.nais.io for details about deploying applications.</p>
+<p>See the <a href="https://doc.nais.io">user documentation</a> for details about deploying applications.</p>
 <h2 id="integrations">Integrations<a class="headerlink" href="#integrations" title="Permanent link">&para;</a></h2>
 <p>A complete nais experience requires that all the integrated services are available, but most of these are not documented.
 Some of them also require various infrastructure to be in place and work in a certain way, which is also not documented.</p>
 <p>Here are some components you might want to look at, although some of these may contain NAV specific code that wouldn't work outside our clusters.</p>
 <p>Documentation on each is also limited:</p>
 <ul>
-<li>CNRM for integration with several GCP features</li>
-<li>Kafkarator, Aivenator and Mutilator for integration with a few Aiven services (Kafka, OpenSearch, InfluxDB and Redis)</li>
-<li>BQrator for BigQuery integration</li>
-<li>Azurerator</li>
-<li>Digdirator</li>
-<li>Console</li>
-<li>Teams</li>
+<li><a href="https://cloud.google.com/config-connector/docs/overview">CNRM</a> for integration with several GCP features</li>
+<li><a href="https://github.com/nais/kafkarator">Kafkarator</a>, <a href="https://github.com/nais/aivenator">Aivenator</a> and <a href="https://github.com/nais/mutilator">Mutilator</a> for integration with a few Aiven services (Kafka, OpenSearch, InfluxDB and Redis)</li>
+<li><a href="https://github.com/nais/bqrator">BQrator</a> for BigQuery integration</li>
+<li><a href="https://github.com/nais/azurerator">Azurerator</a> for automated registration and lifecycle management of Azure Active Directory applications.</li>
+<li><a href="https://github.com/nais/digdirator">Digdirator</a> for automated registration and lifecycle management of ID-porten and Maskinporten clients (integrations) with feature Maskinporten Scopes (APIS).</li>
+<li>Console <a href="https://github.com/nais/console-frontend">frontend</a> and <a href="https://github.com/nais/console-backend">backend</a> which contains a dashboard and overview for teams.</li>
+<li>Teams <a href="https://github.com/nais/teams-frontend">frontend</a> and <a href="https://github.com/nais/teams-backend">backend</a> which allows management of teams and namespaces.</li>
 </ul>
 <p>This is a very quick, high-level introduction, but for now it's all we have 😅</p>
 
