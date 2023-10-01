@@ -8,7 +8,7 @@ authors = []
 python = "^3.9"
 mkdocs = "^1.5.3"
 Pygments = "^2.15.1"
-pymdown-extensions = "^10.0"
+pymdown-extensions = "^10.3"
 mkdocs-material = "^9.1.20"
 
 [tool.poetry.dev-dependencies]
