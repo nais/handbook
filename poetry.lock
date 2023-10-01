@@ -311,18 +311,21 @@ plugins = ["importlib-metadata"]
 
 [[package]]
 name = "pymdown-extensions"
-version = "10.0.1"
+version = "10.3"
 description = "Extension pack for Python Markdown."
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "pymdown_extensions-10.0.1-py3-none-any.whl", hash = "sha256:ae66d84013c5d027ce055693e09a4628b67e9dec5bce05727e45b0918e36f274"},
-    {file = "pymdown_extensions-10.0.1.tar.gz", hash = "sha256:b44e1093a43b8a975eae17b03c3a77aad4681b3b56fce60ce746dbef1944c8cb"},
+    {file = "pymdown_extensions-10.3-py3-none-any.whl", hash = "sha256:77a82c621c58a83efc49a389159181d570e370fff9f810d3a4766a75fc678b66"},
+    {file = "pymdown_extensions-10.3.tar.gz", hash = "sha256:94a0d8a03246712b64698af223848fd80aaf1ae4c4be29c8c61939b0467b5722"},
 ]
 
 [package.dependencies]
 markdown = ">=3.2"
 pyyaml = "*"
+
+[package.extras]
+extra = ["pygments (>=2.12)"]
 
 [[package]]
 name = "pyparsing"
@@ -615,4 +618,4 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "d0ada101835dda3c46f25452412801d696d287f10d0ff93781ad1edec2527090"
+content-hash = "cdaf340b9e9d6421bf13578e92a098c5b40beea337bf549cd14ea02919108d39"
