@@ -11,17 +11,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://handbook.nais.io/administrative/pigs/</loc>
-         <lastmod>2024-01-31</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://handbook.nais.io/administrative/slack/</loc>
-         <lastmod>2024-01-31</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://handbook.nais.io/administrative/trello/</loc>
          <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
