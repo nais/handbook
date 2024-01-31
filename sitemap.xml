@@ -51,17 +51,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://handbook.nais.io/welcome/fadder/</loc>
-         <lastmod>2024-01-31</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://handbook.nais.io/welcome/nais-manifest-eng/</loc>
          <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/welcome/nais-sponsor/</loc>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://handbook.nais.io/welcome/sponsor/</loc>
          <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
