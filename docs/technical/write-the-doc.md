@@ -20,6 +20,6 @@ To create contents you must determine what you are setting out to do. Are you wr
 
 ## Markdown guidelines
 
-notes  #TODO
-highlights #TODO 
-variables #TODO
+- notes  #TODO
+- highlights #TODO 
+- variables #TODO

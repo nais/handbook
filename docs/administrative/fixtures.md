@@ -21,27 +21,8 @@ Any and all meetings that are deemed unnecessary due to priority or lack of subs
 
 The NAIS weekly takes place Monday at high noon.
 
- 
-## Friday Demo 
-
-Friday Demo is held most Fridays and invites are distributed (make some noise if you don't get one). 
-This is an informal "show & tell" where any new feature or initative is introduced to the larger "service platform" grouping. 
-And when we say informal - we mean informal. 
-A rudimentry drawing will do - the idea is to keep everyone abreast of what's going on.
-You can have your demo added to the agenda or you can present on the fly.
-
 ## Retro
  
 Retros are held on "a need to relieve pressure" basis. You will get an invite if one is scheduled. If you feel that one is needed or have topics you want to address let our esteemed product owner know. 
 
-## PIG-meetings 
- 
-- Utvikleropplevelse (developer experience) takes place every other Thursday at 11:30. 
-- Kubeops is normally Thursday mornings at 09:00 but not reccurring - invites are sent to interested parties a few days in advance.
-- Aiven is a biweekly thing - Friday mornings at 09:00.
-- Deploy come together Wednesdays from 12:00-13:00.
-- Security (Sikkerhet) runs with the obscurity principle and won't say...
-
-## Anchor-forum
-
-Every Friday the big-wigs (aka "PIG-Anchors") meet up for a light session of trello grooming so we have tasks ripe for the picking come "Weekly" the following monday.
+## Anchor-forum # TBD

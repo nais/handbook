@@ -55,9 +55,7 @@ nav:
     - Checklist for Faddere: welcome/fadder.md
   - Administrative:
     - Fixtures: administrative/fixtures.md
-    - PIGs: administrative/pigs.md
     - Slack: administrative/slack.md
-    - Trello: administrative/trello.md
   - Technical:
     - What is nais?: technical/nais.md
     - NAIS development: technical/development.md

@@ -7,9 +7,7 @@ Here is a list of Slack channels you might want to join (or in some cases should
 ### Private Channels
 
 `#nais-internal`
-
-`#naisdevice-internal`
-
+`#nais-tech`
 
 ### Public Channels
 
