@@ -2,7 +2,7 @@
 
 ### _It takes a village to raise a NAIS-developer_
 
-For your NAIS-specific onboarding you will be guided by not only one sponsor, but you will be attached to the hip of every [anchor](/administrative/pigs/#what-is-an-anchor) so that you can gain insight into ~~every~~ as many aspects of NAIS as possible.
+For your NAIS-specific onboarding you will be guided by not only one sponsor, but you will be attached to the hip of every anchor so that you can gain insight into ~~every~~ as many aspects of NAIS as possible.
 When you have the general gist of things and feel ready you can just start picking tasks off the board(s).
 
 Not only the anchors are your sponsors.

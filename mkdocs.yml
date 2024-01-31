@@ -13,7 +13,6 @@ theme:
   features:
     - content.code.annotate
     - navigation.instant
-    - navigation.tabs
 extra:
   search:
     language: 'en'
@@ -52,7 +51,7 @@ nav:
   - NAIS Onboarding:
     - Sponsor: welcome/nais-sponsor.md
     - Manifest: welcome/nais-manifest-eng.md
-    - Checklist for Faddere: welcome/fadder.md
+    - Checklist for sponsors: welcome/sponsor.md
   - Administrative:
     - Fixtures: administrative/fixtures.md
     - Slack: administrative/slack.md
