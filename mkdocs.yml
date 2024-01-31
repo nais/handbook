@@ -61,6 +61,6 @@ nav:
     - Production ready?: technical/production-ready.md
     - Publications & Media: technical/publications-media.md
     - Installing nais: technical/installing-nais.md
-    - Write the doc: technical/write-the-doc.md
+    - Write the doc: technical/write-the-doc/write-the-doc.md
   - Social:
       - The Great Outdoors: social/the-great-outdoors.md
