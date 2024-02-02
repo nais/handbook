@@ -1,5 +1,7 @@
-- notes  #TODO
+- Notes #TODO
 
-- highlights #TODO 
+- Highlights #TODO 
 
-- variables #TODO
+- Variables #TODO
+
+- Same same but different (eg. macOS | Windows | Linux) #TODO
