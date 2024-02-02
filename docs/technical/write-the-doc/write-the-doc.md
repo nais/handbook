@@ -14,5 +14,5 @@ To create contents you must determine what you are setting out to do. Are you wr
     - Reference guides are technical descriptions of the machinery and how to operate it. Reference material is information-oriented.
 * [**Explanation**](https://diataxis.fr/explanation/)
     - Explanation is a discusive treatment of a subject, that permits reflection. Explanation is understanding-oriented.
-* [**Markdown guidelines**](./markdown-guidelines.md)
+* [**Markdown guidelines**](https://github.com/nais/doc/blob/main/README.md)
     - "Style guide" that describes the Markdown conventions to be used when authoring NAIS-docs.
