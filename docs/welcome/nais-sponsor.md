@@ -11,7 +11,3 @@ You can also attach yourself to anyone that you feel might shed more light on a 
 
 So if you find yourself wondering about something - keep this in mind:
 It is our duty (not to mention in our own best interest) to make sure you have the tools and understanding that you need so imagine that this _Cronjob_ is run on the team every minute. 
-
-```
-* * * * * sed -i 's/stoopid question//g'
-```
