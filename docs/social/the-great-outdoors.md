@@ -3,7 +3,7 @@
 ### _"All work and no play makes NAIS a dull platform"_
 
 ### Native NAISians
-![](/assets/naisians.png)
+![](../assets/naisians.png)
 
 ### The NAIS Pole
-![](/assets/the-nais-pole.png)
+![](../assets/the-nais-pole.png)

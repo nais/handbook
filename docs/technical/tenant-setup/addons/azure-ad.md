@@ -69,7 +69,7 @@ within the tenant mentioned above is needed for Azurerator to create and manage 
 
     If done correctly, the list of permissions should look like this:
 
-    ![The list of configured permissions for the Application registration in Azure AD. The permissions Application.ReadWrite.All, DelegatedPermissionGrant.ReadWrite.All and Group.Read.All for the Microsoft Graph API are all added as Application permissions. Admin consent has been granted to all of the permissions.](../../assets/azure-ad-permissions-setup.png)
+    ![The list of configured permissions for the Application registration in Azure AD. The permissions Application.ReadWrite.All, DelegatedPermissionGrant.ReadWrite.All and Group.Read.All for the Microsoft Graph API are all added as Application permissions. Admin consent has been granted to all of the permissions.](../../../assets/azure-ad-permissions-setup.png)
 
 ### Microsoft Graph Object ID
 

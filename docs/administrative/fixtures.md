@@ -4,7 +4,7 @@ The NAIS team might look disorganised to a newcomer and in a certain sense of th
 
 ## Froom
 
-![Froom logo](/assets/froom.png)
+![Froom logo](../assets/froom.png)
 
 Thanks to COVID19 we have become "remote ~~first~~ only". And in case you are wondering; The froom is our zoom based digital workspace. Froom is a portmanteau of *Frode* and *Zoom*. Frode is a popular guy, so his personal Zoom space was where we all gravitated.
 

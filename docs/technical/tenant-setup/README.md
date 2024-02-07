@@ -282,7 +282,7 @@ _teams_ performs some operations on behalf of the _teams_ user mentioned above. 
 
 After this is done you should see something like the following:
 
-![Screenshot of the Domain-wide Delegation screen in the Google Admin console](../assets/domainwidedelegation-screenshot.png)
+![Screenshot of the Domain-wide Delegation screen in the Google Admin console](../../assets/domainwidedelegation-screenshot.png)
 
 ### Github Actions secrets
 
