@@ -1,4 +1,5 @@
 # What is production ready?
+
 This is the NAIS team's attempt to define what _production ready_ means to us.
 Production implies quality and durability. Running a system means serving
 requests, and requests are ultimately serving users. We care about our users,

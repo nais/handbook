@@ -20,9 +20,3 @@ Any and all meetings that are deemed unnecessary due to priority or lack of subs
 ## Weekly 
 
 The NAIS weekly takes place Monday at high noon.
-
-## Retro
- 
-Retros are held on "a need to relieve pressure" basis. You will get an invite if one is scheduled. If you feel that one is needed or have topics you want to address let our esteemed product owner know. 
-
-## Anchor-forum # TBD

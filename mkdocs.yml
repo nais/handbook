@@ -14,6 +14,7 @@ theme:
     - content.code.annotate
     - navigation.instant
 extra:
+  generator: false
   search:
     language: 'en'
 extra_javascript:
@@ -46,21 +47,3 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - tables
-nav:
-  - Welcome to NAIS: README.md
-  - NAIS Onboarding:
-    - Sponsor: welcome/nais-sponsor.md
-    - Manifest: welcome/nais-manifest-eng.md
-    - Checklist for sponsors: welcome/sponsor.md
-  - Administrative:
-    - Fixtures: administrative/fixtures.md
-    - Slack: administrative/slack.md
-  - Technical:
-    - What is nais?: technical/nais.md
-    - NAIS development: technical/development.md
-    - Production ready?: technical/production-ready.md
-    - Publications & Media: technical/publications-media.md
-    - Installing nais: technical/installing-nais.md
-    - Write the doc: technical/write-the-doc/write-the-doc.md
-  - Social:
-      - The Great Outdoors: social/the-great-outdoors.md
