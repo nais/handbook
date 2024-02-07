@@ -1,8 +1,17 @@
-### NAIS Doc authoring guide
+### Authoring NAIS-docs
 
-This guide is a highly compressed summary of the doc theory published at [Diataxis](https://diataxis.fr/)
+When writing [the documentation](https://github.com/nais/doc) we serve at doc.nais.io/doc.<tenant>.cloud.nais.io, we want to make sure that the content we provide helps our users to understand and use the platform we're making.
 
-#### _Diátaxis identifies four distinct needs, and four corresponding forms of documentation - tutorials, how-to guides, technical reference and explanation. It places them in a systematic relationship, and proposes that documentation should itself be organised around the structures of those needs._
+Some key points to keep in mind when writing the docs is:
+- [Following the diataxis theory](#diataxishttpsdiataxisfr)
+- Less is more: Keep it short and to the point. This makes it easier to sustain high quality over time.
+- We are writing docs for the _users_ of our platform. No one else. We should be empathetic to their needs and understanding of the platform, and be mindful of adding details that are not relevant in the current documentation context
+- [Consistency](#conventions) in style and tone
+- NAIS [Quality](https://diataxis.fr/quality/)
+
+## [Diataxis](https://diataxis.fr/)
+
+_Diátaxis identifies four distinct needs, and four corresponding forms of documentation - tutorials, how-to guides, technical reference and explanation. It places them in a systematic relationship, and proposes that documentation should itself be organised around the structures of those needs._
 
 To create contents you must determine what you are setting out to do. Are you writing a _Tutorial_, a _How-to guide_, a _Reference_ or is it a comprehensive _Explanantion_ of a concept.
 
@@ -16,3 +25,48 @@ To create contents you must determine what you are setting out to do. Are you wr
     - Explanation is a discusive treatment of a subject, that permits reflection. Explanation is understanding-oriented.
 * [**Markdown guidelines**](https://github.com/nais/doc/blob/main/README.md)
     - "Style guide" that describes the Markdown conventions to be used when authoring NAIS-docs.
+
+## Conventions
+
+### Documentation structure
+
+The file tree represents the structure of the navigation menu.
+The H1 (#) will be the title of the page and the title in the navigation menu
+
+To override the placement in the navigation menu, we use the [Awesome Pages plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin/) for MkDocs.
+
+### Placeholder variables
+
+Where the reader is expected to change the content, we use placeholder variables.
+These variables are written in uppercase, with words separated by hyphens, surrounded by <>. For example: `<MY-APP>`.
+
+### Tenant variables
+
+We template the tenant name in the documentation using <<tenant()>>
+When the documentation is built, this will be replaced with the relevant tenant name.
+
+### Code blocks
+
+We want to use expanded notes with the filename in the title and the code block inside the note. Preferably with syntax highlighting where applicable.
+This will give the reader a copy button with the relevant code and the filename will be visible in the navigation menu.
+
+````
+???+ note ".nais/app.yaml"
+
+    ```yaml hl_lines="6-8 11"
+    apiVersion: nais.io/v1alpha1
+    kind: Application
+    ...
+    ```
+````
+
+### Alternate paths
+
+When the user is given a choice, we want to show both paths in the documentation. For example programming language, OS or different methods
+
+```
+  === "Linux"
+    linux specific stuff
+  === "macOS"
+    macOS specific stuff
+```
