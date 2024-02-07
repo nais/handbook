@@ -1,30 +1,37 @@
-### Authoring NAIS-docs
+### Authoring the NAIS docs
 
-When writing [the documentation](https://github.com/nais/doc) we serve at doc.nais.io/doc.<tenant>.cloud.nais.io, we want to make sure that the content we provide helps our users to understand and use the platform we're making.
+When writing [the documentation](https://github.com/nais/doc) we serve at [doc.nais.io](https://doc.nais.io) / `doc.<tenant>.cloud.nais.io`, we want to make sure that the content we provide helps our users to understand and use the platform we're making.
 
-Some key points to keep in mind when writing the docs is:
-- [Following the diataxis theory](#diataxishttpsdiataxisfr)
+Some key points to keep in mind when writing the docs are:
+
+- [Following the diataxis theory](#diataxis-httpsdiataxisfrhttpsdiataxisfr)
 - Less is more: Keep it short and to the point. This makes it easier to sustain high quality over time.
 - We are writing docs for the _users_ of our platform. No one else. We should be empathetic to their needs and understanding of the platform, and be mindful of adding details that are not relevant in the current documentation context
 - [Consistency](#conventions) in style and tone
 - NAIS [Quality](https://diataxis.fr/quality/)
 
-## [Diataxis](https://diataxis.fr/)
+## Diataxis ([https://diataxis.fr/](https://diataxis.fr/))
 
 _Diátaxis identifies four distinct needs, and four corresponding forms of documentation - tutorials, how-to guides, technical reference and explanation. It places them in a systematic relationship, and proposes that documentation should itself be organised around the structures of those needs._
 
 To create contents you must determine what you are setting out to do. Are you writing a _Tutorial_, a _How-to guide_, a _Reference_ or is it a comprehensive _Explanantion_ of a concept.
 
-* [**Tutorial**](https://diataxis.fr/tutorials/)
-    - A tutorial is an experience that takes place under the guidance of a tutor. A tutorial is always learning-oriented.
-* [**How-to**](https://diataxis.fr/how-to-guides/)
-    - How-to guides are directions that guide the reader through a problem or towards a result. How-to guides are goal-oriented.
-* [**Reference**](https://diataxis.fr/reference/)
-    - Reference guides are technical descriptions of the machinery and how to operate it. Reference material is information-oriented.
-* [**Explanation**](https://diataxis.fr/explanation/)
-    - Explanation is a discusive treatment of a subject, that permits reflection. Explanation is understanding-oriented.
-* [**Markdown guidelines**](https://github.com/nais/doc/blob/main/README.md)
-    - "Style guide" that describes the Markdown conventions to be used when authoring NAIS-docs.
+#### [**Tutorial**](https://diataxis.fr/tutorials/)
+
+A tutorial is an experience that takes place under the guidance of a tutor. A tutorial is always learning-oriented.
+
+#### [**How-to**](https://diataxis.fr/how-to-guides/)
+
+How-to guides are directions that guide the reader through a problem or towards a result. How-to guides are goal-oriented.
+
+#### [**Reference**](https://diataxis.fr/reference/)
+
+Reference guides are technical descriptions of the machinery and how to operate it. Reference material is information-oriented.
+
+#### [**Explanation**](https://diataxis.fr/explanation/)
+
+Explanation is a discusive treatment of a subject, that permits reflection. Explanation is understanding-oriented.
+
 
 ## Conventions
 
