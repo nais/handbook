@@ -8,8 +8,7 @@ theme:
   favicon: assets/logo.png
   palette:
     scheme: slate
-    primary: teal
-    accent: green
+    
   features:
     - content.code.annotate
     - navigation.instant
