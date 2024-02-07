@@ -1,0 +1,1585 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://handbook.nais.io/technical/tenant-setup/">
+      
+      
+        <link rel="prev" href="../write-the-doc/">
+      
+      
+        <link rel="next" href="addons/azure-ad/">
+      
+      
+      <link rel="icon" href="../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.6">
+    
+    
+      
+        <title>Setting up a tenant organization - NAIS Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#setting-up-a-tenant-organization" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="NAIS Handbook" class="md-header__button md-logo" aria-label="NAIS Handbook" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NAIS Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Setting up a tenant organization
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nais/handbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NAIS Handbook" class="md-nav__button md-logo" aria-label="NAIS Handbook" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    NAIS Handbook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nais/handbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A handbook of sorts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Administrative
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Administrative
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administrative/fixtures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fixtures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administrative/slack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Social
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Social
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../social/the-great-outdoors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Great Outdoors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Technical
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Technical
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NAIS Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../production-ready/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is production ready?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publications-media/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publications & Media
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../write-the-doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Write the doc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tenant setup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tenant setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Setting up a tenant organization
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Setting up a tenant organization
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prereq" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prereq
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Required settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-nais-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create the NAIS folder
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create the NAIS folder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grant-access-to-the-nais-team-and-the-terraform-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grant access to the NAIS team and the terraform user
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teams-part-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teams (part 1)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teams (part 1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teams-admins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teams admins
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes group
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-organization-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom organization role
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#highly-recommended-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highly recommended settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Highly recommended settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log location
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organization-policy-for-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organization policy for location
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-nais-terraform-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run nais-terraform-modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run nais-terraform-modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teams-part-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teams (part 2)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teams (part 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-oauth-login-for-web-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure OAuth login for web frontend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domain-wide-delegation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Domain-wide Delegation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-actions-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Github Actions secrets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_2" id="__nav_4_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Addons
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Addons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="addons/azure-ad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure AD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="addons/digdir/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Digdirator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="addons/tokenx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TokenX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Welcome
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Welcome
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../welcome/nais-manifest-eng/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NAIS is a AAAA rated platform service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../welcome/nais-sponsor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NAIS-Sponsor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../welcome/sponsor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Checklist for faddere
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prereq" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prereq
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Required settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-nais-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create the NAIS folder
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create the NAIS folder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grant-access-to-the-nais-team-and-the-terraform-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grant access to the NAIS team and the terraform user
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teams-part-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teams (part 1)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teams (part 1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teams-admins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teams admins
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes group
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-organization-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom organization role
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#highly-recommended-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highly recommended settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Highly recommended settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log location
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organization-policy-for-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organization policy for location
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-nais-terraform-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run nais-terraform-modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run nais-terraform-modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teams-part-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teams (part 2)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teams (part 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-oauth-login-for-web-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure OAuth login for web frontend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domain-wide-delegation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Domain-wide Delegation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-actions-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Github Actions secrets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="setting-up-a-tenant-organization">Setting up a tenant organization<a class="headerlink" href="#setting-up-a-tenant-organization" title="Permanent link">&para;</a></h1>
+<p>This guide is used when setting up a new tenant. This is typically done by the NAIS team, together with the tenants administrators.</p>
+<pre class="mermaid"><code>graph TD
+A[Google Tenant] --&gt; B[NAIS Folder]
+B --&gt; C[management]
+B --&gt; D[dev]
+B --&gt; E[prod]</code></pre>
+<h2 id="prereq">Prereq<a class="headerlink" href="#prereq" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Google Cloud Tenant admin</li>
+<li>GitHub Organization</li>
+</ul>
+<h2 id="required-settings">Required settings<a class="headerlink" href="#required-settings" title="Permanent link">&para;</a></h2>
+<h3 id="required-permissions">Required permissions<a class="headerlink" href="#required-permissions" title="Permanent link">&para;</a></h3>
+<p>On the user that will run the following commands, the following IAM roles are
+required on an organization level.</p>
+<ul>
+<li><code>Owner</code></li>
+<li><code>Organization Administrator</code></li>
+<li><code>Folder Creator</code></li>
+<li><code>Organization Policy Administrator</code></li>
+</ul>
+<h3 id="create-the-nais-folder">Create the NAIS folder<a class="headerlink" href="#create-the-nais-folder" title="Permanent link">&para;</a></h3>
+<p>Everything related to NAIS is contained within this folder.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">NAAS_ORG_NAME</span><span class="o">=</span>my-org<span class="w"> </span><span class="c1"># (1)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">NAAS_ORG_ID</span><span class="o">=</span><span class="k">$(</span>gcloud<span class="w"> </span>organizations<span class="w"> </span>list<span class="w"> </span>--filter<span class="w"> </span><span class="nv">$NAAS_ORG_NAME</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n1<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>gcloud<span class="w"> </span>resource-manager<span class="w"> </span>folders<span class="w"> </span>create<span class="w"> </span>--display-name<span class="o">=</span>nais<span class="w"> </span>--organization<span class="o">=</span><span class="nv">$NAAS_ORG_ID</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">NAAS_GOOGLE_FOLDERID</span><span class="o">=</span><span class="k">$(</span>gcloud<span class="w"> </span>resource-manager<span class="w"> </span>folders<span class="w"> </span>list<span class="w"> </span>--organization<span class="o">=</span><span class="nv">$NAAS_ORG_ID</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>nais<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $3}&#39;</span><span class="k">)</span>
+</code></pre></div>
+<ol>
+<li>:man_raising_hand: Change this to the name of your Google Organization</li>
+</ol>
+<h4 id="grant-access-to-the-nais-team-and-the-terraform-user">Grant access to the NAIS team and the terraform user<a class="headerlink" href="#grant-access-to-the-nais-team-and-the-terraform-user" title="Permanent link">&para;</a></h4>
+<p>To allow the NAIS team the required permissions to operate nais, IAM policies
+must be added to the NAIS folder.</p>
+<div class="admonition bug">
+<p class="admonition-title">Bug</p>
+<p>Find correct roles for the following users:</p>
+<ul>
+<li>nais-viewers</li>
+<li>nais-admins</li>
+</ul>
+</div>
+<details>
+<summary>Copy and run this command</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cat<span class="w"> </span><span class="s">&lt;&lt;EOF &gt; naas-google-org-policy.json</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="s">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="s">  &quot;bindings&quot;: [</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s">    {</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="s">      &quot;members&quot;: [</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="s">        &quot;serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com&quot;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="s">      ],</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="s">      &quot;role&quot;: &quot;roles/artifactregistry.admin&quot;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="s">    },</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="s">    {</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="s">      &quot;members&quot;: [</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="s">        &quot;serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com&quot;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="s">      ],</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="s">      &quot;role&quot;: &quot;roles/compute.admin&quot;</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="s">    },</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="s">    {</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="s">      &quot;members&quot;: [</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="s">        &quot;serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com&quot;</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="s">      ],</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="s">      &quot;role&quot;: &quot;roles/container.admin&quot;</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="s">    },</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="s">    {</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="s">      &quot;members&quot;: [</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="s">        &quot;serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com&quot;</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="s">      ],</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="s">      &quot;role&quot;: &quot;roles/dns.admin&quot;</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="s">    },</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="s">    {</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="s">      &quot;members&quot;: [</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="s">        &quot;serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com&quot;</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="s">      ],</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="s">      &quot;role&quot;: &quot;roles/logging.admin&quot;</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="s">    },</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="s">    {</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="s">      &quot;members&quot;: [</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="s">        &quot;serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com&quot;</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="s">      ],</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="s">      &quot;role&quot;: &quot;roles/resourcemanager.folderCreator&quot;</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="s">    },</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="s">    {</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="s">      &quot;members&quot;: [</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="s">        &quot;serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com&quot;</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="s">      ],</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="s">      &quot;role&quot;: &quot;roles/resourcemanager.folderIamAdmin&quot;</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="s">    },</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="s">    {</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="s">      &quot;members&quot;: [</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="s">        &quot;serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com&quot;</span>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="s">      ],</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="s">      &quot;role&quot;: &quot;roles/resourcemanager.projectCreator&quot;</span>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="s">    },</span>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="s">    {</span>
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="s">      &quot;members&quot;: [</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="s">        &quot;serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com&quot;</span>
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="s">      ],</span>
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="s">      &quot;role&quot;: &quot;roles/serviceusage.serviceUsageAdmin&quot;</span>
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a><span class="s">    }</span>
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a><span class="s">  ]</span>
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a><span class="s">}</span>
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a><span class="s">EOF</span>
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Enter NaaS Tenant Name [</span><span class="nv">$NAAS_TENANTNAME</span><span class="s2">]: &quot;</span><span class="w"> </span>TENANTNAME<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a><span class="nb">export</span><span class="w"> </span><span class="nv">NAAS_TENANTNAME</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">TENANTNAME</span><span class="k">:-</span><span class="nv">$NAAS_TENANTNAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>sed<span class="w"> </span>-ie<span class="w"> </span><span class="s2">&quot;s/__TENANTNAME__/</span><span class="nv">$NAAS_TENANTNAME</span><span class="s2">/g&quot;</span><span class="w"> </span>naas-google-org-policy.json<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;gcloud resource-manager folders set-iam-policy </span><span class="nv">$NAAS_GOOGLE_FOLDERID</span><span class="s2"> naas-google-org-policy.json&quot;</span>
+</code></pre></div>
+</details>
+<h3 id="teams-part-1">Teams (part 1)<a class="headerlink" href="#teams-part-1" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/nais/teams-backend">:fontawesome-brands-github: nais/teams-backend</a> manages teams and configures groups and access in other systems.</p>
+<p><em>teams</em> needs a dedicated user account in the Google directory. This user must be manually created <a href="https://admin.google.com/ac/users">in the Google Admin console</a>. The user must be granted the <code>Groups Admin</code> role to be able to create and maintain groups for the teams:</p>
+<ol>
+<li>Go to <a href="https://admin.google.com/ac/users">https://admin.google.com/ac/users</a></li>
+<li>Click on <code>Add new user</code></li>
+<li>Enter <code>nais-teams</code> as first name, and <code>user</code> as last name</li>
+<li>Enter <code>nais-teams</code> as the primary email</li>
+<li>Click <code>Add new user</code> to add the user account</li>
+<li>Click on the created user and then on <code>Assign roles</code> under the <code>Admin roles and privileges</code> section</li>
+<li>Assign the <code>Groups Admin</code> role and click <code>Save</code></li>
+</ol>
+<h4 id="teams-admins">Teams admins<a class="headerlink" href="#teams-admins" title="Permanent link">&para;</a></h4>
+<p><em>teams</em> automatically syncs users from the Google Workspace to its own database. Tenants can control which users that should be assigned the admin role in <em>teams</em> by creating a group called <code>teams-admins@&lt;tenant-domain&gt;</code>, and then add the necessary users to this group. When <em>teams</em> runs the user sync it will look for this group, and make sure that the users in the group are granted the admin role.
+Whenever a user is removed from the group, <em>teams</em> will
+revoke the admin role from the user on the next sync.</p>
+<p>Users with the admin role in <em>teams</em> have access to some parts of <em>teams</em> that regular users does not. Some of these features are:</p>
+<ul>
+<li>Configure / enable / disable reconcilers</li>
+<li>Grant / revoke roles</li>
+<li>Manipulate reconciler states for teams</li>
+</ul>
+<h3 id="kubernetes-group">Kubernetes group<a class="headerlink" href="#kubernetes-group" title="Permanent link">&para;</a></h3>
+<p>In <a href="https://admin.google.com">Google Admin</a> create a group named <code>gke-security-groups</code>.
+This group is used to manage access to the kubernetes clusters, and will be managed by <em>teams</em>.
+Make sure the group has the <strong>View Members</strong> permission selected for <strong>Group Members</strong>.</p>
+<h3 id="custom-organization-role">Custom organization role<a class="headerlink" href="#custom-organization-role" title="Permanent link">&para;</a></h3>
+<p><a href="https://cloud.google.com/config-connector/docs/overview">Config connector</a> requires a service user in each of the team projects that will be created.
+We want to restrict this user's access to a bare minimum using a custom role.
+We cannot define custom roles at the folder level. Since we need to use a custom role for every project within the nais folder, we define the custom role at the organization level.</p>
+<p>Save the content below to a .yaml file</p>
+<details>
+<summary>Click to see file content</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;NAIS</span><span class="nv"> </span><span class="s">Custom</span><span class="nv"> </span><span class="s">CNRM</span><span class="nv"> </span><span class="s">Role&quot;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Custom</span><span class="nv"> </span><span class="s">role</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">namespaced</span><span class="nv"> </span><span class="s">cnrm</span><span class="nv"> </span><span class="s">users</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">allow</span><span class="nv"> </span><span class="s">creation</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">resources&quot;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;GA&quot;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nt">includedPermissions</span><span class="p">:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudkms.cryptoKeys.create</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudkms.cryptoKeys.get</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudkms.cryptoKeys.update</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudkms.keyRings.create</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudkms.keyRings.get</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudkms.keyRings.getIamPolicy</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudkms.keyRings.setIamPolicy</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudsql.databases.create</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudsql.databases.delete</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudsql.databases.get</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudsql.databases.list</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudsql.databases.update</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudsql.instances.create</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudsql.instances.delete</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudsql.instances.get</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudsql.instances.list</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudsql.instances.update</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudsql.users.create</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudsql.users.delete</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudsql.users.list</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudsql.users.update</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">resourcemanager.projects.get</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">resourcemanager.projects.getIamPolicy</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">resourcemanager.projects.setIamPolicy</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">storage.buckets.create</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">storage.buckets.get</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">storage.buckets.getIamPolicy</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">storage.buckets.list</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">storage.buckets.setIamPolicy</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">storage.buckets.update</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">storage.buckets.delete</span>
+</code></pre></div>
+</details>
+
+<p>Run the following command to apply it to your organization:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>gcloud<span class="w"> </span>iam<span class="w"> </span>roles<span class="w"> </span>create<span class="w"> </span>CustomCNRMRole<span class="w"> </span>--organization<span class="o">=</span>&lt;your<span class="w"> </span>org<span class="w"> </span>ID&gt;<span class="w">  </span>--file<span class="o">=</span>&lt;your<span class="w"> </span>file<span class="w"> </span>name&gt;.yaml
+</code></pre></div>
+<h2 id="highly-recommended-settings">Highly recommended settings<a class="headerlink" href="#highly-recommended-settings" title="Permanent link">&para;</a></h2>
+<h3 id="log-location">Log location<a class="headerlink" href="#log-location" title="Permanent link">&para;</a></h3>
+<p>Every project created in GCP will have a default log location for all logs. The default is Global.
+In order to keep your logs in europe, we <em>strongly</em> recommend setting the default log location to europe using the following command</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>gcloud<span class="w"> </span>alpha<span class="w"> </span>logging<span class="w"> </span>settings<span class="w"> </span>update<span class="w"> </span>--organization<span class="o">=</span>&lt;your<span class="w"> </span>org<span class="w"> </span>ID&gt;<span class="w"> </span>--storage-location<span class="o">=</span>europe-north1
+</code></pre></div>
+<h3 id="organization-policy-for-location">Organization policy for location<a class="headerlink" href="#organization-policy-for-location" title="Permanent link">&para;</a></h3>
+<p>Although all resources created by NAIS is located within the EU, teams are still able to create resources anywhere unless an organizational constraint is in place.</p>
+<details>
+<summary>Click to see file content</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">constraint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">constraints/gcp.resourceLocations</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">etag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BwVUSr8Q7Ng=</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">listPolicy</span><span class="p">:</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">allowedValues</span><span class="p">:</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">in:eu-locations</span>
+</code></pre></div>
+</details>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>gcloud<span class="w"> </span>beta<span class="w"> </span>resource-manager<span class="w"> </span>org-policies<span class="w"> </span>set-policy<span class="w"> </span>--organization<span class="o">=</span>&lt;your<span class="w"> </span>org<span class="w"> </span>ID&gt;<span class="w"> </span>&lt;file<span class="w"> </span>name&gt;.yaml
+</code></pre></div>
+<h2 id="run-nais-terraform-modules">Run nais-terraform-modules<a class="headerlink" href="#run-nais-terraform-modules" title="Permanent link">&para;</a></h2>
+<p>Before doing the following step, run the terraform setup.</p>
+<h3 id="teams-part-2">Teams (part 2)<a class="headerlink" href="#teams-part-2" title="Permanent link">&para;</a></h3>
+<h4 id="configure-oauth-login-for-web-frontend">Configure OAuth login for web frontend<a class="headerlink" href="#configure-oauth-login-for-web-frontend" title="Permanent link">&para;</a></h4>
+<p>Set up an OAuth client for <em>teams</em>.</p>
+<ol>
+<li>Go to https://console.cloud.google.com</li>
+<li>Choose project <tenant org> -&gt; nais-management -&gt; nais-management</li>
+<li>Go to <em>APIs ans Service</em> -&gt; <em>OAuth consent screen</em></li>
+<li><em>Internal</em> -&gt; <em>create</em><ol>
+<li>App name: <code>nais management</code></li>
+<li>User support email: <code>admin@&lt;tenant-domain&gt;</code></li>
+<li>Developer Contact email: <code>admin@&lt;tenant-domain&gt;</code></li>
+</ol>
+</li>
+<li><em>Save and continue</em> (x2)</li>
+<li>Go to <em>APIs ans Service</em> -&gt; <em>Credentials</em></li>
+<li>Click <em>Create Credentials</em> -&gt; <em>OAuth client ID</em></li>
+<li>Select type <em>Web Application</em><ol>
+<li>Name: <code>teams</code></li>
+<li>Authorized redirect URI: <code>http://teams.&lt;tenant-name&gt;.cloud.nais.io/oauth2/callback</code></li>
+</ol>
+</li>
+<li>Set Name and Authorized redirect URIs</li>
+<li><em>Create</em></li>
+<li>Copy client id and secret and give to NAIS-team</li>
+</ol>
+<h4 id="domain-wide-delegation">Domain-wide Delegation<a class="headerlink" href="#domain-wide-delegation" title="Permanent link">&para;</a></h4>
+<p><em>teams</em> performs some operations on behalf of the <em>teams</em> user mentioned above. For this to work the <em>teams</em> <em>service account</em> needs domain-wide delegation with some scopes. This must be manually set up in the Google Admin console:</p>
+<ol>
+<li>Go to <a href="https://admin.google.com/ac/owl/domainwidedelegation">https://admin.google.com/ac/owl/domainwidedelegation</a></li>
+<li>Click on <code>Add new</code> to add a new Client ID</li>
+<li>Enter the ID of the <em>teams</em> service account (provided by the NAIS team)</li>
+<li>Add the following scopes:</li>
+<li><code>https://www.googleapis.com/auth/admin.directory.group</code></li>
+<li><code>https://www.googleapis.com/auth/admin.directory.user.readonly</code></li>
+<li>Click on <code>Authorize</code></li>
+</ol>
+<p>After this is done you should see something like the following:</p>
+<p><img alt="Screenshot of the Domain-wide Delegation screen in the Google Admin console" src="../assets/domainwidedelegation-screenshot.png" /></p>
+<h3 id="github-actions-secrets">Github Actions secrets<a class="headerlink" href="#github-actions-secrets" title="Permanent link">&para;</a></h3>
+<p>If you are using Github Actions to deploy your applications, you may want to add the following variable and secret to your organization's Github Actions secrets:</p>
+<p>Open <code>https://github.com/organizations/[ORG_NAME]/settings/secrets/actions</code></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NAIS_MANAGEMENT_PROJECT_ID</code></td>
+<td><code>Variable</code></td>
+</tr>
+<tr>
+<td><code>NAIS_WORKLOAD_IDENTITY_PROVIDER</code></td>
+<td><code>Secret</code></td>
+</tr>
+</tbody>
+</table>
+<p>These may also be set in the repository's secrets, but it is recommended to set them in the organization's secrets as they are shared between all teams.</p>
+<p>The NAIS team will provide the values.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.instant"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e1c3ead8.min.js"></script>
+      
+        <script src="../../amplitude_javascript/events.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1451 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://handbook.nais.io/technical/tenant-setup/addons/digdir/">
+      
+      
+        <link rel="prev" href="../azure-ad/">
+      
+      
+        <link rel="next" href="../tokenx/">
+      
+      
+      <link rel="icon" href="../../../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.6">
+    
+    
+      
+        <title>Digdirator - NAIS Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#digdirator" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="NAIS Handbook" class="md-header__button md-logo" aria-label="NAIS Handbook" data-md-component="logo">
+      
+  <img src="../../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NAIS Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Digdirator
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nais/handbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="NAIS Handbook" class="md-nav__button md-logo" aria-label="NAIS Handbook" data-md-component="logo">
+      
+  <img src="../../../../assets/logo.png" alt="logo">
+
+    </a>
+    NAIS Handbook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nais/handbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A handbook of sorts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Administrative
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Administrative
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../administrative/fixtures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fixtures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../administrative/slack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Social
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Social
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../social/the-great-outdoors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Great Outdoors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Technical
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Technical
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NAIS Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../production-ready/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is production ready?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../publications-media/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publications & Media
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../write-the-doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Write the doc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tenant setup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tenant setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setting up a tenant organization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_2" id="__nav_4_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Addons
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Addons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure-ad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure AD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Digdirator
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Digdirator
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#for-tenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Tenant
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="For Tenant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#digdir-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digdir configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Digdir configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-administration-clients-for-id-porten-maskinporten" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure administration clients for ID-porten &amp; Maskinporten
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nais-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAIS configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NAIS configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business certificate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certificate-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Certificate chain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Certificate chain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-format-of-a-certificate-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example format of a certificate chain
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-nais" class="md-nav__link">
+    <span class="md-ellipsis">
+      For NAIS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-nais-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary of NAIS configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import Certificates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Import Certificates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-requisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-requisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-cloud-kms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Google Cloud KMS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-secret-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Google Secret Manager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokenx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TokenX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Welcome
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Welcome
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../welcome/nais-manifest-eng/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NAIS is a AAAA rated platform service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../welcome/nais-sponsor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NAIS-Sponsor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../welcome/sponsor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Checklist for faddere
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#for-tenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Tenant
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="For Tenant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#digdir-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digdir configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Digdir configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-administration-clients-for-id-porten-maskinporten" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure administration clients for ID-porten &amp; Maskinporten
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nais-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAIS configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NAIS configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business certificate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certificate-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Certificate chain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Certificate chain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-format-of-a-certificate-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example format of a certificate chain
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-nais" class="md-nav__link">
+    <span class="md-ellipsis">
+      For NAIS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-nais-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary of NAIS configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import Certificates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Import Certificates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-requisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-requisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-cloud-kms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Google Cloud KMS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-secret-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Google Secret Manager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="digdirator">Digdirator<a class="headerlink" href="#digdirator" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Digdirator enabled</p>
+<p>This is an optional addon in NaaS. It is not enabled by default.</p>
+</div>
+<p><a href="https://github.com/nais/digdirator">Digdirator</a> is a feature that integrates with Digdir self-service API. Digdirator
+enables automated registration and lifecycle management of ID-porten and Maskinporten clients.</p>
+<p>Before Digdirator can use the self-service API, the tenant must receive administration clients from Digdir,
+one for each client type, Maskinporten and ID-porten.
+The Digdir self-service API is secured with oAuth2 using a <code>business certificate</code>.</p>
+<p>An overview of the setup is as follows:</p>
+<ul>
+<li>Clients exist in Digdir and a <code>business certificate</code> is configured</li>
+<li>Clients are configured with <a href="#digdir-configuration">scopes</a> required</li>
+<li>Add Client ID's to Secret Manager in your project</li>
+<li>Add <code>business certificate</code> to Google Key Management Service in your project</li>
+<li>Add business certificate <code>certificate-chain</code> to Secret Manager in your project</li>
+</ul>
+<h2 id="for-tenant">For Tenant<a class="headerlink" href="#for-tenant" title="Permanent link">&para;</a></h2>
+<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
+<h4 id="digdir-configuration">Digdir configuration<a class="headerlink" href="#digdir-configuration" title="Permanent link">&para;</a></h4>
+<details class="info">
+<summary>Recommended configuration for administration clients</summary>
+<p>To secure the integration with Digdir we recommend using a separate certificate for each registered client and that tenants request Digdir to lock each
+certificate to each client. If you already have a certificate for your clients, you can use that. As setup with these kinds of certificates
+is not part of this guide, we recommend that you contact Digdir for assistance.</p>
+</details>
+<h5 id="configure-administration-clients-for-id-porten-maskinporten">Configure administration clients for ID-porten &amp; Maskinporten<a class="headerlink" href="#configure-administration-clients-for-id-porten-maskinporten" title="Permanent link">&para;</a></h5>
+<ul>
+<li>ID-porten client is configured with scopes: <code>idporten:dcr.write idporten:dcr.read</code></li>
+<li>Maskinporten client is configured with scopes: <code>idporten:dcr.write idporten:dcr.read idporten:scopes.write</code></li>
+<li><code>business certificates</code> are registered in Digdir</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">Tenant imports the Client ID's to <a href="#google-secret-manager">Secret Manager</a> and provide the resource names to NAIS</p>
+<p><code>projects/&lt;project-id&gt;/secrets/&lt;secret-id&gt;/versions/&lt;version&gt;</code></p>
+</div>
+<details class="info">
+<summary>Digdirator use of Client ID</summary>
+<p>Digdirator sets the Client ID as the claim <code>iss</code> when authenticating against Digdir self-service API</p>
+</details>
+<h4 id="nais-configuration">NAIS configuration<a class="headerlink" href="#nais-configuration" title="Permanent link">&para;</a></h4>
+<p>We really care about our compadres (tenants) and we think that a separation of concerns is a good &amp; secure way to
+go.
+It also helps us to keep the cluster secure and stable. The configuration setup for Digdirator favor security as
+NAIS never have direct access to your business certificate.</p>
+<p>When setup in Digdir is confirmed by tenant and before we can enable Digdirator, the following steps must be completed:</p>
+<h5 id="business-certificate">Business certificate<a class="headerlink" href="#business-certificate" title="Permanent link">&para;</a></h5>
+<details class="info">
+<summary>Update existing certificate</summary>
+<p>Update of a certificate only requires the tenant to provide NAIS with the new <code>&lt;version&gt;</code></p>
+</details>
+<p>The tenant upload their <code>business certificate</code> to
+<a href="https://cloud.google.com/kms/docs/how-tos">Google Cloud KMS</a>. Digdirator will never have direct access to the certificate.
+Once it is uploaded the business certificate can only be used for cryptographic operations.
+The business certificate can never be downloaded or retrieved from the KMS storage.</p>
+<p>An authenticated &amp; authorized Digdirator can only request the <code>Google KMS</code> to sign a payload containing an unsigned
+token with claims, if successful the KMS returns a signed JWT, this JWT is later used to authenticate against Digdir self-service
+API.</p>
+<div class="admonition success">
+<p class="admonition-title">Certificate is <a href="#import-certificates">successfully uploaded</a> to Google KMS, provide NAIS with the resource names</p>
+<p><code>projects/&lt;project-id&gt;/locations/&lt;location&gt;/keyRings/&lt;keyring&gt;/cryptoKeys/&lt;key&gt;/cryptoKeyVersions/&lt;version&gt;</code></p>
+</div>
+<h5 id="certificate-chain">Certificate chain<a class="headerlink" href="#certificate-chain" title="Permanent link">&para;</a></h5>
+<details class="info">
+<summary>Update existing certificate chain</summary>
+<p>This information unlikely to change, only if a new certificate type is added to the Google KMS.
+Then the tenant must provide the new resource name or <code>&lt;version&gt;</code> of the certificate chain.</p>
+</details>
+<p>Now your probably are wondering why another secret storage we already configured KMS?</p>
+<p>Well, when authenticating using a <code>buissness certificate</code> the oauth2.0 spec recommends the <code>certificate chain</code> to be
+present in the token header.</p>
+<p>The public <code>certificate chain</code> should be set to the <code>x5c</code> (X.509 certificate chain) header parameter, corresponding to
+the key used to digitally sign the JWS (JSON Web Signature).</p>
+<p><code>Google Cloud Key Mangement Service</code> is designed as a cryptographic system: nobody, including yourself, can get the keys
+out: this means they're locked inside the system, and you don't have to worry in practice about them leaking.
+The tradeoff is that the only thing you can do with those keys is encrypting, decrypt, and other cryptographic
+operations.</p>
+<p>But when you do have configuration info like a certificate chain or a client-id, where your software actually needs the
+secret, not cryptographic operations, then <code>Secret Manager</code> is designed for that use case.</p>
+<div class="admonition success">
+<p class="admonition-title">Certificate chains is <a href="#import-certificates">successfully uploaded</a> to <code>Secret Manager</code>, provide NAIS with the resource names</p>
+<p><code>projects/&lt;project-id&gt;/secrets/&lt;secret-id&gt;/versions/&lt;version&gt;</code></p>
+</div>
+<h6 id="example-format-of-a-certificate-chain">Example format of a certificate chain<a class="headerlink" href="#example-format-of-a-certificate-chain" title="Permanent link">&para;</a></h6>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>-----BEGIN CERTIFICATE-----
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>MIIFCDECEBC...
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>-----END CERTIFICATE-----
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>-----BEGIN CERTIFICATE-----
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>MIIE3sKEA...
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>-----END CERTIFICATE-----
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>-----BEGIN CERTIFICATE-----
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>MIIFZTKK...
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>-----END CERTIFICATE-----
+</code></pre></div>
+<h2 id="for-nais">For NAIS<a class="headerlink" href="#for-nais" title="Permanent link">&para;</a></h2>
+<p>When Digdirator is enabled, NAIS configures Digdirator with a service account which holds a set of roles to access Google Cloud KMS and Secret Manager in your
+cluster project. </p>
+<p>To access <code>Google KMS</code> the service account is assigned the IAM role <code>roles/cloudkms.signerVerifier</code>,
+which enables sign, verify, and getPublicKey operations.</p>
+<details class="info">
+<summary>Google Cloud KMS roles</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cloudkms.cryptoKeyVersions.useToSign
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cloudkms.cryptoKeyVersions.useToVerify
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>cloudkms.cryptoKeyVersions.viewPublicKey
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>cloudkms.locations.get
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>cloudkms.locations.list
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>resourcemanager.projects.get
+</code></pre></div>
+</details>
+<p>To access <code>Secret Manager</code> the service account is assigned the IAM role <code>roles/secretmanager.secretAccessor</code> which allows Digdirator to
+access the payload of secrets.</p>
+<details class="info">
+<summary>Google Secret Manager roles</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>secretmanager.secrets.get
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>secretmanager.secrets.access
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>resourcemanager.projects.get
+</code></pre></div>
+</details>
+<p>NAIS will configure Digdirator with the information provided, you relax your cognitive load.
+Configure your <a href="https://docs.nais.io/nais-application/application/">NAIS application</a> with ID-porten or Maskinporten, push code -&gt; deploy.<br />
+NAIS handles the rest.</p>
+<div class="admonition warning">
+<p class="admonition-title">ID-porten sidecar</p>
+<p>If you plan to use the <a href="https://docs.nais.io/security/auth/idporten/sidecar/?h=sidecar">ID-porten sidecar</a>, prior to usage, the feature <a href="https://docs.nais.io/appendix/wonderwall/">Wonderwall</a> must be enabled.<br />
+Contact NAIS team for more information.</p>
+</div>
+<h2 id="summary-of-nais-configuration">Summary of NAIS configuration<a class="headerlink" href="#summary-of-nais-configuration" title="Permanent link">&para;</a></h2>
+<p>If we were to translate the above information required by NAIS to configure automated lifecycle of Digdir clients.
+Translated to yaml, it would look something like this</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">maskinporten</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">kms</span><span class="p">:</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;projects/123456789/locations/europe-north1/keyRings/nais-test/cryptoKeys/maskinporten-cert-chain/cryptoKeyVersions/1&quot;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">secret-manager</span><span class="p">:</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">client-id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;projects/123456789/secrets/maskinporten-client-id/versions/1&quot;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">cert-cain</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;projects/123456789/secrets/maskinporten-cert-chain/versions/1&quot;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nt">idporten</span><span class="p">:</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="nt">kms</span><span class="p">:</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;projects/123456789/locations/europe-north1/keyRings/nais-test/cryptoKeys/idporten-cert-chain/cryptoKeyVersions/1&quot;</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="nt">secret-manager</span><span class="p">:</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nt">client-id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;projects/123456789/secrets/idporten-client-id/versions/1&quot;</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="nt">cert-cain</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;projects/123456789/secrets/idporten-cert-chain/versions/1&quot;</span>
+</code></pre></div>
+<h2 id="import-certificates">Import Certificates<a class="headerlink" href="#import-certificates" title="Permanent link">&para;</a></h2>
+<h3 id="pre-requisites">Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">&para;</a></h3>
+<p><a href="https://cloud.google.com/sdk/docs/install">gcloud</a> CLI is installed and configured with a user that have access to the
+project.</p>
+<p>Some configuration can be done in the Google Cloud Console, automatic wrap and import must be done with the <code>gcloud</code>
+CLI.</p>
+<h4 id="google-cloud-kms">Google Cloud KMS<a class="headerlink" href="#google-cloud-kms" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Create a <a href="https://cloud.google.com/kms/docs/importing-a-key#create_targets">target key and key ring</a> in your project</li>
+<li>Create a <a href="https://cloud.google.com/kms/docs/importing-a-key#import_job">import job</a> for the target key.</li>
+<li>
+<p>Make an import request for <a href="https://cloud.google.com/kms/docs/importing-a-key#request_import">key</a></p>
+</li>
+<li>
+<p>Wrap and import of key can be done in automatically or manually.</p>
+<ul>
+<li>Automatically <a href="https://cloud.google.com/kms/docs/importing-a-key#automatically_wrap_and_import">wrap and import</a>
+  with <code>gcloud</code> CLI</li>
+<li>Manually is divided into 2 steps<ul>
+<li><a href="https://cloud.google.com/kms/docs/wrapping-a-key">Manually wrap</a> using OpenSSL for Linux or macOS.</li>
+<li><a href="https://cloud.google.com/kms/docs/importing-a-key#importing_a_manually-wrapped_key">Manually import</a> in the
+  Google
+  Cloud Console or gcloud CLI.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="google-secret-manager">Google Secret Manager<a class="headerlink" href="#google-secret-manager" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Create a <a href="https://cloud.google.com/secret-manager/docs/creating-and-accessing-secrets#creating_a_secret">secret</a> in
+  your project</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "navigation.instant"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.e1c3ead8.min.js"></script>
+      
+        <script src="../../../../amplitude_javascript/events.js"></script>
+      
+    
+  </body>
+</html>

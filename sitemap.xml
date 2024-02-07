@@ -21,11 +21,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://handbook.nais.io/technical/nais/</loc>
-         <lastmod>2024-02-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://handbook.nais.io/technical/overview/</loc>
          <lastmod>2024-02-07</lastmod>
          <changefreq>daily</changefreq>
@@ -41,7 +36,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://handbook.nais.io/technical/write-the-doc/write-the-doc/</loc>
+         <loc>https://handbook.nais.io/technical/write-the-doc/</loc>
+         <lastmod>2024-02-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://handbook.nais.io/technical/tenant-setup/</loc>
+         <lastmod>2024-02-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://handbook.nais.io/technical/tenant-setup/addons/azure-ad/</loc>
+         <lastmod>2024-02-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://handbook.nais.io/technical/tenant-setup/addons/digdir/</loc>
+         <lastmod>2024-02-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://handbook.nais.io/technical/tenant-setup/addons/tokenx/</loc>
          <lastmod>2024-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
