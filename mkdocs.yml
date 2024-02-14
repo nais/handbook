@@ -1,6 +1,7 @@
 site_name: NAIS Handbook
 repo_url: https://github.com/nais/handbook
 site_url: https://handbook.nais.io/
+edit_uri: edit/main/docs/
 theme:
   name: material
   language: 'en'
@@ -8,38 +9,71 @@ theme:
   favicon: assets/logo.png
   palette:
     scheme: slate
-    
+
   features:
+    - content.action.edit
+    - content.code.copy
     - content.code.annotate
+    - content.tabs.link
+    - navigation.footer
     - navigation.instant
+    - navigation.indexes
+    - search.suggest
+copyright: Made with ❤️ by NAV
 extra:
   generator: false
   search:
     language: 'en'
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/nais
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/nais_io
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/nav
+    - icon: fontawesome/brands/internet-explorer
+      link: https://nais.io/blog
 extra_javascript:
   - amplitude_javascript/events.js
 plugins:
-  - search
+  - awesome-pages
+  - search:
+      lang: en
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+      strict: false
 markdown_extensions:
   - toc:
       permalink: True
-  - attr_list
   - admonition
   - pymdownx.details
   - pymdownx.caret
   - pymdownx.tilde
   - pymdownx.superfences:
-        preserve_tabs: true
-        custom_fences:
+      preserve_tabs: true
+      custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:
       use_pygments: true
+      linenums_style: pymdownx-inline
       anchor_linenums: true
-  - pymdownx.tasklist
-  - pymdownx.smartsymbols
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.tabbed
   - tables
+  - pymdownx.tasklist
+  - pymdownx.smartsymbols
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - def_list
+  - attr_list
+  - footnotes
+  - md_in_html
+  - pymdownx.tasklist:
+      custom_checkbox: true
