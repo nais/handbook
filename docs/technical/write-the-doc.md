@@ -49,7 +49,7 @@ These variables are written in uppercase, with words separated by hyphens, surro
 
 ### Tenant variables
 
-We template the tenant name in the documentation using <<tenant()>>
+We template the tenant name in the documentation using `<<tenant()>>`
 When the documentation is built, this will be replaced with the relevant tenant name.
 
 ### Code blocks
