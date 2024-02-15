@@ -17,8 +17,8 @@ It is considered enough to check that the kafka-canary continues to work and han
 
 Once everything is confirmed to work in dev-nais-dev, rolling out to other tenants/clusters can be planned.
 
-Upgrading is done by changing `kafka_version` in the `naas.tf` file for dev-nais tenant, dev environment:
-https://github.com/nais/nais-terraform-modules/blob/main/tenants/dev-nais/naas.tf
+Upgrading is done by changing `kafka_version` in the `naas.tf` file for [dev-nais tenant, dev environment](https://github.com/nais/nais-terraform-modules/blob/main/tenants/dev-nais/naas.tf).
+
 
 ## 2. Upgrade development environments
 
@@ -31,7 +31,7 @@ The upgrade should be announced clearly, with a request for teams to check their
 
 After the upgrade, teams will have 1 week to report any issues to the nais-team, who can decide if the upgrade in production should be held back or go ahead.
 
-Upgrading is done by changing `kafka_version` in the `naas.tf` file for nav tenant, dev environment:
+<!-- Upgrading is done by changing `kafka_version` in the `naas.tf` file for nav tenant, dev environment. -->
 <!-- TODO: https://github.com/nais/nais-terraform-modules/blob/main/tenants/nav/naas.tf -->
 <!-- TODO: Where will nav-integration-test end up? -->
 
@@ -48,6 +48,6 @@ Make sure to dedicate time to watch the upgrade progress, and follow up on any r
 
 Make sure to inform the users when the upgrade has completed.
 
-Upgrading is done by changing `kafka_version` in the `naas.tf` file for nav tenant, prod environment:
+<!-- Upgrading is done by changing `kafka_version` in the `naas.tf` file for nav tenant, prod environment. -->
 <!-- TODO: https://github.com/nais/nais-terraform-modules/blob/main/tenants/nav/naas.tf -->
 <!-- TODO: Where will nav-infrastructure end up? -->
