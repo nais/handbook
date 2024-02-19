@@ -71,4 +71,4 @@ OpenTelemetry Collector implements the [OpenTelemetry protocol (OTLP)](https://o
 The OpenTelemetry Collector exposes the following endpoints:
 
 - `http://opentelemetry-collector-management-internal-collector.nais-system:4317` - OpenTelemetry Protocol (OTLP) endpoint for receiving traces, metrics, and logs from applications.
-- `https://collector-external.<tenant>.cloud.nais.io` - Internet exposed OTLP endpoint for receiving traces, metrics, and logs from applications running outside of nais.
+- `https://collector-internet.<tenant>.cloud.nais.io` - Internet exposed OTLP endpoint for receiving traces, metrics, and logs from applications running outside of nais.
