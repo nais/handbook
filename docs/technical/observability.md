@@ -8,9 +8,12 @@ The observability stack in nais consists of the following components:
 
 - [Alertmanager](https://prometheus.io/docs/alerting/alertmanager/)
 - [Grafana](https://grafana.com/)
+- [Grafana Agent](https://grafana.com/docs/grafana-cloud/agent/)
 - [Logging Operator](https://kube-logging.dev)
 - [Loki](https://grafana.com/oss/loki/)
+- [OpenTelemery Operator](https://opentelemetry.io/docs/operator/)
 - [OpenTelemetry Collector](https://opentelemetry.io/docs/collector/)
+- [Prometheus Operator](https://prometheus-operator.dev/)
 - [Prometheus](https://prometheus.io/)
 - [Tempo](https://grafana.com/oss/tempo/)
 
