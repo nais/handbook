@@ -23,7 +23,7 @@ The OpenTelemetry Collector is a vendor-agnostic, open-source telemetry collecto
 
 OpenTelemetry Collector implements the [OpenTelemetry protocol (OTLP)](https://opentelemetry.io/docs/specs/otlp/) which is a standard for transmitting telemetry data.
 
-=== "otlp"
+=== "Full otlp"
 
     ```mermaid
     graph LR
@@ -44,7 +44,7 @@ OpenTelemetry Collector implements the [OpenTelemetry protocol (OTLP)](https://o
       Prometheus -- query --> Grafana
     ```
 
-=== "traces only"
+=== "Traces only"
 
     ```mermaid
     graph LR
@@ -70,23 +70,26 @@ OpenTelemetry Collector implements the [OpenTelemetry protocol (OTLP)](https://o
 
 The OpenTelemetry Collector exposes the following endpoints:
 
-- `http://opentelemetry-management-collector:4317` - OpenTelemetry Protocol (OTLP) endpoint for receiving traces, metrics, and logs from Features.
-- `https://collector-internet.<tenant>.cloud.nais.io/otlp-http` - Internet exposed OTLP endpoint for receiving traces, metrics, and logs from Features running outside of nais.
+| Endpoint                                            | Description                                                   |
+| --------------------------------------------------- | ------------------------------------------------------------- |
+| `http://opentelemetry-management-collector:4317`    | Internal endpoint for features in nais-system namespace.      |
+| `https://collector-internet.<tenant>.cloud.nais.io` | Internet exposed endpoint for things running outside of nais. |
 
-Featurelikasjoner i Fasit kan du bruke følgende `Feature.yaml` config for å få riktig OpenTelemetry konfigurasjons:
+Fasit features can use environment values in `Feature.yaml` to get the correct OpenTelemetry config without hardcoding the endpoint.
 
-```yaml
-values:
-  observability.otelp.endpoint:
-    computed:
-      template: "{{ .Env.otel_otlp_endpoint }}"
-  observability.otelp.protocol:
-    computed:
-      template: "{{ .Env.otel_otlp_protocol }}"
-  observability.otelp.insecure:
-    computed:
-      template: "{{ .Env.otel_otlp_insecure }}"
-```
+??? example "Feature.yaml"
+    ```yaml
+    values:
+      observability.otelp.endpoint:
+        computed:
+          template: "{{ .Env.otel_otlp_endpoint }}"
+      observability.otelp.protocol:
+        computed:
+          template: "{{ .Env.otel_otlp_protocol }}"
+      observability.otelp.insecure:
+        computed:
+          template: "{{ .Env.otel_otlp_insecure }}"
+    ```
 
 ### Tenant Clusters
 
