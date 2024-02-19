@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://handbook.nais.io/technical/upgrading-kafka/">
+        <link rel="canonical" href="https://handbook.nais.io/technical/observability/">
       
       
-        <link rel="prev" href="../publications-media/">
+        <link rel="prev" href="../../social/the-great-outdoors/">
       
       
-        <link rel="next" href="../write-the-doc/">
+        <link rel="next" href="../overview/">
       
       
       <link rel="icon" href="../../assets/logo.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Procedure to follow when upgrading Kafka - NAIS Handbook</title>
+        <title>Observability Stack - NAIS Handbook</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#procedure-to-follow-when-upgrading-kafka" class="md-skip">
+        <a href="#observability-stack" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Procedure to follow when upgrading Kafka
+              Observability Stack
             
           </span>
         </div>
@@ -454,10 +454,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../observability/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Observability Stack
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -466,6 +486,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opentelemetry-collector" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenTelemetry Collector
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenTelemetry Collector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoints
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -538,30 +611,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Procedure to follow when upgrading Kafka
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../upgrading-kafka/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -570,53 +623,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-upgrade-in-dev-nais-dev-first" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Upgrade in dev-nais-dev first
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-upgrade-development-environments" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Upgrade development environments
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-upgrade-production-environments" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Upgrade production environments
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -942,29 +948,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-upgrade-in-dev-nais-dev-first" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Upgrade in dev-nais-dev first
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-upgrade-development-environments" class="md-nav__link">
+  <a href="#opentelemetry-collector" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Upgrade development environments
+      OpenTelemetry Collector
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenTelemetry Collector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoints
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#3-upgrade-production-environments" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Upgrade production environments
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -983,7 +995,7 @@
                   
 
   
-    <a href="https://github.com/nais/handbook/edit/main/docs/technical/upgrading-kafka.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/nais/handbook/edit/main/docs/technical/observability.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -991,42 +1003,69 @@
   
 
 
-<h1 id="procedure-to-follow-when-upgrading-kafka">Procedure to follow when upgrading Kafka<a class="headerlink" href="#procedure-to-follow-when-upgrading-kafka" title="Permanent link">&para;</a></h1>
-<p>Kafka is an important service in NAV, and problems that affect Kafka affects many teams.
-For that reason we have decided to describe the procedure for upgrading Kafka in detail, to have a playlist to refer to.</p>
-<p>The upgrade should be properly announced in #nais-announcements, with a copy to relevant channels, either by link or by copied text.
-For NAV, #kafka is a relevant channel.
-For any other tenants that use Kafka, the tenant will typically have one support channel which should get a copy of the announcement.</p>
-<h2 id="1-upgrade-in-dev-nais-dev-first">1. Upgrade in dev-nais-dev first<a class="headerlink" href="#1-upgrade-in-dev-nais-dev-first" title="Permanent link">&para;</a></h2>
-<p>The dev-nais-dev tenant is our testing tenant, and allows testing platform changes without affecting developer teams.
-By upgrading in dev-nais-dev first, we can check that kafka-canary continues to work, and optionally run additional tests to verify that everything works.</p>
-<p>It is considered enough to check that the kafka-canary continues to work and handles the upgrade process without major issues.</p>
-<p>Once everything is confirmed to work in dev-nais-dev, rolling out to other tenants/clusters can be planned.</p>
-<p>Upgrading is done by changing <code>kafka_version</code> in the <code>naas.tf</code> file for <a href="https://github.com/nais/nais-terraform-modules/blob/main/tenants/dev-nais/naas.tf">dev-nais tenant, dev environment</a>.</p>
-<h2 id="2-upgrade-development-environments">2. Upgrade development environments<a class="headerlink" href="#2-upgrade-development-environments" title="Permanent link">&para;</a></h2>
-<p>Currently, NAV is the only tenant that uses Kafka, but we have two projects that fall in this category:</p>
+<h1 id="observability-stack">Observability Stack<a class="headerlink" href="#observability-stack" title="Permanent link">&para;</a></h1>
+<p>This document describes the technical observability stack for nais-system applications.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The observability stack in nais consists of the following components:</p>
 <ul>
-<li>nav-dev</li>
-<li>nav-integration-test</li>
+<li><a href="https://prometheus.io/docs/alerting/alertmanager/">Alertmanager</a></li>
+<li><a href="https://grafana.com/">Grafana</a></li>
+<li><a href="https://kube-logging.dev">Logging Operator</a></li>
+<li><a href="https://grafana.com/oss/loki/">Loki</a></li>
+<li><a href="https://opentelemetry.io/docs/collector/">OpenTelemetry Collector</a></li>
+<li><a href="https://prometheus.io/">Prometheus</a></li>
+<li><a href="https://grafana.com/oss/tempo/">Tempo</a></li>
 </ul>
-<p>The upgrade should be announced clearly, with a request for teams to check their applications during the upgrade and after.</p>
-<p>After the upgrade, teams will have 1 week to report any issues to the nais-team, who can decide if the upgrade in production should be held back or go ahead.</p>
-<!-- Upgrading is done by changing `kafka_version` in the `naas.tf` file for nav tenant, dev environment. -->
-<!-- TODO: https://github.com/nais/nais-terraform-modules/blob/main/tenants/nav/naas.tf -->
-<!-- TODO: Where will nav-integration-test end up? -->
+<h2 id="opentelemetry-collector">OpenTelemetry Collector<a class="headerlink" href="#opentelemetry-collector" title="Permanent link">&para;</a></h2>
+<p>The OpenTelemetry Collector is a vendor-agnostic, open-source telemetry collector that can be used to collect, process, and export telemetry data. It is a powerful tool that can be used to collect logs, metrics, and traces from a variety of sources and export them to a variety of destinations.</p>
+<p>OpenTelemetry Collector implements the <a href="https://opentelemetry.io/docs/specs/otlp/">OpenTelemetry protocol (OTLP)</a> which is a standard for transmitting telemetry data.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">otlp</label><label for="__tabbed_1_2">traces only</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>graph LR
+  App[Application]
+  OtelCollector[Collector]
+  Loki
+  Prometheus
+  Tempo
 
-<h2 id="3-upgrade-production-environments">3. Upgrade production environments<a class="headerlink" href="#3-upgrade-production-environments" title="Permanent link">&para;</a></h2>
-<p>There are two projects:</p>
+  App -- otlp --&gt; OtelCollector
+
+  OtelCollector -- traces --&gt; Tempo
+  OtelCollector -- logs --&gt; Loki
+  OtelCollector -- metrics --&gt; Prometheus
+
+  Tempo -- query --&gt; Grafana
+  Loki -- query --&gt; Grafana
+  Prometheus -- query --&gt; Grafana</code></pre>
+</div>
+<div class="tabbed-block">
+<pre class="mermaid"><code>graph LR
+  App[Application]
+  OtelCollector[Collector]
+  LoggingOperator
+  Loki
+  Prometheus
+  Tempo
+
+  App -- traces --&gt; OtelCollector
+  App -- stdout/stderr --&gt; LoggingOperator
+  LoggingOperator -- forward --&gt; Loki
+  App -- scrape --&gt; Prometheus
+  OtelCollector -- traces --&gt; Tempo
+
+  Tempo -- query --&gt; Grafana
+  Loki -- query --&gt; Grafana
+  Prometheus -- query --&gt; Grafana</code></pre>
+</div>
+</div>
+</div>
+<h3 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">&para;</a></h3>
+<p>The OpenTelemetry Collector exposes the following endpoints:</p>
 <ul>
-<li>nav-prod</li>
-<li>nav-infrastructure</li>
+<li><code>http://opentelemetry-collector-management-internal-collector.nais-system:4317</code> - OpenTelemetry Protocol (OTLP) endpoint for receiving traces, metrics, and logs from applications.</li>
+<li><code>https://collector-external.&lt;tenant&gt;.cloud.nais.io</code> - Internet exposed OTLP endpoint for receiving traces, metrics, and logs from applications running outside of nais.</li>
 </ul>
-<p>When announcing the upgrade, request that teams that haven't checked their dev environment do so now, and allow for a few hours before starting the upgrade.
-Make sure to dedicate time to watch the upgrade progress, and follow up on any reports of problems.</p>
-<p>Make sure to inform the users when the upgrade has completed.</p>
-<!-- Upgrading is done by changing `kafka_version` in the `naas.tf` file for nav tenant, prod environment. -->
-<!-- TODO: https://github.com/nais/nais-terraform-modules/blob/main/tenants/nav/naas.tf -->
-<!-- TODO: Where will nav-infrastructure end up? -->
 
 
 
@@ -1090,7 +1129,7 @@ Make sure to dedicate time to watch the upgrade progress, and follow up on any r
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../publications-media/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Publications &amp; Media">
+          <a href="../../social/the-great-outdoors/" class="md-footer__link md-footer__link--prev" aria-label="Previous: The Great Outdoors">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1100,20 +1139,20 @@ Make sure to dedicate time to watch the upgrade progress, and follow up on any r
                 Previous
               </span>
               <div class="md-ellipsis">
-                Publications & Media
+                The Great Outdoors
               </div>
             </div>
           </a>
         
         
           
-          <a href="../write-the-doc/" class="md-footer__link md-footer__link--next" aria-label="Next: Authoring the NAIS docs">
+          <a href="../overview/" class="md-footer__link md-footer__link--next" aria-label="Next: NAIS Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Authoring the NAIS docs
+                NAIS Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">
