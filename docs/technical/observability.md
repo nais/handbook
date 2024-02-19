@@ -93,7 +93,12 @@ values:
 All nais clusters have a dedicated OpenTelemetry Collector instance running in the `nais-system`. Tenant clusters forwards to management cluster using the `otlp-http` endpoint so that all telemetry data from nais-system is collected in a single place.
 
 ```mermaid
-graph TD
+---
+config:
+    flowchart:
+        defaultRenderer: elk
+---
+flowchart
   subgraph "management"[Management Cluster]
     subgraph "management-nais-system"[nais-system]
       OtelCollector[Management Collector]
@@ -107,14 +112,14 @@ graph TD
   subgraph "dev"[Tenant Dev Cluster]
     subgraph "dev-nais-system"[nais-system]
       DevFeature[Feature]
-      DevOtelC[Management\nCollector]
+      DevOtelC[Management Collector]
     end
   end
 
   subgraph "prod"[Tenant Prod Cluster]
     subgraph "prod-nais-system"[nais-system]
       ProdFeature[Feature]
-      ProdOtelC[Management\nCollector]
+      ProdOtelC[Management Collector]
     end
   end
 
