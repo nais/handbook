@@ -530,6 +530,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tenant-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tenant Clusters
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -975,6 +984,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tenant-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tenant Clusters
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1004,7 +1022,7 @@
 
 
 <h1 id="observability-stack">Observability Stack<a class="headerlink" href="#observability-stack" title="Permanent link">&para;</a></h1>
-<p>This document describes the technical observability stack for nais-system applications.</p>
+<p>This document describes the technical observability stack for nais-system Features.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The observability stack in nais consists of the following components:</p>
 <ul>
@@ -1026,13 +1044,13 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <pre class="mermaid"><code>graph LR
-  App[Application]
+  Feature[Feature]
   OtelCollector[Collector]
   Loki
   Prometheus
   Tempo
 
-  App -- otlp --&gt; OtelCollector
+  Feature -- otlp --&gt; OtelCollector
 
   OtelCollector -- traces --&gt; Tempo
   OtelCollector -- logs --&gt; Loki
@@ -1044,17 +1062,17 @@
 </div>
 <div class="tabbed-block">
 <pre class="mermaid"><code>graph LR
-  App[Application]
+  Feature[Feature]
   OtelCollector[Collector]
   LoggingOperator
   Loki
   Prometheus
   Tempo
 
-  App -- traces --&gt; OtelCollector
-  App -- stdout/stderr --&gt; LoggingOperator
+  Feature -- traces --&gt; OtelCollector
+  Feature -- stdout/stderr --&gt; LoggingOperator
   LoggingOperator -- forward --&gt; Loki
-  App -- scrape --&gt; Prometheus
+  Feature -- scrape --&gt; Prometheus
   OtelCollector -- traces --&gt; Tempo
 
   Tempo -- query --&gt; Grafana
@@ -1066,10 +1084,10 @@
 <h3 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">&para;</a></h3>
 <p>The OpenTelemetry Collector exposes the following endpoints:</p>
 <ul>
-<li><code>http://opentelemetry-management-collector:4317</code> - OpenTelemetry Protocol (OTLP) endpoint for receiving traces, metrics, and logs from applications.</li>
-<li><code>https://collector-internet.&lt;tenant&gt;.cloud.nais.io/otlp-http</code> - Internet exposed OTLP endpoint for receiving traces, metrics, and logs from applications running outside of nais.</li>
+<li><code>http://opentelemetry-management-collector:4317</code> - OpenTelemetry Protocol (OTLP) endpoint for receiving traces, metrics, and logs from Features.</li>
+<li><code>https://collector-internet.&lt;tenant&gt;.cloud.nais.io/otlp-http</code> - Internet exposed OTLP endpoint for receiving traces, metrics, and logs from Features running outside of nais.</li>
 </ul>
-<p>Applikasjoner i Fasit kan du bruke følgende <code>Feature.yaml</code> config for å få riktig OpenTelemetry konfigurasjons:</p>
+<p>Featurelikasjoner i Fasit kan du bruke følgende <code>Feature.yaml</code> config for å få riktig OpenTelemetry konfigurasjons:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">values</span><span class="p">:</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">observability.otelp.endpoint</span><span class="p">:</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">computed</span><span class="p">:</span>
@@ -1081,6 +1099,43 @@
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">computed</span><span class="p">:</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">template</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">.Env.otel_otlp_insecure</span><span class="nv"> </span><span class="s">}}&quot;</span>
 </code></pre></div>
+<h3 id="tenant-clusters">Tenant Clusters<a class="headerlink" href="#tenant-clusters" title="Permanent link">&para;</a></h3>
+<p>All nais clusters have a dedicated OpenTelemetry Collector instance running in the <code>nais-system</code>. Tenant clusters forwards to management cluster using the <code>otlp-http</code> endpoint so that all telemetry data from nais-system is collected in a single place.</p>
+<pre class="mermaid"><code>graph TD
+  subgraph "management"[Management Cluster]
+    subgraph "management-nais-system"[nais-system]
+      OtelCollector[Management Collector]
+      Tempo
+      Loki
+      Prometheus
+      Feature[Feature]
+    end
+  end
+
+  subgraph "dev"[Tenant Dev Cluster]
+    subgraph "dev-nais-system"[nais-system]
+      DevFeature[Feature]
+      DevOtelC[Management\nCollector]
+    end
+  end
+
+  subgraph "prod"[Tenant Prod Cluster]
+    subgraph "prod-nais-system"[nais-system]
+      ProdFeature[Feature]
+      ProdOtelC[Management\nCollector]
+    end
+  end
+
+  Feature -- otlp-grpc --&gt; OtelCollector
+
+  DevFeature -- otlp-grpc --&gt; DevOtelC
+  ProdFeature -- otlp-grpc --&gt; ProdOtelC
+  DevOtelC -- otlp-http --&gt; OtelCollector
+  ProdOtelC -- otlp-http --&gt; OtelCollector
+
+  OtelCollector -- traces --&gt; Tempo
+  OtelCollector -- logs --&gt; Loki
+  OtelCollector -- metrics --&gt; Prometheus</code></pre>
 
 
 
@@ -1103,7 +1158,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-02-19T13:42:38+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-02-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-02-19T13:53:21+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-02-19</span>
   </span>
 
     
@@ -1113,7 +1168,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-02-19T13:42:38+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-02-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-02-19T13:53:21+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-02-19</span>
   </span>
 
     
