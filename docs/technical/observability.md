@@ -1,6 +1,6 @@
 # Observability Stack
 
-This document describes the technical observability stack for nais-system applications.
+This document describes the technical observability stack for nais-system Features.
 
 ## Overview
 
@@ -27,13 +27,13 @@ OpenTelemetry Collector implements the [OpenTelemetry protocol (OTLP)](https://o
 
     ```mermaid
     graph LR
-      App[Application]
+      Feature[Feature]
       OtelCollector[Collector]
       Loki
       Prometheus
       Tempo
 
-      App -- otlp --> OtelCollector
+      Feature -- otlp --> OtelCollector
 
       OtelCollector -- traces --> Tempo
       OtelCollector -- logs --> Loki
@@ -48,17 +48,17 @@ OpenTelemetry Collector implements the [OpenTelemetry protocol (OTLP)](https://o
 
     ```mermaid
     graph LR
-      App[Application]
+      Feature[Feature]
       OtelCollector[Collector]
       LoggingOperator
       Loki
       Prometheus
       Tempo
 
-      App -- traces --> OtelCollector
-      App -- stdout/stderr --> LoggingOperator
+      Feature -- traces --> OtelCollector
+      Feature -- stdout/stderr --> LoggingOperator
       LoggingOperator -- forward --> Loki
-      App -- scrape --> Prometheus
+      Feature -- scrape --> Prometheus
       OtelCollector -- traces --> Tempo
 
       Tempo -- query --> Grafana
@@ -70,10 +70,10 @@ OpenTelemetry Collector implements the [OpenTelemetry protocol (OTLP)](https://o
 
 The OpenTelemetry Collector exposes the following endpoints:
 
-- `http://opentelemetry-management-collector:4317` - OpenTelemetry Protocol (OTLP) endpoint for receiving traces, metrics, and logs from applications.
-- `https://collector-internet.<tenant>.cloud.nais.io/otlp-http` - Internet exposed OTLP endpoint for receiving traces, metrics, and logs from applications running outside of nais.
+- `http://opentelemetry-management-collector:4317` - OpenTelemetry Protocol (OTLP) endpoint for receiving traces, metrics, and logs from Features.
+- `https://collector-internet.<tenant>.cloud.nais.io/otlp-http` - Internet exposed OTLP endpoint for receiving traces, metrics, and logs from Features running outside of nais.
 
-Applikasjoner i Fasit kan du bruke følgende `Feature.yaml` config for å få riktig OpenTelemetry konfigurasjons:
+Featurelikasjoner i Fasit kan du bruke følgende `Feature.yaml` config for å få riktig OpenTelemetry konfigurasjons:
 
 ```yaml
 values:
@@ -86,4 +86,46 @@ values:
   observability.otelp.insecure:
     computed:
       template: "{{ .Env.otel_otlp_insecure }}"
+```
+
+### Tenant Clusters
+
+All nais clusters have a dedicated OpenTelemetry Collector instance running in the `nais-system`. Tenant clusters forwards to management cluster using the `otlp-http` endpoint so that all telemetry data from nais-system is collected in a single place.
+
+```mermaid
+graph TD
+  subgraph "management"[Management Cluster]
+    subgraph "management-nais-system"[nais-system]
+      OtelCollector[Management Collector]
+      Tempo
+      Loki
+      Prometheus
+      Feature[Feature]
+    end
+  end
+
+  subgraph "dev"[Tenant Dev Cluster]
+    subgraph "dev-nais-system"[nais-system]
+      DevFeature[Feature]
+      DevOtelC[Management\nCollector]
+    end
+  end
+
+  subgraph "prod"[Tenant Prod Cluster]
+    subgraph "prod-nais-system"[nais-system]
+      ProdFeature[Feature]
+      ProdOtelC[Management\nCollector]
+    end
+  end
+
+  Feature -- otlp-grpc --> OtelCollector
+
+  DevFeature -- otlp-grpc --> DevOtelC
+  ProdFeature -- otlp-grpc --> ProdOtelC
+  DevOtelC -- otlp-http --> OtelCollector
+  ProdOtelC -- otlp-http --> OtelCollector
+
+  OtelCollector -- traces --> Tempo
+  OtelCollector -- logs --> Loki
+  OtelCollector -- metrics --> Prometheus
 ```
