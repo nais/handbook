@@ -98,6 +98,7 @@ config:
     flowchart:
         defaultRenderer: elk
 ---
+%%{init: {'theme':'dark'}}%%
 flowchart
   subgraph "management"[Management Cluster]
     subgraph "management-nais-system"[nais-system]
