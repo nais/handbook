@@ -16,7 +16,7 @@ jobs:
         with:
           python-version-file: '.python-version'
       - name: Setup Poetry
-        uses: Gr1N/setup-poetry@v8
+        uses: Gr1N/setup-poetry@v9
       - name: Install all dependencies
         run: poetry install
       - name: Build
