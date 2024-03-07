@@ -78,3 +78,20 @@ When the user is given a choice, we want to show both paths in the documentation
   === "macOS"
     macOS specific stuff
 ```
+
+### Links
+
+With the new structure links play a big part in the documentation. We want to make sure that the links are consistent and easy to understand. We use the following structure for links:
+
+
+| Type of Link  | Icon                        | Link                                                       |
+| ------------- | --------------------------- | ---------------------------------------------------------- |
+| Explanation   | :bulb:                      | `[:bulb: Learn more about ...](../)`                       |
+| How-to guide  | :dart:                      | `[:dart: Learn how to ...](../)`                           |
+| Reference     | :computer:                  | `[:computer: Reference for ](../)`                         |
+| Tutorial      | :rocket:                    | `[:rocket: Tutorial for ...](../)`                         |
+| Prometheus    | :simple-prometheus:         | `[:simple-prometheus: Open Prometheus](../)`               |
+| Grafana       | :simple-grafana:            | `[:simple-grafana: Open Grafana](../)`                     |
+| External link | :octicons-link-external-24: | `[:octicons-link-external-24: External link](https://...)` |
+
+
