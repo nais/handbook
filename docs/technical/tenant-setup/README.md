@@ -154,61 +154,6 @@ In [Google Admin](https://admin.google.com) create a group named `gke-security-g
 This group is used to manage access to the kubernetes clusters, and will be managed by _teams_.
 Make sure the group has the **View Members** permission selected for **Group Members**.
 
-### Custom organization role
-
-[Config connector](https://cloud.google.com/config-connector/docs/overview) requires a service user in each of the team projects that will be created.
-We want to restrict this user's access to a bare minimum using a custom role.
-We cannot define custom roles at the folder level. Since we need to use a custom role for every project within the nais folder, we define the custom role at the organization level.
-
-Save the content below to a .yaml file
-
-<details>
-<summary>Click to see file content</summary>
-``` yaml
-title: "NAIS Custom CNRM Role"
-description: "Custom role for namespaced cnrm users to allow creation of resources"
-stage: "GA"
-includedPermissions:
-- cloudkms.cryptoKeys.create
-- cloudkms.cryptoKeys.get
-- cloudkms.cryptoKeys.update
-- cloudkms.keyRings.create
-- cloudkms.keyRings.get
-- cloudkms.keyRings.getIamPolicy
-- cloudkms.keyRings.setIamPolicy
-- cloudsql.databases.create
-- cloudsql.databases.delete
-- cloudsql.databases.get
-- cloudsql.databases.list
-- cloudsql.databases.update
-- cloudsql.instances.create
-- cloudsql.instances.delete
-- cloudsql.instances.get
-- cloudsql.instances.list
-- cloudsql.instances.update
-- cloudsql.users.create
-- cloudsql.users.delete
-- cloudsql.users.list
-- cloudsql.users.update
-- resourcemanager.projects.get
-- resourcemanager.projects.getIamPolicy
-- resourcemanager.projects.setIamPolicy
-- storage.buckets.create
-- storage.buckets.get
-- storage.buckets.getIamPolicy
-- storage.buckets.list
-- storage.buckets.setIamPolicy
-- storage.buckets.update
-- storage.buckets.delete
-```
-</details>
-
-Run the following command to apply it to your organization:
-
-```bash
-gcloud iam roles create CustomCNRMRole --organization=<your org ID>  --file=<your file name>.yaml
-```
-
 ## Highly recommended settings 
 
 ### Log location
