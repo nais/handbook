@@ -94,4 +94,29 @@ With the new structure links play a big part in the documentation. We want to ma
 | Grafana       | :simple-grafana:            | `[:simple-grafana: Open Grafana](../)`                     |
 | External link | :octicons-link-external-24: | `[:octicons-link-external-24: External link](https://...)` |
 
+### Tags
 
+We use tags to categorize and group the content.
+This allows for finding related pages by tag.
+Tags are written in the front matter of the markdown file:
+
+```markdown
+---
+tags: [tag1, tag2]
+---
+
+# Title
+
+...
+```
+
+Tags should be in lowercase.
+
+Tag the form of the page. The following tags are used:
+
+| Form         | Tag           |
+|--------------|---------------|
+| Explanation  | `explanation` |
+| How-to guide | `guide`       |
+| Reference    | `reference`   |
+| Tutorial     | `tutorial`    |
