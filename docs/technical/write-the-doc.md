@@ -88,7 +88,7 @@ With the new structure links play a big part in the documentation. We want to ma
 | ------------- | --------------------------- | ---------------------------------------------------------- |
 | Explanation   | :bulb:                      | `[:bulb: Learn more about ...](../)`                       |
 | How-to guide  | :dart:                      | `[:dart: Learn how to ...](../)`                           |
-| Reference     | :computer:                  | `[:computer: Reference for ](../)`                         |
+| Reference     | :books:                     | `[:books: Reference for ](../)`                         |
 | Tutorial      | :rocket:                    | `[:rocket: Tutorial for ...](../)`                         |
 | Prometheus    | :simple-prometheus:         | `[:simple-prometheus: Open Prometheus](../)`               |
 | Grafana       | :simple-grafana:            | `[:simple-grafana: Open Grafana](../)`                     |
