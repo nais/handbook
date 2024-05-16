@@ -30,9 +30,9 @@ some-service/
 ├─ .pages
 ```
 
-???+ note "Simple reference structure"
+???+ note "Collapsed reference structure"
 
-    If the service contains a single reference page, and is likely to remain that way, you can skip the `reference` folder and place the reference page directly in the service folder as `reference.md`.
+    If the service contains a single reference page, name the page `README.md`. This will collapse the directory structure in the navigation menu.
 
 
 ### Honest exceptions
@@ -120,10 +120,10 @@ We want to make sure that the links are consistent and easy to understand. We us
 
 
 | Type of Link  | Icon                        | Link                                                       |
-| ------------- | --------------------------- | ---------------------------------------------------------- |
+|---------------|-----------------------------|------------------------------------------------------------|
 | Explanation   | :bulb:                      | `[:bulb: Learn more about ...](../)`                       |
 | How-to guide  | :dart:                      | `[:dart: Learn how to ...](../)`                           |
-| Reference     | :books:                     | `[:books: Reference for ](../)`                         |
+| Reference     | :books:                     | `[:books: Reference for ](../)`                            |
 | Tutorial      | :rocket:                    | `[:rocket: Tutorial for ...](../)`                         |
 | External link | :octicons-link-external-24: | `[:octicons-link-external-24: External link](https://...)` |
 | Prometheus    | :simple-prometheus:         | `[:simple-prometheus: Open Prometheus](../)`               |
@@ -147,8 +147,11 @@ tags: [tag1, tag2]
 
 #### Which tags should I use?
 
-We typically always tag the diataxis-type the page classifies as with these mappings:
+Tags should group multiple related pages together.
+Avoid using tags that only apply to a single page.
+This helps keeping the Tags-overview page cleaner.
 
+We typically always tag the diataxis-type the page classifies as with these mappings:
 
 | Form         | Tag           |
 |--------------|---------------|
@@ -156,11 +159,27 @@ We typically always tag the diataxis-type the page classifies as with these mapp
 | How-to guide | `how-to`      |
 | Reference    | `reference`   |
 | Tutorial     | `tutorial`    |
+ 
+Tag each page with the parent category or service that it belongs to.
 
-Additionally we typically tag the page with the parent category. E.g. if you are writing a `How to`-guide under the 'metrics' category, you would tag it with `metrics` and `how-to`. We would then omit the `observability`-tag, as it would be very crowded. 
+For example, these would be the tags for `metrics` and `tracing` in the `observability` category:
 
-We try to avoid having tags with only one page, as they are typically not so helpful. It also help to keep the Tags-overview page cleaner.
-
+```text
+observability/
+├─ README.md           # tags: [observability, explanation]
+├─ metrics/
+│  ├─ README.md        # tags: [observability, metrics, explanation]
+│  ├─ how-to/
+|  |  ├─ how-to1.md    # tags: [metrics, how-to]
+|  ├─ reference/
+│  |  ├─ spec.md       # tags: [metrics, reference]
+├─ tracing/
+│  ├─ README.md        # tags: [observability, tracing, explanation]
+│  ├─ how-to/
+|  |  ├─ how-to1.md    # tags: [tracing, how-to]
+|  ├─ reference/
+│  |  ├─ spec.md       # tags: [tracing, reference]
+```
 
 ## Diataxis ([https://diataxis.fr/](https://diataxis.fr/))
 
