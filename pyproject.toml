@@ -11,7 +11,7 @@ Pygments = "^2.16.1"
 pymdown-extensions = "^10.8"
 mkdocs-material = "^9.5.18"
 mkdocs-awesome-pages-plugin = "^2.9.2"
-mkdocs-git-revision-date-localized-plugin = "^1.2.5"
+mkdocs-git-revision-date-localized-plugin = "^1.2.6"
 
 [tool.poetry.dev-dependencies]
 
