@@ -49,7 +49,7 @@ The `.pages` file is used to define overrides and customizations to the titles a
 
 A conventional `.pages` file looks like this:
 
-```text
+```text title=".pages"
 title: My overridden title
 nav:
 - README.md
@@ -82,11 +82,46 @@ When the documentation is built, this will be replaced with the relevant tenant 
 
 For even more convenience, we have a `<<tenant_url("service")>>` function that will replace the `service` with the relevant URL for the service and create a full tenant URL to the service. An optional second parameter can be used to specify the path to the service eg. `<<tenant_url("grafana", "explore")>>`
 
+### Tenant-specific content
+
+Some sections are specific for a given tenant:
+
+```markdown title="page.md"
+{%- if tenant() == "nav" %}
+Tenant-specific content
+{%- endif %}
+```
+
+...or for multiple tenants:
+
+```markdown title="page.md"
+{%- if tenant() in ("nav", "dev-nais") %}
+Tenant-specific content
+{%- endif %}
+```
+
+### Tenant-specific pages
+
+If an entire page is specific to a tenant, specify the `conditional` field in the markdown front matter:
+
+```markdown title="page.md"
+---
+conditional: [tenant, <tenant-name>]
+---
+
+# Title
+
+...
+```
+
+- `tenant` marks the page as tenant-specific.
+- `<tenant-name>` specifies which tenant that the page should be shown for.
+
 ### Code blocks
 
-When we use code blocks, set the correct language for syntax highlighting. Define a title and highlight lines if needed.
+When using code blocks, set the correct language for syntax highlighting. Define a title and highlight lines if needed.
 
-````markdown
+````markdown title="page.md"
 
 ```yaml title="describe content / filename" hl_lines="6-8 11"
 apiVersion: nais.io/v1alpha1
@@ -99,7 +134,7 @@ kind: Application
 
 When the user is given a choice, we want to show both paths in the documentation. For example programming language, OS or different methods
 
-```markdown
+```markdown title="page.md"
 === "Linux"
 
   linux specific stuff
@@ -135,7 +170,7 @@ We use tags to categorize and group the content to make it easier to find, as an
 
 Tags are written in the front matter of the markdown file like so:
 
-```markdown
+```markdown title="page.md"
 ---
 tags: [tag1, tag2]
 ---
