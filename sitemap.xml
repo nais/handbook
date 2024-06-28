@@ -2,82 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://handbook.nais.io/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/administrative/fixtures/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/administrative/slack/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/social/the-great-outdoors/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/doc-guidelines/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/observability/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/overview/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/production-ready/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/publications-media/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/upgrading-kafka/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/tenant-setup/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/tenant-setup/addons/azure-ad/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/tenant-setup/addons/digdir/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/tenant-setup/addons/tokenx/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/welcome/nais-manifest-eng/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://handbook.nais.io/welcome/nais-sponsor/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-06-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
