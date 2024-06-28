@@ -22,10 +22,9 @@ Upgrading is done by changing `kafka_version` in the `naas.tf` file for [dev-nai
 
 ## 2. Upgrade development environments
 
-Currently, NAV is the only tenant that uses Kafka, but we have two projects that fall in this category:
+Currently, NAV is the only tenant that uses Kafka, but we have one project that fall in this category:
 
 - nav-dev
-- nav-integration-test
 
 The upgrade should be announced clearly, with a request for teams to check their applications during the upgrade and after.
 
@@ -33,7 +32,6 @@ After the upgrade, teams will have 1 week to report any issues to the nais-team,
 
 <!-- Upgrading is done by changing `kafka_version` in the `naas.tf` file for nav tenant, dev environment. -->
 <!-- TODO: https://github.com/nais/nais-terraform-modules/blob/main/tenants/nav/naas.tf -->
-<!-- TODO: Where will nav-integration-test end up? -->
 
 
 ## 3. Upgrade production environments
