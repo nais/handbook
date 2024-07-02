@@ -180,6 +180,21 @@ tags: [tag1, tag2]
 ...
 ```
 
+### GCP only features
+
+Features that are only available in GCP clusters should preferably be marked in a consistent way.
+
+For that purpose, a macro is available to add a warning in the text:
+
+```markdown title="page.md"
+# Aiven Redis
+
+<<gcp_only("Aiven Redis")>>
+
+Aiven Redis is ...
+```
+
+
 #### Which tags should I use?
 
 Tags should group multiple related pages together.
