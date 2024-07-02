@@ -164,6 +164,21 @@ We want to make sure that the links are consistent and easy to understand. We us
 | Prometheus    | :simple-prometheus:         | `[:simple-prometheus: Open Prometheus](../)`               |
 | Grafana       | :simple-grafana:            | `[:simple-grafana: Open Grafana](../)`                     |
 
+### GCP only features
+
+Features that are only available in GCP clusters should preferably be marked in a consistent way.
+
+For that purpose, a macro is available to add a warning in the text:
+
+```markdown title="page.md"
+# Aiven Redis
+
+<<gcp_only("Aiven Redis")>>
+
+Aiven Redis is ...
+```
+
+
 ### Tags
 
 We use tags to categorize and group the content to make it easier to find, as an alternative to the navigation menu and search.
@@ -179,21 +194,6 @@ tags: [tag1, tag2]
 
 ...
 ```
-
-### GCP only features
-
-Features that are only available in GCP clusters should preferably be marked in a consistent way.
-
-For that purpose, a macro is available to add a warning in the text:
-
-```markdown title="page.md"
-# Aiven Redis
-
-<<gcp_only("Aiven Redis")>>
-
-Aiven Redis is ...
-```
-
 
 #### Which tags should I use?
 
