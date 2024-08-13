@@ -61,10 +61,12 @@ I'm going to use `detsombetyrnoe.no` as an example.
       secretName: wc-detsombetyrnoe-no-tls
     ```
 
-4. After the certificate has been approved by Let's encrypt, you need to notify `Naiserator` about your certificate secret `wc-detsombetyrnoe-no-tls`.
+4. After the certificate has been approved by Let's encrypt, you need to notify `loadbalancer` about your certificate secret `wc-detsombetyrnoe-no-tls`.
+   Go to [Fasit](https://fasit.nais.io) > Your env > loadbalancer, and add your secret name to the `Certificates` list.
+5. Then you need to inform `Naiserator` about the new ingress, `detsombetyrnoe.no`.
    Go to [Fasit](https://fasit.nais.io) > Your env > Naiserator, and add your secret name to the `Extra external hosts` list.
-5. Ask the user to add their new ingress to their `nais.yaml`.
-6. Success?
+6. Ask the user to add their new ingress to their `nais.yaml`.
+7. Success?
 
 ### Subdomains? Yeah, but manually...
 
