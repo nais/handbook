@@ -13,7 +13,9 @@ I'm going to use `detsombetyrnoe.no` as an example.
 
 1. Ask the secops team do add the following to the domain
 
-       _acme-challenge.detsombetyrnoe.no  IN  CNAME  _acme-challenge.detsombetyrnoe.inter.nav.no.
+   ```
+   _acme-challenge.detsombetyrnoe.no  IN  CNAME  _acme-challenge.detsombetyrnoe.inter.nav.no.
+   ```
 
 2. Create an Kubernetes `Issuer`:
 
