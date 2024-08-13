@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://handbook.nais.io/technical/upgrading-kafka/">
+        <link rel="canonical" href="https://handbook.nais.io/technical/external-ingress/">
       
       
-        <link rel="prev" href="../publications-media/">
+        <link rel="prev" href="../doc-guidelines/">
       
       
-        <link rel="next" href="../tenant-setup/">
+        <link rel="next" href="../observability/">
       
       
       <link rel="icon" href="../../assets/logo.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Procedure to follow when upgrading Kafka - NAIS Handbook</title>
+        <title>External ingress - NAIS Handbook</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#procedure-to-follow-when-upgrading-kafka" class="md-skip">
+        <a href="#external-ingress" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Procedure to follow when upgrading Kafka
+              External ingress
             
           </span>
         </div>
@@ -477,10 +477,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../external-ingress/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    External ingress
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -489,6 +509,50 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-external-ingress-up-and-running" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting external ingress up and running
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting external ingress up and running">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subdomains-yeah-but-manually" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subdomains? Yeah, but manually...
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -582,30 +646,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Procedure to follow when upgrading Kafka
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../upgrading-kafka/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -614,53 +658,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-upgrade-in-dev-nais-dev-first" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Upgrade in dev-nais-dev first
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-upgrade-development-environments" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Upgrade development environments
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-upgrade-production-environments" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Upgrade production environments
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -965,29 +962,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-upgrade-in-dev-nais-dev-first" class="md-nav__link">
+  <a href="#getting-external-ingress-up-and-running" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Upgrade in dev-nais-dev first
+      Getting external ingress up and running
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting external ingress up and running">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subdomains-yeah-but-manually" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subdomains? Yeah, but manually...
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2-upgrade-development-environments" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Upgrade development environments
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-upgrade-production-environments" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Upgrade production environments
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1006,7 +1000,7 @@
                   
 
   
-    <a href="https://github.com/nais/handbook/edit/main/docs/technical/upgrading-kafka.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/nais/handbook/edit/main/docs/technical/external-ingress.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1014,40 +1008,74 @@
   
 
 
-<h1 id="procedure-to-follow-when-upgrading-kafka">Procedure to follow when upgrading Kafka<a class="headerlink" href="#procedure-to-follow-when-upgrading-kafka" title="Permanent link">&para;</a></h1>
-<p>Kafka is an important service in NAV, and problems that affect Kafka affects many teams.
-For that reason we have decided to describe the procedure for upgrading Kafka in detail, to have a playlist to refer to.</p>
-<p>The upgrade should be properly announced in #nais-announcements, with a copy to relevant channels, either by link or by copied text.
-For NAV, #kafka is a relevant channel.
-For any other tenants that use Kafka, the tenant will typically have one support channel which should get a copy of the announcement.</p>
-<h2 id="1-upgrade-in-dev-nais-dev-first">1. Upgrade in dev-nais-dev first<a class="headerlink" href="#1-upgrade-in-dev-nais-dev-first" title="Permanent link">&para;</a></h2>
-<p>The dev-nais-dev tenant is our testing tenant, and allows testing platform changes without affecting developer teams.
-By upgrading in dev-nais-dev first, we can check that kafka-canary continues to work, and optionally run additional tests to verify that everything works.</p>
-<p>It is considered enough to check that the kafka-canary continues to work and handles the upgrade process without major issues.</p>
-<p>Once everything is confirmed to work in dev-nais-dev, rolling out to other tenants/clusters can be planned.</p>
-<p>Upgrading is done by changing <code>kafka_version</code> in the <code>naas.tf</code> file for <a href="https://github.com/nais/nais-terraform-modules/blob/main/tenants/dev-nais/naas.tf">dev-nais tenant, dev environment</a>.</p>
-<h2 id="2-upgrade-development-environments">2. Upgrade development environments<a class="headerlink" href="#2-upgrade-development-environments" title="Permanent link">&para;</a></h2>
-<p>Currently, NAV is the only tenant that uses Kafka, but we have one project that fall in this category:</p>
-<ul>
-<li>nav-dev</li>
-</ul>
-<p>The upgrade should be announced clearly, with a request for teams to check their applications during the upgrade and after.</p>
-<p>After the upgrade, teams will have 1 week to report any issues to the nais-team, who can decide if the upgrade in production should be held back or go ahead.</p>
-<!-- Upgrading is done by changing `kafka_version` in the `naas.tf` file for nav tenant, dev environment. -->
-<!-- TODO: https://github.com/nais/nais-terraform-modules/blob/main/tenants/nav/naas.tf -->
-
-<h2 id="3-upgrade-production-environments">3. Upgrade production environments<a class="headerlink" href="#3-upgrade-production-environments" title="Permanent link">&para;</a></h2>
-<p>There are two projects:</p>
-<ul>
-<li>nav-prod</li>
-<li>nav-infrastructure</li>
-</ul>
-<p>When announcing the upgrade, request that teams that haven't checked their dev environment do so now, and allow for a few hours before starting the upgrade.
-Make sure to dedicate time to watch the upgrade progress, and follow up on any reports of problems.</p>
-<p>Make sure to inform the users when the upgrade has completed.</p>
-<!-- Upgrading is done by changing `kafka_version` in the `naas.tf` file for nav tenant, prod environment. -->
-<!-- TODO: https://github.com/nais/nais-terraform-modules/blob/main/tenants/nav/naas.tf -->
-<!-- TODO: Where will nav-infrastructure end up? -->
+<h1 id="external-ingress">External ingress<a class="headerlink" href="#external-ingress" title="Permanent link">&para;</a></h1>
+<p>We support adding external ingresses that other controls using cert-manager.
+This is easily done by adding a <code>CNAME</code> record pointing to an ingress we control.</p>
+<p>Read more about delegated domains for dns01 at <a href="https://cert-manager.io/docs/configuration/acme/dns01/#delegated-domains-for-dns01">cert-manager.io/docs</a>.</p>
+<p>Underneath I've written the steps needed to take for us to get this working.</p>
+<h2 id="getting-external-ingress-up-and-running">Getting external ingress up and running<a class="headerlink" href="#getting-external-ingress-up-and-running" title="Permanent link">&para;</a></h2>
+<p>I'm going to use <code>detsombetyrnoe.no</code> as an example.</p>
+<ol>
+<li>
+<p>Ask the secops team do add the following to the domain</p>
+<p>_acme-challenge.detsombetyrnoe.no  IN  CNAME  _acme-challenge.detsombetyrnoe.inter.nav.no.</p>
+</li>
+<li>
+<p>Create an Kubernetes <code>Issuer</code>:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cert-manager.io/v1</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Issuer</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">detsombetyrnoe-no</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nais-system</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">acme</span><span class="p">:</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">frode.sundby@nav.no</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">preferredChain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ISRG Root X1</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">privateKeySecretRef</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloud-nais-io-account-key</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://acme-v02.api.letsencrypt.org/directory</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">solvers</span><span class="p">:</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">selector</span><span class="p">:</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="nt">dnsZones</span><span class="p">:</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">detsombetyrnoe.no</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">      </span><span class="nt">dns01</span><span class="p">:</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="nt">cnameStrategy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Follow</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="nt">cloudDNS</span><span class="p">:</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">          </span><span class="nt">hostedZoneName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">intern-nav-no</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">          </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nais-prod-020f</span>
+</code></pre></div>
+<p>You can use <code>dnsName</code> if you don't have subdomains, or if you want to be explicit.</p>
+<ol>
+<li>
+<p>Then create a Kubernetes <code>Certificate</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cert-manager.io/v1</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Certificate</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wc-detsombetyrnoe-no</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nais-system</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">dnsNames</span><span class="p">:</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">detsombetyrnoe.no</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;*.detsombetyrnoe.no&#39;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">issuerRef</span><span class="p">:</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">detsombetyrnoe-no</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wc-detsombetyrnoe-no-tls</span>
+</code></pre></div>
+</li>
+<li>
+<p>After the certificate has been approved by Let's encrypt, you need to notify <code>Naiserator</code> about your certificate secret <code>wc-detsombetyrnoe-no-tls</code>.
+   Go to <a href="https://fasit.nais.io">Fasit</a> &gt; Your env &gt; Naiserator, and add your secret name to the <code>Extra external hosts</code> list.</p>
+</li>
+<li>Ask the user to add their new ingress to their <code>nais.yaml</code>.</li>
+<li>Success?</li>
+</ol>
+<h3 id="subdomains-yeah-but-manually">Subdomains? Yeah, but manually...<a class="headerlink" href="#subdomains-yeah-but-manually" title="Permanent link">&para;</a></h3>
+<p>This solution also supports subdomains, but we need the secops team to add each subdomain as an <code>_acme_challenge</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>_acme-challenge.www.detsombetyrnoe.no	IN	CNAME	_acme-challenge.detsombetyrnoe.intern.nav.no.
+</code></pre></div>
+<p>PS: Make sure there are not other issuer with the <code>tag: issuewild</code>!</p>
 
 
 
@@ -1111,7 +1139,7 @@ Make sure to dedicate time to watch the upgrade progress, and follow up on any r
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../publications-media/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Publications &amp; Media">
+          <a href="../doc-guidelines/" class="md-footer__link md-footer__link--prev" aria-label="Previous: NAIS documentation guidelines">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1121,20 +1149,20 @@ Make sure to dedicate time to watch the upgrade progress, and follow up on any r
                 Previous
               </span>
               <div class="md-ellipsis">
-                Publications & Media
+                NAIS documentation guidelines
               </div>
             </div>
           </a>
         
         
           
-          <a href="../tenant-setup/" class="md-footer__link md-footer__link--next" aria-label="Next: Setting up a tenant organization">
+          <a href="../observability/" class="md-footer__link md-footer__link--next" aria-label="Next: Observability Stack">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Setting up a tenant organization
+                Observability Stack
               </div>
             </div>
             <div class="md-footer__button md-icon">
