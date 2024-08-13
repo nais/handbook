@@ -13,38 +13,37 @@ I'm going to use `detsombetyrnoe.no` as an example.
 
 1. Ask the secops team do add the following to the domain
 
-   ```
-   _acme-challenge.detsombetyrnoe.no  IN  CNAME  _acme-challenge.detsombetyrnoe.inter.nav.no.
-   ```
+    ```
+    _acme-challenge.detsombetyrnoe.no  IN  CNAME  _acme-challenge.detsombetyrnoe.inter.nav.no.
+    ```
 
 2. Create an Kubernetes `Issuer`:
 
-   ```yaml
-   apiVersion: cert-manager.io/v1
-   kind: Issuer
-   metadata:
-     name: detsombetyrnoe-no
-     namespace: nais-system
-   spec:
-     acme:
-       email: frode.sundby@nav.no
-       preferredChain: ISRG Root X1
-       privateKeySecretRef:
-         name: cloud-nais-io-account-key
-       server: https://acme-v02.api.letsencrypt.org/directory
-       solvers:
-       - selector:
-           dnsZones:
-             - detsombetyrnoe.no
-         dns01:
-           cnameStrategy: Follow
-           cloudDNS:
-             hostedZoneName: intern-nav-no
-             project: nais-prod-020f
+    ```yaml
+    apiVersion: cert-manager.io/v1
+    kind: Issuer
+    metadata:
+      name: detsombetyrnoe-no
+      namespace: nais-system
+    spec:
+      acme:
+        email: frode.sundby@nav.no
+        preferredChain: ISRG Root X1
+        privateKeySecretRef:
+          name: cloud-nais-io-account-key
+        server: https://acme-v02.api.letsencrypt.org/directory
+        solvers:
+        - selector:
+            dnsZones:
+              - detsombetyrnoe.no
+          dns01:
+            cnameStrategy: Follow
+            cloudDNS:
+              hostedZoneName: intern-nav-no
+              project: nais-prod-020f
+    ```
 
-   ```
-
-   You can use `dnsName` if you don't have subdomains, or if you want to be explicit.
+    You can use `dnsName` if you don't have subdomains, or if you want to be explicit.
 
 3. Then create a Kubernetes `Certificate`:
 
