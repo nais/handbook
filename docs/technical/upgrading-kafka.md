@@ -10,17 +10,27 @@ For any other tenants that use Kafka, the tenant will typically have one support
 
 ## 1. Upgrade in dev-nais-dev first
 
-The dev-nais-dev tenant is our testing tenant, and allows testing platform changes without affecting developer teams.
+The dev-nais tenant is our testing tenant, and allows testing platform changes without affecting developer teams.
 By upgrading in dev-nais-dev first, we can check that kafka-canary continues to work, and optionally run additional tests to verify that everything works.
 
 It is considered enough to check that the kafka-canary continues to work and handles the upgrade process without major issues.
 
-Once everything is confirmed to work in dev-nais-dev, rolling out to other tenants/clusters can be planned.
+Once everything is confirmed to work in dev-nais-dev, rolling out to ci-nais should be next.
 
 Upgrading is done by changing `kafka_version` in the `naas.tf` file for [dev-nais tenant, dev environment](https://github.com/nais/nais-terraform-modules/blob/main/tenants/dev-nais/naas.tf).
 
 
-## 2. Upgrade development environments
+## 2. Upgrade the ci-nais tenant
+
+The ci-nais tenant is our CI tenant, and should emulate a production tenant as close as possible.
+Upgrading in ci-nais will allow us to check that the upgrade process works in a tenant that is more similar to production.
+
+Once everything is confirmed to work in ci-nais, rolling out to other tenants/clusters should be started as soon as possible.
+
+Upgrading is done by changing `kafka_version` in the `naas.tf` file for [ci-nais tenant, ci environment](https://github.com/nais/nais-terraform-modules/blob/main/tenants/dev-nais/naas.tf).
+
+
+## 3. Upgrade development environments
 
 Currently, NAV is the only tenant that uses Kafka, but we have one project that fall in this category:
 
@@ -34,18 +44,15 @@ After the upgrade, teams will have 1 week to report any issues to the nais-team,
 <!-- TODO: https://github.com/nais/nais-terraform-modules/blob/main/tenants/nav/naas.tf -->
 
 
-## 3. Upgrade production environments
-
-There are two projects:
-
-- nav-prod
-- nav-infrastructure
+## 4. Upgrade remaining environments
 
 When announcing the upgrade, request that teams that haven't checked their dev environment do so now, and allow for a few hours before starting the upgrade.
 Make sure to dedicate time to watch the upgrade progress, and follow up on any reports of problems.
 
 Make sure to inform the users when the upgrade has completed.
 
-<!-- Upgrading is done by changing `kafka_version` in the `naas.tf` file for nav tenant, prod environment. -->
-<!-- TODO: https://github.com/nais/nais-terraform-modules/blob/main/tenants/nav/naas.tf -->
-<!-- TODO: Where will nav-infrastructure end up? -->
+Upgrading is done by changing the default value for the `kafka_version` variable in these files:
+
+* [modules/aiven/variables.tf](https://github.com/nais/nais-terraform-modules/blob/main/modules/aiven/variables.tf)
+* [modules/legacy/variables.tf](https://github.com/nais/nais-terraform-modules/blob/main/modules/legacy/variables.tf)
+* [modules/tenant/variables.tf](https://github.com/nais/nais-terraform-modules/blob/main/modules/tenant/variables.tf)
