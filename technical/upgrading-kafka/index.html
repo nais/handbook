@@ -640,18 +640,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-upgrade-development-environments" class="md-nav__link">
+  <a href="#2-upgrade-the-ci-nais-tenant" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Upgrade development environments
+      2. Upgrade the ci-nais tenant
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-upgrade-production-environments" class="md-nav__link">
+  <a href="#3-upgrade-development-environments" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Upgrade production environments
+      3. Upgrade development environments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-upgrade-remaining-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Upgrade remaining environments
     </span>
   </a>
   
@@ -974,18 +983,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-upgrade-development-environments" class="md-nav__link">
+  <a href="#2-upgrade-the-ci-nais-tenant" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Upgrade development environments
+      2. Upgrade the ci-nais tenant
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-upgrade-production-environments" class="md-nav__link">
+  <a href="#3-upgrade-development-environments" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Upgrade production environments
+      3. Upgrade development environments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-upgrade-remaining-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Upgrade remaining environments
     </span>
   </a>
   
@@ -1021,12 +1039,17 @@ For that reason we have decided to describe the procedure for upgrading Kafka in
 For NAV, #kafka is a relevant channel.
 For any other tenants that use Kafka, the tenant will typically have one support channel which should get a copy of the announcement.</p>
 <h2 id="1-upgrade-in-dev-nais-dev-first">1. Upgrade in dev-nais-dev first<a class="headerlink" href="#1-upgrade-in-dev-nais-dev-first" title="Permanent link">&para;</a></h2>
-<p>The dev-nais-dev tenant is our testing tenant, and allows testing platform changes without affecting developer teams.
+<p>The dev-nais tenant is our testing tenant, and allows testing platform changes without affecting developer teams.
 By upgrading in dev-nais-dev first, we can check that kafka-canary continues to work, and optionally run additional tests to verify that everything works.</p>
 <p>It is considered enough to check that the kafka-canary continues to work and handles the upgrade process without major issues.</p>
-<p>Once everything is confirmed to work in dev-nais-dev, rolling out to other tenants/clusters can be planned.</p>
+<p>Once everything is confirmed to work in dev-nais-dev, rolling out to ci-nais should be next.</p>
 <p>Upgrading is done by changing <code>kafka_version</code> in the <code>naas.tf</code> file for <a href="https://github.com/nais/nais-terraform-modules/blob/main/tenants/dev-nais/naas.tf">dev-nais tenant, dev environment</a>.</p>
-<h2 id="2-upgrade-development-environments">2. Upgrade development environments<a class="headerlink" href="#2-upgrade-development-environments" title="Permanent link">&para;</a></h2>
+<h2 id="2-upgrade-the-ci-nais-tenant">2. Upgrade the ci-nais tenant<a class="headerlink" href="#2-upgrade-the-ci-nais-tenant" title="Permanent link">&para;</a></h2>
+<p>The ci-nais tenant is our CI tenant, and should emulate a production tenant as close as possible.
+Upgrading in ci-nais will allow us to check that the upgrade process works in a tenant that is more similar to production.</p>
+<p>Once everything is confirmed to work in ci-nais, rolling out to other tenants/clusters should be started as soon as possible.</p>
+<p>Upgrading is done by changing <code>kafka_version</code> in the <code>naas.tf</code> file for <a href="https://github.com/nais/nais-terraform-modules/blob/main/tenants/dev-nais/naas.tf">ci-nais tenant, ci environment</a>.</p>
+<h2 id="3-upgrade-development-environments">3. Upgrade development environments<a class="headerlink" href="#3-upgrade-development-environments" title="Permanent link">&para;</a></h2>
 <p>Currently, NAV is the only tenant that uses Kafka, but we have one project that fall in this category:</p>
 <ul>
 <li>nav-dev</li>
@@ -1036,18 +1059,16 @@ By upgrading in dev-nais-dev first, we can check that kafka-canary continues to 
 <!-- Upgrading is done by changing `kafka_version` in the `naas.tf` file for nav tenant, dev environment. -->
 <!-- TODO: https://github.com/nais/nais-terraform-modules/blob/main/tenants/nav/naas.tf -->
 
-<h2 id="3-upgrade-production-environments">3. Upgrade production environments<a class="headerlink" href="#3-upgrade-production-environments" title="Permanent link">&para;</a></h2>
-<p>There are two projects:</p>
-<ul>
-<li>nav-prod</li>
-<li>nav-infrastructure</li>
-</ul>
+<h2 id="4-upgrade-remaining-environments">4. Upgrade remaining environments<a class="headerlink" href="#4-upgrade-remaining-environments" title="Permanent link">&para;</a></h2>
 <p>When announcing the upgrade, request that teams that haven't checked their dev environment do so now, and allow for a few hours before starting the upgrade.
 Make sure to dedicate time to watch the upgrade progress, and follow up on any reports of problems.</p>
 <p>Make sure to inform the users when the upgrade has completed.</p>
-<!-- Upgrading is done by changing `kafka_version` in the `naas.tf` file for nav tenant, prod environment. -->
-<!-- TODO: https://github.com/nais/nais-terraform-modules/blob/main/tenants/nav/naas.tf -->
-<!-- TODO: Where will nav-infrastructure end up? -->
+<p>Upgrading is done by changing the default value for the <code>kafka_version</code> variable in these files:</p>
+<ul>
+<li><a href="https://github.com/nais/nais-terraform-modules/blob/main/modules/aiven/variables.tf">modules/aiven/variables.tf</a></li>
+<li><a href="https://github.com/nais/nais-terraform-modules/blob/main/modules/legacy/variables.tf">modules/legacy/variables.tf</a></li>
+<li><a href="https://github.com/nais/nais-terraform-modules/blob/main/modules/tenant/variables.tf">modules/tenant/variables.tf</a></li>
+</ul>
 
 
 
@@ -1070,7 +1091,7 @@ Make sure to dedicate time to watch the upgrade progress, and follow up on any r
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-08-13T11:05:05+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-08-13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-08-20T13:43:13+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-08-20</span>
   </span>
 
     
@@ -1080,7 +1101,7 @@ Make sure to dedicate time to watch the upgrade progress, and follow up on any r
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-08-13T11:05:05+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-08-13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-08-20T13:43:13+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-08-20</span>
   </span>
 
     
