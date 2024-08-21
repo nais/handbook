@@ -38,10 +38,15 @@ Currently, NAV is the only tenant that uses Kafka, but we have one project that 
 
 The upgrade should be announced clearly, with a request for teams to check their applications during the upgrade and after.
 
+Before starting the upgrade, it is recommended to silence some alerts that typically get triggered during the upgrade:
+
+* [HighDiskReads](https://nais-alertmanager.dev-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-dev-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22HighDiskReads%22%7D)
+* [NetworkSentInbalanced](https://nais-alertmanager.dev-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-dev-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22NetworkSentInbalanced%22%7D)
+* [HighDiskUsagePredicted](https://nais-alertmanager.dev-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-dev-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22HighDiskUsagePredicted%22%7D)
+
 After the upgrade, teams will have 1 week to report any issues to the nais-team, who can decide if the upgrade in production should be held back or go ahead.
 
-<!-- Upgrading is done by changing `kafka_version` in the `naas.tf` file for nav tenant, dev environment. -->
-<!-- TODO: https://github.com/nais/nais-terraform-modules/blob/main/tenants/nav/naas.tf -->
+Upgrading is done by changing/adding `kafka_version` in the `naas.tf` file for [nav tenant, dev-gcp environment](https://github.com/nais/nais-terraform-modules/blob/main/tenants/nav/naas.tf).
 
 
 ## 4. Upgrade remaining environments
@@ -49,9 +54,16 @@ After the upgrade, teams will have 1 week to report any issues to the nais-team,
 When announcing the upgrade, request that teams that haven't checked their dev environment do so now, and allow for a few hours before starting the upgrade.
 Make sure to dedicate time to watch the upgrade progress, and follow up on any reports of problems.
 
+Before starting the upgrade, it is recommended to silence some alerts that typically get triggered during the upgrade:
+
+* [HighDiskReads](https://nais-alertmanager.prod-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-prod-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22HighDiskReads%22%7D)
+* [NetworkSentInbalanced](https://nais-alertmanager.prod-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-prod-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22NetworkSentInbalanced%22%7D)
+* [HighDiskUsagePredicted](https://nais-alertmanager.prod-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-prod-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22HighDiskUsagePredicted%22%7D)
+* TODO: Find links for alerts in nav-infrastructure
+
 Make sure to inform the users when the upgrade has completed.
 
-Upgrading is done by changing the default value for the `kafka_version` variable in these files:
+Upgrading is done by changing the default value for the `kafka_version` variable in these files (and remove any tenant/environment specific values):
 
 * [modules/aiven/variables.tf](https://github.com/nais/nais-terraform-modules/blob/main/modules/aiven/variables.tf)
 * [modules/legacy/variables.tf](https://github.com/nais/nais-terraform-modules/blob/main/modules/legacy/variables.tf)
