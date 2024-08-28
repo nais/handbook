@@ -59,6 +59,7 @@ Before starting the upgrade, it is recommended to silence some alerts that typic
 * [HighDiskReads](https://nais-alertmanager.prod-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-prod-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22HighDiskReads%22%7D)
 * [NetworkSentInbalanced](https://nais-alertmanager.prod-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-prod-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22NetworkSentInbalanced%22%7D)
 * [HighDiskUsagePredicted](https://nais-alertmanager.prod-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-prod-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22HighDiskUsagePredicted%22%7D)
+* [HighDiskWrites](https://nais-alertmanager.prod-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-prod-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22HighDiskWrites%22%7D)
 * TODO: Find links for alerts in nav-infrastructure
 
 Make sure to inform the users when the upgrade has completed.
