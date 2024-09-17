@@ -76,6 +76,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://handbook.nais.io/technical/tenant-setup/addons/aiven/</loc>
+         <lastmod>2024-09-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://handbook.nais.io/technical/tenant-setup/addons/azure-ad/</loc>
          <lastmod>2024-09-17</lastmod>
          <changefreq>daily</changefreq>
