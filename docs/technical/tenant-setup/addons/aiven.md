@@ -46,7 +46,6 @@ Relevant documentation for applications:
 
     - `aiven-operator`
     - `mutilator`
-        - Optionally configure OpenTelemetry endpoint
     - `aivenator`
 
 - If Kafka is enabled, also enable these features:
