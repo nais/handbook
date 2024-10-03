@@ -11,7 +11,9 @@ Underneath I've written the steps needed to take for us to get this working.
 
 I'm going to use `detsombetyrnoe.no` as an example.
 
-1. Ask the secops team do add the following to the domain
+0. Ask the secops team to add a redirect from the domain to our external loadbalancer (prod-gcp: `34.102.211.240`).
+
+1. Ask the secops team do add the following `acme-challenge` to the domain:
 
     ```
     _acme-challenge.detsombetyrnoe.no  IN  CNAME  _acme-challenge.detsombetyrnoe.inter.nav.no.
