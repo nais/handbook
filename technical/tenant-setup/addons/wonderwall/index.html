@@ -1010,6 +1010,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Requirements and Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identity-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identity Provider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secret
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1233,6 +1257,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Requirements and Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identity-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identity Provider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secret
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1319,29 +1367,50 @@
 <p>This is an optional feature that is not enabled by default.</p>
 <h2 id="for-tenant">For Tenant<a class="headerlink" href="#for-tenant" title="Permanent link">&para;</a></h2>
 <h3 id="requirements-and-setup">Requirements and Setup<a class="headerlink" href="#requirements-and-setup" title="Permanent link">&para;</a></h3>
+<h4 id="identity-provider">Identity Provider<a class="headerlink" href="#identity-provider" title="Permanent link">&para;</a></h4>
 <p>The tenant must bring its own identity provider.</p>
+<p>Provide the NAIS team with the well-known URL of the identity provider for each cluster, e.g:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://idp.example.com/.well-known/openid-configuration
+</code></pre></div>
+<p>The given identity provider will be the default for all applications in the cluster using Wonderwall.</p>
+<h4 id="secret">Secret<a class="headerlink" href="#secret" title="Permanent link">&para;</a></h4>
 <p>The tenant must set up a secret for each application that will use Wonderwall.
 The secret must fulfill the following:</p>
 <ul>
 <li>Must be in the same namespace as the application</li>
-<li>Must follow the naming convention <code>login-config-&lt;application-name&gt;</code></li>
-<li>Must contain the following keys:</li>
+<li>Must follow the naming convention
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>login-config-&lt;application-name&gt;
+</code></pre></div></li>
+<li>Must contain the following keys:<ul>
 <li><code>WONDERWALL_OPENID_CLIENT_ID</code> (e.g. <code>my-client-id</code>)</li>
-<li><code>WONDERWALL_OPENID_CLIENT_JWK</code> (e.g. <code>{"kty":"RSA","e":"AQAB","kid":"my-key-id",...}</code>)</li>
-<li><code>WONDERWALL_OPENID_WELL_KNOWN_URL</code> (e.g. <code>https://idp.example.com/.well-known/openid-configuration</code>)</li>
+<li><code>WONDERWALL_OPENID_CLIENT_JWK</code> (this is a private key in JWK format, e.g. <code>{"kty":"RSA","e":"AQAB","kid":"my-key-id",...}</code>)</li>
 </ul>
-<h3 id="usage-by-applications">Usage by Applications<a class="headerlink" href="#usage-by-applications" title="Permanent link">&para;</a></h3>
-<p>To use Wonderwall, the application must be configured to use the sidecar:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">spec</span><span class="p">:</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">login</span><span class="p">:</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openid</span>
+</li>
+</ul>
+<p>The secret should also contain an annotation that automatically reloads the pod when the data changes:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">reloader.stakater.com/match</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
 </code></pre></div>
-<p>The application must also be configured to allow external traffic to the identity provider:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">spec</span><span class="p">:</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">accessPolicy</span><span class="p">:</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">outbound</span><span class="p">:</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">external</span><span class="p">:</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;identity-provider-host&gt;</span>
+<p>To override the default identity provider configuration, set the <code>WONDERWALL_OPENID_WELL_KNOWN_URL</code> key in the same secret.</p>
+<h3 id="usage-by-applications">Usage by Applications<a class="headerlink" href="#usage-by-applications" title="Permanent link">&para;</a></h3>
+<p>Configure the application to enable injection of Wonderwall as a sidecar:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">login</span><span class="p">:</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openid</span>
+</code></pre></div>
+<p>See the <a href="https://doc.nais.io/workloads/application/reference/application-spec/#login">NAIS application reference</a> for the complete specifications with all possible options.</p>
+<p>Additional documentation:</p>
+<ul>
+<li><a href="https://github.com/nais/wonderwall/tree/master/docs">Technical documentation on GitHub</a></li>
+<li><a href="https://doc.nais.io/auth/explanations/#login-proxy">Developer-focused documentation on NAIS</a></li>
+</ul>
+<p>If you've configured <code>WONDERWALL_OPENID_WELL_KNOWN_URL</code>, the application must also allow egress traffic to the matching host:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">accessPolicy</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">outbound</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="nt">external</span><span class="p">:</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;identity-provider-host&gt;</span>
 </code></pre></div>
 <h2 id="for-nais">For NAIS<a class="headerlink" href="#for-nais" title="Permanent link">&para;</a></h2>
 <h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
@@ -1351,10 +1420,11 @@ The secret must fulfill the following:</p>
 <h3 id="enable-the-wonderwall-feature-flag-in-naiserator">Enable the Wonderwall feature flag in naiserator<a class="headerlink" href="#enable-the-wonderwall-feature-flag-in-naiserator" title="Permanent link">&para;</a></h3>
 <h3 id="enable-the-wonderwall-feature-in-fasit">Enable the Wonderwall feature in Fasit<a class="headerlink" href="#enable-the-wonderwall-feature-in-fasit" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Configure <code>aiven.redisPlan</code></li>
-<li>Enable <code>openid.enabled</code></li>
-<li>Disable <code>azure.enabled</code></li>
-<li>Disable <code>idporten.enabled</code></li>
+<li>Configure <code>aiven.redisPlan</code> (e.g. <code>hobbyist</code> for development, <code>startup-4</code> for production)</li>
+<li>Configure <code>openid.wellKnownUrl</code> provided by the tenant (e.g. <code>https://idp.example.com/.well-known/openid-configuration</code>)</li>
+<li><em>Enable</em> <code>openid.enabled</code></li>
+<li><em>Disable</em> <code>azure.enabled</code></li>
+<li><em>Disable</em> <code>idporten.enabled</code></li>
 <li>Finally, enable the feature itself</li>
 </ul>
 
@@ -1379,7 +1449,7 @@ The secret must fulfill the following:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-10-03T07:17:34+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-10-03</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-10-03T13:22:17+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-10-03</span>
   </span>
 
     
@@ -1389,7 +1459,7 @@ The secret must fulfill the following:</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-10-03T07:17:34+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-10-03</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-10-03T13:22:17+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-10-03</span>
   </span>
 
     
