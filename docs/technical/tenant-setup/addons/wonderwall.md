@@ -30,9 +30,12 @@ The secret must fulfill the following:
     ```
     login-config-<application-name>
     ```
-- Must contain the following keys:
+- Must contain all the following keys:
     - `WONDERWALL_OPENID_CLIENT_ID` (e.g. `my-client-id`)
+
+- Must contain at least one of the following:
     - `WONDERWALL_OPENID_CLIENT_JWK` (this is a private key in JWK format, e.g. `{"kty":"RSA","e":"AQAB","kid":"my-key-id",...}`)
+    - `WONDERWALL_OPENID_CLIENT_SECRET`
 
 The secret should also contain an annotation that automatically reloads the pod when the data changes:
 
@@ -42,7 +45,7 @@ metadata:
     reloader.stakater.com/match: "true"
 ```
 
-To override the default identity provider configuration, set the `WONDERWALL_OPENID_WELL_KNOWN_URL` key in the same secret.
+To override the default identity provider configuration, you can set the `WONDERWALL_OPENID_WELL_KNOWN_URL` key in the same secret.
 
 ### Usage by Applications
 
@@ -85,6 +88,4 @@ spec:
 - Configure `aiven.redisPlan` (e.g. `hobbyist` for development, `startup-4` for production)
 - Configure `openid.wellKnownUrl` provided by the tenant (e.g. `https://idp.example.com/.well-known/openid-configuration`)
 - _Enable_ `openid.enabled`
-- _Disable_ `azure.enabled `
-- _Disable_ `idporten.enabled`
 - Finally, enable the feature itself
