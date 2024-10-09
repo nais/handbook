@@ -1,0 +1,9 @@
+# A NAIS cycle
+
+## Focus period (6 weeks)
+Every week during cooldown we have a [weekly](weekly.md)
+
+## Cool-down (2 weeks)
+- Tuesday in the first week in cooldown we have a [NAIS day](nais-day.md)
+- Cut-off for initiatives is the last day of the first week in cooldown. 
+- Thursday in the second week we announce the first draft of the next focus period. Any adjustments to the draft must be made by the end of the week.
