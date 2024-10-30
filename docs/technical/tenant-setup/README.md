@@ -12,7 +12,7 @@ B --> E[prod]
 
 ## Prereq
 
-- Google Cloud Tenant admin
+- [Google Cloud Tenant admin](https://cloud.google.com/identity/docs/set-up-cloud-identity-admin)
 - GitHub Organization
 
 ## Required settings
