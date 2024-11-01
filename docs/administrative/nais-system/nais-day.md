@@ -1,13 +1,13 @@
-# A Nais day
+# A NAIS day
 
 Every Tuesday in the first week of the cooldown period is a NAIS day.
 
-Here we meet up in person (if possible) in the office. 
+On this particular Tuesday, those who can attend meet in person at the office.
 
-We start off the day with team discussions around how we as a team work together, and how we can improve. 
-We launch a thread in the #nais_internal channel a couple of days before to pre-gather some topics.
+We start off the day with team discussions around how we work together as a team, and how we can improve. 
+We launch a thread in the #nais_internal channel a couple of days before to pre-populate our topics.
 
-This goes on until lunch, and after we get together and have demos of what we've been working on the last focus period.
-We discuss and share ideas until we feel just the right amount of dizzy. That's the signal that it's time to head off to a pub or restaurant for some food and drink the rest of the evening.
+This continues until lunch, followed by a group demo session to share our work from the last focus period.
+We discuss and share ideas until we feel just the right amount of dizzy. That's the signal that it's time to head off to a pub or restaurant for an evening of wining and dining.
 This is organized by our eminent social general, Kim Tore. 
 

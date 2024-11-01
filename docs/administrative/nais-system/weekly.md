@@ -1,1 +1,1 @@
-The NAIS weekly takes place Monday at high noon.
+The NAIS weekly takes place Mondays at high noon.
