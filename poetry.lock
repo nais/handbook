@@ -402,13 +402,13 @@ wcmatch = ">=7"
 
 [[package]]
 name = "mkdocs-git-revision-date-localized-plugin"
-version = "1.2.7"
+version = "1.3.0"
 description = "Mkdocs plugin that enables displaying the localized date of the last git modification of a markdown file."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "mkdocs_git_revision_date_localized_plugin-1.2.7-py3-none-any.whl", hash = "sha256:d2b30ccb74ec8e118298758d75ae4b4f02c620daf776a6c92fcbb58f2b78f19f"},
-    {file = "mkdocs_git_revision_date_localized_plugin-1.2.7.tar.gz", hash = "sha256:2f83b52b4dad642751a79465f80394672cbad022129286f40d36b03aebee490f"},
+    {file = "mkdocs_git_revision_date_localized_plugin-1.3.0-py3-none-any.whl", hash = "sha256:c99377ee119372d57a9e47cff4e68f04cce634a74831c06bc89b33e456e840a1"},
+    {file = "mkdocs_git_revision_date_localized_plugin-1.3.0.tar.gz", hash = "sha256:439e2f14582204050a664c258861c325064d97cdc848c541e48bb034a6c4d0cb"},
 ]
 
 [package.dependencies]
@@ -416,6 +416,11 @@ babel = ">=2.7.0"
 GitPython = "*"
 mkdocs = ">=1.0"
 pytz = "*"
+
+[package.extras]
+all = ["GitPython", "babel (>=2.7.0)", "click", "codecov", "mkdocs (>=1.0)", "mkdocs-gen-files", "mkdocs-git-authors-plugin", "mkdocs-material", "mkdocs-static-i18n", "pytest", "pytest-cov", "pytz"]
+base = ["GitPython", "babel (>=2.7.0)", "mkdocs (>=1.0)", "pytz"]
+dev = ["click", "codecov", "mkdocs-gen-files", "mkdocs-git-authors-plugin", "mkdocs-material", "mkdocs-static-i18n", "pytest", "pytest-cov"]
 
 [[package]]
 name = "mkdocs-material"
@@ -885,4 +890,4 @@ test = ["big-O", "jaraco.functools", "jaraco.itertools", "jaraco.test", "more-it
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "ba69fb547970d0843a4bd7656761a1e2f3a5826330f01fd7d79707d178e2aed5"
+content-hash = "fccd0f33b325c47a9f46cfc9b935193dfe7ec8b65a9d64c68d64de58f3e2ab43"
