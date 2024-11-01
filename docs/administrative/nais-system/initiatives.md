@@ -47,3 +47,23 @@ Note that the working group is free to deviate from this as long as the essence 
 ### Other relevant information
 
 List any other relevant information that might be useful for the working group to know. Links, images, sketches, etc.
+
+
+## Working on initiatives
+
+### Getting started
+
+When the focus period has been set, the working group get together and make a plan for the period. 
+It's a good idea to talk through the iniative(s) together, to make sure that everyone is on the same page. If anything is unclear, this is the time to ask questions and involve whoever was involved in the shaping of the initiative.
+Once this is done, it's a good idea to see if there is any particular order in which the initiatives should be worked on. 
+
+Things to consider related to this might be:
+- Are any key people going away during the focus period? 
+- Are there any other initiatives in the team, that has impact on our work - that we should coordinate with?
+
+### Working on the initiative
+
+When working on the iniatitive, it's important to keep track of the time. Once in a while, it's a good practice to check if we're on track to delivering a Nais solution to the essence, within the time frame. 
+
+You might find yourself in a situation where you've found a solution quicker than what was the investment. This is normal and great, just move on.
+In the opposite situation, and need more time to finish the solution you've envisioned - see if there is a way to cut the scope. If there isn't any meaningful way to cut scope, we re-evaluate the initiative before moving on.
