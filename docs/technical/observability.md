@@ -4,6 +4,41 @@ This document describes the technical observability stack for nais-system Featur
 
 ## Overview
 
+Observability in nais has two parallel stacks, one for nais-system and one for tenant applications. Both stacks are based on the same components but have different configurations.
+
+```mermaid
+---
+config:
+    flowchart:
+        defaultRenderer: elk
+---
+%%{init: {'theme':'dark'}}%%
+  flowchart
+    subgraph "tenant"
+      subgraph "dev"
+        prometheus-dev-nais[prometheus\nnais]
+        prometheus-dev-tenant[prometheus\ntenant]
+      end
+
+      subgraph "prod"
+        prometheus-prod-nais[prometheus\nnais]
+        prometheus-prod-tenant[prometheus\ntenant]
+      end
+
+      subgraph "management"
+        grafana-tenant[grafana.tenant.cloud.nais.io] --> prometheus-dev-tenant
+        grafana-tenant[grafana.tenant.cloud.nais.io] --> prometheus-prod-tenant
+        prometheus-management-nais["prometheus nais"]
+      end
+    end
+
+    subgraph "nais-io"
+      grafana-nais-io[monitoring.nais.io] --> prometheus-dev-nais
+      grafana-nais-io[monitoring.nais.io] --> prometheus-prod-nais
+      grafana-nais-io[monitoring.nais.io] --> prometheus-management-nais
+    end
+```
+
 The observability stack in nais consists of the following components:
 
 - [Alertmanager](https://prometheus.io/docs/alerting/alertmanager/)
@@ -13,8 +48,8 @@ The observability stack in nais consists of the following components:
 - [Loki](https://grafana.com/oss/loki/)
 - [OpenTelemery Operator](https://opentelemetry.io/docs/operator/)
 - [OpenTelemetry Collector](https://opentelemetry.io/docs/collector/)
-- [Prometheus Operator](https://prometheus-operator.dev/)
-- [Prometheus](https://prometheus.io/)
+- [prometheus Operator](https://prometheus-operator.dev/)
+- [prometheus](https://prometheus.io/)
 - [Tempo](https://grafana.com/oss/tempo/)
 
 ## OpenTelemetry Collector
@@ -30,18 +65,18 @@ OpenTelemetry Collector implements the [OpenTelemetry protocol (OTLP)](https://o
       Feature[Feature]
       OtelCollector[Collector]
       Loki
-      Prometheus
+      prometheus
       Tempo
 
       Feature -- otlp --> OtelCollector
 
       OtelCollector -- traces --> Tempo
       OtelCollector -- logs --> Loki
-      OtelCollector -- metrics --> Prometheus
+      OtelCollector -- metrics --> prometheus
 
       Tempo -- query --> Grafana
       Loki -- query --> Grafana
-      Prometheus -- query --> Grafana
+      prometheus -- query --> Grafana
     ```
 
 === "Traces only"
@@ -52,18 +87,18 @@ OpenTelemetry Collector implements the [OpenTelemetry protocol (OTLP)](https://o
       OtelCollector[Collector]
       LoggingOperator
       Loki
-      Prometheus
+      prometheus
       Tempo
 
       Feature -- traces --> OtelCollector
       Feature -- stdout/stderr --> LoggingOperator
       LoggingOperator -- forward --> Loki
-      Feature -- scrape --> Prometheus
+      Feature -- scrape --> prometheus
       OtelCollector -- traces --> Tempo
 
       Tempo -- query --> Grafana
       Loki -- query --> Grafana
-      Prometheus -- query --> Grafana
+      prometheus -- query --> Grafana
     ```
 
 ### Endpoints
@@ -108,7 +143,7 @@ flowchart
       OtelCollector[Management Collector]
       Tempo
       Loki
-      Prometheus
+      prometheus
       Feature[Feature]
     end
   end
@@ -136,5 +171,5 @@ flowchart
 
   OtelCollector -- traces --> Tempo
   OtelCollector -- logs --> Loki
-  OtelCollector -- metrics --> Prometheus
+  OtelCollector -- metrics --> prometheus
 ```
