@@ -80,3 +80,15 @@ _acme-challenge.www.detsombetyrnoe.no	IN	CNAME	_acme-challenge.detsombetyrnoe.in
 ```
 
 PS: Make sure there are not other issuer with the `tag: issuewild`!
+
+### Updating manually created certificates
+
+Tenants with self-managed domains must manually update the certificates presented by the loadbalancers. These certificates 
+are stored in Google Certificate Manager. To upload new certficates from secrets in the cluster, the following command can be used:
+```
+# External loadbalancer certificates (globally managed)
+# For internal loadbalancer certificates add "--location europe-north1" to the command
+gcloud certificate-manager certificates create <certificate name> --private-key-file <(kubectl get secret <secretname> -o json | jq -r '.data["tls.key"]' |base64 -d) --certificate-file <(kubectl get secret <secret name> -o json | jq -r '.data["tls.crt"]' |base64 -d)
+```
+
+After the certificates are updated in Certificate Manager, nais-terraform-modules must be run to update the loadbalancers with the new certificates.
