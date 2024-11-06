@@ -1446,6 +1446,37 @@
 <h1 id="observability-stack">Observability Stack<a class="headerlink" href="#observability-stack" title="Permanent link">&para;</a></h1>
 <p>This document describes the technical observability stack for nais-system Features.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Observability in nais has two parallel stacks, one for nais-system and one for tenant applications. Both stacks are based on the same components but have different configurations.</p>
+<pre class="mermaid"><code>---
+config:
+    flowchart:
+        defaultRenderer: elk
+---
+%%{init: {'theme':'dark'}}%%
+  flowchart
+    subgraph "tenant"
+      subgraph "dev"
+        prometheus-dev-nais[prometheus\nnais]
+        prometheus-dev-tenant[prometheus\ntenant]
+      end
+
+      subgraph "prod"
+        prometheus-prod-nais[prometheus\nnais]
+        prometheus-prod-tenant[prometheus\ntenant]
+      end
+
+      subgraph "management"
+        grafana-tenant[grafana.tenant.cloud.nais.io] --&gt; prometheus-dev-tenant
+        grafana-tenant[grafana.tenant.cloud.nais.io] --&gt; prometheus-prod-tenant
+        prometheus-management-nais["prometheus nais"]
+      end
+    end
+
+    subgraph "nais-io"
+      grafana-nais-io[monitoring.nais.io] --&gt; prometheus-dev-nais
+      grafana-nais-io[monitoring.nais.io] --&gt; prometheus-prod-nais
+      grafana-nais-io[monitoring.nais.io] --&gt; prometheus-management-nais
+    end</code></pre>
 <p>The observability stack in nais consists of the following components:</p>
 <ul>
 <li><a href="https://prometheus.io/docs/alerting/alertmanager/">Alertmanager</a></li>
@@ -1455,8 +1486,8 @@
 <li><a href="https://grafana.com/oss/loki/">Loki</a></li>
 <li><a href="https://opentelemetry.io/docs/operator/">OpenTelemery Operator</a></li>
 <li><a href="https://opentelemetry.io/docs/collector/">OpenTelemetry Collector</a></li>
-<li><a href="https://prometheus-operator.dev/">Prometheus Operator</a></li>
-<li><a href="https://prometheus.io/">Prometheus</a></li>
+<li><a href="https://prometheus-operator.dev/">prometheus Operator</a></li>
+<li><a href="https://prometheus.io/">prometheus</a></li>
 <li><a href="https://grafana.com/oss/tempo/">Tempo</a></li>
 </ul>
 <h2 id="opentelemetry-collector">OpenTelemetry Collector<a class="headerlink" href="#opentelemetry-collector" title="Permanent link">&para;</a></h2>
@@ -1469,18 +1500,18 @@
   Feature[Feature]
   OtelCollector[Collector]
   Loki
-  Prometheus
+  prometheus
   Tempo
 
   Feature -- otlp --&gt; OtelCollector
 
   OtelCollector -- traces --&gt; Tempo
   OtelCollector -- logs --&gt; Loki
-  OtelCollector -- metrics --&gt; Prometheus
+  OtelCollector -- metrics --&gt; prometheus
 
   Tempo -- query --&gt; Grafana
   Loki -- query --&gt; Grafana
-  Prometheus -- query --&gt; Grafana</code></pre>
+  prometheus -- query --&gt; Grafana</code></pre>
 </div>
 <div class="tabbed-block">
 <pre class="mermaid"><code>graph LR
@@ -1488,18 +1519,18 @@
   OtelCollector[Collector]
   LoggingOperator
   Loki
-  Prometheus
+  prometheus
   Tempo
 
   Feature -- traces --&gt; OtelCollector
   Feature -- stdout/stderr --&gt; LoggingOperator
   LoggingOperator -- forward --&gt; Loki
-  Feature -- scrape --&gt; Prometheus
+  Feature -- scrape --&gt; prometheus
   OtelCollector -- traces --&gt; Tempo
 
   Tempo -- query --&gt; Grafana
   Loki -- query --&gt; Grafana
-  Prometheus -- query --&gt; Grafana</code></pre>
+  prometheus -- query --&gt; Grafana</code></pre>
 </div>
 </div>
 </div>
@@ -1552,7 +1583,7 @@ flowchart
       OtelCollector[Management Collector]
       Tempo
       Loki
-      Prometheus
+      prometheus
       Feature[Feature]
     end
   end
@@ -1580,7 +1611,7 @@ flowchart
 
   OtelCollector -- traces --&gt; Tempo
   OtelCollector -- logs --&gt; Loki
-  OtelCollector -- metrics --&gt; Prometheus</code></pre>
+  OtelCollector -- metrics --&gt; prometheus</code></pre>
 
 
 
@@ -1603,7 +1634,7 @@ flowchart
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-11-04T11:52:06+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-11-04</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-11-06T13:51:12+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-11-06</span>
   </span>
 
     
@@ -1613,7 +1644,7 @@ flowchart
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-11-04T11:52:06+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-11-04</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-11-06T13:51:12+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-11-06</span>
   </span>
 
     
