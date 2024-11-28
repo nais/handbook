@@ -40,11 +40,11 @@ Everything related to NAIS is contained within this folder.
 
 ```bash
 export NAAS_ORG_NAME=my-org # (1)
-export NAAS_ORG_ID=$(gcloud organizations list --filter $NAAS_ORG_NAME | tail -n1 | awk '{print $2}')
+export NAAS_ORG_ID=$(gcloud organizations list --filter $NAAS_ORG_NAME --format "value(name)")
 
 gcloud organizations add-iam-policy-binding "$NAAS_ORG_ID" --member="domain:nais.io" --role="roles/compute.osLoginExternalUser"
 gcloud resource-manager folders create --display-name=nais --organization=$NAAS_ORG_ID
-export NAAS_GOOGLE_FOLDERID=$(gcloud resource-manager folders list --organization=$NAAS_ORG_ID | grep nais | awk '{print $3}')
+export NAAS_GOOGLE_FOLDERID=$(gcloud resource-manager folders list --organization="$NAAS_ORG_ID" --filter "displayName=nais AND parent=organizations/${NAAS_ORG_ID}" --format "value(name)")
 ```
 
 1. :man_raising_hand: Change this to the name of your Google Organization
