@@ -4,8 +4,7 @@ TODO:
 
 - nais-terraform-modules, legg til ny tenant i lista i serviceaccounts.tf. -> PR -> apply
 - add denne brukeren til billing i NAV (frode, sten og johnny kan gjøre dette). Billing -> Account Management -> se på høyresida -> Add user.
-- for nytt domene: bestilles av Trond. Når det er klart, kan man klikke seg igjennom og opprette ny org. Da må det verifiseres noe greier som må inn i DNS. 
-
+- for nytt domene: bestilles av Trond. Når det er klart, kan man klikke seg igjennom og opprette ny org. Da må det verifiseres noe greier som må inn i DNS.
 
 This guide is used when setting up a new tenant. This is typically done by the NAIS team, together with the tenants administrators.
 
@@ -43,6 +42,7 @@ Everything related to NAIS is contained within this folder.
 export NAAS_ORG_NAME=my-org # (1)
 export NAAS_ORG_ID=$(gcloud organizations list --filter $NAAS_ORG_NAME | tail -n1 | awk '{print $2}')
 
+gcloud organizations add-iam-policy-binding "$NAAS_ORG_ID" --member="domain:nais.io" --role="roles/compute.osLoginExternalUser"
 gcloud resource-manager folders create --display-name=nais --organization=$NAAS_ORG_ID
 export NAAS_GOOGLE_FOLDERID=$(gcloud resource-manager folders list --organization=$NAAS_ORG_ID | grep nais | awk '{print $3}')
 ```
@@ -135,11 +135,10 @@ must be added to the NAIS folder.
 Before doing the following step, run the terraform setup.
 but even before this again, update nais/core/ipplan
 
-
-
 ## Teams and users
 
 ### Create nais admin user (in tenant admin.google.com)
+
 Nais needs a dedicated user account in the Google directory. This user must be manually created [in the Google Admin console](https://admin.google.com/ac/users). The user must be granted the `Groups Admin` role to be able to create and maintain groups for the teams:
 
 1. Go to [https://admin.google.com/ac/users](https://admin.google.com/ac/users)
@@ -150,7 +149,7 @@ Nais needs a dedicated user account in the Google directory. This user must be m
 6. Click on the created user and then on `Assign roles` under the `Admin roles and privileges` section
 7. Assign the `Groups Admin` role and click `Save`
 
-### Set up domain-wide delegation  (in tenant admin.google.com)
+### Set up domain-wide delegation (in tenant admin.google.com)
 
 Nais performs some operations on behalf of the Nais admin user mentioned above. For this to work the, this user needs domain-wide delegation with some scopes. This must be manually set up in the Google Admin console:
 
@@ -171,7 +170,7 @@ After this is done you should see something like the following:
 Nais (API) automatically syncs users from the Google Workspace to its own database. Tenants can control which users that should be assigned the admin role in Nais by creating a group called `nais-admins@<tenant-domain>`, and then add the necessary users to this group. When _teams_ runs the user sync it will look for this group, and make sure that the users in the group are granted the admin role.
 Whenever a user is removed from the group, Nais will revoke the admin role from the user on the next sync.
 
-Users with the admin role in Console have access to some additional settings: 
+Users with the admin role in Console have access to some additional settings:
 
 - Configure / enable / disable reconcilers
 - Grant / revoke roles
@@ -179,12 +178,13 @@ Users with the admin role in Console have access to some additional settings:
 
 ### Create Kubernetes security group (in tenant admin.google.com)
 
-This group is used to manage access to the kubernetes clusters, and this is where Nais automatically adds teams that should have access to the clusters. 
+This group is used to manage access to the kubernetes clusters, and this is where Nais automatically adds teams that should have access to the clusters.
 
 In [Google Admin](https://admin.google.com) create a group named `gke-security-groups`.
 Make sure the group has the **View Members** permission selected for **Group Members**.
 
 ### Create nais' k8s nais admin groups (do not confuse with the tenants nais-admins group above, done in nais.io admin.google.com)
+
 Create group $NAAS_TENANT_NAME-k8s-admins with the email: $NAAS_TENANT_NAME-k8s-admins@nais.io
 
 ## Configure OAuth login for web frontend
@@ -195,20 +195,20 @@ Set up an OAuth client for _Console_.
 1. Choose project <tenant org> -> nais-management -> nais-management
 1. Go to _APIs ans Service_ -> _OAuth consent screen_
 1. _Internal_ -> _create_
-    1. App name: `nais management`
-    1. User support email: `admin@<tenant-domain>`
-    1. Developer Contact email: `admin@<tenant-domain>`
+   1. App name: `nais management`
+   1. User support email: `admin@<tenant-domain>`
+   1. Developer Contact email: `admin@<tenant-domain>`
 1. _Save and continue_ (x2)
 1. Go to _APIs ans Service_ -> _Credentials_
 1. Click _Create Credentials_ -> _OAuth client ID_
 1. Select type _Web Application_
-    1. Name: `Console`
-    1. Authorized redirect URI: `http://console.<tenant-name>.cloud.nais.io/oauth2/callback`
+   1. Name: `Console`
+   1. Authorized redirect URI: `http://console.<tenant-name>.cloud.nais.io/oauth2/callback`
 1. Set Name and Authorized redirect URIs
 1. _Create_
 1. Copy client id and secret and give to NAIS-team
 
-## Highly recommended settings 
+## Highly recommended settings
 
 ### Log location
 
