@@ -1,10 +1,10 @@
 # Observability Stack
 
-This document describes the technical observability stack for nais-system Features.
+Sit back and relax, we got you covered. The observability stack in nais is designed to provide you with all the tools you need to monitor and troubleshoot your applications.
 
 ## Overview
 
-Observability in nais has two parallel stacks, one for nais-system and one for tenant applications. Both stacks are based on the same components but have different configurations.
+On a high level there are two parallel observability stacks in nais, one for nais-system namespaces (we call it the management stack) and one for tenant applications. Both stacks are based on the same components – Prometheus for metrics, Loki for logs, and Tempo for traces and Grafana for visualization.
 
 ```mermaid
 ---
@@ -16,19 +16,19 @@ config:
   flowchart
     subgraph "tenant"
       subgraph "dev"
-        prometheus-dev-nais[prometheus\nnais]
-        prometheus-dev-tenant[prometheus\ntenant]
+        prometheus-dev-nais[nais-system]
+        prometheus-dev-tenant[team apps]
       end
 
       subgraph "prod"
-        prometheus-prod-nais[prometheus\nnais]
-        prometheus-prod-tenant[prometheus\ntenant]
+        prometheus-prod-nais[nais-system]
+        prometheus-prod-tenant[team apps]
       end
 
       subgraph "management"
-        grafana-tenant[grafana.tenant.cloud.nais.io] --> prometheus-dev-tenant
-        grafana-tenant[grafana.tenant.cloud.nais.io] --> prometheus-prod-tenant
-        prometheus-management-nais["prometheus nais"]
+        grafana-tenant[grafana.$tenant.cloud.nais.io] --> prometheus-dev-tenant
+        grafana-tenant[grafana.$tenant.cloud.nais.io] --> prometheus-prod-tenant
+        prometheus-management-nais[nais-system]
       end
     end
 
@@ -41,16 +41,18 @@ config:
 
 The observability stack in nais consists of the following components:
 
-- [Alertmanager](https://prometheus.io/docs/alerting/alertmanager/)
-- [Grafana](https://grafana.com/)
-- [Grafana Agent](https://grafana.com/docs/grafana-cloud/agent/)
-- [Logging Operator](https://kube-logging.dev)
-- [Loki](https://grafana.com/oss/loki/)
-- [OpenTelemery Operator](https://opentelemetry.io/docs/operator/)
-- [OpenTelemetry Collector](https://opentelemetry.io/docs/collector/)
-- [prometheus Operator](https://prometheus-operator.dev/)
-- [prometheus](https://prometheus.io/)
-- [Tempo](https://grafana.com/oss/tempo/)
+<div class="grid cards" markdown>
+
+- :simple-prometheus: [__Prometheus Operator__](https://prometheus-operator.dev/) for managing Prometheus instances, providing easy monitoring definitions for Kubernetes services and deployment and management of Prometheus instances.
+- :simple-prometheus: [__Prometheus__](https://prometheus.io/) for metrics, offering powerful querying and alerting capabilities to monitor the performance and health of applications.
+- :simple-prometheus: [__Alertmanager__](https://prometheus.io/docs/alerting/alertmanager/) for alerting, handling alerts sent by client applications such as the Prometheus server and managing silencing, inhibition, and alert grouping.
+- :simple-grafana: [__Grafana__](https://grafana.com/) for visualization, enabling the creation of dashboards and graphs to visualize metrics, logs, and traces from various data sources.
+- :simple-grafana: [__Grafana Loki__](https://grafana.com/oss/loki/) for logs, providing a highly efficient and cost-effective log aggregation system that integrates seamlessly with Grafana.
+- :simple-grafana: [__Grafana Tempo__](https://grafana.com/oss/tempo/) for traces, offering a scalable and high-performance distributed tracing backend that integrates with Grafana for trace visualization.
+- :simple-opentelemetry: [__OpenTelemetry Collector__](https://opentelemetry.io/docs/collector/) for collecting, processing, and exporting telemetry data, supporting multiple formats and providing a vendor-agnostic solution for telemetry data management.
+- :simple-fluentd: [__Logging Operator__](https://kube-logging.dev) for collecting logs from stdout/stderr, simplifying the deployment and management of Fluentd log collectors in Kubernetes environments.
+
+</div>
 
 ## OpenTelemetry Collector
 
@@ -58,7 +60,59 @@ The OpenTelemetry Collector is a vendor-agnostic, open-source telemetry collecto
 
 OpenTelemetry Collector implements the [OpenTelemetry protocol (OTLP)](https://opentelemetry.io/docs/specs/otlp/) which is a standard for transmitting telemetry data.
 
+We have two parallel OpenTelemetry Collectors running in nais, one for the management stack and one for tenant applications. The management collector is used to collect telemetry data from nais-system namespaces and the tenant collector is used to collect telemetry data from tenant applications.
+
+```mermaid
+---
+config:
+    flowchart:
+        defaultRenderer: elk
+---
+%%{init: {'theme':'dark'}}%%
+  flowchart
+    subgraph "tenant"
+      subgraph "$env"
+        subgraph "$env-nais-system" [nais-system]
+          $env-management-collector[Management Collector]
+
+          $env-otel-internet-collector[Internet Collector]
+          $env-otel-collector[Collector]
+          $env-tempo[Grafana Tempo]
+          $env-loki[Grafana Loki]
+          $env-prometheus[Prometheus]
+        end
+      end
+
+      subgraph "management"
+        subgraph "nais-system"
+          management-internet-collector[Internet Collector]
+          management-collector[Collector]
+          management-tempo[Grafana Tempo]
+          management-loki[Grafana Loki]
+          management-prometheus[Prometheus]
+        end
+      end
+    end
+
+    $env-otel-collector -- traces --> $env-tempo
+    $env-otel-collector -- logs --> $env-loki
+    $env-otel-collector -- metrics --> $env-prometheus
+
+    management-collector -- traces --> management-tempo
+    management-collector -- logs --> management-loki
+    management-collector -- metrics --> management-prometheus
+
+    naisdevice -- otlp --> management-internet-collector
+    management-internet-collector -- otlp --> management-collector
+
+    $env-management-collector -- otlp --> management-collector
+
+    github[GitHub Actions] -- otlp --> $env-otel-internet-collector
+```
+
 === "Full otlp"
+
+    Full otlp is used when all telemetry data is sent to the OpenTelemetry Collector including logs, metrics, and traces.
 
     ```mermaid
     graph LR
@@ -80,6 +134,8 @@ OpenTelemetry Collector implements the [OpenTelemetry protocol (OTLP)](https://o
     ```
 
 === "Traces only"
+
+    Traces only is used when only traces are sent to the OpenTelemetry Collector, logs are sent using stdout/stderr and metrics are scraped by Prometheus.
 
     ```mermaid
     graph LR
