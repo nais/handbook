@@ -142,12 +142,12 @@ but even before this again, update nais/core/ipplan
 Nais needs a dedicated user account in the Google directory. This user must be manually created [in the Google Admin console](https://admin.google.com/ac/users). The user must be granted the `Groups Admin` role to be able to create and maintain groups for the teams:
 
 1. Go to [https://admin.google.com/ac/users](https://admin.google.com/ac/users)
-2. Click on `Add new user`
-3. Enter `nais` as first name, and `admin` as last name
-4. Enter `nais-admin` as the primary email
-5. Click `Add new user` to add the user account
-6. Click on the created user and then on `Assign roles` under the `Admin roles and privileges` section
-7. Assign the `Groups Admin` role and click `Save`
+1. Click on `Add new user`
+1. Enter `nais` as first name, and `admin` as last name
+1. Enter `nais-admin` as the primary email
+1. Click `Add new user` to add the user account (you can safely ignore the generated password)
+1. Click on the created user and then on `Assign roles` under the `Admin roles and privileges` section
+1. Assign the `Groups Admin` role and click `Save`
 
 ### Set up domain-wide delegation (in tenant admin.google.com)
 
