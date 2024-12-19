@@ -146,7 +146,7 @@ Nais needs a dedicated user account in the Google directory. This user must be m
 1. Enter `nais` as first name, and `admin` as last name
 1. Enter `nais-admin` as the primary email
 1. Click `Add new user` to add the user account (you can safely ignore the generated password)
-1. Click on the created user and then on `Assign roles` under the `Admin roles and privileges` section
+1. Click on the created user (might require a hard refresh of the user list) and then on `Assign roles` under the `Admin roles and privileges` section
 1. Assign the `Groups Admin` role and click `Save`
 
 ### Set up domain-wide delegation (in tenant admin.google.com)
@@ -165,10 +165,19 @@ After this is done you should see something like the following:
 
 ![Screenshot of the Domain-wide Delegation screen in the Google Admin console](../../assets/domainwidedelegation-screenshot.png)
 
-### Create nais admins group (in tenant admin.google.com)
+### Create Console admins group (in tenant admin.google.com)
 
-Nais (API) automatically syncs users from the Google Workspace to its own database. Tenants can control which users that should be assigned the admin role in Nais by creating a group called `nais-admins@<tenant-domain>`, and then add the necessary users to this group. When _teams_ runs the user sync it will look for this group, and make sure that the users in the group are granted the admin role.
+Nais (API) automatically syncs users from the Google Workspace to its own database. Tenants can control which users that should be assigned the admin role in Nais by creating a group called `console-admins@<tenant-domain>`, and then add the necessary users to this group. When Console/Nais API runs the user sync it will look for this group, and make sure that the users in the group are granted the admin role.
 Whenever a user is removed from the group, Nais will revoke the admin role from the user on the next sync.
+
+1. Go to [https://admin.google.com/ac/groups](https://admin.google.com/ac/groups)
+1. Click on `Create group`
+1. Enter `console-admins` as the group name
+1. Enter `console-admins` as the email address
+1. Enter 'This group is used to control who has admin permissions in the Nais Console' as the description
+1. Click `Next`
+1. Select 'Only invited users' in the 'Who can join the group' section. Leave the rest as default.
+1. Click `Create Group`
 
 Users with the admin role in Console have access to some additional settings:
 
