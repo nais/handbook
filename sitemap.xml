@@ -2,118 +2,118 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://handbook.nais.io/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/administrative/areas/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/administrative/fixtures/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/administrative/slack/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/administrative/nais-system/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/administrative/nais-system/cycle/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/administrative/nais-system/holiday-mode/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/administrative/nais-system/initiatives/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/administrative/nais-system/nais-day/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/administrative/nais-system/weekly/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/social/the-great-outdoors/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/doc-guidelines/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/external-ingress/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/observability/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/overview/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/production-ready/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/publications-media/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/upgrading-kafka/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/narcos/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/narcos/reference/cluster/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/narcos/reference/tenant/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/tenant-setup/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/tenant-setup/addons/aiven/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/tenant-setup/addons/azure-ad/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/tenant-setup/addons/digdir/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/tenant-setup/addons/tokenx/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/technical/tenant-setup/addons/wonderwall/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/welcome/nais-manifest-eng/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
     <url>
          <loc>https://handbook.nais.io/welcome/nais-sponsor/</loc>
-         <lastmod>2024-12-19</lastmod>
+         <lastmod>2024-12-20</lastmod>
     </url>
 </urlset>
