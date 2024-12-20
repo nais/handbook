@@ -157,8 +157,8 @@ Nais performs some operations on behalf of the Nais admin user mentioned above. 
 1. Click on `Add new` to add a new Client ID
 1. Enter the ID of the tenant directory service account
     ```bash title="Using gcloud"
-    MANAGEMENT_PROJECT_ID=<tenant management project>`
-    gcloud iam service-accounts --project=$MANAGEMENT_PROJECT_ID describe tenant-directory-sa@$MANAGEMENT_PROJECT_ID.iam.gserviceaccount.com --format="value(uniqueId)"`
+    MANAGEMENT_PROJECT_ID=<tenant management project>
+    gcloud iam service-accounts --project=$MANAGEMENT_PROJECT_ID describe tenant-directory-sa@$MANAGEMENT_PROJECT_ID.iam.gserviceaccount.com --format="value(uniqueId)"
     ```
 1. Add the following scopes:
     - `https://www.googleapis.com/auth/admin.directory.group`
