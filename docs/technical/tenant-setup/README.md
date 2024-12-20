@@ -178,7 +178,7 @@ Whenever a user is removed from the group, Nais will revoke the admin role from 
 1. Click on `Create group`
 1. Enter `console-admins` as the group name
 1. Enter `console-admins` as the email address
-1. Enter 'This group is used to control who has admin permissions in the Nais Console' as the description
+1. Enter `This group is used to control who has admin permissions in the Nais Console` as the description
 1. Click `Next`
 1. Select 'Only invited users' in the 'Who can join the group' section. Leave the rest as default.
 1. Click `Create Group`
