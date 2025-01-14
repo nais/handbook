@@ -41,8 +41,11 @@ The upgrade should be announced clearly, with a request for teams to check their
 Before starting the upgrade, it is recommended to silence some alerts that typically get triggered during the upgrade:
 
 * [HighDiskReads](https://nais-alertmanager.dev-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-dev-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22HighDiskReads%22%7D)
+* [HighDiskWrites](https://nais-alertmanager.dev-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-dev-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22HighDiskWrites%22%7D)
 * [NetworkSentInbalanced](https://nais-alertmanager.dev-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-dev-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22NetworkSentInbalanced%22%7D)
+* [NetworkRecvInbalanced](https://nais-alertmanager.dev-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-dev-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22NetworkRecvInbalanced%22%7D)
 * [HighDiskUsagePredicted](https://nais-alertmanager.dev-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-dev-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22HighDiskUsagePredicted%22%7D)
+* [HighCpuUsage](https://nais-alertmanager.dev-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-dev-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22HighCpuUsage%22%7D)
 
 After the upgrade, teams will have 1 week to report any issues to the nais-team, who can decide if the upgrade in production should be held back or go ahead.
 
@@ -57,10 +60,11 @@ Make sure to dedicate time to watch the upgrade progress, and follow up on any r
 Before starting the upgrade, it is recommended to silence some alerts that typically get triggered during the upgrade:
 
 * [HighDiskReads](https://nais-alertmanager.prod-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-prod-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22HighDiskReads%22%7D)
-* [NetworkSentInbalanced](https://nais-alertmanager.prod-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-prod-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22NetworkSentInbalanced%22%7D)
-* [HighDiskUsagePredicted](https://nais-alertmanager.prod-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-prod-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22HighDiskUsagePredicted%22%7D)
 * [HighDiskWrites](https://nais-alertmanager.prod-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-prod-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22HighDiskWrites%22%7D)
-* TODO: Find links for alerts in nav-infrastructure
+* [NetworkSentInbalanced](https://nais-alertmanager.prod-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-prod-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22NetworkSentInbalanced%22%7D)
+* [NetworkRecvInbalanced](https://nais-alertmanager.prod-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-prod-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22NetworkRecvInbalanced%22%7D)
+* [HighDiskUsagePredicted](https://nais-alertmanager.prod-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-prod-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22HighDiskUsagePredicted%22%7D)
+* [HighCpuUsage](https://nais-alertmanager.prod-gcp.nav.cloud.nais.io/#/silences/new?filter=%7Bservice%3D%22nav-prod-kafka%22%2C%20tenant%3D%22nav%22%2C%20alertname%3D%22HighCpuUsage%22%7D)
 
 Make sure to inform the users when the upgrade has completed.
 
