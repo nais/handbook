@@ -1,12 +1,14 @@
 # Setting up a tenant organization
 
-TODO:
-
-- nais-terraform-modules, legg til ny tenant i lista i serviceaccounts.tf. -> PR -> apply
-- add denne brukeren til billing i NAV (frode, sten og johnny kan gjøre dette). Billing -> Account Management -> se på høyresida -> Add user.
-- for nytt domene: bestilles av Trond. Når det er klart, kan man klikke seg igjennom og opprette ny org. Da må det verifiseres noe greier som må inn i DNS.
-
 This guide is used when setting up a new tenant. This is typically done by the NAIS team, together with the tenants administrators.
+
+Nais-team needs to do the following:
+
+- In nais-terraform-modules, add new tenant to serviceaccounts.tf. -> PR -> apply
+- add the new user to NAV's billing account (frode, sten or johnny). Billing -> Account Management -> right side menu -> Add user.
+
+
+The tenant needs to do the following:
 
 ```mermaid
 graph TD
@@ -20,7 +22,7 @@ B --> E[prod]
 
 - [Google Cloud Tenant admin](https://cloud.google.com/identity/docs/set-up-cloud-identity-admin)
 - GitHub Organization
-- Allow users from nais.io (nais-io) in the `Allowed Domain Policy` under `IAM/Organization Policies`
+- If `Domain restricted sharing` is enabled, allow users from nais.io (nais-io) by adding the domain to `iam.allowedPolicyMemberDomains` under `IAM/Organization Policies`
 
 ## Required settings
 
@@ -130,6 +132,7 @@ must be added to the NAIS folder.
     echo "gcloud resource-manager folders set-iam-policy $NAAS_GOOGLE_FOLDERID naas-google-org-policy.json"
     ```
 
+The Nais team will now create the environment before 
 ## Run nais-terraform-modules
 
 Before doing the following step, run the terraform setup.
