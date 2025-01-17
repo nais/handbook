@@ -15,12 +15,14 @@ The primary channel for alerts is #naas-alerts. This channel is monitored by the
 
 ## Levels of criticality
 
-With the exception of the Info level, all alerts entering the channel are handled by Naisvakt. 
+With the exception of the `info` level, all alerts entering the channel are handled by Naisvakt. 
 Handling an alert means acknowledging it, investigating it or ensuring that the right people are notified. 
 
-If the alert does not lead to or require action, and is not `Info`, the alert must be tuned. Notify the people who created it. 
+If the alert does not lead to or require action, and is not `info`, the alert must be tuned. Notify the people who created it. 
 
 It's important that we have control over and continuously work to tune alerts to avoid false positives and unnecessary work - leading to alert fatigue.
+
+In the `PrometheusRules` resource you use `spec.groups[].rules[].labels.severity` to set the level, and `spec.groups[].rules[].labels.ping: nais-vakt` if the alarm needs to notify the Naisvakt.
 
 ### Critical w/Naisvakt tag
 
@@ -41,6 +43,3 @@ Examples: `Disk usage above 80%`, `Certificate expiring in 14 days`
 
 Informational alerts that do not require immediate action/handling, but are important to know about.
 Examples: `etcd latency alert`, we can't do anything about it, but it's good to know.
-
-
-
