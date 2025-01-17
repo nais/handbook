@@ -40,6 +40,7 @@ Examples: `Disk usage above 80%`, `Certificate expiring in 14 days`
 ### Info
 
 Informational alerts that do not require immediate action/handling, but are important to know about.
+Examples: `etcd latency alert`, we can't do anything about it, but it's good to know.
 
 
 
