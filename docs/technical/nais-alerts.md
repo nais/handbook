@@ -31,8 +31,8 @@ Examples: `Deploy canary failing`, `Connectivity tests failing`.
 
 ### Critical
 
-Should be handled immediately during waking hours (not necessary to wake Naisvakt at night)
-Examples: `Container restarting`
+Should be handled immediately during waking hours (not necessary to wake Naisvakt at night). Use for errors that are critical for the service itself but not for the end users.
+Examples: `Backup failing`
 
 ### Warning
 
