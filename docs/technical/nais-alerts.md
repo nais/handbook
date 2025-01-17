@@ -29,7 +29,7 @@ Examples: `Deploy canary failing`, `Connectivity tests failing`.
 
 ### Critical
 
-Should be handled immediately, but can wait until morning.
+Should be handled immediately during waking hours (not necessary to wake Naisvakt at night)
 Examples: `Container restarting`
 
 ### Warning
