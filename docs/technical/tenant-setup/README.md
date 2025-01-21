@@ -6,6 +6,7 @@ Nais-team needs to do the following:
 
 - In nais-terraform-modules, add new tenant to serviceaccounts.tf. -> PR -> apply
 - add the new user to NAV's billing account (frode, sten or johnny). Billing -> Account Management -> right side menu -> Add user.
+- Create group $NAAS_TENANT_NAME-k8s-admins with the email: $NAAS_TENANT_NAME-k8s-admins@nais.io in nais.io admin.google.com
 
 
 The tenant needs to do the following:
@@ -132,6 +133,15 @@ must be added to the NAIS folder.
     echo "gcloud resource-manager folders set-iam-policy $NAAS_GOOGLE_FOLDERID naas-google-org-policy.json"
     ```
 
+
+### Create Kubernetes security group (in tenant admin.google.com)
+
+This group is used to manage access to the kubernetes clusters, and this is where Nais automatically adds teams that should have access to the clusters.
+
+In [Google Admin](https://admin.google.com) create a group named `gke-security-groups`.
+Make sure the group has the **View Members** permission selected for **Group Members**.
+
+
 The Nais team will now create the environment before 
 ## Run nais-terraform-modules
 
@@ -192,16 +202,6 @@ Users with the admin role in Console have access to some additional settings:
 - Grant / revoke roles
 - Manipulate reconciler states for teams
 
-### Create Kubernetes security group (in tenant admin.google.com)
-
-This group is used to manage access to the kubernetes clusters, and this is where Nais automatically adds teams that should have access to the clusters.
-
-In [Google Admin](https://admin.google.com) create a group named `gke-security-groups`.
-Make sure the group has the **View Members** permission selected for **Group Members**.
-
-### Create nais' k8s nais admin groups (do not confuse with the tenants nais-admins group above, done in nais.io admin.google.com)
-
-Create group $NAAS_TENANT_NAME-k8s-admins with the email: $NAAS_TENANT_NAME-k8s-admins@nais.io
 
 ## Configure OAuth login for web frontend
 
