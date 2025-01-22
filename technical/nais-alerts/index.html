@@ -809,6 +809,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#alert-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alert Rules
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1479,6 +1488,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#alert-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alert Rules
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1507,20 +1525,20 @@
 <p class="admonition-title">Info</p>
 <p>Status: Draft</p>
 </div>
-<p>When developing and operating Nais features, we often need to add alerts so we're able to respond quickly if something unexpected or undesirable should happen. </p>
-<p>This document describes how we currently do alerting in Nais. </p>
+<p>When developing and operating Nais features, we often need to add alerts so we're able to respond quickly if something unexpected or undesirable should happen.</p>
+<p>This document describes how we currently do alerting in Nais.</p>
 <h2 id="alerting-in-nais">Alerting in Nais<a class="headerlink" href="#alerting-in-nais" title="Permanent link">&para;</a></h2>
-<p>We use Slack as the delivery mechanism for alerts, similar to what we provide for the teams. </p>
+<p>We use Slack as the delivery mechanism for alerts, similar to what we provide for the teams.</p>
 <p>The primary channel for alerts is #naas-alerts. This channel is monitored by the whole team during working hours, and by Naisvakt 24/7.</p>
 <h2 id="levels-of-criticality">Levels of criticality<a class="headerlink" href="#levels-of-criticality" title="Permanent link">&para;</a></h2>
-<p>With the exception of the <code>info</code> level, all alerts entering the channel are handled by Naisvakt. 
-Handling an alert means acknowledging it, investigating it or ensuring that the right people are notified. </p>
-<p>If the alert does not lead to or require action, and is not <code>info</code>, the alert must be tuned. Notify the people who created it. </p>
+<p>With the exception of the <code>info</code> level, all alerts entering the channel are handled by Naisvakt.
+Handling an alert means acknowledging it, investigating it or ensuring that the right people are notified.</p>
+<p>If the alert does not lead to or require action, and is not <code>info</code>, the alert must be tuned. Notify the people who created it.</p>
 <p>It's important that we have control over and continuously work to tune alerts to avoid false positives and unnecessary work - leading to alert fatigue.</p>
 <p>In the <code>PrometheusRules</code> resource you use <code>spec.groups[].rules[].labels.severity</code> to set the level, and <code>spec.groups[].rules[].labels.ping: nais-vakt</code> if the alarm needs to notify the Naisvakt.</p>
 <h3 id="critical-wnaisvakt-tag">Critical w/Naisvakt tag<a class="headerlink" href="#critical-wnaisvakt-tag" title="Permanent link">&para;</a></h3>
 <p>Must be handled immediately, and will wake Naisvakt (and probably anyone in close proximity) at night. Ensure that the alert is critical enough to warrant this.
-Examples: <code>Deploy canary failing</code>, <code>Connectivity tests failing</code>. </p>
+Examples: <code>Deploy canary failing</code>, <code>Connectivity tests failing</code>.</p>
 <h3 id="critical">Critical<a class="headerlink" href="#critical" title="Permanent link">&para;</a></h3>
 <p>Should be handled immediately during waking hours (not necessary to wake Naisvakt at night). Use for errors that are critical for the service itself but not for the end users.
 Examples: <code>Backup failing</code></p>
@@ -1530,6 +1548,47 @@ Examples: <code>Disk usage above 80%</code>, <code>Certificate expiring in 14 da
 <h3 id="info">Info<a class="headerlink" href="#info" title="Permanent link">&para;</a></h3>
 <p>Informational alerts that do not require immediate action/handling, but are important to know about.
 Examples: <code>etcd latency alert</code>, we can't do anything about it, but it's good to know.</p>
+<h2 id="alert-rules">Alert Rules<a class="headerlink" href="#alert-rules" title="Permanent link">&para;</a></h2>
+<p>Alert rules are defined in the <code>PrometheusRule</code> resource in the <code>/templates</code> directory of the feature repository.</p>
+<div class="annotate highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring.coreos.com/v1</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PrometheusRule</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my-feature&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">groups</span><span class="p">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;./my.feature.rules&quot;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">rules</span><span class="p">:</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;MyFeatureErrorRateHigh&quot;</span><span class="w"> </span><span class="c1"># (1)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="no">(</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">            </span><span class="no">sum(rate(nginx_ingress_controller_requests{service=&quot;my-feature&quot;, status=~&quot;5..&quot;}[5m])) by (service)</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="no">)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="no">/</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="no">(</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">            </span><span class="no">sum(rate(nginx_ingress_controller_requests{service=&quot;my-feature&quot;}[5m])) by (service)</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="no">) &gt; 0.05</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">      </span><span class="nt">for</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span><span class="w"> </span><span class="c1"># (2)</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;warning&quot;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;nais-system&quot;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">      </span><span class="nt">annotations</span><span class="p">:</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">            </span><span class="no">The error rate for my-feature is above 5% for http requests.</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="nt">consequence</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">            </span><span class="no">Descibe how this affects the users of the service.</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">            </span><span class="no">Check recent changes to the feature https://github.com/nais/helm-charts/commits/main/features/my-feature</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">            </span><span class="no">Check the for any errors `kubectl logs -n nais-system svc/{{`{{`}} $labels.service {{`}}`}}`</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">        </span><span class="nt">dashboard_url</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"> </span><span class="c1"># (3)</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">            </span><span class="no">&quot;https://monitoring.nais.io/d/abc123/my-feature?var-tenant={{ $.Values.fasit.tenant.name }}&amp;var-env={{ $.Values.fasit.env.name }}&quot;</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">        </span><span class="nt">runbook_url</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">            </span><span class="no">&quot;https://github.com/nais/vakt/blob/main/runbooks/my-feature.md&quot;</span>
+</code></pre></div>
+<ol>
+<li>Follow the naming convention <code>FeatureNameAlertDescription</code> for the alert name.</li>
+<li>The alert activation time should not be more than 10 minutes for critical alerts.</li>
+<li>You can use templating to create a dashboard URL that links to the relevant dashboard with the correct variables set for the feature.</li>
+</ol>
 
 
 
@@ -1552,7 +1611,7 @@ Examples: <code>etcd latency alert</code>, we can't do anything about it, but it
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-01-21T16:59:47+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-01-21</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-01-22T09:22:30+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-01-22</span>
   </span>
 
     
@@ -1562,7 +1621,7 @@ Examples: <code>etcd latency alert</code>, we can't do anything about it, but it
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-01-21T16:59:47+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-01-21</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-01-22T09:22:30+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-01-22</span>
   </span>
 
     
