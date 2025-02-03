@@ -1,11 +1,19 @@
 # Step 1 - Nais-team preparations
 
+## Create the terraform service user
 
+In [nais-terraform-modules](https://github.com/nais/nais-terraform-modules)
 
-Nais-team needs to do the following:
+Add the new tenant to `serviceaccounts.tf`. 
 
-- In nais-terraform-modules, add new tenant to serviceaccounts.tf. -> PR -> apply
-- add the new user to NAV's billing account (frode, sten or johnny). Billing -> Account Management -> right side menu -> Add user.
+The name you choose here will be the $NAIS_TENANT_ALIAS used in the next step.
 
+Create a PR and let Atlantis plan and apply the changes.
 
-Snakk med tenant om IP-ranges, og oppdater nais/core/ipplan
+## Add the new tenant to the Nais billing account
+
+- Billing -> Account Management -> Right side menu -> Add user.
+
+## Ask the tenant about what IP-ranges they want to use
+
+TODO: frode
