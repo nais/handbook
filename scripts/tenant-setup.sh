@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+set -e
+
 if [ "$#" -ne 2 ]; then
 	echo "Usage: $0 <ORG_ID> <NAIS_TENANT_ALIAS>"
 	echo ""
@@ -72,17 +74,17 @@ cat <<EOF > nais-user-permissions.json
     }
 EOF
 
-# Create the Nais users permissions file
-sed -ie "s/__TENANTNAME__/$NAIS_TENANT_ALIAS/g" nais-user-permissions.json 
+echo "Creating the Nais users permissions file"
+sed -i "s/__TENANTNAME__/$NAIS_TENANT_ALIAS/g" nais-user-permissions.json && echo "✔️ Permissions file created"
 
-# Allow nais.io domain to be used to log into VMs. Note: does not grant permissions to VMs, just the possibility for the users to come from this domain. 
-gcloud organizations add-iam-policy-binding "$ORG_ID" --member="domain:nais.io" --role="roles/compute.osLoginExternalUser"
+echo "Allowing nais.io domain to be used to log into VMs. Note: does not grant permissions to VMs, just the possibility for the users to come from this domain."
+gcloud organizations add-iam-policy-binding "$ORG_ID" --member="domain:nais.io" --role="roles/compute.osLoginExternalUser" && echo "✔️ nais.io domain allowed to log into VMs"
 
-# Create the nais folder
-gcloud resource-manager folders create --display-name=nais --organization="$ORG_ID"
+echo "Creating the Nais folder"
+gcloud resource-manager folders create --display-name=nais --organization="$ORG_ID" && echo "✔️ Nais folder created"
 
-# Get the folder id for the newly created Nais folder
-NAIS_FOLDER_ID=$(gcloud resource-manager folders list --organization="$ORG_ID" --filter "displayName=nais AND parent=organizations/${ORG_ID}" --format "value(name)")
+echo "Getting the folder id for the Nais folder"
+NAIS_FOLDER_ID=$(gcloud resource-manager folders list --organization="$ORG_ID" --filter "displayName=nais AND parent=organizations/${ORG_ID}" --format "value(name)") && echo "Folder id for nais folder: $NAIS_FOLDER_ID" && echo "✔️ Folder id retrieved"
 
-# Set the IAM policy for the nais folder
-gcloud resource-manager folders set-iam-policy "$NAIS_FOLDER_ID" nais-user-permissions.json
+echo "Setting the IAM policy for the Nais folder"
+gcloud resource-manager folders set-iam-policy "$NAIS_FOLDER_ID" nais-user-permissions.json && echo "✔️ IAM policy set for the Nais folder"
