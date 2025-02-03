@@ -31,6 +31,8 @@ If `Domain restricted sharing` is enabled, allow users from nais.io (nais-io) by
 
 Download and run the setup script found here: https://raw.githubusercontent.com/nais/handbook/refs/heads/main/scripts/tenant-setup.sh
 
+This can be done using the Google Cloud Shell, or locally if you have `gcloud` installed.
+
 ## Teams and users (admin google com)
 
 ### Create Kubernetes security group
