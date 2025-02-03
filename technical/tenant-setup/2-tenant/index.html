@@ -1187,26 +1187,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-the-nais-folder" class="md-nav__link">
+  <a href="#run-setup-script" class="md-nav__link">
     <span class="md-ellipsis">
-      Create the NAIS folder
+      Run setup script
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Create the NAIS folder">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#grant-access-to-the-nais-team-and-the-terraform-user" class="md-nav__link">
-    <span class="md-ellipsis">
-      Grant access to the NAIS team and the terraform user
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1218,35 +1203,35 @@
         <li class="md-nav__item">
   <a href="#teams-and-users-admin-google-com" class="md-nav__link">
     <span class="md-ellipsis">
-      Teams and users (admin google com
+      Teams and users (admin google com)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Teams and users (admin google com">
+    <nav class="md-nav" aria-label="Teams and users (admin google com)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create-kubernetes-security-group-in-tenant-admingooglecom" class="md-nav__link">
+  <a href="#create-kubernetes-security-group" class="md-nav__link">
     <span class="md-ellipsis">
-      Create Kubernetes security group (in tenant admin.google.com)
+      Create Kubernetes security group
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-nais-admin-user-in-tenant-admingooglecom" class="md-nav__link">
+  <a href="#create-nais-admin-user" class="md-nav__link">
     <span class="md-ellipsis">
-      Create nais admin user (in tenant admin.google.com)
+      Create nais admin user
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-console-admins-group-in-tenant-admingooglecom" class="md-nav__link">
+  <a href="#create-console-admins-group" class="md-nav__link">
     <span class="md-ellipsis">
-      Create Console admins group (in tenant admin.google.com)
+      Create Console admins group
     </span>
   </a>
   
@@ -1685,26 +1670,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-the-nais-folder" class="md-nav__link">
+  <a href="#run-setup-script" class="md-nav__link">
     <span class="md-ellipsis">
-      Create the NAIS folder
+      Run setup script
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Create the NAIS folder">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#grant-access-to-the-nais-team-and-the-terraform-user" class="md-nav__link">
-    <span class="md-ellipsis">
-      Grant access to the NAIS team and the terraform user
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1716,35 +1686,35 @@
         <li class="md-nav__item">
   <a href="#teams-and-users-admin-google-com" class="md-nav__link">
     <span class="md-ellipsis">
-      Teams and users (admin google com
+      Teams and users (admin google com)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Teams and users (admin google com">
+    <nav class="md-nav" aria-label="Teams and users (admin google com)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create-kubernetes-security-group-in-tenant-admingooglecom" class="md-nav__link">
+  <a href="#create-kubernetes-security-group" class="md-nav__link">
     <span class="md-ellipsis">
-      Create Kubernetes security group (in tenant admin.google.com)
+      Create Kubernetes security group
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-nais-admin-user-in-tenant-admingooglecom" class="md-nav__link">
+  <a href="#create-nais-admin-user" class="md-nav__link">
     <span class="md-ellipsis">
-      Create nais admin user (in tenant admin.google.com)
+      Create nais admin user
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-console-admins-group-in-tenant-admingooglecom" class="md-nav__link">
+  <a href="#create-console-admins-group" class="md-nav__link">
     <span class="md-ellipsis">
-      Create Console admins group (in tenant admin.google.com)
+      Create Console admins group
     </span>
   </a>
   
@@ -1813,16 +1783,13 @@
 
 
 <h1 id="step-2-tenant-preparations">Step 2 - Tenant preparations<a class="headerlink" href="#step-2-tenant-preparations" title="Permanent link">&para;</a></h1>
-<p>When setting up Nais in your Google organization, they will need a dedicated folder for all resources related to Nais. Everything Nais related will be contained within this folder, and no further permissions are required in the organization.</p>
-<p>Example:</p>
-<pre class="mermaid"><code>graph TD
-A[GCP Organization] --&gt; B[nais]
-B --&gt; C[management]
-B --&gt; D[dev]
-B --&gt; E[prod]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step is done by the tenant administrators, and is typically done in collaboration with the Nais team.</p>
+</div>
+<p>When setting up Nais in your Google organization, we will need a dedicated folder for all resources related to Nais. Everything Nais related will be contained within this folder, and no further permissions are required in the organization.</p>
 <h2 id="required-settings">Required settings<a class="headerlink" href="#required-settings" title="Permanent link">&para;</a></h2>
-<p>On the user that will run the following commands, the following IAM roles are
-required on an organization level.</p>
+<p>The tenant administrator that will perform the following commands will need these permissions on the organization level: </p>
 <ul>
 <li><code>Owner</code></li>
 <li><code>Organization Administrator</code></li>
@@ -1831,106 +1798,26 @@ required on an organization level.</p>
 </ul>
 <h3 id="disable-domain-restricted-sharing">Disable Domain restricted sharing<a class="headerlink" href="#disable-domain-restricted-sharing" title="Permanent link">&para;</a></h3>
 <ul>
-<li>If <code>Domain restricted sharing</code> is enabled, allow users from nais.io (nais-io) by adding the domain to <code>iam.allowedPolicyMemberDomains</code> under <code>IAM/Organization Policies</code>
-TODO: steps to do this. This must happen before the next step because we are refering to nais.io.</li>
+<li>If <code>Domain restricted sharing</code> is enabled, allow users from nais.io (nais-io) by adding the domain to <code>iam.allowedPolicyMemberDomains</code> under <code>IAM/Organization Policies</code></li>
 </ul>
-<h3 id="create-the-nais-folder">Create the NAIS folder<a class="headerlink" href="#create-the-nais-folder" title="Permanent link">&para;</a></h3>
-<p>Everything related to NAIS is contained within this folder.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">NAAS_ORG_NAME</span><span class="o">=</span>my-org<span class="w"> </span><span class="c1"># (1)</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">NAAS_ORG_ID</span><span class="o">=</span><span class="k">$(</span>gcloud<span class="w"> </span>organizations<span class="w"> </span>list<span class="w"> </span>--filter<span class="w"> </span><span class="nv">$NAAS_ORG_NAME</span><span class="w"> </span>--format<span class="w"> </span><span class="s2">&quot;value(name)&quot;</span><span class="k">)</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>gcloud<span class="w"> </span>organizations<span class="w"> </span>add-iam-policy-binding<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAAS_ORG_ID</span><span class="s2">&quot;</span><span class="w"> </span>--member<span class="o">=</span><span class="s2">&quot;domain:nais.io&quot;</span><span class="w"> </span>--role<span class="o">=</span><span class="s2">&quot;roles/compute.osLoginExternalUser&quot;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>gcloud<span class="w"> </span>resource-manager<span class="w"> </span>folders<span class="w"> </span>create<span class="w"> </span>--display-name<span class="o">=</span>nais<span class="w"> </span>--organization<span class="o">=</span><span class="nv">$NAAS_ORG_ID</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">NAAS_GOOGLE_FOLDERID</span><span class="o">=</span><span class="k">$(</span>gcloud<span class="w"> </span>resource-manager<span class="w"> </span>folders<span class="w"> </span>list<span class="w"> </span>--organization<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$NAAS_ORG_ID</span><span class="s2">&quot;</span><span class="w"> </span>--filter<span class="w"> </span><span class="s2">&quot;displayName=nais AND parent=organizations/</span><span class="si">${</span><span class="nv">NAAS_ORG_ID</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>--format<span class="w"> </span><span class="s2">&quot;value(name)&quot;</span><span class="k">)</span>
-</code></pre></div>
-<ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> Change this to the name of your Google Organization</li>
-</ol>
-<h4 id="grant-access-to-the-nais-team-and-the-terraform-user">Grant access to the NAIS team and the terraform user<a class="headerlink" href="#grant-access-to-the-nais-team-and-the-terraform-user" title="Permanent link">&para;</a></h4>
-<p>To allow the NAIS team the required permissions to operate nais, IAM policies
-must be added to the NAIS folder.</p>
-<div class="admonition bug">
-<p class="admonition-title">Bug</p>
-<p>Find correct roles for the following users:</p>
-<ul>
-<li>nais-viewers</li>
-<li>nais-admins</li>
-</ul>
-</div>
-<details>
-<summary>Copy and run this command</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cat<span class="w"> </span><span class="s">&lt;&lt;EOF &gt; naas-google-org-policy.json</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="s">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="s">  &quot;bindings&quot;: [</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s">    {</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="s">      &quot;members&quot;: [</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="s">        &quot;serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com&quot;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="s">      ],</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="s">      &quot;role&quot;: &quot;roles/artifactregistry.admin&quot;</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="s">    },</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="s">    {</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="s">      &quot;members&quot;: [</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="s">        &quot;serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com&quot;</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="s">      ],</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="s">      &quot;role&quot;: &quot;roles/compute.admin&quot;</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="s">    },</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="s">    {</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="s">      &quot;members&quot;: [</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="s">        &quot;serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com&quot;</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="s">      ],</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="s">      &quot;role&quot;: &quot;roles/container.admin&quot;</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="s">    },</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="s">    {</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="s">      &quot;members&quot;: [</span>
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="s">        &quot;serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com&quot;</span>
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="s">      ],</span>
-<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="s">      &quot;role&quot;: &quot;roles/dns.admin&quot;</span>
-<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="s">    },</span>
-<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="s">    {</span>
-<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="s">      &quot;members&quot;: [</span>
-<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="s">        &quot;serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com&quot;</span>
-<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="s">      ],</span>
-<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="s">      &quot;role&quot;: &quot;roles/logging.admin&quot;</span>
-<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="s">    },</span>
-<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="s">    {</span>
-<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="s">      &quot;members&quot;: [</span>
-<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="s">        &quot;serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com&quot;</span>
-<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="s">      ],</span>
-<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="s">      &quot;role&quot;: &quot;roles/resourcemanager.folderCreator&quot;</span>
-<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="s">    },</span>
-<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="s">    {</span>
-<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="s">      &quot;members&quot;: [</span>
-<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="s">        &quot;serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com&quot;</span>
-<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="s">      ],</span>
-<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="s">      &quot;role&quot;: &quot;roles/resourcemanager.folderIamAdmin&quot;</span>
-<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="s">    },</span>
-<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="s">    {</span>
-<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="s">      &quot;members&quot;: [</span>
-<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="s">        &quot;serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com&quot;</span>
-<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="s">      ],</span>
-<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="s">      &quot;role&quot;: &quot;roles/resourcemanager.projectCreator&quot;</span>
-<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="s">    },</span>
-<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="s">    {</span>
-<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="s">      &quot;members&quot;: [</span>
-<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="s">        &quot;serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com&quot;</span>
-<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="s">      ],</span>
-<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="s">      &quot;role&quot;: &quot;roles/serviceusage.serviceUsageAdmin&quot;</span>
-<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a><span class="s">    }</span>
-<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a><span class="s">  ]</span>
-<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a><span class="s">}</span>
-<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a><span class="s">EOF</span>
-<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;Enter NaaS Tenant Name [</span><span class="nv">$NAAS_TENANTNAME</span><span class="s2">]: &quot;</span><span class="w"> </span>TENANTNAME<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a><span class="nb">export</span><span class="w"> </span><span class="nv">NAAS_TENANTNAME</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">TENANTNAME</span><span class="k">:-</span><span class="nv">$NAAS_TENANTNAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>sed<span class="w"> </span>-ie<span class="w"> </span><span class="s2">&quot;s/__TENANTNAME__/</span><span class="nv">$NAAS_TENANTNAME</span><span class="s2">/g&quot;</span><span class="w"> </span>naas-google-org-policy.json<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;gcloud resource-manager folders set-iam-policy </span><span class="nv">$NAAS_GOOGLE_FOLDERID</span><span class="s2"> naas-google-org-policy.json&quot;</span>
-</code></pre></div>
-</details>
-<h2 id="teams-and-users-admin-google-com">Teams and users (admin google com<a class="headerlink" href="#teams-and-users-admin-google-com" title="Permanent link">&para;</a></h2>
-<h3 id="create-kubernetes-security-group-in-tenant-admingooglecom">Create Kubernetes security group (in tenant admin.google.com)<a class="headerlink" href="#create-kubernetes-security-group-in-tenant-admingooglecom" title="Permanent link">&para;</a></h3>
+<p>TODO: steps to do this. This must happen before the next step because we are refering to nais.io.</p>
+<h3 id="run-setup-script">Run setup script<a class="headerlink" href="#run-setup-script" title="Permanent link">&para;</a></h3>
+<p>Download and run the setup script found here: https://raw.githubusercontent.com/nais/handbook/refs/heads/main/scripts/tenant-setup.sh</p>
+<h2 id="teams-and-users-admin-google-com">Teams and users (admin google com)<a class="headerlink" href="#teams-and-users-admin-google-com" title="Permanent link">&para;</a></h2>
+<h3 id="create-kubernetes-security-group">Create Kubernetes security group<a class="headerlink" href="#create-kubernetes-security-group" title="Permanent link">&para;</a></h3>
 <p>This group is used to manage access to the kubernetes clusters, and this is where Nais automatically adds teams that should have access to the clusters.</p>
-<p>In <a href="https://admin.google.com">Google Admin</a> create a group named <code>gke-security-groups</code>.
-Make sure the group has the <strong>View Members</strong> permission selected for <strong>Group Members</strong>.</p>
-<h3 id="create-nais-admin-user-in-tenant-admingooglecom">Create nais admin user (in tenant admin.google.com)<a class="headerlink" href="#create-nais-admin-user-in-tenant-admingooglecom" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to <a href="https://admin.google.com/ac/groups">https://admin.google.com/ac/groups</a></li>
+<li>Click on <code>Create group</code></li>
+<li>Enter <code>gke-security-groups</code> as the group name</li>
+<li>Enter <code>gke-security-groups</code> as the email address</li>
+<li>Enter <code>This group manages who has GKE permissions</code> as the description</li>
+<li>Note: Do <em>not</em> check the box for <code>Security</code></li>
+<li>Click <code>Next</code></li>
+<li>Select 'Only invited users' in the 'Who can join the group' section. Leave the rest as default.</li>
+<li>Click <code>Create Group</code></li>
+</ol>
+<h3 id="create-nais-admin-user">Create nais admin user<a class="headerlink" href="#create-nais-admin-user" title="Permanent link">&para;</a></h3>
 <p>Nais needs a dedicated user account in the Google directory. This user must be manually created <a href="https://admin.google.com/ac/users">in the Google Admin console</a>. The user must be granted the <code>Groups Admin</code> role to be able to create and maintain groups for the teams:</p>
 <ol>
 <li>Go to <a href="https://admin.google.com/ac/users">https://admin.google.com/ac/users</a></li>
@@ -1941,7 +1828,7 @@ Make sure the group has the <strong>View Members</strong> permission selected fo
 <li>Click on the created user (might require a hard refresh of the user list) and then on <code>Assign roles</code> under the <code>Admin roles and privileges</code> section</li>
 <li>Assign the <code>Groups Admin</code> role and click <code>Save</code></li>
 </ol>
-<h3 id="create-console-admins-group-in-tenant-admingooglecom">Create Console admins group (in tenant admin.google.com)<a class="headerlink" href="#create-console-admins-group-in-tenant-admingooglecom" title="Permanent link">&para;</a></h3>
+<h3 id="create-console-admins-group">Create Console admins group<a class="headerlink" href="#create-console-admins-group" title="Permanent link">&para;</a></h3>
 <p>Nais (API) automatically syncs users from the Google Workspace to its own database. Tenants can control which users that should be assigned the admin role in Nais by creating a group called <code>console-admins@&lt;tenant-domain&gt;</code>, and then add the necessary users to this group. When Console/Nais API runs the user sync it will look for this group, and make sure that the users in the group are granted the admin role.
 Whenever a user is removed from the group, Nais will revoke the admin role from the user on the next sync.</p>
 <ol>
@@ -1964,21 +1851,21 @@ Whenever a user is removed from the group, Nais will revoke the admin role from 
 <h3 id="log-location">Log location<a class="headerlink" href="#log-location" title="Permanent link">&para;</a></h3>
 <p>Every project created in GCP will have a default log location for all logs. The default is Global.
 In order to keep your logs in europe, we <em>strongly</em> recommend setting the default log location to europe using the following command</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>gcloud<span class="w"> </span>alpha<span class="w"> </span>logging<span class="w"> </span>settings<span class="w"> </span>update<span class="w"> </span>--organization<span class="o">=</span><span class="nv">$NAAS_ORG_ID</span><span class="w"> </span>--storage-location<span class="o">=</span>europe-north1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gcloud<span class="w"> </span>alpha<span class="w"> </span>logging<span class="w"> </span>settings<span class="w"> </span>update<span class="w"> </span>--organization<span class="o">=</span><span class="nv">$ORG_ID</span><span class="w"> </span>--storage-location<span class="o">=</span>europe-north1
 </code></pre></div>
 <h3 id="organization-policy-for-location">Organization policy for location<a class="headerlink" href="#organization-policy-for-location" title="Permanent link">&para;</a></h3>
 <p>Although all resources created by NAIS is located within the EU, teams are still able to create resources anywhere unless an organizational constraint is in place.</p>
 <details>
 <summary>Click to see file content</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">constraint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">constraints/gcp.resourceLocations</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">etag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BwVUSr8Q7Ng=</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">listPolicy</span><span class="p">:</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">allowedValues</span><span class="p">:</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">in:eu-locations</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">constraint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">constraints/gcp.resourceLocations</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">etag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BwVUSr8Q7Ng=</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">listPolicy</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">allowedValues</span><span class="p">:</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">in:eu-locations</span>
 </code></pre></div>
 </details>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>gcloud<span class="w"> </span>beta<span class="w"> </span>resource-manager<span class="w"> </span>org-policies<span class="w"> </span>set-policy<span class="w"> </span>--organization<span class="o">=</span><span class="nv">$NAAS_ORG_ID</span><span class="w"> </span>&lt;file<span class="w"> </span>name&gt;.yaml
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>gcloud<span class="w"> </span>beta<span class="w"> </span>resource-manager<span class="w"> </span>org-policies<span class="w"> </span>set-policy<span class="w"> </span>--organization<span class="o">=</span><span class="nv">$ORG_ID</span><span class="w"> </span>&lt;file<span class="w"> </span>name&gt;.yaml
 </code></pre></div>
 
 
@@ -2002,7 +1889,7 @@ In order to keep your logs in europe, we <em>strongly</em> recommend setting the
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-02-03T09:52:08+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-02-03</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-02-03T09:59:11+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-02-03</span>
   </span>
 
     
@@ -2012,7 +1899,7 @@ In order to keep your logs in europe, we <em>strongly</em> recommend setting the
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-02-03T09:52:08+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-02-03</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-02-03T09:59:11+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-02-03</span>
   </span>
 
     
