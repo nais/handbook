@@ -2,7 +2,7 @@
 
 ## Configure OAuth login for web frontend
 
-Set up an OAuth client for _Console_.
+Set up an OAuth client for _Console_ in the tenant management project. 
 
 1. Go to https://console.cloud.google.com
 1. Choose project <tenant org> -> nais-management -> nais-management
