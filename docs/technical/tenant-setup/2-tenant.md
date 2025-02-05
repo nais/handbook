@@ -15,16 +15,17 @@ The tenant administrator that will perform the following commands will need thes
 - `Folder Creator`
 - `Organization Policy Administrator`
 
-### Edit `Domain restricted sharing` policy
+### Disable `Domain restricted sharing` policy
 
-If `Domain restricted sharing` is enabled, allow users from nais.io (nais-io) by adding the domain to `iam.allowedPolicyMemberDomains` under `IAM/Organization Policies`
+Domain restricted sharing must be disabled to allow SA's from other domains, as well as being able to create public resources. See [Google documentation](https://cloud.google.com/resource-manager/docs/organization-policy/restricting-domains#configure-exceptions) for more information.
 
 1. Select the top-level organization in the Google Cloud Console
 1. Go to `IAM & Admin` -> `Organization policies`
 1. Find the policy `Domain restricted sharing` (iam.allowedPolicyMemberDomains)
 1. Actions (three dots) -> Edit policy
 1. Click `Manage policy`
-1. Here, you will likely see a existing rule with a custom allow policy for your domain (`is:C0XXXXXX`). Add the value `is:C00xgb366` to this rule. This is the nais.io domain.
+1. Select `Override parent's policy` and `Replace`
+1. In the `Policy values` select `Allow all`
 1. Click `Done` and `Set policy`
 1. Allow a couple of minutes for the policy to take effect
 
