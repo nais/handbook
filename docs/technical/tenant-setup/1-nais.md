@@ -19,24 +19,30 @@ Create a PR and let Atlantis plan and apply the changes.
 Make sure we have IP-ranges that do not overlap with the tenant's existing infrastructure.
 If the tenant requires connectivity with external 
 ### Example ranges
-#### Clusters
-##### Management
-| Subnetworks    | Description       |
-|----------------|-------------------|
-| 10.0.0.0/26    | node ip range     |
-| 10.0.8.0/21    | pod ip range      |
-| 192.168.0.0/21 | services ip range |
-| 100.64.4.0/24  | internal lb range |
-| 172.16.5.0/28  | apiserver         |
+Management
+  ip_cidr_range            = "10.17.0.0/23"
+  pods_ip_cidr_range       = "10.17.64.0/18"
+  svc_ip_cidr_range        = "192.168.0.0/21"
+  master_ip_cidr_range     = "172.16.0.0/28"
+  loadbalancer_cidr_range  = "100.64.0.0/24"
+
+Dev 
+  ip_cidr_range            = "10.17.2.0/23"
+  aiven_vpc_cidr           = "10.17.8.0/24"
+  pods_ip_cidr_range       = "10.17.128.0/18"
+  svc_ip_cidr_range        = "192.168.4.0/21"
+  master_ip_cidr_range     = "172.16.0.16/28"
+  loadbalancer_cidr_range  = "100.64.1.0/24"
+  shared_vpc_ip_cidr       = "100.71.0.0/20"
+
+Prod 
+  ip_cidr_range            = "10.17.4.0/23"
+  aiven_vpc_cidr           = "10.17.9.0/24"
+  pods_ip_cidr_range       = "10.17.192.0/18"
+  svc_ip_cidr_range        = "192.168.8.0/21"
+  master_ip_cidr_range     = "172.16.0.32/28"
+  loadbalancer_cidr_range  = "100.64.2.0/24"
+  shared_vpc_ip_cidr_start = "100.71.16.0/20"
 
 
-##### sandbox
-| Subnetworks    | Description       |
-|----------------|-------------------|
-| 10.0.2.0/23    | node ip range     |
-| 10.0.64.0/18   | pod ip range      |
-| 192.168.8.0/21 | services ip range |
-| 100.64.5.0/24  | internal lb range |
-| 172.16.5.16/28 | apiserver         |
-| 172.16.5.16/24 | aiven             |
 

@@ -68,6 +68,12 @@ cat <<EOF > nais-user-permissions.json
           "members": [
             "serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com"
           ],
+          "role": "roles/privilegedaccessmanager.admin"
+        },
+        {
+          "members": [
+            "serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com"
+          ],
           "role": "roles/serviceusage.serviceUsageAdmin"
         }
       ]
@@ -88,3 +94,6 @@ NAIS_FOLDER_ID=$(gcloud resource-manager folders list --organization="$ORG_ID" -
 
 echo "Setting the IAM policy for the Nais folder"
 gcloud resource-manager folders set-iam-policy "$NAIS_FOLDER_ID" nais-user-permissions.json && echo "✔️ IAM policy set for the Nais folder"
+
+echo "Copy and send the following values to the Nais team:"
+echo "NAIS_FOLDER_ID: $NAIS_FOLDER_ID, ORG_ID: $ORG_ID"

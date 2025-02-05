@@ -2,6 +2,7 @@
 
 !!! note
     This step is done by the tenant administrators, and is typically done in collaboration with the Nais team.
+    
 
 When setting up Nais in your Google organization, we will need a dedicated folder for all resources related to Nais. Everything Nais related will be contained within this folder, and no further permissions are required in the organization.
 
@@ -32,6 +33,9 @@ If `Domain restricted sharing` is enabled, allow users from nais.io (nais-io) by
 Download and run the setup script found here: https://raw.githubusercontent.com/nais/handbook/refs/heads/main/scripts/tenant-setup.sh
 
 This can be done using the Google Cloud Shell, or locally if you have `gcloud` installed.
+
+!!! note
+    After running the script, we have both the `ORG_ID` and `NAIS_FOLDER_ID` that is required by the nais team.
 
 ## Teams and users (admin google com)
 
