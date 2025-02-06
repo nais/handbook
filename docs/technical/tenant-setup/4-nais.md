@@ -20,3 +20,14 @@ Set up an OAuth client for _Console_ in the tenant management project.
 1. Set Name and Authorized redirect URIs
 1. _Create_
 1. Copy client id and secret and give to NAIS-team
+
+## 
+
+## Add the API reconcilers user to the billing account
+
+- Billing -> Account Management -> Right side menu (Show info panel) -> Add principal
+
+Add `nais-api-reconcilers@<MANAGEMENT_PROJECT_ID>.iam.gserviceaccount.com` as Billing Account User
+
+
+

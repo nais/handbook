@@ -12,7 +12,9 @@ Create a PR and let Atlantis plan and apply the changes.
 
 ## Add the new tenant to the Nais billing account
 
-- Billing -> Account Management -> Right side menu -> Add user.
+- Billing -> Account Management -> Right side menu (Show info panel) -> Add principal
+
+Add `nais-tf-<TENANT>@nais-io.iam.gserviceaccount.com` as Billing Account User
 
 ## Ask the tenant about what IP-ranges they want to use
 
