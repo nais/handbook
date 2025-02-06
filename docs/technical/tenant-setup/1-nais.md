@@ -21,6 +21,8 @@ Add `nais-tf-<TENANT>@nais-io.iam.gserviceaccount.com` as Billing Account User
 Make sure we have IP-ranges that do not overlap with the tenant's existing infrastructure.
 If the tenant requires connectivity with external 
 ### Example ranges
+
+```text
 Management
   ip_cidr_range            = "10.17.0.0/23"
   pods_ip_cidr_range       = "10.17.64.0/18"
@@ -45,6 +47,6 @@ Prod
   master_ip_cidr_range     = "172.16.0.32/28"
   loadbalancer_cidr_range  = "100.64.2.0/24"
   shared_vpc_ip_cidr_start = "100.71.16.0/20"
-
+```
 
 
