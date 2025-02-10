@@ -11,6 +11,7 @@ This document describes how the board works and the meaning of it's columns.
 This is where initiatives are placed when they are first created and the shaping takes place.
 Whoever has the initiative makes sure relevant people are involved in the shaping process.
 
+Initiatives that are not selected for the next period are moved back to this column, and can then either be [re-pitched](#re-pitching) or archived.
 
 ### Initiativer (RFC)
 
