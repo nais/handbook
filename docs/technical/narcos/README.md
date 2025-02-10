@@ -4,7 +4,7 @@ NAIS Adminstrator CLI Og Scripts
 
 ## Installation
 
-`brew install narco`
+`brew install narc`
 
 ## Usage
 
