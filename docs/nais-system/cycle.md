@@ -1,7 +1,7 @@
 # A NAIS cycle
 
 ## Focus period (6 weeks)
-Every week during a focus period we have a [weekly](weekly.md)
+Every week during a focus period we have a weekly at noon. 
 
 ## Cool-down (2 weeks)
 - Tuesday in the first week of a cooldown we have a [NAIS day](nais-day.md)
