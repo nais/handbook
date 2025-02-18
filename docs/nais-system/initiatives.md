@@ -6,6 +6,8 @@ An initiative makes it clear _why_ this should be done, and _how_ it can solve _
 
 The process of taking an idea to a proposed initiative, is typically referred to as _shaping_.
 
+An initiative may be a standalone project, or part of a lager [ambition](ambitions.md).
+
 ## Anatomy
 
 These are the key components of an initiative:

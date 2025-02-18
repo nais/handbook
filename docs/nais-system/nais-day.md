@@ -9,5 +9,3 @@ We launch a thread in the #nais_internal channel a couple of days before to pre-
 
 This continues until lunch, followed by a group demo session to share our work from the last focus period.
 We discuss and share ideas until we feel just the right amount of dizzy. That's the signal that it's time to head off to a pub or restaurant for an evening of wining and dining.
-This is organized by our eminent social general, Kim Tore. 
-
