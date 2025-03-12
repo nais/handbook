@@ -25,11 +25,11 @@ The tokens are in turn only issued to Google Service Accounts that exist within 
 To set this up, you will need to find some identifiers from within your Google organization:
 
 1. Find the NAIS Google Project IDs:
-    1. Use the `gcloud` CLI: `gcloud projects list --filter="nais-"`
-    2. There should be one project ID for each environment; `nais-dev-xxxx` and `nais-prod-xxxx`. Note these down.
-2. For each project ID, find the unique Service Account ID for Azurerator:
-    1. `gcloud iam service-accounts describe azurerator@<PROJECT_ID>.iam.gserviceaccount.com`, where `PROJECT_ID` is the ID found in the previous step.
-    2. Note down the `uniqueId` for the service account. This ID uniquely identifies the Google Service Account that Azurerator uses in each environment.
+    1. Use the `gcloud` CLI: `gcloud projects list --filter="project_id ~ ^nais-" --format="value(PROJECT_ID)"`
+    2. There should be one project ID for each environment; for example `nais-dev-xxxx` and `nais-prod-xxxx`. Note these down.
+2. For each project ID, find the unique ID for Azurerator's service account:
+    1. `gcloud iam service-accounts describe azurerator@<PROJECT_ID>.iam.gserviceaccount.com --format="value(uniqueId)"`, where `PROJECT_ID` is the ID found in the previous step.
+    2. Note down the ID value. This ID uniquely identifies the Google Service Account that Azurerator uses in each environment.
 
 ### Azure AD Application Registration
 
