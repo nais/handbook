@@ -39,6 +39,7 @@ This tenant is configured by [nais-terraform-modules](https://github.com/nais/na
 ### test-nais.no
 An environment for potential future tenants to test out the platform.
 It is not connected to Aiven, so testing is limited to basic functionality.
+When someone wants access to test-nais.no, we will create test-nais.no users for them manually.
 This tenant is configured by [nais-terraform-modules](https://github.com/nais/nais-terraform-modules)
 
 All of the above tenants are accessible with our nais.io-user.
