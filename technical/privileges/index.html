@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://handbook.nais.io/technical/narcos/">
+        <link rel="canonical" href="https://handbook.nais.io/technical/privileges/">
       
       
-        <link rel="prev" href="../upgrading-kafka/">
+        <link rel="prev" href="../overview/">
       
       
-        <link rel="next" href="reference/cluster/">
+        <link rel="next" href="../production-ready/">
       
       
       <link rel="icon" href="../../assets/logo.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Narcos - NAIS Handbook</title>
+        <title>Privilegier og brukere - NAIS Handbook</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#narcos" class="md-skip">
+        <a href="#privilegier-og-brukere" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Narcos
+              Privilegier og brukere
             
           </span>
         </div>
@@ -740,10 +740,31 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../privileges/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Privilegier og brukere
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -753,6 +774,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nais-io-bruker" class="md-nav__link">
+    <span class="md-ellipsis">
+      nais-io-bruker
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tenant-bruker" class="md-nav__link">
+    <span class="md-ellipsis">
+      tenant-bruker
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#superadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superadmin
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -828,8 +896,6 @@
                 
   
   
-    
-  
   
   
     
@@ -844,16 +910,16 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../narcos/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -865,13 +931,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_12">
             <span class="md-nav__icon md-icon"></span>
             narcos
@@ -929,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/cluster/" class="md-nav__link">
+      <a href="../narcos/reference/cluster/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -951,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/tenant/" class="md-nav__link">
+      <a href="../narcos/reference/tenant/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1481,18 +1547,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#nais-io-bruker" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation
+      nais-io-bruker
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
+  <a href="#tenant-bruker" class="md-nav__link">
     <span class="md-ellipsis">
-      Usage
+      tenant-bruker
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#superadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superadmin
     </span>
   </a>
   
@@ -1514,7 +1589,7 @@
 
 
   
-    <a href="https://github.com/nais/handbook/edit/main/docs/technical/narcos/README.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/nais/handbook/edit/main/docs/technical/privileges.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1522,12 +1597,19 @@
   
 
 
-<h1 id="narcos">Narcos<a class="headerlink" href="#narcos" title="Permanent link">&para;</a></h1>
-<p>NAIS Adminstrator CLI Og Scripts</p>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p><code>brew install narc</code></p>
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<p>See available subcommands under the Reference section in the navigation sidebar.</p>
+<h1 id="privilegier-og-brukere">Privilegier og brukere<a class="headerlink" href="#privilegier-og-brukere" title="Permanent link">&para;</a></h1>
+<h2 id="nais-io-bruker">nais-io-bruker<a class="headerlink" href="#nais-io-bruker" title="Permanent link">&para;</a></h2>
+<p>For å administrere Nais benyttes nais-io-brukeren din hos alle tenants.
+Denne brukeren har i utgangspunktet svært få rettigheter, men man kan elevere tilgangene sine ved behov med <a href="../narcos/">narc</a>. Vær klar over at <code>reason</code>-feltet i <code>narc</code>-kommandoene er obligatorisk, og at det er viktig å begrunne hvorfor du trenger tilgang til en spesifikk ressurs, da dette blir loggført og er synlig for tenants.
+Med eleverte tilganger har du utvidet rettighetene dine i en begrenset periode i nais-katalogen hos den enkelte tenant.</p>
+<h2 id="tenant-bruker">tenant-bruker<a class="headerlink" href="#tenant-bruker" title="Permanent link">&para;</a></h2>
+<p>Noen ganger har vi behov for å teste hvordan funksjonaliteten vi har laget oppleves for utviklere på nais.
+Til dette har vi dedikerte brukere i noen av tenantene. Eksempelvis dev-nais-brukere i dev-nais-tenanten.
+Med denne brukeren kan du utforske console, opprette team og bruke plattformen som en vanlig utvikler.
+Disse brukerne opprettes manuelt av noen med admin-tilgang til tenanten.</p>
+<h2 id="superadmin">Superadmin<a class="headerlink" href="#superadmin" title="Permanent link">&para;</a></h2>
+<p>I tillegg til å være Nais-administratorer har vi også ansvar for Navs GCP-organisasjon. 
+Dette krever tilganger ut over nais-katalogen, og det er en håndfull personer i nais-teamet som har personlige upersonlige brukere sikret med fysisk nøkkel som har mulighet til å gjøre ting på organisasjonsnivå.</p>
 
 
 
@@ -1591,7 +1673,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../upgrading-kafka/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Procedure to follow when upgrading Kafka">
+          <a href="../overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: NAIS Overview">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1601,20 +1683,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Procedure to follow when upgrading Kafka
+                NAIS Overview
               </div>
             </div>
           </a>
         
         
           
-          <a href="reference/cluster/" class="md-footer__link md-footer__link--next" aria-label="Next: cluster command">
+          <a href="../production-ready/" class="md-footer__link md-footer__link--next" aria-label="Next: What is production ready?">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                cluster command
+                What is production ready?
               </div>
             </div>
             <div class="md-footer__button md-icon">
