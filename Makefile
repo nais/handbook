@@ -1,10 +1,12 @@
-.PHONY: all install local
-SHELL := bash
+.PHONY: build check serve install-mkdocs
 
-all: install local
-
-install:
+install-mkdocs:
 	poetry install
 
-local:
-	poetry run mkdocs serve --dev-addr localhost:8001
+build:
+	poetry run mkdocs build --strict
+
+chect: build
+
+serve:
+	poetry run mkdocs serve --clean --strict --watch docs/
