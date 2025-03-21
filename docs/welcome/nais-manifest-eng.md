@@ -13,7 +13,8 @@ The NAIS platform is there for the development teams, and aims to offer the best
 We do this by offering solid products that solve real problems at scale.
 The products are based on technology the nais team believes are technologically sustainable.
 By using the platform's products and following the platform standards, the teams can focus on solving high value challenges rather than underlying nuts and bolts.
-The two most important drivers for the further evolution of the platform are technological developments and the needs of the teams.
+
+The two most important drivers for the further evolution of the platform are _technological developments_ and the _needs of the teams_.
 
 ## What motivates us?
 
@@ -39,13 +40,13 @@ We take the advice of seasoned adventurers, but at the same time know that we ca
 ## What are we optimizing for?
 
 * Development speed
- 
+
 * A first class developer experience
-  
+
 * Easy to build secure applications
- 
+
 * Easy to operate applications
- 
+
 * Good ergonomics
- 
+
 * Keep pace with new technology

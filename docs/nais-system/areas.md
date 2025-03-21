@@ -1,6 +1,6 @@
 # NAIS areas
 
-To ensure that all parts of NAIS are well taken care of, we have created what we call "areas". Everything we create, have a home in one of these areas. 
+To ensure that all parts of NAIS are well taken care of, we have created what we call "areas". Everything we create, have a home in one of these areas.
 Each area has one or two _anchors_. The anchors responsibility is to ensure that the area is well taken care of. They have oversight over the area, and are the go-to person for questions and discussions related to the area. E.g. if an [initiative](initiatives.md) is proposed that affects the area, the anchor should be involved in the discussion.
 
 NAIS is divided into several areas, each with its own anchor. The anchor is responsible for the area and is the go-to person for questions and discussions related to the area. The anchor is also responsible for keeping the area's board up to date.
@@ -49,7 +49,7 @@ NAIS is divided into several areas, each with its own anchor. The anchor is resp
 
 **Anchor(s):** Thomas & Christer
 
-**Components:** Nais API, Console, Nais CLI, Fasit, hookd, deployd, deploy-action. 
+**Components:** Nais API, Console, Nais CLI, Fasit, hookd, deployd, deploy-action.
 
 ## Visuelt
 
@@ -62,7 +62,7 @@ NAIS is divided into several areas, each with its own anchor. The anchor is resp
 **Anchor(s):** Frode, Johnny
 
 **Components:** doc, nais.io, handbook, naiserator, liberator, CLI, actions (deploy, docker-build-push, cdn, "spa-deploy")
- 
+
 ---
 
 **Misc:**
@@ -70,4 +70,3 @@ NAIS is divided into several areas, each with its own anchor. The anchor is resp
 - KrakenD: Tommy & Sindre
 - Unleash: Hans Kristian
 - Vault: Trong (https://github.com/orgs/nais/projects/26/views/1)
-

@@ -1,8 +1,7 @@
 # Initiative
 
 The scheduled work we do in our focus periods are described in what we call _initiatives_.
-
-An initiative makes it clear _why_ this should be done, and _how_ it can solve _what_ for _whom_. 
+An initiative makes it clear _why_ this should be done, and _how_ it can solve _what_ for _whom_.
 
 The process of taking an idea to a proposed initiative, is typically referred to as _shaping_.
 
@@ -15,7 +14,7 @@ These are the key components of an initiative:
 ### Essence
 
 The essence should describe the core idea and purpose of the initiative.
-This should be clear and concise, and ensures that you have solid understanding of the problem. 
+This should be clear and concise, and ensures that you have solid understanding of the problem.
 
 In addition this helps the working group make scoping decisions along the way.
 
@@ -31,11 +30,11 @@ During the shaping process, you often identify rabbit holes and critial paths th
 
 ### Possible solution
 
-Make sure that there actually exists a path to success by sketching out how one envisions an actual _possible_ solution. 
+Make sure that there actually exists a path to success by sketching out how one envisions an actual _possible_ solution.
 
 This exercise ensures that what is proposed is technically feasible. By going through the moving parts involved, you're usually able to detect any obvious show stoppers as well as possible rabbit holes to avoid. These should be listed as [non-goals](#non-goals).
 
-Having worked through this, we can see if we are introducing or removing any components, creating any new dependencies or taking on any new responsibilities. 
+Having worked through this, we can see if we are introducing or removing any components, creating any new dependencies or taking on any new responsibilities.
 Understand the technical and/or human impact is important aspects when evaluating the initiative.
 
 If the solution impacts or involves some parts of NAIS, make sure that the relevant people (e.g. anchors) are involved in the shaping process.
@@ -60,6 +59,7 @@ It's a good idea to talk through the iniative(s) together, to make sure that eve
 Once this is done, it's a good idea to see if there is any particular order in which the initiatives should be worked on. 
 
 Things to consider related to this might be:
+
 - Will any key people be unavailable during the focus period?
 - Are there any other initiatives in the team, that might impact our work - that we should coordinate with?
 

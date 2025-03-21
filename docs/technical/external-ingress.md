@@ -83,7 +83,7 @@ PS: Make sure there are not other issuer with the `tag: issuewild`!
 
 ### Updating manually created certificates
 
-Tenants with self-managed domains must manually update the certificates presented by the loadbalancers. These certificates 
+Tenants with self-managed domains must manually update the certificates presented by the loadbalancers. These certificates
 are stored in Google Certificate Manager. To upload new certficates from secrets in the cluster, the following command can be used:
 ```
 # External loadbalancer certificates (globally managed)

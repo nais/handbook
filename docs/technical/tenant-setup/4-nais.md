@@ -2,7 +2,7 @@
 
 ## Configure OAuth login for web frontend
 
-Set up an OAuth client for _Console_ in the tenant management project. 
+Set up an OAuth client for _Console_ in the tenant management project.
 
 1. Go to https://console.cloud.google.com
 1. Choose project <tenant org> -> nais-management -> nais-management
@@ -31,6 +31,3 @@ Add `nais-api-reconcilers@<MANAGEMENT_PROJECT_ID>.iam.gserviceaccount.com` as Bi
 
 1. in .github/workflows/main.yml add the new tenant to the `tenants` list (two places)
 1. in docs/workloads/reference/environments.md, add a new section for the tenant with the correct content.
- 
-
-

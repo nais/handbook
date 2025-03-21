@@ -1,4 +1,4 @@
-# NAIS-Sponsor 
+# NAIS-Sponsor
 
 ### _It takes a village to raise a NAIS-developer_
 
@@ -10,4 +10,4 @@ Every member of the team is - and you should not be apologetic or hold back in t
 You can also attach yourself to anyone that you feel might shed more light on a topic you want to explore further.
 
 So if you find yourself wondering about something - keep this in mind:
-It is our duty (not to mention in our own best interest) to make sure you have the tools and understanding that you need so imagine that this _Cronjob_ is run on the team every minute. 
+It is our duty (not to mention in our own best interest) to make sure you have the tools and understanding that you need - so never forget that no question is too stupid to be worth asking.

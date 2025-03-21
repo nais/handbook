@@ -18,7 +18,7 @@ You will also need to set up a couple of things within said tenant. We'll guide 
 ### Google Service Accounts
 
 Azurerator uses [federated credentials](https://learn.microsoft.com/en-us/graph/api/resources/federatedidentitycredentials-overview?view=graph-rest-1.0)
-in order to authenticate itself to your Azure AD tenant, by using tokens issued by Google. 
+in order to authenticate itself to your Azure AD tenant, by using tokens issued by Google.
 This removes the need to share client secrets between our organizations.
 The tokens are in turn only issued to Google Service Accounts that exist within the NAIS projects that we've created for your Google organization.
 
@@ -41,7 +41,7 @@ within the tenant mentioned above is needed for Azurerator to create and manage 
 3. Select **App registrations**.
 4. Select **New registration**.
     1. Name the application, for example "azurerator".
-    2. Supported account type doesn't matter, single tenant is fine. 
+    2. Supported account type doesn't matter, single tenant is fine.
     3. Leave **Redirect URI** empty.
 5. Under **Overview**, note down the values for the following fields:
     1. **Application (client) ID**.
@@ -93,7 +93,7 @@ Azurerator creates Azure AD application registrations that are restricted by def
 - Access is granted by group membership; groups are assigned directly to applications.
 - Users must be direct members of the groups, i.e. nested groups will not work.
 
-You will need to define a group that contains all users in your tenant. 
+You will need to define a group that contains all users in your tenant.
 The definition of "all users" is left for you to decide. This can for example be:
 
 - all users, including guest accounts and machine users
@@ -103,10 +103,10 @@ The definition of "all users" is left for you to decide. This can for example be
 
 Refer to the following guides at Microsoft for details on groups:
 
-- [creating and managing groups](https://learn.microsoft.com/en-gb/azure/active-directory/fundamentals/how-to-manage-groups) 
+- [creating and managing groups](https://learn.microsoft.com/en-gb/azure/active-directory/fundamentals/how-to-manage-groups)
 - [dynamic group memberships](https://learn.microsoft.com/en-gb/azure/active-directory/enterprise-users/groups-dynamic-membership)
 
-The all users group will be assigned to any application that has enabled the `allowAllUsers` directive. 
+The all users group will be assigned to any application that has enabled the `allowAllUsers` directive.
 Note down the **object ID** for this group.
 
 ---

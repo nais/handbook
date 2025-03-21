@@ -2,13 +2,13 @@
 
 !!! note
     This step is done by the tenant administrators, and is typically done in collaboration with the Nais team.
-    
+
 
 When setting up Nais in your Google organization, we will need a dedicated folder for all resources related to Nais. Everything Nais related will be contained within this folder, and no further permissions are required in the organization.
 
 ## Required settings
 
-The tenant administrator that will perform the following commands will need these permissions on the organization level: 
+The tenant administrator that will perform the following commands will need these permissions on the organization level:
 
 - `Owner`
 - `Organization Administrator`

@@ -41,7 +41,7 @@ Relevant documentation for applications:
 - Enable Aiven for the tenant in nais-terraform-modules
 - If the tenant wishes to use Kafka, enable Kafka in nais-terraform-modules
 
-- After terraform has created the necessary Aiven resources, enable relevant features in Fasit 
+- After terraform has created the necessary Aiven resources, enable relevant features in Fasit
   (including required dependencies):
 
     - `aiven-operator`

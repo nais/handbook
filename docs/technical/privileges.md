@@ -12,5 +12,5 @@ Med denne brukeren kan du utforske console, opprette team og bruke plattformen s
 Disse brukerne opprettes manuelt av noen med admin-tilgang til tenanten.
 
 ## Superadmin
-I tillegg til å være Nais-administratorer har vi også ansvar for Navs GCP-organisasjon. 
+I tillegg til å være Nais-administratorer har vi også ansvar for Navs GCP-organisasjon.
 Dette krever tilganger ut over nais-katalogen, og det er en håndfull personer i nais-teamet som har personlige upersonlige brukere sikret med fysisk nøkkel som har mulighet til å gjøre ting på organisasjonsnivå.

@@ -109,7 +109,7 @@ MIIFZTKK...
 ## For NAIS
 
 When Digdirator is enabled, NAIS configures Digdirator with a service account which holds a set of roles to access Google Cloud KMS and Secret Manager in your
-cluster project. 
+cluster project.
 
 To access `Google KMS` the service account is assigned the IAM role `roles/cloudkms.signerVerifier`,
 which enables sign, verify, and getPublicKey operations.
@@ -135,11 +135,11 @@ access the payload of secrets.
     ```
 
 NAIS will configure Digdirator with the information provided, you relax your cognitive load.
-Configure your [NAIS application](https://docs.nais.io/nais-application/application/) with ID-porten or Maskinporten, push code -> deploy.  
+Configure your [NAIS application](https://docs.nais.io/nais-application/application/) with ID-porten or Maskinporten, push code -> deploy.
 NAIS handles the rest.
 
 !!! warning "ID-porten sidecar"
-    If you plan to use the [ID-porten sidecar](https://docs.nais.io/security/auth/idporten/sidecar/?h=sidecar), prior to usage, the feature [Wonderwall](https://docs.nais.io/appendix/wonderwall/) must be enabled.  
+    If you plan to use the [ID-porten sidecar](https://docs.nais.io/security/auth/idporten/sidecar/?h=sidecar), prior to usage, the feature [Wonderwall](https://docs.nais.io/appendix/wonderwall/) must be enabled.
     Contact NAIS team for more information.
 
 ## Summary of NAIS configuration
@@ -192,4 +192,3 @@ CLI.
 
 * Create a [secret](https://cloud.google.com/secret-manager/docs/creating-and-accessing-secrets#creating_a_secret) in
   your project
-

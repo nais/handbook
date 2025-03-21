@@ -209,7 +209,7 @@ We typically always tag the diataxis-type the page classifies as with these mapp
 | How-to guide | `how-to`      |
 | Reference    | `reference`   |
 | Tutorial     | `tutorial`    |
- 
+
 Tag each page with the parent category or service that it belongs to.
 
 For example, these would be the tags for `metrics` and `tracing` in the `observability` category:
@@ -252,4 +252,3 @@ Reference guides are technical descriptions of the machinery and how to operate 
 ### [**Explanation**](https://diataxis.fr/explanation/)
 
 Explanation is a discusive treatment of a subject, that permits reflection. Explanation is understanding-oriented.
-

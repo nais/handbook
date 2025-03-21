@@ -40,5 +40,5 @@ Initiatives that have been completed.
 
 ## Re-pitching
 
-Iniatives (or minitiatives) that were not selected in previous cycles are moved back to `Draft`. 
-Whoever owns the initiative will decide if it should be re-pitched based on feedback/discussions and if it's still relevant. Re-pitching ideally happens as soon as possible after the new focus period starts, and is done by moving it back to the appropriate column. 
+Iniatives (or minitiatives) that were not selected in previous cycles are moved back to `Draft`.
+Whoever owns the initiative will decide if it should be re-pitched based on feedback/discussions and if it's still relevant. Re-pitching ideally happens as soon as possible after the new focus period starts, and is done by moving it back to the appropriate column.

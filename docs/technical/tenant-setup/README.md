@@ -7,5 +7,3 @@ This guide is used when setting up a new tenant. This is typically done by the N
 - [Step 3](3-nais-terraform.md) - Nais terraforming the tenant
 - [Step 4](4-nais.md) - Nais post terraforming
 - [Step 5](5-tenant.md) - Tenant post terraforming
-
-

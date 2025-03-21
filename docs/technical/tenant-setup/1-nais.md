@@ -4,7 +4,7 @@
 
 In [nais-terraform-modules](https://github.com/nais/nais-terraform-modules)
 
-Add the new tenant to `serviceaccounts.tf`. 
+Add the new tenant to `serviceaccounts.tf`.
 
 The name you choose here will be the $NAIS_TENANT_ALIAS used in the next step.
 
@@ -19,7 +19,7 @@ Add `nais-tf-<TENANT>@nais-io.iam.gserviceaccount.com` as Billing Account User
 ## Ask the tenant about what IP-ranges they want to use
 
 Make sure we have IP-ranges that do not overlap with the tenant's existing infrastructure.
-If the tenant requires connectivity with external 
+If the tenant requires connectivity with external
 ### Example ranges
 
 ```text
@@ -30,7 +30,7 @@ Management
   master_ip_cidr_range     = "172.16.0.0/28"
   loadbalancer_cidr_range  = "100.64.0.0/24"
 
-Dev 
+Dev
   ip_cidr_range            = "10.17.2.0/23"
   aiven_vpc_cidr           = "10.17.8.0/24"
   pods_ip_cidr_range       = "10.17.128.0/18"
@@ -39,7 +39,7 @@ Dev
   loadbalancer_cidr_range  = "100.64.1.0/24"
   shared_vpc_ip_cidr       = "100.71.0.0/20"
 
-Prod 
+Prod
   ip_cidr_range            = "10.17.4.0/23"
   aiven_vpc_cidr           = "10.17.9.0/24"
   pods_ip_cidr_range       = "10.17.192.0/18"
@@ -48,5 +48,3 @@ Prod
   loadbalancer_cidr_range  = "100.64.2.0/24"
   shared_vpc_ip_cidr_start = "100.71.16.0/20"
 ```
-
-

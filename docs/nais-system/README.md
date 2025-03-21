@@ -1,14 +1,14 @@
 # NAIS system
 
-_NAIS system_ is the name of the process we use to develop NAIS. 
+_NAIS system_ is the name of the process we use to develop NAIS.
 
-The process a naisified version of [Shape Up from 37signals](https://basecamp.com/shapeup), and has been used since the beginning of 2024. 
+The process a naisified version of [Shape Up from 37signals](https://basecamp.com/shapeup), and has been used since the beginning of 2024.
 
 ## A brief overview
 
 We work in [cycles](cycle.md). Each cycle consists of a six week focus period where we split into smaller groups, usually 2-3 people, working on one or more [initiatives](initiatives.md). 
 
-After each focus period we have a two week cool-down. Here we reset, re-orient and make plans for what's next. 
+After each focus period we have a two week cool-down. Here we reset, re-orient and make plans for what's next.
 
 Oh, and we also have [holiday-modes](holiday-mode.md) in the summer and around Christmas.
 

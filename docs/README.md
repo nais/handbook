@@ -13,7 +13,6 @@ Factoids about the team are posted on [Slack](https://nav-it.slack.com/archives/
 The technical [documentation](https://doc.nais.io) is comprehensive but hardly describes how we function as a team.
 This handbook is an attempt at bringing some of the silent knowledge to an audible frequency, and at the very least guide you through the bare essentials.
 To get you started we recommend that you familiarize yourself with our [manifest](welcome/nais-manifest-eng.md).
-The guiding principles that define the how, the what, and the why we do the things that we do. 
+The guiding principles that define the how, the what, and the why we do the things that we do.
 
 So now that have you have memorized the manifest and documentation we can get into it all.
-
