@@ -1,5 +1,7 @@
 # Privilegier og brukere
 
+Se [Typical workflow examples](/docs/daily-workflows/tenant-switching-workflows.md) for påminnelse(r) om hvordan gå frem med brukersjonglering (eller mangel derav) ifbm. tenants.
+
 ## nais-io-bruker
 For å administrere Nais benyttes nais-io-brukeren din hos alle tenants.
 Denne brukeren har i utgangspunktet svært få rettigheter, men man kan elevere tilgangene sine ved behov med [narc](./narcos/README.md). Vær klar over at `reason`-feltet i `narc`-kommandoene er obligatorisk, og at det er viktig å begrunne hvorfor du trenger tilgang til en spesifikk ressurs, da dette blir loggført og er synlig for tenants.
