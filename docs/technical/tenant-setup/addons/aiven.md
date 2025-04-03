@@ -9,7 +9,7 @@ Aiven provides these services:
 
 - Kafka (one per tenant environment)
 - OpenSearch (Created on-demand for each application)
-- Redis (Created on-demand for each application)
+- Valkey (Created on-demand for each application)
 
 This is an optional feature that is not enabled by default.
 
@@ -33,7 +33,7 @@ Relevant documentation for applications:
 
 - [Kafka](https://docs.nais.io/persistence/kafka/)
 - [OpenSearch](https://docs.nais.io/persistence/opensearch/)
-- [Redis](https://docs.nais.io/persistence/redis/)
+- [Valkey](https://docs.nais.io/persistence/valkey/)
 
 
 ## For NAIS

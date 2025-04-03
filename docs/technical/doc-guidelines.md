@@ -171,11 +171,11 @@ Features that are only available in GCP clusters should preferably be marked in 
 For that purpose, a macro is available to add a warning in the text:
 
 ```markdown title="page.md"
-# Aiven Redis
+# Aiven Valkey
 
-<<gcp_only("Aiven Redis")>>
+<<gcp_only("Aiven Valkey")>>
 
-Aiven Redis is ...
+Aiven Valkey is ...
 ```
 
 
