@@ -75,6 +75,12 @@ cat <<EOF > nais-user-permissions.json
             "serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com"
           ],
           "role": "roles/serviceusage.serviceUsageAdmin"
+        },
+        {
+          "members": [
+            "serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com"
+          ],
+          "role": "roles/iam.serviceAccountKeyAdmin"
         }
       ]
     }
