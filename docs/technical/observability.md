@@ -229,3 +229,20 @@ flowchart
   OtelCollector -- logs --> Loki
   OtelCollector -- metrics --> prometheus
 ```
+
+## Logs
+
+The logging stack in nais is based on [logging-operator](https://kube-logging.dev/) which is a collection of components that configures and managed fluentd and fluentbit instances in Kubernetes. The logging stack is used to collect logs from stdout/stderr and forward them to Grafana Loki for storage and querying.
+
+We have two parallel logging stacks running in nais, one for the management stack and one in each tenant cluster. The management stack is used to collect logs from kube-system and nais-system namespaces and the tenant stack is used to collect logs from tenant applications.
+
+Management logs are available from the management Grafana instance at [monitoring.nais.io](https://monitoring.nais.io) and tenant logs are available from the tenant Grafana instance at `grafana.<tenant>.cloud.nais.io`.
+
+### Configure Logging
+
+If you want logs from a feature in nais-system to be viewable in the tenant Grafana instance, you need to add the following label to the feature:
+
+```yaml
+labels:
+  logs.nais.io/flow-loki: "true"
+```
