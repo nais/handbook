@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://handbook.nais.io/technical/tenant-setup/addons/azure-ad/">
+        <link rel="canonical" href="https://handbook.nais.io/technical/iam/">
       
       
-        <link rel="prev" href="../aiven/">
+        <link rel="prev" href="../upgrading-kafka/">
       
       
-        <link rel="next" href="../digdir/">
+        <link rel="next" href="../narcos/">
       
       
-      <link rel="icon" href="../../../../assets/logo.png">
+      <link rel="icon" href="../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
-        <title>Azure AD - NAIS Handbook</title>
+        <title>Identity and Access Management - NAIS Handbook</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../css/timeago.css">
+      <link rel="stylesheet" href="../../css/timeago.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#azure-ad" class="md-skip">
+        <a href="#identity-and-access-management" class="md-skip">
           Skip to content
         </a>
       
@@ -90,9 +90,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="NAIS Handbook" class="md-header__button md-logo" aria-label="NAIS Handbook" data-md-component="logo">
+    <a href="../.." title="NAIS Handbook" class="md-header__button md-logo" aria-label="NAIS Handbook" data-md-component="logo">
       
-  <img src="../../../../assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Azure AD
+              Identity and Access Management
             
           </span>
         </div>
@@ -201,9 +201,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="NAIS Handbook" class="md-nav__button md-logo" aria-label="NAIS Handbook" data-md-component="logo">
+    <a href="../.." title="NAIS Handbook" class="md-nav__button md-logo" aria-label="NAIS Handbook" data-md-component="logo">
       
-  <img src="../../../../assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     NAIS Handbook
@@ -230,7 +230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -294,7 +294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../daily-workflows/tenant-switching-workflows/" class="md-nav__link">
+      <a href="../../daily-workflows/tenant-switching-workflows/" class="md-nav__link">
         
   
   
@@ -360,7 +360,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../nais-system/" class="md-nav__link ">
+            <a href="../../nais-system/" class="md-nav__link ">
               
   
   
@@ -395,7 +395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../nais-system/ambitions/" class="md-nav__link">
+      <a href="../../nais-system/ambitions/" class="md-nav__link">
         
   
   
@@ -418,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../nais-system/areas/" class="md-nav__link">
+      <a href="../../nais-system/areas/" class="md-nav__link">
         
   
   
@@ -441,7 +441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../nais-system/board/" class="md-nav__link">
+      <a href="../../nais-system/board/" class="md-nav__link">
         
   
   
@@ -464,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../nais-system/cycle/" class="md-nav__link">
+      <a href="../../nais-system/cycle/" class="md-nav__link">
         
   
   
@@ -487,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../nais-system/holiday-mode/" class="md-nav__link">
+      <a href="../../nais-system/holiday-mode/" class="md-nav__link">
         
   
   
@@ -510,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../nais-system/initiatives/" class="md-nav__link">
+      <a href="../../nais-system/initiatives/" class="md-nav__link">
         
   
   
@@ -533,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../nais-system/minitiative/" class="md-nav__link">
+      <a href="../../nais-system/minitiative/" class="md-nav__link">
         
   
   
@@ -556,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../nais-system/nais-day/" class="md-nav__link">
+      <a href="../../nais-system/nais-day/" class="md-nav__link">
         
   
   
@@ -579,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../nais-system/properties/" class="md-nav__link">
+      <a href="../../nais-system/properties/" class="md-nav__link">
         
   
   
@@ -679,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../announcements/" class="md-nav__link">
+      <a href="../announcements/" class="md-nav__link">
         
   
   
@@ -702,7 +702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../doc-guidelines/" class="md-nav__link">
+      <a href="../doc-guidelines/" class="md-nav__link">
         
   
   
@@ -725,7 +725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../external-ingress/" class="md-nav__link">
+      <a href="../external-ingress/" class="md-nav__link">
         
   
   
@@ -748,7 +748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nais-alerts/" class="md-nav__link">
+      <a href="../nais-alerts/" class="md-nav__link">
         
   
   
@@ -771,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../naisdevice/" class="md-nav__link">
+      <a href="../naisdevice/" class="md-nav__link">
         
   
   
@@ -794,7 +794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../observability/" class="md-nav__link">
+      <a href="../observability/" class="md-nav__link">
         
   
   
@@ -817,7 +817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -840,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../privileges/" class="md-nav__link">
+      <a href="../privileges/" class="md-nav__link">
         
   
   
@@ -863,7 +863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../production-ready/" class="md-nav__link">
+      <a href="../production-ready/" class="md-nav__link">
         
   
   
@@ -886,7 +886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../publications-media/" class="md-nav__link">
+      <a href="../publications-media/" class="md-nav__link">
         
   
   
@@ -909,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../upgrading-kafka/" class="md-nav__link">
+      <a href="../upgrading-kafka/" class="md-nav__link">
         
   
   
@@ -929,6 +929,8 @@
                 
   
   
+    
+  
   
   
     
@@ -942,15 +944,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../iam/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   
@@ -964,7 +966,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_12">
             <span class="md-nav__icon md-icon"></span>
             Identity and Access Management
@@ -1008,7 +1010,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../narcos/" class="md-nav__link ">
+            <a href="../narcos/" class="md-nav__link ">
               
   
   
@@ -1087,7 +1089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../narcos/reference/kubeconfig/" class="md-nav__link">
+      <a href="../narcos/reference/kubeconfig/" class="md-nav__link">
         
   
   
@@ -1110,7 +1112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../narcos/reference/tenant/" class="md-nav__link">
+      <a href="../narcos/reference/tenant/" class="md-nav__link">
         
   
   
@@ -1146,8 +1148,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1173,15 +1173,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_14" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_14" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../tenant-setup/" class="md-nav__link ">
               
   
   
@@ -1200,7 +1200,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_14_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_14_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_14">
             <span class="md-nav__icon md-icon"></span>
             Tenant setup
@@ -1216,7 +1216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../1-nais/" class="md-nav__link">
+      <a href="../tenant-setup/1-nais/" class="md-nav__link">
         
   
   
@@ -1239,7 +1239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2-tenant/" class="md-nav__link">
+      <a href="../tenant-setup/2-tenant/" class="md-nav__link">
         
   
   
@@ -1262,7 +1262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3-nais-terraform/" class="md-nav__link">
+      <a href="../tenant-setup/3-nais-terraform/" class="md-nav__link">
         
   
   
@@ -1285,7 +1285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4-nais/" class="md-nav__link">
+      <a href="../tenant-setup/4-nais/" class="md-nav__link">
         
   
   
@@ -1308,7 +1308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5-tenant/" class="md-nav__link">
+      <a href="../tenant-setup/5-tenant/" class="md-nav__link">
         
   
   
@@ -1328,10 +1328,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1351,11 +1349,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_14_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_14_7" >
         
           
           <label class="md-nav__link" for="__nav_4_14_7" id="__nav_4_14_7_label" tabindex="0">
@@ -1371,7 +1369,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_14_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_14_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_14_7">
             <span class="md-nav__icon md-icon"></span>
             Addons
@@ -1385,7 +1383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aiven/" class="md-nav__link">
+      <a href="../tenant-setup/addons/aiven/" class="md-nav__link">
         
   
   
@@ -1405,32 +1403,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Azure AD
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../tenant-setup/addons/azure-ad/" class="md-nav__link">
         
   
   
@@ -1441,95 +1417,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#for-tenant" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Tenant
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="For Tenant">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Requirements
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#google-service-accounts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Google Service Accounts
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#azure-ad-application-registration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Azure AD Application Registration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#microsoft-graph-object-id" class="md-nav__link">
-    <span class="md-ellipsis">
-      Microsoft Graph Object ID
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#application-access-groups" class="md-nav__link">
-    <span class="md-ellipsis">
-      Application Access Groups
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#for-nais" class="md-nav__link">
-    <span class="md-ellipsis">
-      For NAIS
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1542,7 +1429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../digdir/" class="md-nav__link">
+      <a href="../tenant-setup/addons/digdir/" class="md-nav__link">
         
   
   
@@ -1565,7 +1452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../domains/" class="md-nav__link">
+      <a href="../tenant-setup/addons/domains/" class="md-nav__link">
         
   
   
@@ -1588,7 +1475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenx/" class="md-nav__link">
+      <a href="../tenant-setup/addons/tokenx/" class="md-nav__link">
         
   
   
@@ -1611,7 +1498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wonderwall/" class="md-nav__link">
+      <a href="../tenant-setup/addons/wonderwall/" class="md-nav__link">
         
   
   
@@ -1701,7 +1588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../welcome/nais-manifest-eng/" class="md-nav__link">
+      <a href="../../welcome/nais-manifest-eng/" class="md-nav__link">
         
   
   
@@ -1724,7 +1611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../welcome/nais-sponsor/" class="md-nav__link">
+      <a href="../../welcome/nais-sponsor/" class="md-nav__link">
         
   
   
@@ -1774,55 +1661,65 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#for-tenant" class="md-nav__link">
+  <a href="#google-workspaces" class="md-nav__link">
     <span class="md-ellipsis">
-      For Tenant
+      Google Workspaces
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="For Tenant">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zitadel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zitadel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zitadel">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
+  <a href="#concepts" class="md-nav__link">
     <span class="md-ellipsis">
-      Requirements
+      Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instances
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#google-service-accounts" class="md-nav__link">
+  <a href="#organizations" class="md-nav__link">
     <span class="md-ellipsis">
-      Google Service Accounts
+      Organizations
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#azure-ad-application-registration" class="md-nav__link">
+  <a href="#projects" class="md-nav__link">
     <span class="md-ellipsis">
-      Azure AD Application Registration
+      Projects
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#microsoft-graph-object-id" class="md-nav__link">
+  <a href="#applications" class="md-nav__link">
     <span class="md-ellipsis">
-      Microsoft Graph Object ID
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#application-access-groups" class="md-nav__link">
-    <span class="md-ellipsis">
-      Application Access Groups
+      Applications
     </span>
   </a>
   
@@ -1832,13 +1729,87 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#for-nais" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#runtime" class="md-nav__link">
     <span class="md-ellipsis">
-      For NAIS
+      Runtime
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nais-io-terraform-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      nais-io-terraform-modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nais-terraform-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      nais-terraform-modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loginnaisio" class="md-nav__link">
+    <span class="md-ellipsis">
+      login.nais.io
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintenance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1858,7 +1829,7 @@
 
 
   
-    <a href="https://github.com/nais/handbook/edit/main/docs/technical/tenant-setup/addons/azure-ad.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/nais/handbook/edit/main/docs/technical/iam/README.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1866,153 +1837,97 @@
   
 
 
-<h1 id="azure-ad">Azure AD<a class="headerlink" href="#azure-ad" title="Permanent link">&para;</a></h1>
-<p><a href="https://github.com/nais/azurerator"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg></span> nais/azurerator</a> creates and manages Azure AD applications via Kubernetes Custom Resources for <a href="https://doc.nais.io/security/auth/azure-ad/">use in various authentication scenarios</a>.</p>
-<p>This is an optional addon in NaaS. It is not enabled by default.</p>
-<h2 id="for-tenant">For Tenant<a class="headerlink" href="#for-tenant" title="Permanent link">&para;</a></h2>
-<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
-<p>To be able to use this addon, you will need to bring your own <a href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis">Azure AD tenant</a>.</p>
-<p>Unfortunately, we do not offer provisioning nor management of Azure AD itself as a service.
-The Azure AD tenant must be wholly owned and operated by your organization.</p>
-<p>You will also need to set up a couple of things within said tenant. We'll guide you through the steps.</p>
-<h3 id="google-service-accounts">Google Service Accounts<a class="headerlink" href="#google-service-accounts" title="Permanent link">&para;</a></h3>
-<p>Azurerator uses <a href="https://learn.microsoft.com/en-us/graph/api/resources/federatedidentitycredentials-overview?view=graph-rest-1.0">federated credentials</a>
-in order to authenticate itself to your Azure AD tenant, by using tokens issued by Google.
-This removes the need to share client secrets between our organizations.
-The tokens are in turn only issued to Google Service Accounts that exist within the NAIS projects that we've created for your Google organization.</p>
-<p>To set this up, you will need to find some identifiers from within your Google organization:</p>
-<ol>
-<li>Find the NAIS Google Project IDs:<ol>
-<li>Use the <code>gcloud</code> CLI: <code>gcloud projects list --filter="project_id ~ ^nais-" --format="value(PROJECT_ID)"</code></li>
-<li>There should be one project ID for each environment; for example <code>nais-dev-xxxx</code> and <code>nais-prod-xxxx</code>. Note these down.</li>
-</ol>
-</li>
-<li>For each project ID, find the unique ID for Azurerator's service account:<ol>
-<li><code>gcloud iam service-accounts describe azurerator@&lt;PROJECT_ID&gt;.iam.gserviceaccount.com --format="value(uniqueId)"</code>, where <code>PROJECT_ID</code> is the ID found in the previous step.</li>
-<li>Note down the ID value. This ID uniquely identifies the Google Service Account that Azurerator uses in each environment.</li>
-</ol>
-</li>
-</ol>
-<h3 id="azure-ad-application-registration">Azure AD Application Registration<a class="headerlink" href="#azure-ad-application-registration" title="Permanent link">&para;</a></h3>
-<p>An <a href="https://learn.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals">Azure AD application registration</a>
-within the tenant mentioned above is needed for Azurerator to create and manage application registrations within Azure AD.</p>
-<ol>
-<li>Sign in to your Azure Account through the <a href="https://portal.azure.com/">Azure portal</a>.</li>
-<li>Select <strong>Azure Active Directory</strong>.</li>
-<li>Select <strong>App registrations</strong>.</li>
-<li>Select <strong>New registration</strong>.<ol>
-<li>Name the application, for example "azurerator".</li>
-<li>Supported account type doesn't matter, single tenant is fine.</li>
-<li>Leave <strong>Redirect URI</strong> empty.</li>
-</ol>
-</li>
-<li>Under <strong>Overview</strong>, note down the values for the following fields:<ol>
-<li><strong>Application (client) ID</strong>.</li>
-<li><strong>Directory (tenant) ID</strong></li>
-</ol>
-</li>
-<li>Navigate to <strong>Certificates and secrets</strong>.<ol>
-<li>Select <strong>Federated credentials</strong>.</li>
-<li>Select <strong>Add credentials</strong>.</li>
-<li>Under <strong>Federated credential scenario</strong>, select <strong>Other issuer</strong>.</li>
-<li>Under <strong>Issuer</strong>, enter the value <code>https://accounts.google.com</code></li>
-<li>Under <strong>Subject</strong>, enter the value for <code>uniqueId</code> that you noted down from the <a href="#google-service-accounts">previous section on Google Service Accounts</a>.</li>
-<li>Under <strong>Name</strong>, enter the value <code>nais-&lt;environment&gt;</code>, for example <code>nais-dev</code> or <code>nais-prod</code></li>
-<li>Leave the <strong>Audience</strong> at the default value, i.e. <code>api://AzureADTokenExchange</code></li>
-<li>Repeat the steps starting from step <strong>6</strong> with the second <code>uniqueId</code> from the <a href="#google-service-accounts">previous section on Google Service Accounts</a>.</li>
-</ol>
-</li>
-<li>
-<p>Navigate to <strong>API permissions</strong>.</p>
-<ol>
-<li>Select <strong>Add a permission</strong>.</li>
-<li>Select <strong>Microsoft Graph</strong>.</li>
-<li>Select <strong>Application permissions</strong>.</li>
-<li>The application needs the following permissions:<ul>
-<li><code>Application.ReadWrite.All</code></li>
-<li><code>DelegatedPermissionGrant.ReadWrite.All</code></li>
-<li><code>GroupMember.Read.All</code></li>
-</ul>
-</li>
-<li>Add the permissions.</li>
-<li>Select <strong>Grant admin consent for &lt;tenant name&gt;</strong>.</li>
-<li>Confirm to grant the application access to the configured permissions.</li>
-</ol>
-<p>If done correctly, the list of permissions should look like this:</p>
-<p><img alt="The list of configured permissions for the Application registration in Azure AD. The permissions Application.ReadWrite.All, DelegatedPermissionGrant.ReadWrite.All and Group.Read.All for the Microsoft Graph API are all added as Application permissions. Admin consent has been granted to all of the permissions." src="../../../../assets/azure-ad-permissions-setup.png" /></p>
-</li>
-</ol>
-<h3 id="microsoft-graph-object-id">Microsoft Graph Object ID<a class="headerlink" href="#microsoft-graph-object-id" title="Permanent link">&para;</a></h3>
-<p>In order for Azurerator to pre-approve delegated API permissions for the managed applications,
-you will need to find the <strong>Object ID</strong> for the Microsoft Graph Enterprise Application that is unique to each Azure AD tenant.</p>
-<ol>
-<li>Sign in to your Azure Account through the <a href="https://portal.azure.com/">Azure portal</a>.</li>
-<li>Select <strong>Azure Active Directory</strong>.</li>
-<li>Select <strong>Enterprise applications</strong>.</li>
-<li>Filter the list of applications:<ol>
-<li><strong>Applicaton ID starts with</strong> == "00000003-0000-0000-c000-000000000000"</li>
-<li><strong>Application type</strong> == "Microsoft Applications"</li>
-</ol>
-</li>
-<li>You should see an application named <code>GraphAggregatorService</code> or <code>Microsoft Graph</code>.</li>
-<li>Note down the <strong>Object ID</strong> for this application.</li>
-</ol>
-<h3 id="application-access-groups">Application Access Groups<a class="headerlink" href="#application-access-groups" title="Permanent link">&para;</a></h3>
-<p>Azurerator creates Azure AD application registrations that are restricted by default:</p>
+<h1 id="identity-and-access-management">Identity and Access Management<a class="headerlink" href="#identity-and-access-management" title="Permanent link">&para;</a></h1>
+<p>This page describes the Identity and Access Management (IAM) systems used in Nais.</p>
+<h2 id="google-workspaces">Google Workspaces<a class="headerlink" href="#google-workspaces" title="Permanent link">&para;</a></h2>
+<p>Users in Nais are currently provisioned and managed in Google Workspaces.
+For more information about Google Workspaces, see the <a href="https://workspace.google.com/">Google Workspaces documentation</a>.</p>
+<h2 id="zitadel">Zitadel<a class="headerlink" href="#zitadel" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/zitadel/zitadel">Zitadel</a> is an open-source IAM solution.
+We use a self-hosted version in Nais as a central identity provider for internal Nais services and applications, such as Console and CLI.</p>
+<p>The instance is available at <a href="https://auth.nais.io">https://auth.nais.io</a>.</p>
+<p>A web console is available at <a href="https://auth.nais.io/ui/console">https://auth.nais.io/ui/console</a>, but is only intended as a view-only interface for the Nais team. Configuration and management should instead be done through Terraform whenever possible.</p>
+<h3 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">&para;</a></h3>
+<p>To learn more about the different resources and concepts in Zitadel, see the <a href="https://zitadel.com/docs/concepts">Zitadel documentation</a>.</p>
+<h4 id="instances">Instances<a class="headerlink" href="#instances" title="Permanent link">&para;</a></h4>
+<p>We use a single, shared <a href="https://zitadel.com/docs/concepts/structure/instance"><em>instance</em></a> for the entirety of Nais.
+An instance contains multiple <a href="https://zitadel.com/docs/concepts/structure/organizations"><em>organizations</em></a>.</p>
+<p><img alt="Zitadel instance overview" src="https://zitadel.com/docs/assets/images/object_overview-e30a5f5181bc950ab8f4965d41503372.png" /></p>
+<h4 id="organizations">Organizations<a class="headerlink" href="#organizations" title="Permanent link">&para;</a></h4>
+<p>Each tenant is configured with their own organization.</p>
+<p><img alt="Zitadel organization overview" src="https://zitadel.com/docs/assets/images/organization-543de60130b2bfa9f220861e5e38e338.png" /></p>
+<p>All users belonging to a tenant are assigned to the same organization.
+This is currently handled through the usersync process in Nais API.</p>
+<p>Authentication is currently done through OpenID Connect federation through Google, which means that all users must authenticate with their Google accounts.</p>
+<h4 id="projects">Projects<a class="headerlink" href="#projects" title="Permanent link">&para;</a></h4>
+<p>Within each organization, we have a number of <a href="https://zitadel.com/docs/concepts/structure/projects"><em>projects</em></a> that are used to group applications and services.</p>
+<h4 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">&para;</a></h4>
+<p>Each project can have multiple <a href="https://zitadel.com/docs/concepts/structure/applications"><em>applications</em></a> that are used to authenticate users and provide access to resources.</p>
+<p>In most cases, there should be a one-to-one relationship between a Project and an Application.</p>
+<h3 id="runtime">Runtime<a class="headerlink" href="#runtime" title="Permanent link">&para;</a></h3>
+<p>Our instance of Zitadel is deployed to Google Cloud Run and uses a PostgreSQL database in Google Cloud SQL.</p>
 <ul>
-<li>Users are not allowed access to the application unless they are explicitly given access.</li>
-<li>Access is granted by group membership; groups are assigned directly to applications.</li>
-<li>Users must be direct members of the groups, i.e. nested groups will not work.</li>
+<li><a href="https://console.cloud.google.com/run/detail/europe-north1/zitadel?project=nais-login">Cloud Run instance</a></li>
+<li><a href="https://console.cloud.google.com/sql/instances/zitadel?project=nais-login">Cloud SQL instance</a></li>
 </ul>
-<p>You will need to define a group that contains all users in your tenant.
-The definition of "all users" is left for you to decide. This can for example be:</p>
+<p>The Cloud Run instance runs with a minimum of 1 replica at all times and will scale up and down as needed.
+The Cloud SQL instance is configured with high availability and regular backups with point-in-time recovery.</p>
+<h3 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h3>
+<p>The Zitadel instance and its resources are managed through Terraform.</p>
+<h4 id="nais-io-terraform-modules"><a href="https://github.com/nais/nais-io-terraform-modules/tree/main/modules/nais_login">nais-io-terraform-modules</a><a class="headerlink" href="#nais-io-terraform-modules" title="Permanent link">&para;</a></h4>
+<p>Provisions the Zitadel instance itself, including the PostgreSQL database and Cloud Run instance as well as necessary networking services.</p>
+<p>All instance-level settings are set and configured here.</p>
+<p>The module also provisions the nais.io organization and everything within.
+Shared projects and applications that should be available to multiple tenants should be defined in the nais.io organization.</p>
+<p>The repository also contains a GitHub Actions workflow at
+<a href="https://github.com/nais/nais-io-terraform-modules/blob/main/.github/workflows/zitadel.yaml">https://github.com/nais/nais-io-terraform-modules/blob/main/.github/workflows/zitadel.yaml</a>.
+Runs on a daily schedule and can be manually triggered ad-hoc.
+The workflow:</p>
 <ul>
-<li>all users, including guest accounts and machine users</li>
-<li>all users that are not guests in your tenant</li>
-<li>all users that have a valid license</li>
-<li>all users within a certain department, and so on</li>
+<li>fetches the latest release of Zitadel</li>
+<li>mirrors the image to Google Artifact Registry</li>
+<li>creates a pull request to point the Cloud Run manifest to the new version</li>
 </ul>
-<p>Refer to the following guides at Microsoft for details on groups:</p>
+<h4 id="nais-terraform-modules"><a href="https://github.com/nais/nais-terraform-modules/blob/main/modules/management/zitadel.tf">nais-terraform-modules</a><a class="headerlink" href="#nais-terraform-modules" title="Permanent link">&para;</a></h4>
+<p>Provisions a Zitadel organization for each tenant.</p>
+<p>Tenant-specific Nais services such as Console / API are provisioned here in their own projects and applications.</p>
+<h4 id="loginnaisio"><a href="https://github.com/nais/login.nais.io">login.nais.io</a><a class="headerlink" href="#loginnaisio" title="Permanent link">&para;</a></h4>
+<p>This is a multi-tenant application that serves as a portal to show the authenticated user correct links to tenant-specific Nais services based on the organization they belong to.</p>
+<pre class="mermaid"><code>flowchart LR
+    A[User] --&gt;|Login| B[login.nais.io]
+    B --&gt;|Redirect| C["console.&amp;lt;tenant&amp;gt;.cloud.nais.io"]
+    B --&gt;|Redirect| D["grafana.&amp;lt;tenant&amp;gt;.cloud.nais.io"]
+    B --&gt;|Redirect| E["&amp;lt;app&amp;gt;.&amp;lt;tenant&amp;gt;.cloud.nais.io"]</code></pre>
+<p>A variant at <a href="https://console.nais.io">https://console.nais.io</a> automatically redirects the authenticated user to the correct Console.</p>
+<pre class="mermaid"><code>flowchart LR
+    A[User] --&gt;|Login| B[console.nais.io]
+    B --&gt;|Redirect| C["console.&amp;lt;tenant&amp;gt;.cloud.nais.io"]</code></pre>
+<h3 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h3>
+<p>See the <a href="https://monitoring.nais.io/d/bel6280x2srggc/zitadel">Grafana dashboard at monitoring.nais.io</a></p>
+<h3 id="maintenance">Maintenance<a class="headerlink" href="#maintenance" title="Permanent link">&para;</a></h3>
+<p>The Zitadel binary is generally built to manage upgrades in a straightforward manner with zero downtime.
+For more information, refer to Zitadels documentation:</p>
 <ul>
-<li><a href="https://learn.microsoft.com/en-gb/azure/active-directory/fundamentals/how-to-manage-groups">creating and managing groups</a></li>
-<li><a href="https://learn.microsoft.com/en-gb/azure/active-directory/enterprise-users/groups-dynamic-membership">dynamic group memberships</a></li>
+<li><a href="https://zitadel.com/docs/self-hosting/manage/updating_scaling">https://zitadel.com/docs/self-hosting/manage/updating_scaling</a></li>
+<li><a href="https://zitadel.com/docs/concepts/architecture/solution#zero-downtime-updates">https://zitadel.com/docs/concepts/architecture/solution#zero-downtime-updates</a></li>
 </ul>
-<p>The all users group will be assigned to any application that has enabled the <code>allowAllUsers</code> directive.
-Note down the <strong>object ID</strong> for this group.</p>
-<hr />
-<p>Once you've got through all of the above, provide the NAIS team with the following information:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Property</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Tenant ID</td>
-<td style="text-align: left;">See <a href="#azure-ad-application-registration">Azure AD Application Registration</a></td>
-</tr>
-<tr>
-<td style="text-align: left;">Client ID</td>
-<td style="text-align: left;">See <a href="#azure-ad-application-registration">Azure AD Application Registration</a></td>
-</tr>
-<tr>
-<td style="text-align: left;">Microsoft Graph Object ID</td>
-<td style="text-align: left;">See <a href="#microsoft-graph-object-id">Microsoft Graph Object ID</a></td>
-</tr>
-<tr>
-<td style="text-align: left;">Default All-Users Group Object ID</td>
-<td style="text-align: left;">See <a href="#application-access-groups">Application Access Groups</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="for-nais">For NAIS<a class="headerlink" href="#for-nais" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Enter the required configuration for <code>azurerator</code> in Fasit, using the information given by the tenant</li>
-<li>Enable the <code>azurerator</code> feature in Fasit</li>
-<li>Enable the <code>azurerator</code> feature within <code>naiserator</code> in Fasit</li>
-</ol>
+<p>The upgrade process currently looks like this:</p>
+<ul>
+<li>The automated GitHub Actions workflow in <a href="#nais-io-terraform-modules">nais-io-terraform-modules</a> will notify us when a new version is available through a pull request</li>
+<li>Review the <a href="https://github.com/zitadel/zitadel/releases">Zitadel release notes on GitHub</a></li>
+<li>Review the <a href="https://zitadel.com/changelog">Zitadel Changelog</a></li>
+<li>Review <a href="https://zitadel.com/docs/support/technical_advisory">technical advisories from Zitadel</a></li>
+<li>Plan and apply the pull request</li>
+</ul>
+<p>At some point we should consider a mirrored staging environment to test the upgrade process before applying it to production.</p>
+<h3 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Check relevant logs and metrics, see the links in the <a href="#monitoring">Monitoring section</a></li>
+<li><a href="https://zitadel.com/docs/support/troubleshooting">Troubleshoot Zitadel</a></li>
+<li><a href="https://zitadel.com/docs/self-hosting/deploy/troubleshooting">Troubleshoot Zitadel (self-hosted)</a></li>
+<li><a href="https://cloud.google.com/run/docs/troubleshooting">Troubleshoot Cloud Run</a></li>
+<li><a href="https://cloud.google.com/sql/docs/postgres/troubleshooting">Troubleshoot Cloud SQL</a></li>
+</ul>
 
 
 
@@ -2076,7 +1991,7 @@ Note down the <strong>object ID</strong> for this group.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../aiven/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Aiven services and Kafka">
+          <a href="../upgrading-kafka/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Procedure to follow when upgrading Kafka">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2086,20 +2001,20 @@ Note down the <strong>object ID</strong> for this group.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Aiven services and Kafka
+                Procedure to follow when upgrading Kafka
               </div>
             </div>
           </a>
         
         
           
-          <a href="../digdir/" class="md-footer__link md-footer__link--next" aria-label="Next: Digdirator">
+          <a href="../narcos/" class="md-footer__link md-footer__link--next" aria-label="Next: Narcos">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Digdirator
+                Narcos
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2182,16 +2097,16 @@ Note down the <strong>object ID</strong> for this group.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.footer", "navigation.instant", "navigation.indexes", "search.suggest"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.footer", "navigation.instant", "navigation.indexes", "search.suggest"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
-        <script src="../../../../js/timeago.min.js"></script>
+        <script src="../../js/timeago.min.js"></script>
       
-        <script src="../../../../js/timeago_mkdocs_material.js"></script>
+        <script src="../../js/timeago_mkdocs_material.js"></script>
       
-        <script src="../../../../amplitude_javascript/events.js"></script>
+        <script src="../../amplitude_javascript/events.js"></script>
       
     
   </body>
