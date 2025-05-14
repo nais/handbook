@@ -68,8 +68,8 @@ Provisions the Zitadel instance itself, including the PostgreSQL database and Cl
 
 All instance-level settings are set and configured here.
 
-The module also provisions the nais.io organization and everything within.
-Shared projects and applications that should be available to multiple tenants should be defined in the nais.io organization.
+The module also provisions the nais.io organization to Zitadel.
+This organization should contain shared projects and applications that should be available to multiple tenants.
 
 The repository also contains a GitHub Actions workflow at
 <https://github.com/nais/nais-io-terraform-modules/blob/main/.github/workflows/zitadel.yaml>.
