@@ -14,7 +14,12 @@ We use a self-hosted version in Nais as a central identity provider for internal
 
 The instance is available at <https://auth.nais.io>.
 
-A web console is available at <https://auth.nais.io/ui/console>, but is only intended as a view-only interface for the Nais team. Configuration and management should instead be done through Terraform whenever possible.
+A web console is available at <https://auth.nais.io/ui/console>, but is only intended as a view-only interface for the Nais team.
+Configuration and management should instead be done through Terraform whenever possible.
+
+To access the Console, you must authenticate with your `@nais.io` user.
+Users have no permissions by default.
+Ask a privileged member of the team if you need further access.
 
 ### Concepts
 
