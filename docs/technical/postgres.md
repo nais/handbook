@@ -10,7 +10,7 @@ The procedure is the same for management and tenant clusters.
 
 ## Creating the PostgreSQL database
 
-As part of your feature, install a `postgresql` resource in the nais-system namespace.
+As part of your feature, install a `postgresql` resource in the `pg-nais-system` namespace.
 Remember to select suitable values for these fields:
 
 - `.spec.volume.size`
