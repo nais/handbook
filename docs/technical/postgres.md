@@ -5,7 +5,7 @@ Postgres in nais-system
     Postgres provisioned by the Zalando postgres-operator, is an experimental feature for now.
     Requires that the [postgres-operator feature](https://fasit.nais.io/features/postgres-operator) is enabled in the cluster you are deploying to.
 
-This documentation describes how to provision and use a PostgreSQL database using the postgres-operator for things running in nais-system.
+This documentation describes how to provision and use a PostgreSQL database using the postgres-operator for things running in `nais-system`.
 The procedure is the same for management and tenant clusters.
 
 ## Creating the PostgreSQL database
@@ -66,7 +66,7 @@ spec:
 The postgres-operator will create a secret with username and password, but there are a number of other details you need to configure.
 You must add these to the `spec.template.spec.containers[].env` section of your deployment:
 
-The convention we have settled for is to use the environment variables supported by libpq (and many other postgres libraries), and variables named similarly:
+The convention we have settled for is to use the environment variables supported by [libpq](https://www.postgresql.org/docs/current/libpq-envars.html) (and many other postgres libraries), and variables named similarly:
 
 ```yaml title="deployment.yaml"
 env:
@@ -122,3 +122,8 @@ env:
    - name: PGHOST
      value: {{ include "my_feature.name" . }}-pooler.pg-{{ .Release.Namespace }}
 ```
+
+## Other resources
+
+The postgres-operator supports a number of other configuration options, which we have found to not be needed in nais.
+If there are special needs for your application, you can refer to the [postgres-operator documentation](https://postgres-operator.readthedocs.io/en/latest/reference/cluster_manifest/).
