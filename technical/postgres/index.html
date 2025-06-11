@@ -8,26 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://handbook.nais.io/">
+        <link rel="canonical" href="https://handbook.nais.io/technical/postgres/">
       
       
+        <link rel="prev" href="../overview/">
       
-        <link rel="next" href="daily-workflows/tenant-switching-workflows/">
+      
+        <link rel="next" href="../privileges/">
       
       
-      <link rel="icon" href="assets/logo.png">
+      <link rel="icon" href="../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>NAIS Handbook</title>
+        <title>Postgres in nais-system - NAIS Handbook</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="css/timeago.css">
+      <link rel="stylesheet" href="../../css/timeago.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#a-handbook-of-sorts" class="md-skip">
+        <a href="#postgres-in-nais-system" class="md-skip">
           Skip to content
         </a>
       
@@ -88,9 +90,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="NAIS Handbook" class="md-header__button md-logo" aria-label="NAIS Handbook" data-md-component="logo">
+    <a href="../.." title="NAIS Handbook" class="md-header__button md-logo" aria-label="NAIS Handbook" data-md-component="logo">
       
-  <img src="assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -107,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              A handbook of sorts
+              Postgres in nais-system
             
           </span>
         </div>
@@ -199,9 +201,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="NAIS Handbook" class="md-nav__button md-logo" aria-label="NAIS Handbook" data-md-component="logo">
+    <a href="../.." title="NAIS Handbook" class="md-nav__button md-logo" aria-label="NAIS Handbook" data-md-component="logo">
       
-  <img src="assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     NAIS Handbook
@@ -225,19 +227,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -248,7 +241,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -302,7 +294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="daily-workflows/tenant-switching-workflows/" class="md-nav__link">
+      <a href="../../daily-workflows/tenant-switching-workflows/" class="md-nav__link">
         
   
   
@@ -368,7 +360,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="nais-system/" class="md-nav__link ">
+            <a href="../../nais-system/" class="md-nav__link ">
               
   
   
@@ -403,7 +395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="nais-system/ambitions/" class="md-nav__link">
+      <a href="../../nais-system/ambitions/" class="md-nav__link">
         
   
   
@@ -426,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="nais-system/areas/" class="md-nav__link">
+      <a href="../../nais-system/areas/" class="md-nav__link">
         
   
   
@@ -449,7 +441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="nais-system/board/" class="md-nav__link">
+      <a href="../../nais-system/board/" class="md-nav__link">
         
   
   
@@ -472,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="nais-system/cycle/" class="md-nav__link">
+      <a href="../../nais-system/cycle/" class="md-nav__link">
         
   
   
@@ -495,7 +487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="nais-system/holiday-mode/" class="md-nav__link">
+      <a href="../../nais-system/holiday-mode/" class="md-nav__link">
         
   
   
@@ -518,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="nais-system/initiatives/" class="md-nav__link">
+      <a href="../../nais-system/initiatives/" class="md-nav__link">
         
   
   
@@ -541,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="nais-system/minitiative/" class="md-nav__link">
+      <a href="../../nais-system/minitiative/" class="md-nav__link">
         
   
   
@@ -564,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="nais-system/nais-day/" class="md-nav__link">
+      <a href="../../nais-system/nais-day/" class="md-nav__link">
         
   
   
@@ -587,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="nais-system/properties/" class="md-nav__link">
+      <a href="../../nais-system/properties/" class="md-nav__link">
         
   
   
@@ -614,8 +606,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -653,11 +647,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -673,7 +667,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Technical
@@ -687,7 +681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/announcements/" class="md-nav__link">
+      <a href="../announcements/" class="md-nav__link">
         
   
   
@@ -710,7 +704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/doc-guidelines/" class="md-nav__link">
+      <a href="../doc-guidelines/" class="md-nav__link">
         
   
   
@@ -733,7 +727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/external-ingress/" class="md-nav__link">
+      <a href="../external-ingress/" class="md-nav__link">
         
   
   
@@ -756,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/nais-alerts/" class="md-nav__link">
+      <a href="../nais-alerts/" class="md-nav__link">
         
   
   
@@ -779,7 +773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/naisdevice/" class="md-nav__link">
+      <a href="../naisdevice/" class="md-nav__link">
         
   
   
@@ -802,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/observability/" class="md-nav__link">
+      <a href="../observability/" class="md-nav__link">
         
   
   
@@ -825,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -845,10 +839,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="technical/postgres/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Postgres in nais-system
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -859,6 +875,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-the-postgresql-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating the PostgreSQL database
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-the-application-to-use-the-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure the application to use the database
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network policies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-pooler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection pooler
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -871,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/privileges/" class="md-nav__link">
+      <a href="../privileges/" class="md-nav__link">
         
   
   
@@ -894,7 +966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/production-ready/" class="md-nav__link">
+      <a href="../production-ready/" class="md-nav__link">
         
   
   
@@ -917,7 +989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/publications-media/" class="md-nav__link">
+      <a href="../publications-media/" class="md-nav__link">
         
   
   
@@ -940,7 +1012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/upgrading-kafka/" class="md-nav__link">
+      <a href="../upgrading-kafka/" class="md-nav__link">
         
   
   
@@ -981,7 +1053,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="technical/iam/" class="md-nav__link ">
+            <a href="../iam/" class="md-nav__link ">
               
   
   
@@ -1039,7 +1111,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="technical/narcos/" class="md-nav__link ">
+            <a href="../narcos/" class="md-nav__link ">
               
   
   
@@ -1118,7 +1190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/narcos/reference/kubeconfig/" class="md-nav__link">
+      <a href="../narcos/reference/kubeconfig/" class="md-nav__link">
         
   
   
@@ -1141,7 +1213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/narcos/reference/tenant/" class="md-nav__link">
+      <a href="../narcos/reference/tenant/" class="md-nav__link">
         
   
   
@@ -1210,7 +1282,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="technical/tenant-setup/" class="md-nav__link ">
+            <a href="../tenant-setup/" class="md-nav__link ">
               
   
   
@@ -1245,7 +1317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/tenant-setup/1-nais/" class="md-nav__link">
+      <a href="../tenant-setup/1-nais/" class="md-nav__link">
         
   
   
@@ -1268,7 +1340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/tenant-setup/2-tenant/" class="md-nav__link">
+      <a href="../tenant-setup/2-tenant/" class="md-nav__link">
         
   
   
@@ -1291,7 +1363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/tenant-setup/3-nais-terraform/" class="md-nav__link">
+      <a href="../tenant-setup/3-nais-terraform/" class="md-nav__link">
         
   
   
@@ -1314,7 +1386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/tenant-setup/4-nais/" class="md-nav__link">
+      <a href="../tenant-setup/4-nais/" class="md-nav__link">
         
   
   
@@ -1337,7 +1409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/tenant-setup/5-tenant/" class="md-nav__link">
+      <a href="../tenant-setup/5-tenant/" class="md-nav__link">
         
   
   
@@ -1412,7 +1484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/tenant-setup/addons/aiven/" class="md-nav__link">
+      <a href="../tenant-setup/addons/aiven/" class="md-nav__link">
         
   
   
@@ -1435,7 +1507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/tenant-setup/addons/azure-ad/" class="md-nav__link">
+      <a href="../tenant-setup/addons/azure-ad/" class="md-nav__link">
         
   
   
@@ -1458,7 +1530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/tenant-setup/addons/digdir/" class="md-nav__link">
+      <a href="../tenant-setup/addons/digdir/" class="md-nav__link">
         
   
   
@@ -1481,7 +1553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/tenant-setup/addons/domains/" class="md-nav__link">
+      <a href="../tenant-setup/addons/domains/" class="md-nav__link">
         
   
   
@@ -1504,7 +1576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/tenant-setup/addons/tokenx/" class="md-nav__link">
+      <a href="../tenant-setup/addons/tokenx/" class="md-nav__link">
         
   
   
@@ -1527,7 +1599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/tenant-setup/addons/wonderwall/" class="md-nav__link">
+      <a href="../tenant-setup/addons/wonderwall/" class="md-nav__link">
         
   
   
@@ -1617,7 +1689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="welcome/nais-manifest-eng/" class="md-nav__link">
+      <a href="../../welcome/nais-manifest-eng/" class="md-nav__link">
         
   
   
@@ -1640,7 +1712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="welcome/nais-sponsor/" class="md-nav__link">
+      <a href="../../welcome/nais-sponsor/" class="md-nav__link">
         
   
   
@@ -1683,6 +1755,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-the-postgresql-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating the PostgreSQL database
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-the-application-to-use-the-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure the application to use the database
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network policies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-pooler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection pooler
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1697,7 +1813,7 @@
 
 
   
-    <a href="https://github.com/nais/handbook/edit/main/docs/README.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/nais/handbook/edit/main/docs/technical/postgres.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1705,19 +1821,111 @@
   
 
 
-<h1 id="a-handbook-of-sorts">A handbook of sorts<a class="headerlink" href="#a-handbook-of-sorts" title="Permanent link">&para;</a></h1>
-<p>Here we will cover the parts "unique" to us and therefore weren't covered during onboarding</p>
-<p align="left">
-  <img width="70" height="70" src="assets/nais-handbook.png">
-</p>
-
-<p>Nais is a complex animal - and if you are new to the team there will be quite a few things that are all but obvious and apparent.</p>
-<p>Factoids about the team are posted on <a href="https://nav-it.slack.com/archives/G013UH65QQZ/p1643208152207700">Slack</a>. Take a minute to present your facts, and find out about your colleagues.</p>
-<p>The technical <a href="https://doc.nais.io">documentation</a> is comprehensive but hardly describes how we function as a team.
-This handbook is an attempt at bringing some of the silent knowledge to an audible frequency, and at the very least guide you through the bare essentials.
-To get you started we recommend that you familiarize yourself with our <a href="welcome/nais-manifest-eng/">manifest</a>.
-The guiding principles that define the how, the what, and the why we do the things that we do.</p>
-<p>So now that have you have memorized the manifest and documentation we can get into it all.</p>
+<h1 id="postgres-in-nais-system">Postgres in nais-system<a class="headerlink" href="#postgres-in-nais-system" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Experimental feature</p>
+</div>
+<p>Postgres provisioned by the Zalando postgres-operator, is an experimental feature for now.
+   Requires that the <a href="https://fasit.nais.io/features/postgres-operator">postgres-operator feature</a> is enabled in the cluster you are deploying to.</p>
+<p>This documentation describes how to provision and use a PostgreSQL database using the postgres-operator for things running in nais-system.
+The procedure is the same for management and tenant clusters.</p>
+<h2 id="creating-the-postgresql-database">Creating the PostgreSQL database<a class="headerlink" href="#creating-the-postgresql-database" title="Permanent link">&para;</a></h2>
+<p>As part of your feature, install a <code>postgresql</code> resource in the nais-system namespace.
+Remember to select suitable values for these fields:</p>
+<ul>
+<li><code>.spec.volume.size</code></li>
+<li><code>.spec.numberOfInstances</code> (2 or 3 recommended)</li>
+<li><code>.spec.resources</code></li>
+<li><code>.spec.postgresql.version</code></li>
+</ul>
+<div class="highlight"><span class="filename">postgresql.yaml</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nn">---</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;acid.zalan.do/v1&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">include &quot;my_feature.name&quot; .</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pg-{{ .Release.Namespace }}</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="p p-Indicator">{{</span><span class="nv">- include &quot;my_feature.labels&quot; . | nindent 4</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">apiserver-access</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">enabled</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">teamId</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Namespace</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">volume</span><span class="p">:</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;5Gi&quot;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nt">storageClass</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;premium-rwo&quot;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="nt">numberOfInstances</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="nt">patroni</span><span class="p">:</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nt">synchronous_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nt">synchronous_mode_strict</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span><span class="nt">preparedDatabases</span><span class="p">:</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">      </span><span class="nt">defaultUsers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">      </span><span class="nt">secretNamespace</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Namespace</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">      </span><span class="nt">schemas</span><span class="p">:</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="nt">public</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">  </span><span class="nt">nodeAffinity</span><span class="p">:</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">    </span><span class="nt">requiredDuringSchedulingIgnoredDuringExecution</span><span class="p">:</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">      </span><span class="nt">nodeSelectorTerms</span><span class="p">:</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matchExpressions</span><span class="p">:</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nais.io/type</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">              </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">In</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">              </span><span class="nt">values</span><span class="p">:</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">  </span><span class="nt">resources</span><span class="p">:</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="nt">limits</span><span class="p">:</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">      </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2Gi&quot;</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">    </span><span class="nt">requests</span><span class="p">:</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">      </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;300m&quot;</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">      </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2Gi&quot;</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">  </span><span class="nt">postgresql</span><span class="p">:</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;17&quot;</span>
+</code></pre></div>
+<h2 id="configure-the-application-to-use-the-database">Configure the application to use the database<a class="headerlink" href="#configure-the-application-to-use-the-database" title="Permanent link">&para;</a></h2>
+<p>The postgres-operator will create a secret with username and password, but there are a number of other details you need to configure.
+You must add these to the <code>spec.template.spec.containers[].env</code> section of your deployment:</p>
+<p>The convention we have settled for is to use the environment variables supported by libpq (and many other postgres libraries), and variables named similarly:</p>
+<div class="highlight"><span class="filename">deployment.yaml</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">env</span><span class="p">:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGHOST</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">     </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">include &quot;my_feature.name&quot; .</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">.pg-{{ .Release.Namespace }}</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGPORT</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">     </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;5432&quot;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGDATABASE</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">     </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGUSER</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">     </span><span class="nt">valueFrom</span><span class="p">:</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">       </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">         </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">         </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-owner-user.{{ include &quot;my_feature.name&quot; . }}.credentials.postgresql.acid.zalan.do</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGPASSWORD</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">     </span><span class="nt">valueFrom</span><span class="p">:</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">       </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">         </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">         </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-owner-user.{{ include &quot;my_feature.name&quot; . }}.credentials.postgresql.acid.zalan.do</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGURL</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">     </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql://$(PGUSER):$(PGPASSWORD)@$(PGHOST):$(PGPORT)/$(PGDATABASE)</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGJDBCURL</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">     </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jdbc:postgresql://$(PGHOST):$(PGPORT)/$(PGDATABASE)?user=$(PGUSER)&amp;password=$(PGPASSWORD)</span>
+</code></pre></div>
+<p>In addition to the environment variables, you must also label your pods with <code>postgres=true</code> to allow the network policies to work correctly.</p>
+<h2 id="network-policies">Network policies<a class="headerlink" href="#network-policies" title="Permanent link">&para;</a></h2>
+<p>The postgres-operator feature will by default install a set of network policies in the <code>nais-system</code> and <code>pg-nais-system</code> namespaces that will allow network access.
+To make the experience slightly better for nais developers, we have made the policies more permissive than the ones we create for tenant applications.
+The policies are designed such that all pods with the label <code>postgres=true</code> in the <code>nais-system</code> namespace will have access to any postgres database in the <code>pg-nais-system</code> namespace.</p>
+<p>For tenant applications, network policies are tailored for each individual application.</p>
+<h2 id="connection-pooler">Connection pooler<a class="headerlink" href="#connection-pooler" title="Permanent link">&para;</a></h2>
+<p>For the majority of applications in the <code>nais-system</code> namespace, we have assumed that a separate connection pooler is not needed.
+Should the need arise, the postgresql resource can be configured with a connection pooler configuration, and the <code>PGHOST</code> variable needs to be adjusted to point to the connection pooler pods instead of the postgres cluster directly.</p>
+<div class="highlight"><span class="filename">postgresql.yaml</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">   </span><span class="nt">enableConnectionPooler</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">   </span><span class="nt">connectionPooler</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">     </span><span class="nt">resources</span><span class="p">:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">       </span><span class="nt">requests</span><span class="p">:</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">         </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;50m&quot;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">         </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;50Mi&quot;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">deployment.yaml</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">env</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PGHOST</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">     </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">include &quot;my_feature.name&quot; .</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">-pooler.pg-{{ .Release.Namespace }}</span>
+</code></pre></div>
 
 
 
@@ -1780,15 +1988,31 @@ The guiding principles that define the how, the what, and the why we do the thin
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="../overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: NAIS Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                NAIS Overview
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="daily-workflows/tenant-switching-workflows/" class="md-footer__link md-footer__link--next" aria-label="Next: Typical workflow examples">
+          <a href="../privileges/" class="md-footer__link md-footer__link--next" aria-label="Next: Privilegier og brukere">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Typical workflow examples
+                Privilegier og brukere
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1871,16 +2095,16 @@ The guiding principles that define the how, the what, and the why we do the thin
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.footer", "navigation.instant", "navigation.indexes", "search.suggest"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.footer", "navigation.instant", "navigation.indexes", "search.suggest"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="js/timeago.min.js"></script>
+        <script src="../../js/timeago.min.js"></script>
       
-        <script src="js/timeago_mkdocs_material.js"></script>
+        <script src="../../js/timeago_mkdocs_material.js"></script>
       
-        <script src="amplitude_javascript/events.js"></script>
+        <script src="../../amplitude_javascript/events.js"></script>
       
     
   </body>
