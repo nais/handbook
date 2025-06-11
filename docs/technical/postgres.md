@@ -2,8 +2,8 @@ Postgres in nais-system
 =======================
 
 !!! warning "Experimental feature"
-   Postgres provisioned by the Zalando postgres-operator, is an experimental feature for now.
-   Requires that the [postgres-operator feature](https://fasit.nais.io/features/postgres-operator) is enabled in the cluster you are deploying to.
+    Postgres provisioned by the Zalando postgres-operator, is an experimental feature for now.
+    Requires that the [postgres-operator feature](https://fasit.nais.io/features/postgres-operator) is enabled in the cluster you are deploying to.
 
 This documentation describes how to provision and use a PostgreSQL database using the postgres-operator for things running in nais-system.
 The procedure is the same for management and tenant clusters.
