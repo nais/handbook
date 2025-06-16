@@ -26,7 +26,7 @@ metadata:
   name: {{ include "my_feature.name" . }}
   namespace: pg-{{ .Release.Namespace }}
   labels:
-      {{- include "my_feature.labels" . | nindent 4 }}
+    {{- include "my_feature.labels" . | nindent 4 }}
     apiserver-access: enabled
 spec:
   teamId: {{ .Release.Namespace }}
