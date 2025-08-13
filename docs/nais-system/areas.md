@@ -29,7 +29,7 @@ NAIS is divided into several areas, each with its own anchor. The anchor is resp
 
 **Anchor(s):** Trong
 
-**Components:** Digdirator, Azurerator, Wonderwall, TokenX, IAP / Forward Auth
+**Components:** Zitadel, Digdirator, Azurerator, Wonderwall, TokenX, IAP / Forward Auth
 
 **Board**: https://github.com/orgs/nais/projects/27/views/1
 
@@ -53,7 +53,7 @@ NAIS is divided into several areas, each with its own anchor. The anchor is resp
 
 ## Visuelt
 
-**Anchor(s):** Andreas & Roger
+**Anchor(s):** Roger
 
 **Components:** Nais Console, nais.io (visuelt), doc (visuelt), ds-svelte, Fasit frontend, naisdevice connection successful
 
