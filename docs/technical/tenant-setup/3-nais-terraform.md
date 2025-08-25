@@ -6,6 +6,7 @@ Here we describe the steps required to run through the terraform as this is not 
 
 1. Copy an existing tenant folder to get have naas.tf and main.tf as templates.
 1. Update the naas.tf and main.tf files to represent desired reality.
+   - to maximize profit, wait with adding domains that require manual certificates.
 1. Add the new tenant to atlantis.yaml
 
 ## console.cloud.google.com -> nais-io project
