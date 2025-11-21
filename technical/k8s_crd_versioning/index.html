@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://handbook.nais.io/technical/production-ready/">
+        <link rel="canonical" href="https://handbook.nais.io/technical/k8s_crd_versioning/">
       
       
-        <link rel="prev" href="../privileges/">
+        <link rel="prev" href="../external-ingress/">
       
       
-        <link rel="next" href="../publications-media/">
+        <link rel="next" href="../nais-alerts/">
       
       
       <link rel="icon" href="../../assets/logo.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>What is production ready? - NAIS Handbook</title>
+        <title>K8s CRD Versioning - NAIS Handbook</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-is-production-ready" class="md-skip">
+        <a href="#k8s-crd-versioning" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              What is production ready?
+              K8s CRD Versioning
             
           </span>
         </div>
@@ -749,10 +749,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../k8s_crd_versioning/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    K8s CRD Versioning
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -763,6 +785,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#just-give-me-a-damn-nais-specific-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Just give me a damn nais-specific checklist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-would-you-need-to-know-about-k8s-crd-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      What would you need to know about K8s CRD Versions?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#so-how-does-this-relate-to-a-conversion-webhook" class="md-nav__link">
+    <span class="md-ellipsis">
+      So how does this relate to a conversion webhook?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#so-what-are-the-general-steps-to-follow" class="md-nav__link">
+    <span class="md-ellipsis">
+      So, what are the general steps to follow?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -910,32 +988,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    What is production ready?
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../production-ready/" class="md-nav__link">
         
   
   
@@ -946,134 +1002,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#12-factor-app" class="md-nav__link">
-    <span class="md-ellipsis">
-      12 factor app
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#observability" class="md-nav__link">
-    <span class="md-ellipsis">
-      Observability
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#measuring-success" class="md-nav__link">
-    <span class="md-ellipsis">
-      Measuring success
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#alerts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Alerts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relevant-logs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relevant logs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tests" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tests
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Documentation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#continuous-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Continuous Integration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#publish-and-announce" class="md-nav__link">
-    <span class="md-ellipsis">
-      Publish and announce
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#decrease-bus-factor" class="md-nav__link">
-    <span class="md-ellipsis">
-      Decrease bus factor
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-protection-impact-assessment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Protection Impact Assessment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-audit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Security Audit
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1859,108 +1787,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#12-factor-app" class="md-nav__link">
+  <a href="#just-give-me-a-damn-nais-specific-checklist" class="md-nav__link">
     <span class="md-ellipsis">
-      12 factor app
+      Just give me a damn nais-specific checklist
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#observability" class="md-nav__link">
+  <a href="#what-would-you-need-to-know-about-k8s-crd-versions" class="md-nav__link">
     <span class="md-ellipsis">
-      Observability
+      What would you need to know about K8s CRD Versions?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#measuring-success" class="md-nav__link">
+  <a href="#so-how-does-this-relate-to-a-conversion-webhook" class="md-nav__link">
     <span class="md-ellipsis">
-      Measuring success
+      So how does this relate to a conversion webhook?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#alerts" class="md-nav__link">
+  <a href="#so-what-are-the-general-steps-to-follow" class="md-nav__link">
     <span class="md-ellipsis">
-      Alerts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relevant-logs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relevant logs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tests" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tests
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Documentation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#continuous-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Continuous Integration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#publish-and-announce" class="md-nav__link">
-    <span class="md-ellipsis">
-      Publish and announce
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#decrease-bus-factor" class="md-nav__link">
-    <span class="md-ellipsis">
-      Decrease bus factor
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-protection-impact-assessment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Protection Impact Assessment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-audit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Security Audit
+      So, what are the general steps to follow?
     </span>
   </a>
   
@@ -1982,7 +1838,7 @@
 
 
   
-    <a href="https://github.com/nais/handbook/edit/main/docs/technical/production-ready.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/nais/handbook/edit/main/docs/technical/k8s_crd_versioning.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1990,77 +1846,100 @@
   
 
 
-<h1 id="what-is-production-ready">What is production ready?<a class="headerlink" href="#what-is-production-ready" title="Permanent link">&para;</a></h1>
-<p>This is the NAIS team's attempt to define what <em>production ready</em> means to us.
-Production implies quality and durability. Running a system means serving
-requests, and requests are ultimately serving users. We care about our users,
-thus we must care about our systems.</p>
-<p>At NAIS, we strive to:</p>
-<ul>
-<li>provide fully self serviced products with minimal downtime,</li>
-<li>be confident that code changes will not break existing functionality,</li>
-<li>respond quickly when systems fail,</li>
-<li>spend minimal time fixing errors,</li>
-<li>and most importantly: spend as much time possible implementing useful services for our users. (you!)</li>
+<h1 id="k8s-crd-versioning">K8s CRD Versioning<a class="headerlink" href="#k8s-crd-versioning" title="Permanent link">&para;</a></h1>
+<p>Updating a CRD in Kubernetes involves adding a new version to the CRD, and then <a href="#so-what-are-the-general-steps-to-follow">doing a "dance"</a>, which <a href="https://blog.howardjohn.info/posts/crd-versioning/#removing-versions-and-changing-storage-version">that many often skip</a>.</p>
+<h2 id="just-give-me-a-damn-nais-specific-checklist">Just give me a damn nais-specific checklist<a class="headerlink" href="#just-give-me-a-damn-nais-specific-checklist" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Add new CRD version + <code>conversion webhook</code> config to liberator/<code>nais-crds</code>'s fasit-feature<ul>
+<li>!!<img alt="DON'T DEPLOY" src="https://nav-it.slack.com/archives/C050DP53VPH/p1763636578685559" />!!!</li>
 </ul>
-<p>We believe that if our systems conform to the principles in this document, we have a greater chance of achieving these goals.</p>
-<h2 id="12-factor-app">12 factor app<a class="headerlink" href="#12-factor-app" title="Permanent link">&para;</a></h2>
-<p>Write your application according to the principles of <a href="https://12factor.net/">12 factor apps</a>.</p>
-<p>Twelve factor apps:</p>
-<ul>
-<li>have declarative system requirements,</li>
-<li>are suitable for deployment in Docker containers,</li>
-<li>do not have differences between development and production, and</li>
-<li>can scale up without significant changes to tooling, architecture, or development practices.</li>
+</li>
+<li>Turn off reconciliation in <code>fasit</code> for all envs/tenants for <code>nais-crds</code><ul>
+<li>Except where you want to test/iterate in solitude</li>
 </ul>
-<h2 id="observability">Observability<a class="headerlink" href="#observability" title="Permanent link">&para;</a></h2>
-<p>Expose a Prometheus metric endpoint to allow scraping of key application metrics.</p>
-<h2 id="measuring-success">Measuring success<a class="headerlink" href="#measuring-success" title="Permanent link">&para;</a></h2>
-<p>Figure out <em>service level indicators</em> (SLI) and <em>service level objectives</em> (SLO).</p>
-<p>Service level indicators are quantifying metrics such as <em>error rate</em>, <em>request
-latency</em>, <em>availability</em>, and <em>system throughput</em>.</p>
-<p>Service level objectives are targets values for your metrics. You might say
-that you want an uptime of 99.9%. How do you define uptime? Is it a
-sufficiently low error rate? Is it being able to serve requests within a
-reasonable amount of time?</p>
-<p>Implement SLIs in the application code. Create views in a
-<a href="https://grafana.nais.io">Grafana</a> dashboard to check up on SLOs.</p>
-<p>Recommended read: <a href="https://sre.google/sre-book/service-level-objectives/">Service Level
-Objectives</a> in the
-Google Site Reliability Engineering handbook.</p>
-<h2 id="alerts">Alerts<a class="headerlink" href="#alerts" title="Permanent link">&para;</a></h2>
-<p><a href="https://doc.nais.io/observability/alerts/">Alerts</a> should be tied to SLOs.
-Consider if alerting is at all needed. An alert should only fire if human intervention is required.
-Too many alerts going off will result in <a href="https://en.wikipedia.org/wiki/Alarm_fatigue">alarm fatigue</a>.</p>
-<h2 id="relevant-logs">Relevant logs<a class="headerlink" href="#relevant-logs" title="Permanent link">&para;</a></h2>
-<p>Ensure traceability of errors by logging sufficient amount of debug information.
-Do not include sensitive data in logs. Sensitive data include credentials and
-personally identifyable information.</p>
-<h2 id="tests">Tests<a class="headerlink" href="#tests" title="Permanent link">&para;</a></h2>
-<p>Ensure sufficient test coverage so that the next developer is not afraid of
-breaking things when updating your code.</p>
-<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Development/building</li>
-<li>End-user documentation</li>
-<li>Sysadmin/maintenance</li>
-<li>Document code where it is complex, hard to read, or otherwise obscure</li>
+</li>
+<li>Now you can deploy <code>nais-crds</code>, ref step 1.</li>
+<li>When happy, deploy to all envs/tenants<ul>
+<li><em>without</em> having changed which CRD version has <code>storage == true</code></li>
 </ul>
-<h2 id="continuous-integration">Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permanent link">&para;</a></h2>
-<p>Ensure that changes to the codebase are built automatically, and pushed to
-development and production environments. No manual steps other than <code>git push</code>
-should be neccessary.</p>
-<h2 id="publish-and-announce">Publish and announce<a class="headerlink" href="#publish-and-announce" title="Permanent link">&para;</a></h2>
-<p>Your system is not in production until it has users.
-Make sure all potential end users are aware of your system and can use it.
-Using a system means making requests and having access to support and documentation.</p>
-<h2 id="decrease-bus-factor">Decrease bus factor<a class="headerlink" href="#decrease-bus-factor" title="Permanent link">&para;</a></h2>
-<p>Ensure that at least two people on your team have sufficient knowledge to debug
-and work on the system, to avoid <a href="https://en.wikipedia.org/wiki/Bus_factor">bus factor</a>.</p>
-<h2 id="data-protection-impact-assessment">Data Protection Impact Assessment<a class="headerlink" href="#data-protection-impact-assessment" title="Permanent link">&para;</a></h2>
-<p>Perform, if applicable, a <em>Data Protection Impact Assessment</em> (or in Norwegian, <em>personvernskonsekvensvurdering</em> (PVK)).</p>
-<h2 id="security-audit">Security Audit<a class="headerlink" href="#security-audit" title="Permanent link">&para;</a></h2>
-<p>Perform a <a href="https://doc.nais.io/clusters/migrating-to-gcp/#ros">security audit (ROS)</a> before releasing to production.</p>
+</li>
+<li>Update all clients that leverage this CRD to use the new version, eg:<ul>
+<li>operators</li>
+<li>controllers</li>
+<li>tools generating k8s yamls that get <code>kubectl apply</code>ed</li>
+</ul>
+</li>
+<li>Set <code>storage == true</code> to the new version<ul>
+<li>Remember to update the <code>conversion webhook</code> if necessary, ref <a href="#so-how-does-this-relate-to-a-conversion-webhook">the notes on <code>conversion webhook</code></a>s</li>
+</ul>
+</li>
+<li>Set <code>served == false</code> for the old version(s), and/or delete them from the CRD</li>
+<li>If other versions (besides the one that has <code>served == true &amp;&amp; storage == true</code> have been removed<ul>
+<li>You can now delete the <code>conversion webhook</code> and its config.</li>
+</ul>
+</li>
+<li>Remember to clean up all solutions that support the old/removed versions from step 5.</li>
+</ol>
+<h2 id="what-would-you-need-to-know-about-k8s-crd-versions">What would you need to know about K8s CRD Versions?<a class="headerlink" href="#what-would-you-need-to-know-about-k8s-crd-versions" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Each version has these two fields:<ol>
+<li><code>served</code> (boolean): whether or not this version is served by the API server (e.g. accessible for k8s clients)</li>
+<li><code>storage</code> (boolean): if this version is how CRD (across all versions) are stored in etcd<ul>
+<li>There has to be x1 of these set to <code>true</code>, and only x1.
+  All other versions have to have this field set to <code>false</code>.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Thus, the CRD versions follow a<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><ul>
+<li><code>hub</code> (the version with <code>storage</code> set to <code>true</code>) and</li>
+<li><code>spoke</code>s (all versions with <code>served</code> set to <code>true</code>) model</li>
+</ul>
+</li>
+</ol>
+<h2 id="so-how-does-this-relate-to-a-conversion-webhook">So how does this relate to a <code>conversion webhook</code>?<a class="headerlink" href="#so-how-does-this-relate-to-a-conversion-webhook" title="Permanent link">&para;</a></h2>
+<p>When using the https://kubebuilder.io controller-runtime, which we leverage in the NAIS platform's <a href="https://github.com/nais/liberator">liberator</a>, a <code>conversion webhook</code><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> will/must:</p>
+<ol>
+<li>always convert <em>from</em> the <code>storage == true</code> version</li>
+<li>be able to convert <em>to</em> <strong>any</strong> of the <code>served == true</code> versions</li>
+</ol>
+<h2 id="so-what-are-the-general-steps-to-follow">So, what are the general steps to follow?<a class="headerlink" href="#so-what-are-the-general-steps-to-follow" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Design/spec out the new CRD version</li>
+<li>Write the conversion webhook that satisfies the list in <a href="#so-how-does-this-relate-to-a-conversion-webhook">how does this relate to a <code>conversion webhook</code>?</a></li>
+<li>Install to the cluster/add a new version to the CRD + the required <code>spec.conversion</code> field which configures the <a href="https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definition-versioning/#configure-customresourcedefinition-to-use-conversion-webhooks">conversion webhook</a></li>
+<li>Verify that you can <code>kubectl get &lt;resource kind&gt;.&lt;new resource version&gt;.&lt;resource apiVersion without the '/&lt;version&gt;'&gt;</code> for your custom resorces</li>
+<li>Update all clients leveraging this CRD to make use of/reference <code>apiVersion</code> of this CRD with the new version</li>
+<li>Update the CRD to set <code>storage == true</code> from the old version that had this, to the new version<ol>
+<li>Remember to also update <code>conversion webhook</code> now, if necessary</li>
+</ol>
+</li>
+<li>If you don't want to remove the old version(s), you can stop now.<ul>
+<li>If you want to remove the old version(s), proceed with the remaining steps</li>
+</ul>
+</li>
+<li>Update the CRD to have <code>served == false</code> for all versions you want to remove</li>
+<li>Use the prometheus metric <code>apiserver_storage_objects</code> to ensure all of the resources are stored in the new <code>storage == true</code> version<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></li>
+<li>Delete the version(s) you want to remove from the CRD<ol>
+<li>If there's only 1x version of the CRD left, you can delete the <code>conversion webhook</code> and its config too</li>
+<li>Remember to delete any code/implementations that handle multiple versions from step 6.</li>
+</ol>
+</li>
+</ol>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>https://book.kubebuilder.io/multiversion-tutorial/conversion-concepts&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definition-versioning&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>https://dev.to/jotak/kubernetes-crd-the-versioning-joy-6g0&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
@@ -2124,7 +2003,7 @@ and work on the system, to avoid <a href="https://en.wikipedia.org/wiki/Bus_fact
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../privileges/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Privilegier og brukere">
+          <a href="../external-ingress/" class="md-footer__link md-footer__link--prev" aria-label="Previous: External ingress">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2134,20 +2013,20 @@ and work on the system, to avoid <a href="https://en.wikipedia.org/wiki/Bus_fact
                 Previous
               </span>
               <div class="md-ellipsis">
-                Privilegier og brukere
+                External ingress
               </div>
             </div>
           </a>
         
         
           
-          <a href="../publications-media/" class="md-footer__link md-footer__link--next" aria-label="Next: Publications &amp;amp; Media">
+          <a href="../nais-alerts/" class="md-footer__link md-footer__link--next" aria-label="Next: Nais alerts">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Publications &amp; Media
+                Nais alerts
               </div>
             </div>
             <div class="md-footer__button md-icon">
