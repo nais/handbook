@@ -1847,19 +1847,19 @@
 
 
 <h1 id="k8s-crd-versioning">K8s CRD Versioning<a class="headerlink" href="#k8s-crd-versioning" title="Permanent link">&para;</a></h1>
-<p>Updating a CRD in Kubernetes involves adding a new version to the CRD, and then <a href="#so-what-are-the-general-steps-to-follow">doing a "dance"</a>, which <a href="https://blog.howardjohn.info/posts/crd-versioning/#removing-versions-and-changing-storage-version">that many often skip</a>.</p>
+<p>Updating a CRD in Kubernetes involves adding a new version to the CRD, and then <a href="#so-what-are-the-general-steps-to-follow">doing a "dance"</a>, which <a href="https://blog.howardjohn.info/posts/crd-versioning/#removing-versions-and-changing-storage-version">many often skip</a>.</p>
 <h2 id="what-would-you-need-to-know-about-k8s-crd-versions">What would you need to know about K8s CRD Versions?<a class="headerlink" href="#what-would-you-need-to-know-about-k8s-crd-versions" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Each version has these two fields:<ol>
-<li><code>served</code> (boolean): whether or not this version is served by the API server (e.g. accessible for k8s clients)</li>
-<li><code>storage</code> (boolean): if this version is how how the resources of this CRD (across all versions) are stored in etcd<ul>
+<li><code>served</code> (boolean): is this version is served by the API server? (e.g. accessible for k8s clients)</li>
+<li><code>storage</code> (boolean): if this version is how the resources of this CRD (across all versions) are stored in etcd?<ul>
 <li>There has to be x1 of these set to <code>true</code>, and only x1.
   All other versions have to have this field set to <code>false</code>.</li>
 </ul>
 </li>
 </ol>
 </li>
-<li>Thus, the CRD versions follow a<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><ul>
+<li>The CRD versions follow a<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><ul>
 <li><code>hub</code> (the version with <code>storage</code> set to <code>true</code>) and</li>
 <li><code>spoke</code>s (all versions with <code>served</code> set to <code>true</code>) model</li>
 </ul>
@@ -1874,7 +1874,7 @@
 <h2 id="so-what-are-the-general-steps-to-follow">So, what are the general steps to follow?<a class="headerlink" href="#so-what-are-the-general-steps-to-follow" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Design/spec out the new CRD version</li>
-<li>Write the conversion webhook that satisfies the list in <a href="#so-how-does-this-relate-to-a-conversion-webhook">how does this relate to a <code>conversion webhook</code>?</a></li>
+<li>Write the conversion webhook that satisfies the list in <a href="#so-how-does-this-relate-to-a-conversion-webhook">how does this relate to a <code>conversion webhook</code></a>?</li>
 <li>Install to the cluster/add a new version to the CRD + the required <code>spec.conversion</code> field which configures the <a href="https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definition-versioning/#configure-customresourcedefinition-to-use-conversion-webhooks">conversion webhook</a></li>
 <li>Verify that you can <code>kubectl get &lt;resource kind&gt;.&lt;new resource version&gt;.&lt;resource apiVersion without the '/&lt;version&gt;'&gt;</code> for your custom resorces</li>
 <li>Update all clients leveraging this CRD to make use of/reference <code>apiVersion</code> of this CRD with the new version</li>
@@ -1918,7 +1918,7 @@
 </ul>
 </li>
 <li>Set <code>served == false</code> for the old version(s), and/or delete them from the CRD</li>
-<li>If other versions (besides the one that has <code>served == true &amp;&amp; storage == true</code> have been removed<ul>
+<li>If other versions (besides the one that has <code>served == true &amp;&amp; storage == true</code>) have been removed<ul>
 <li>You can now delete the <code>conversion webhook</code> and its config.</li>
 </ul>
 </li>
@@ -1960,7 +1960,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="November 21, 2025 14:35:16 UTC"><span class="timeago" datetime="2025-11-21T14:35:16+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="November 21, 2025 14:35:16 UTC">2025-11-21</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="November 25, 2025 09:41:52 UTC"><span class="timeago" datetime="2025-11-25T09:41:52+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="November 25, 2025 09:41:52 UTC">2025-11-25</span>
   </span>
 
     
@@ -1970,7 +1970,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="November 21, 2025 14:35:16 UTC"><span class="timeago" datetime="2025-11-21T14:35:16+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="November 21, 2025 14:35:16 UTC">2025-11-21</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="November 25, 2025 09:41:52 UTC"><span class="timeago" datetime="2025-11-25T09:41:52+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="November 25, 2025 09:41:52 UTC">2025-11-25</span>
   </span>
 
     
