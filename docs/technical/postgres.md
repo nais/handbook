@@ -59,6 +59,9 @@ spec:
       memory: "2Gi"
   postgresql:
     version: "17"
+  spiloFSGroup: 103
+  spiloRunAsGroup: 103
+  spiloRunAsUser: 101
 ```
 
 ## Configure the application to use the database

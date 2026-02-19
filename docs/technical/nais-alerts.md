@@ -87,3 +87,112 @@ spec:
 1. Follow the naming convention `FeatureNameAlertDescription` for the alert name.
 2. The alert activation time should not be more than 10 minutes for critical alerts.
 3. You can use templating to create a dashboard URL that links to the relevant dashboard with the correct variables set for the feature.
+
+## More examples
+
+### Info level alerts
+
+For informational alerts that should go to `#nais-alerts-info`, add these labels:
+
+``` { .yaml .annotate }
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: "nais-info-alerts"
+spec:
+  groups:
+  - name: "./nais.info.rules"
+    rules:
+    - alert: "EtcdHighLatency"
+      expr: |
+        histogram_quantile(0.99, rate(etcd_disk_wal_fsync_duration_seconds_bucket[5m])) > 0.5
+      for: 5m
+      labels:
+        severity: "info" # (1)
+        namespace: "nais-system"
+        alert_type: "custom" # (2)
+        channel: "nais-alerts-info" # (3)
+      annotations:
+        summary: "etcd disk latency is high"
+        description: "etcd WAL fsync latency is {{ $value }}s (99th percentile)"
+        action: "Monitor etcd performance dashboard for trends"
+```
+
+1. Use `info` severity for informational alerts
+2. Set `alert_type: custom` to route to info channel
+3. Specify the target channel
+
+### Critical alerts with Naisvakt ping
+
+For alerts that should wake Naisvakt, add the `ping: nais-vakt` label:
+
+``` { .yaml .annotate }
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: "nais-critical-alerts"
+spec:
+  groups:
+  - name: "./nais.critical.rules"
+    rules:
+    - alert: "NaisDeployCanaryFailing"
+      expr: |
+        (
+          sum(rate(nais_deployment_canary_failures_total[10m])) by (cluster, tenant)
+          /
+          sum(rate(nais_deployment_canary_total[10m])) by (cluster, tenant)
+        ) > 0.5
+      for: 2m # (1)
+      labels:
+        severity: "critical"
+        ping: "nais-vakt" # (2)
+        namespace: "nais-system"
+      annotations:
+        summary: "NAIS deployment canary failure rate is high"
+        description: "{{ $value | humanizePercentage }} of canary deployments are failing"
+        consequence: "Teams cannot deploy applications successfully"
+        action: |
+          Check canary deployment logs: `kubectl logs -n nais-system -l app=deploy-canary`
+        runbook_url: "https://github.com/nais/vakt/blob/main/runbooks/deployment-canary.md"
+```
+
+1. Short activation time for critical issues
+2. Add `ping: nais-vakt` to notify Naisvakt immediately
+
+### Alerts with multiple conditions
+
+You can combine multiple metrics in alert expressions:
+
+``` { .yaml .annotate }
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: "nais-complex-alerts"
+spec:
+  groups:
+  - name: "./nais.complex.rules"
+    rules:
+    - alert: "NaisAPIServerDegraded"
+      expr: |
+        (
+          sum(rate(apiserver_request_duration_seconds_count{code!~"2.."}[5m])) by (cluster)
+          /
+          sum(rate(apiserver_request_duration_seconds_count[5m])) by (cluster)
+        ) > 0.05
+        and # (1)
+        histogram_quantile(0.99,
+          sum(rate(apiserver_request_duration_seconds_bucket[5m])) by (le, cluster)
+        ) > 2
+      for: 5m
+      labels:
+        severity: "critical"
+        ping: "nais-vakt"
+        namespace: "nais-system"
+      annotations:
+        summary: "Kubernetes API server is degraded"
+        description: "API server has high error rate and latency"
+        consequence: "kubectl commands and deployments will be slow or fail"
+        action: "Check API server logs and etcd health"
+```
+
+1. Use `and` to combine conditions - both error rate AND latency must be high

@@ -7,6 +7,8 @@ The process of taking an idea to a proposed initiative, is typically referred to
 
 An initiative may be a standalone project, or part of a lager [ambition](ambitions.md).
 
+ Everyone in the team who has a good idea or recognizes something that needs to be done, are expected to write initiatives.
+
 ## Anatomy
 
 These are the key components of an initiative:
@@ -54,9 +56,9 @@ List any other relevant information that might be useful for the working group t
 
 ### Getting started
 
-When the focus period has been set, the working group get together and make a plan for the period. 
+When the focus period has been set, the working group get together and make a plan for the period.
 It's a good idea to talk through the iniative(s) together, to make sure that everyone is on the same page. If anything is unclear, this is the time to ask questions and involve whomever was involved in the shaping of the initiative.
-Once this is done, it's a good idea to see if there is any particular order in which the initiatives should be worked on. 
+Once this is done, it's a good idea to see if there is any particular order in which the initiatives should be worked on.
 
 Things to consider related to this might be:
 
@@ -65,7 +67,7 @@ Things to consider related to this might be:
 
 ### Working on the initiative
 
-When working on the iniatitive, it's important to keep track of time. Once in a while, it's good practice to check if we're on track to delivering the _essence_ within the alloted time. 
+When working on the iniatitive, it's important to keep track of time. Once in a while, it's good practice to check if we're on track to delivering the _essence_ within the alloted time.
 
 You might find yourself in a situation where you've found a solution sooner than the scoped investment. This is normal and great, just move on.
 In the opposite situation, where more time is needed to finish the solution you've envisioned - see if there is a way to narrow the scope. If there isn't any meaningful way to reduce the scope, we re-evaluate the initiative before moving on.
