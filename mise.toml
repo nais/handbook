@@ -1,6 +1,7 @@
 [tools]
 python = "latest"
 uv = "latest"
+"go:github.com/sethvargo/ratchet" = "latest"
 
 [tasks.install]
 description = "Install dependencies"
@@ -19,3 +20,7 @@ depends = ["build"]
 description = "Start the development server"
 depends = ["install"]
 run = "uv run mkdocs serve --clean --strict --watch docs/"
+
+[tasks.ratchet]
+description = "Pin GitHub Actions versions"
+run = "ratchet pin .github/workflows/*.yaml"

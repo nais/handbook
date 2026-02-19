@@ -11,9 +11,9 @@ jobs:
     name: Build and Deploy
     steps:
       - name: git-checkout
-        uses: actions/checkout@v6
-      - uses: astral-sh/setup-uv@v7
-      - uses: actions/setup-python@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # ratchet:actions/checkout@v6
+      - uses: astral-sh/setup-uv@eac588ad8def6316056a12d4907a9d4d84ff7a3b # ratchet:astral-sh/setup-uv@v7
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # ratchet:actions/setup-python@v6
         with:
           python-version-file: '.python-version'
       - name: Install all dependencies
@@ -21,7 +21,7 @@ jobs:
       - name: Build
         run: uv run mkdocs build
       - name: Push
-        uses: s0/git-publish-subdir-action@v2.6.0
+        uses: s0/git-publish-subdir-action@92faf786f11dfa44fc366ac3eb274d193ca1af7e # ratchet:s0/git-publish-subdir-action@v2.6.0
         env:
           REPO: self
           BRANCH: handbook-serve # The branch name where you want to push the assets
