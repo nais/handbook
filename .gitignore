@@ -1,3 +1,5 @@
 .DS_Store
 .idea
 .direnv/
+.agent-shell
+site/

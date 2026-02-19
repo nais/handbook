@@ -1,4 +1,4 @@
-name: Build and push Poetry to GitHub Pages branch
+name: Build and push to GitHub Pages branch
 
 on:
   push:
@@ -12,15 +12,14 @@ jobs:
     steps:
       - name: git-checkout
         uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@v5
       - uses: actions/setup-python@v6
         with:
           python-version-file: '.python-version'
-      - name: Setup Poetry
-        uses: Gr1N/setup-poetry@v9
       - name: Install all dependencies
-        run: poetry install
+        run: uv sync
       - name: Build
-        run: poetry run mkdocs build
+        run: uv run mkdocs build
       - name: Push
         uses: s0/git-publish-subdir-action@v2.6.0
         env:

@@ -1,0 +1,21 @@
+[tools]
+python = "latest"
+uv = "latest"
+
+[tasks.install]
+description = "Install dependencies"
+run = "uv sync"
+
+[tasks.build]
+description = "Build the site"
+depends = ["install"]
+run = "uv run mkdocs build --strict"
+
+[tasks.check]
+description = "Check the site builds"
+depends = ["build"]
+
+[tasks.serve]
+description = "Start the development server"
+depends = ["install"]
+run = "uv run mkdocs serve --clean --strict --watch docs/"

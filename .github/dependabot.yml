@@ -4,7 +4,7 @@ updates:
     directory: "/" # must be root (ref. docs)
     schedule:
       interval: "monthly"
-  - package-ecosystem: "pip" # poetry / pyproject
+  - package-ecosystem: "uv"
     directory: "/"
     schedule:
       interval: "monthly"
