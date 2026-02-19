@@ -9,7 +9,7 @@ package-mode = false
 [tool.poetry.dependencies]
 python = "^3.9"
 mkdocs = "^1.5.3"
-Pygments = "^2.19.1"
+Pygments = "^2.19.2"
 pymdown-extensions = "^10.20"
 mkdocs-material = "^9.7.1"
 mkdocs-awesome-pages-plugin = "^2.10.1"
