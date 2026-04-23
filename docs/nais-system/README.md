@@ -2,20 +2,22 @@
 
 _NAIS system_ is the name of the process we use to develop NAIS.
 
-The process a naisified version of [Shape Up from 37signals](https://basecamp.com/shapeup), and has been used since the beginning of 2024.
+The process is a naisified version of [Shape Up from 37signals](https://basecamp.com/shapeup), and has been used since the beginning of 2024.
+
+All of our planned work lives as Pull Requests in [`nais/system`](https://github.com/nais/system). That repository is the source of truth for what we're doing, what we've shaped, and what we've finished. This handbook describes the concepts; the system repo describes the mechanics.
 
 ## A brief overview
 
-We work in [cycles](cycle.md). Each cycle consists of a six week focus period where we split into smaller groups, usually 2-3 people, working on one or more [initiatives](initiatives.md). 
+We work in [periods](period.md). A period is eight weeks: six weeks of focus, followed by a two week cooldown. During the focus weeks we split into smaller groups – usually 2-3 people – working on one or more [initiatives](initiatives.md). The cooldown is for resetting, re-orienting, and shaping what comes next.
 
-After each focus period we have a two week cool-down. Here we reset, re-orient and make plans for what's next.
+Larger, cross-period goals are expressed as [ambitions](ambitions.md). Initiatives contribute to ambitions over time.
 
-Oh, and we also have [holiday-modes](holiday-mode.md) in the summer and around Christmas.
+We also have [holiday modes](holiday-mode.md) in the summer and around Christmas.
 
 ## Why do we organize our work this way?
 
-- We value focus and deep work. We believe this leads to better solutions and happier team members. Having focus periods facilitates this. 
-- By basing our work on initiatives, we are forced to be explicit and clear about our ideas. This makes it possible for everyone to keep up with what's happening and take part in the discussions. Bonus: a finished initative along with it's discussions serves as an ADR.
-- When working on an initiative, you don't have to start each day wondering what to do. Also, you know that what you are doing, makes sense. 
-- We belive that it creates a healthy commitment towards the rest of the team: namely that during the alotted time, you try to focus and do your best work. 
-- By organizing our work this way we achieve a shared orientation despite being a large team.
+- We value focus and deep work. Period-based work facilitates that.
+- Expressing work as initiatives forces clarity. Everyone can follow along and weigh in. A merged initiative, together with its discussion, serves as an ADR.
+- When you're on an initiative, you don't start the day wondering what to do. You know the work matters, and why.
+- There's a healthy commitment to the rest of the team: during the period, you try to focus and do your best work.
+- We achieve shared orientation despite being a large team.
