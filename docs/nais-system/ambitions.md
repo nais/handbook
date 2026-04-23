@@ -2,7 +2,9 @@
 
 An ambition is a long-term goal that spans several periods. It describes a desired future state and why we want to reach it. The _how_ is defined and discussed in individual [initiatives](initiatives.md) that contribute to the ambition over time.
 
-Ambitions are not timeboxed and they rarely merge – they stay open until the ambition is reached or abandoned.
+[Initiatives](initiatives.md) define the work we do in a single period, but many of the things we do are pieces of a larger puzzle that spans several periods. When we're deciding where we're going and what we want to achieve, we need to look at the big picture and not just the individual pieces. This is why we have ambitions.
+
+Ambitions are not timeboxed. The PR stays open while the ambition is still something we're working towards, and is merged once the ambition is reached – or closed if we abandon it.
 
 ## Where ambitions live
 

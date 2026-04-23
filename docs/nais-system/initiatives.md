@@ -15,7 +15,7 @@ The PR is not a "request to merge code" in the usual sense. It is the initiative
 | PR state | What it means |
 |---|---|
 | Draft | Shaping – the initiative is being formed, not yet ready for broad discussion |
-| Open, not draft, no milestone | Ready for discussion and available for selection (the pool) |
+| Open, not draft, no milestone | Ready for discussion and available for selection |
 | Open, not draft, with milestone | Selected for that period; being worked on |
 | Merged | Completed |
 | Closed without merging | Abandoned. The last comment explains why. |
