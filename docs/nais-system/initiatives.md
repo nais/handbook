@@ -1,73 +1,100 @@
 # Initiative
 
-The scheduled work we do in our focus periods are described in what we call _initiatives_.
-An initiative makes it clear _why_ this should be done, and _how_ it can solve _what_ for _whom_.
+An initiative describes a piece of planned work – what it is, why we should do it, and how we envision solving it. Initiatives are the primary unit of work in a focus period.
 
-The process of taking an idea to a proposed initiative, is typically referred to as _shaping_.
+An initiative may stand on its own, or contribute to a larger [ambition](ambitions.md).
 
-An initiative may be a standalone project, or part of a lager [ambition](ambitions.md).
+Anyone in the team who has a good idea, or recognises something that needs doing, is expected to write initiatives.
 
- Everyone in the team who has a good idea or recognizes something that needs to be done, are expected to write initiatives.
+## Where initiatives live
+
+Every initiative is a Pull Request in [`nais/system`](https://github.com/nais/system). The PR body contains the markdown file that describes the initiative, placed under the primary area's directory (e.g. `persistence/<slug>/README.md`).
+
+The PR is not a "request to merge code" in the usual sense. It is the initiative itself – a living document. The state of the PR reflects the state of the initiative:
+
+| PR state | What it means |
+|---|---|
+| Draft | Shaping – the initiative is being formed, not yet ready for broad discussion |
+| Open, not draft, no milestone | Ready for discussion and available for selection |
+| Open, not draft, with milestone | Selected for that period; being worked on |
+| Merged | Completed |
+| Closed without merging | Abandoned. The last comment explains why. |
+
+Labels classify the initiative without driving its lifecycle: `type:initiative`, one or more `area:*`, and a `size:*` (see below).
+
+## Ownership
+
+The **initiator** – the person who opens the PR – owns the initiative. They drive the shaping, involve the right people, and answer questions.
+
+The **anchor** for each area the initiative touches is involved when their area is affected. `CODEOWNERS` in `nais/system` automatically requests a review from the anchor of the primary area. Anchors of secondary areas are mentioned manually when their input matters.
+
+Anchors are not initiative owners by default – they are area stewards who make sure the area is well taken care of.
 
 ## Anatomy
 
-These are the key components of an initiative:
+An initiative's markdown file has these sections.
 
 ### Essence
 
-The essence should describe the core idea and purpose of the initiative.
-This should be clear and concise, and ensures that you have solid understanding of the problem.
-
-In addition this helps the working group make scoping decisions along the way.
-
-### Investment
-
-All iniatives are timeboxed to a certain number of weeks or days. This is the upper limit of how much time we are willing to spend on it, before we do a re-evaluation.
-
-It's important to note that this is not an estimate of how long it will take to complete the initiative, but rather a statement of how much time we feel is reasonable to spend on it given the potential impact.
+The core idea and purpose. This should be clear and concise, and ensures you have a solid understanding of the problem. It also helps the working group make scoping decisions later.
 
 ### Non-goals
 
-During the shaping process, you often identify rabbit holes and critial paths that you don't want to go down. These should be listed as non-goals with an explanation.
+Rabbit holes and critical paths you explicitly don't want to go down. Each non-goal has a short explanation.
 
 ### Possible solution
 
-Make sure that there actually exists a path to success by sketching out how one envisions an actual _possible_ solution.
+A sketch of how we imagine solving this. Not a full spec – just enough detail to show that a path to success exists.
 
-This exercise ensures that what is proposed is technically feasible. By going through the moving parts involved, you're usually able to detect any obvious show stoppers as well as possible rabbit holes to avoid. These should be listed as [non-goals](#non-goals).
+Working through this is where you detect obvious showstoppers and new rabbit holes (which then become non-goals). It also surfaces the technical and human impact: what components are introduced or removed, what dependencies change, what new responsibilities we take on.
 
-Having worked through this, we can see if we are introducing or removing any components, creating any new dependencies or taking on any new responsibilities.
-Understand the technical and/or human impact is important aspects when evaluating the initiative.
+If the solution impacts or involves parts of NAIS beyond the primary area, make sure the relevant people – especially the anchors – are involved in the shaping.
 
-If the solution impacts or involves some parts of NAIS, make sure that the relevant people (e.g. anchors) are involved in the shaping process.
+Rough sketches help. The working group is free to deviate from the possible solution as long as the essence is preserved.
 
-Rough sketches can also be helpful to help the working group understand the rough idea you have in mind.
+### Size
 
-Depending on how clear your understanding of the problem is, this can be a chaotic process where many ideas are thrown around and you find yourself exploring many alternative solutions, refining the essence, and the investment as you go along.
-Note that the working group is free to deviate from this as long as the essence is preserved.
+Initiatives are labeled with a size: `size:s`, `size:m`, or `size:l`. Size signals how much time we are willing to invest – it is not an estimate.
 
+| Label | Upper bound | Typical shaping |
+|---|---|---|
+| `size:s` | 1-3 days | Light: essence + possible solution may be enough |
+| `size:m` | ≈1-2 weeks | Full anatomy |
+| `size:l` | 3-6 weeks | Full anatomy with explicit non-goals |
+
+An initiative without a size label is still in draft. Before a PR leaves draft, the initiator assigns a size.
+
+We do not use an XL size. If an initiative feels bigger than L, it should be broken down, or re-expressed as an [ambition](ambitions.md) with smaller initiatives contributing to it.
 
 ### Other relevant information
 
-List any other relevant information that might be useful for the working group to know. Links, images, sketches, etc.
+Anything else the working group might need: links, images, sketches, related initiatives.
 
+## Shaping
 
-## Working on initiatives
+Shaping happens while the PR is in draft. The initiator involves relevant anchors by mentioning them or requesting review. When the initiative is clear enough for broad discussion, the initiator marks the PR ready for review. A PR can always be re-drafted if you want to pull it back.
 
-### Getting started
+There is no separate "RFC" state – ready-for-review is the state for discussion.
 
-When the focus period has been set, the working group get together and make a plan for the period.
-It's a good idea to talk through the iniative(s) together, to make sure that everyone is on the same page. If anything is unclear, this is the time to ask questions and involve whomever was involved in the shaping of the initiative.
-Once this is done, it's a good idea to see if there is any particular order in which the initiatives should be worked on.
+## Contributing to an ambition
 
-Things to consider related to this might be:
+If an initiative contributes to an ambition, include the line
+
+```
+Contributes to: #<ambition-PR-number>
+```
+
+in the PR body. GitHub then shows the initiative as a cross-reference in the ambition's timeline.
+
+## Working on an initiative
+
+Once an initiative is selected for a period, the milestone is set on its PR and assignees are added. The working group meets, talks through the initiative, and makes a plan.
+
+Things to consider:
 
 - Will any key people be unavailable during the focus period?
-- Are there any other initiatives in the team, that might impact our work - that we should coordinate with?
+- Are there other active initiatives we should coordinate with?
 
-### Working on the initiative
+Progress is logged as commits to the PR and comments on it. A running `## Status` section in the markdown file is a good way to make progress visible.
 
-When working on the iniatitive, it's important to keep track of time. Once in a while, it's good practice to check if we're on track to delivering the _essence_ within the alloted time.
-
-You might find yourself in a situation where you've found a solution sooner than the scoped investment. This is normal and great, just move on.
-In the opposite situation, where more time is needed to finish the solution you've envisioned - see if there is a way to narrow the scope. If there isn't any meaningful way to reduce the scope, we re-evaluate the initiative before moving on.
+It's good practice to check, now and then, whether you're on track to deliver the essence within the allotted size. If you finish early, great – move on. If more time is needed, narrow the scope if you can. If there's no meaningful way to reduce scope, re-evaluate the initiative before continuing.
