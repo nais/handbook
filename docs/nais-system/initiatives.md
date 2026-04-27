@@ -72,7 +72,7 @@ Anything else the working group might need: links, images, sketches, related ini
 
 ## Shaping
 
-Shaping happens while the PR is in draft. The initiator involves relevant anchors by mentioning them or requesting review. When the initiative is clear enough for broad discussion, the initiator marks the PR ready for review. A PR can always be re-drafted if you want to pull it back.
+Shaping happens while the PR is in draft. Here, the initiator involves relevant anchors or key persons to discuss, clarify the intent and align with existing work. When the initiative is clear enough for broad discussion, the initiator marks the PR ready for review. A PR can always be re-drafted if you want to pull it back.
 
 There is no separate "RFC" state – ready-for-review is the state for discussion.
 
