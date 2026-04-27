@@ -54,7 +54,7 @@ Rough sketches help. The working group is free to deviate from the possible solu
 
 ### Size
 
-Initiatives are labeled with a size: `size:s`, `size:m`, or `size:l`. Size signals how much time we are willing to invest – it is not an estimate.
+Initiatives are labeled with a size: `size:s`, `size:m`, or `size:l`. Size signals how much time we feel is reasonable to spend on the initiative given the current information. It is a rough estimate of the effort required to deliver the essence, and is used for planning and prioritization. If we find out later that the initiative is bigger than we thought, we can re-evaluate and adjust the size or scope.
 
 | Label | Upper bound | Typical shaping |
 |---|---|---|
