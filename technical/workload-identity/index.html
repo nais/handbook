@@ -2148,9 +2148,9 @@
 <h2 id="usage-for-nais-components">Usage for Nais components<a class="headerlink" href="#usage-for-nais-components" title="Permanent link">&para;</a></h2>
 <p>Nais components that require authentication must validate the incoming PSAT as a JWT.</p>
 <h3 id="oidc-metadata-document">OIDC Metadata Document<a class="headerlink" href="#oidc-metadata-document" title="Permanent link">&para;</a></h3>
-<p>The token is a standard JWT that can be validated using the OIDC Metadata Document for a given cluster.</p>
-<p>The metadata document is available in Fasit as an environment variable for each environment under the key <code>apiserver_oidc_well_known_url</code>.</p>
-<p>Example:</p>
+<p>The token is a standard JWT that can be validated using the <a href="https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata">OIDC Metadata Document</a> for a given cluster.</p>
+<p>The URL to the metadata document is available in Fasit as an environment variable for each environment under the key <code>apiserver_oidc_well_known_url</code>.</p>
+<p>Example metadata document:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;issuer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://container.googleapis.com/v1/projects/nais-dev-2e7b/locations/europe-north1/clusters/nais-dev&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;jwks_uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://container.googleapis.com/v1/projects/nais-dev-2e7b/locations/europe-north1/clusters/nais-dev/jwks&quot;</span><span class="p">,</span>
@@ -2193,8 +2193,19 @@
 <p>See also <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#serviceaccount-token-volume-projection">https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#serviceaccount-token-volume-projection</a>.</p>
 <p>Note that the <code>kubernetes.io.pod</code> and <code>kubernetes.io.node</code> claims may be omitted if the token was minted from the API-server instead of the kubelet, for example when running <code>kubectl create token</code>.</p>
 <h3 id="jwt-validation">JWT Validation<a class="headerlink" href="#jwt-validation" title="Permanent link">&para;</a></h3>
-<p>Standard claims should be validated in accordance with <a href="https://datatracker.ietf.org/doc/html/rfc7519">RFC 7519</a>.</p>
-<p>Other claims such as <code>sub</code> or <code>kubernetes.io</code> should be validated according to the needs of the component. For example, a component may require that the <code>sub</code> claim starts with <code>system:serviceaccount:</code>, or that the <code>kubernetes.io</code> claim contains a specific service account name or namespace.</p>
+<p>Validators must:</p>
+<ol>
+<li><strong>Verify the signature</strong> against the cluster issuer's JWKS (from <code>jwks_uri</code> in the metadata document).</li>
+<li><strong>Verify <code>iss</code></strong> matches the <code>issuer</code> from the cluster's OIDC metadata document (<a href="https://datatracker.ietf.org/doc/html/rfc8725#section-3.8">BCP 225 — Validate Issuer and Subject</a>).</li>
+<li><strong>Verify <code>aud</code></strong> contains <code>nais</code>. Accept both string and array forms (<a href="https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.3">RFC 7519 §4.1.3</a>, <a href="https://datatracker.ietf.org/doc/html/rfc8725#section-3.9">BCP 225 — Use and Validate Audience</a>).</li>
+<li><strong>Verify time claims</strong> (allow up to 30 seconds of clock skew; most JWT libraries default to 30–60 seconds):<ul>
+<li><code>exp</code> must be in the future (<a href="https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.4">RFC 7519 §4.1.4</a>).</li>
+<li><code>iat</code> must be in the past or present (<a href="https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.6">RFC 7519 §4.1.6</a>).</li>
+<li><code>nbf</code>, if present, must be in the past or present (<a href="https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.5">RFC 7519 §4.1.5</a>).</li>
+</ul>
+</li>
+<li><strong>Validate <code>sub</code> and/or <code>kubernetes.io</code></strong> as needed — e.g. require <code>sub</code> starts with <code>system:serviceaccount:</code>, or a specific namespace/service account.</li>
+</ol>
 <h3 id="jwks-caching">JWKS caching<a class="headerlink" href="#jwks-caching" title="Permanent link">&para;</a></h3>
 <p>Cache the JWKS document (e.g. for 5–15 minutes) rather than fetching it on every request. Refresh on signature verification failure to handle key rotation.</p>
 <h2 id="usage-for-consumer-workloads">Usage for consumer workloads<a class="headerlink" href="#usage-for-consumer-workloads" title="Permanent link">&para;</a></h2>
@@ -2227,7 +2238,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 4, 2026 11:06:27 UTC"><span class="timeago" datetime="2026-05-04T11:06:27+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 4, 2026 11:06:27 UTC">2026-05-04</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 11, 2026 06:19:03 UTC"><span class="timeago" datetime="2026-05-11T06:19:03+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 11, 2026 06:19:03 UTC">2026-05-11</span>
   </span>
 
     
@@ -2237,7 +2248,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 4, 2026 11:06:27 UTC"><span class="timeago" datetime="2026-05-04T11:06:27+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 4, 2026 11:06:27 UTC">2026-05-04</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 11, 2026 06:19:03 UTC"><span class="timeago" datetime="2026-05-11T06:19:03+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 11, 2026 06:19:03 UTC">2026-05-11</span>
   </span>
 
     
