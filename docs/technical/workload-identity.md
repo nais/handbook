@@ -10,11 +10,11 @@ Nais components that require authentication must validate the incoming PSAT as a
 
 ### OIDC Metadata Document
 
-The token is a standard JWT that can be validated using the OIDC Metadata Document for a given cluster.
+The token is a standard JWT that can be validated using the [OIDC Metadata Document](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata) for a given cluster.
 
-The metadata document is available in Fasit as an environment variable for each environment under the key `apiserver_oidc_well_known_url`.
+The URL to the metadata document is available in Fasit as an environment variable for each environment under the key `apiserver_oidc_well_known_url`.
 
-Example:
+Example metadata document:
 
 ```json
 {
@@ -69,9 +69,16 @@ Note that the `kubernetes.io.pod` and `kubernetes.io.node` claims may be omitted
 
 ### JWT Validation
 
-Standard claims should be validated in accordance with [RFC 7519](https://datatracker.ietf.org/doc/html/rfc7519).
+Validators must:
 
-Other claims such as `sub` or `kubernetes.io` should be validated according to the needs of the component. For example, a component may require that the `sub` claim starts with `system:serviceaccount:`, or that the `kubernetes.io` claim contains a specific service account name or namespace.
+1. **Verify the signature** against the cluster issuer's JWKS (from `jwks_uri` in the metadata document).
+2. **Verify `iss`** matches the `issuer` from the cluster's OIDC metadata document ([BCP 225 — Validate Issuer and Subject](https://datatracker.ietf.org/doc/html/rfc8725#section-3.8)).
+3. **Verify `aud`** contains `nais`. Accept both string and array forms ([RFC 7519 §4.1.3](https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.3), [BCP 225 — Use and Validate Audience](https://datatracker.ietf.org/doc/html/rfc8725#section-3.9)).
+4. **Verify time claims** (allow up to 30 seconds of clock skew; most JWT libraries default to 30–60 seconds):
+    - `exp` must be in the future ([RFC 7519 §4.1.4](https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.4)).
+    - `iat` must be in the past or present ([RFC 7519 §4.1.6](https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.6)).
+    - `nbf`, if present, must be in the past or present ([RFC 7519 §4.1.5](https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.5)).
+5. **Validate `sub` and/or `kubernetes.io`** as needed — e.g. require `sub` starts with `system:serviceaccount:`, or a specific namespace/service account.
 
 ### JWKS caching
 
