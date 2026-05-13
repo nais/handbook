@@ -32,10 +32,6 @@ Upgrading is done by changing `kafka_version` in the `naas.tf` file for [ci-nais
 
 ## 3. Upgrade development environments
 
-Currently, NAV is the only tenant that uses Kafka, but we have one project that fall in this category:
-
-- nav-dev
-
 The upgrade should be announced clearly, with a request for teams to check their applications during the upgrade and after.
 
 Before starting the upgrade, it is recommended to silence some alerts that typically get triggered during the upgrade:
