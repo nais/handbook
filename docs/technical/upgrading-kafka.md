@@ -41,8 +41,8 @@ These links are for nav-dev-kafka, adjust for other tenants if needed.
 * [Kafka high disk reads](https://nais-alertmanager.nav.cloud.nais.io/#/silences/new?filter=%7Baiven_service_name%3D%22nav-dev-kafka%22%2C%20alertname%3D%22Kafka%20high%20disk%20reads%22%7D)
 * [Kafka high disk writes](https://nais-alertmanager.nav.cloud.nais.io/#/silences/new?filter=%7Baiven_service_name%3D%22nav-dev-kafka%22%2C%20alertname%3D%22Kafka%20high%20disk%20writes%22%7D)
 * [Kafka high cpu usage](https://nais-alertmanager.nav.cloud.nais.io/#/silences/new?filter=%7Baiven_service_name%3D%22nav-dev-kafka%22%2C%20alertname%3D%22Kafka%20high%20cpu%20usage%22%7D)
-* [Kafka network received bytes inbalanced](https://nais-alertmanager.nav.cloud.nais.io/#/silences/new?filter=%7Baiven_service_name%3D%22nav-dev-kafka%22%2C%20alertname%3D%22Kafka%20network%20received%20bytes%20inbalanced%22%7D)
-* [Kafka network sent bytes inbalanced](https://nais-alertmanager.nav.cloud.nais.io/#/silences/new?filter=%7Baiven_service_name%3D%22nav-dev-kafka%22%2C%20alertname%3D%22Kafka%20network%20sent%20bytes%20inbalanced%22%7D)
+* [Kafka network received bytes inbalanced](https://nais-alertmanager.nav.cloud.nais.io/#/silences/new?filter=%7Bk8s_cluster_name%3D%22dev%22%2C%20alertname%3D%22Kafka%20network%20received%20bytes%20inbalanced%22%7D)
+* [Kafka network sent bytes inbalanced](https://nais-alertmanager.nav.cloud.nais.io/#/silences/new?filter=%7Bk8s_cluster_name%3D%22dev%22%2C%20alertname%3D%22Kafka%20network%20sent%20bytes%20inbalanced%22%7D)
 * [Kafka high disk usage predicted](https://nais-alertmanager.nav.cloud.nais.io/#/silences/new?filter=%7Baiven_service_name%3D%22nav-dev-kafka%22%2C%20alertname%3D%22Kafka%20high%20disk%20usage%20predicted%22%7D)
 * [AivenKafkaTransactionsUnavailable](https://nais-alertmanager.nav.cloud.nais.io/#/silences/new?filter=%7Bpool%3D%22nav-dev%22%2C%20alertname%3D%22AivenKafkaTransactionsUnavailable%22%7D)
 
@@ -63,8 +63,8 @@ These links are for nav-prod-kafka, adjust for other tenants if needed.
 * [Kafka high disk reads](https://nais-alertmanager.nav.cloud.nais.io/#/silences/new?filter=%7Baiven_service_name%3D%22nav-prod-kafka%22%2C%20alertname%3D%22Kafka%20high%20disk%20reads%22%7D)
 * [Kafka high disk writes](https://nais-alertmanager.nav.cloud.nais.io/#/silences/new?filter=%7Baiven_service_name%3D%22nav-prod-kafka%22%2C%20alertname%3D%22Kafka%20high%20disk%20writes%22%7D)
 * [Kafka high cpu usage](https://nais-alertmanager.nav.cloud.nais.io/#/silences/new?filter=%7Baiven_service_name%3D%22nav-prod-kafka%22%2C%20alertname%3D%22Kafka%20high%20cpu%20usage%22%7D)
-* [Kafka network received bytes inbalanced](https://nais-alertmanager.nav.cloud.nais.io/#/silences/new?filter=%7Baiven_service_name%3D%22nav-prod-kafka%22%2C%20alertname%3D%22Kafka%20network%20received%20bytes%20inbalanced%22%7D)
-* [Kafka network sent bytes inbalanced](https://nais-alertmanager.nav.cloud.nais.io/#/silences/new?filter=%7Baiven_service_name%3D%22nav-prod-kafka%22%2C%20alertname%3D%22Kafka%20network%20sent%20bytes%20inbalanced%22%7D)
+* [Kafka network received bytes inbalanced](https://nais-alertmanager.nav.cloud.nais.io/#/silences/new?filter=%7Bk8s_cluster_name%3D%22prod%22%2C%20alertname%3D%22Kafka%20network%20received%20bytes%20inbalanced%22%7D)
+* [Kafka network sent bytes inbalanced](https://nais-alertmanager.nav.cloud.nais.io/#/silences/new?filter=%7Bk8s_cluster_name%3D%22prod%22%2C%20alertname%3D%22Kafka%20network%20sent%20bytes%20inbalanced%22%7D)
 * [Kafka high disk usage predicted](https://nais-alertmanager.nav.cloud.nais.io/#/silences/new?filter=%7Baiven_service_name%3D%22nav-prod-kafka%22%2C%20alertname%3D%22Kafka%20high%20disk%20usage%20predicted%22%7D)
 * [AivenKafkaTransactionsUnavailable](https://nais-alertmanager.nav.cloud.nais.io/#/silences/new?filter=%7Bpool%3D%22nav-prod%22%2C%20alertname%3D%22AivenKafkaTransactionsUnavailable%22%7D)
 
