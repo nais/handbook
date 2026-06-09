@@ -1,18 +1,22 @@
-# Privilegier og brukere
+# Privileges and users
 
-Se [Typical workflow examples](/docs/daily-workflows/tenant-switching-workflows.md) for påminnelse(r) om hvordan gå frem med brukersjonglering (eller mangel derav) ifbm. tenants.
+See [Typical workflow examples](daily-workflows/tenant-switching-workflows) for a reminder on how to approach user juggling (or the lack thereof) in relation to tenants.
 
-## nais-io-bruker
-For å administrere Nais benyttes nais-io-brukeren din hos alle tenants.
-Denne brukeren har i utgangspunktet svært få rettigheter, men man kan elevere tilgangene sine ved behov med [narc](./narcos/README.md). Vær klar over at `reason`-feltet i `narc`-kommandoene er obligatorisk, og at det er viktig å begrunne hvorfor du trenger tilgang til en spesifikk ressurs, da dette blir loggført og er synlig for tenants.
-Med eleverte tilganger har du utvidet rettighetene dine i en begrenset periode i nais-katalogen hos den enkelte tenant.
+## Nais-io user
 
-## tenant-bruker
-Noen ganger har vi behov for å teste hvordan funksjonaliteten vi har laget oppleves for utviklere på nais.
-Til dette har vi dedikerte brukere i noen av tenantene. Eksempelvis dev-nais-brukere i dev-nais-tenanten.
-Med denne brukeren kan du utforske console, opprette team og bruke plattformen som en vanlig utvikler.
-Disse brukerne opprettes manuelt av noen med admin-tilgang til tenanten.
+The nais-io user is used to administer Nais across all tenants.
+This user has very few permissions by default, but you can elevate your access as needed using [narc](./narcos/README.md).
+Be aware that the `reason` field in `narc` commands is mandatory, it is important to justify why you need access to a specific resource, as this is logged and visible to tenants.
+With elevated access, your permissions are expanded for a limited period within the nais directory of the individual tenant.
+
+## Tenant user
+
+Sometimes we need to test how the functionality we have built is experienced by developers on nais.
+For this purpose we have dedicated users in some of the test tenants, dev-nais users in the dev-nais tenant.
+With this user you can explore the console, create teams, and use the platform as a regular developer.
+These users are created manually by someone with admin access to the tenant.
 
 ## Superadmin
-I tillegg til å være Nais-administratorer har vi også ansvar for Navs GCP-organisasjon.
-Dette krever tilganger ut over nais-katalogen, og det er en håndfull personer i nais-teamet som har personlige upersonlige brukere sikret med fysisk nøkkel som har mulighet til å gjøre ting på organisasjonsnivå.
+
+In addition to being Nais administrators, we are also responsible for NAV's GCP organization.
+This requires permissions beyond the nais directory, and a handful of people in the nais team have personal impersonal users secured with a physical key that are able to perform actions at the organization level.

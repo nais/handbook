@@ -162,7 +162,7 @@ config:
 The OpenTelemetry Collector exposes the following endpoints:
 
 | Endpoint                                            | Description                                                   |
-| --------------------------------------------------- | ------------------------------------------------------------- |
+|-----------------------------------------------------|---------------------------------------------------------------|
 | `http://opentelemetry-management-collector:4317`    | Internal endpoint for features in nais-system namespace.      |
 | `https://collector-internet.<tenant>.cloud.nais.io` | Internet exposed endpoint for things running outside of nais. |
 

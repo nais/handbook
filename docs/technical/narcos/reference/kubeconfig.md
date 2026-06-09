@@ -9,8 +9,8 @@ narc --help kubeconfig
 ```
 gives
 
-| Flag      | Short | Description                                                         |
-|-----------|-------|---------------------------------------------------------------------|
-| overwrite | -o    | Will overwrite users, clusters, and contexts in your kubeconfig.    |
-| clear     | -c    | Clear existing kubeconfig before writing new data            |
-| verbose   | -v    | More output, mostly useful combined with overwrite |
+| Flag      | Short | Description                                                      |
+|-----------|-------|------------------------------------------------------------------|
+| overwrite | -o    | Will overwrite users, clusters, and contexts in your kubeconfig. |
+| clear     | -c    | Clear existing kubeconfig before writing new data                |
+| verbose   | -v    | More output, mostly useful combined with overwrite               |

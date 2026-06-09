@@ -1,24 +1,24 @@
 # Announcements
 
-For å la flere kunne få med seg hva som skjer på plattformen har vi lagd en logg på [nais.io/log](https://nais.io/log/).
-For å unngå dobbeltarbeid ved at man må publisere på nettsiden, og i Slack har, har vi lagd en liten [bot](https://github.com/nais/announcements/) som henter siste innlegg fra en RSS-kilde, og publiserer nye innlegg i Slack.
-Derfor trenger man kun lage nye annonseringer i [nais/nais.github.io](https://github.com/nais/nais.github.io/tree/main/src/routes/(pages)/log/posts)-repoet.
+To let more people keep track of what's happening on the platform, we've created a log at [nais.io/log](https://nais.io/log/).
+Each announcement is a Markdown file.
+Remember to post a link to `#nais-announcements`.
 
-Hver annonseringer er en Markdown-fil med støtte for Slack-emojis *i* content-delen, ikke i frontmatter-delen.
-
-Eksempel på en annonsering:
+Example announcement:
 
 ``` markdown
 ---
-title: "En første aprilspøk"
+title: "An April Fools' joke"
 date: 2020-04-01T12:00
-author: Aprilspøk
+author: AprilFools
 tags: [github, action, cloud, build, gcp]
 layout: log
 ---
 
-Etter dagens suksess med flytting av NAIS deploy til GCP ønsker vi å skru av funksjonalitet knyttet til legacy byggesystemer. Det har vært en del ustabilitet rundt GitHub Actions og CircleCI så de ønsker vi gå bort fra. Vi har testet ut nye systemer og landet på at vi skal flytte alle bygg ut på Google Cloud Build. Vi kommer derfor til å skru av støtte for andre byggesystemer. Fra i dag av blir dermed Jenkins, Travis, CircleCI, GitHub Actions, m.fl. deprecated og vil trigge en warning i byggejobben. Vi skrur av støtte mandag den 29. juni 2020.
-:trolll:
+Following today's successful migration of NAIS deploy to GCP, we want to disable functionality related to legacy build systems.
+There has been some instability around GitHub Actions and CircleCI, so we want to move away from those.
+We have evaluated new systems and concluded that we will move all builds to Google Cloud Build.
+We will therefore be disabling support for other build systems.
+Starting today, Jenkins, Travis, CircleCI, GitHub Actions, and similar tools are deprecated and will trigger a warning in the build job.
+Support will be disabled on Monday the 29th of June 2020.
 ```
-
-Når en ny annonsering blir pushet til repoet, så vil Github Action bygge og publisere Github pages, og sende et kall til announcementsbotten.

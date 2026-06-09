@@ -5,13 +5,13 @@ This document is a high-level overview of the NAIS platform
 Over the years we have a number of k8s namespaces that we use for different purposes.
 The ones to know about are:
 
-| Name | Description |
-| ---- | ----------- |
-| `nais-system` | Where we deliver NAIS functionality |
-| `nais` | Team namespace for NAIS. Custom functionality for NAV |
-| `nais-verification` | Test applications for verifying NAIS with alerts |
-| `kyverno` | Only [Kyverno](https://kyverno.io/) is allowed in here |
-| `cnrm-system` | Where [Cloud Native Resource Manager](https://cloud.google.com/config-connector/docs/overview) runs. Managed by Google |
+| Name                | Description                                                                                                            |
+|---------------------|------------------------------------------------------------------------------------------------------------------------|
+| `nais-system`       | Where we deliver NAIS functionality                                                                                    |
+| `nais`              | Team namespace for NAIS. Custom functionality for NAV                                                                  |
+| `nais-verification` | Test applications for verifying NAIS with alerts                                                                       |
+| `kyverno`           | Only [Kyverno](https://kyverno.io/) is allowed in here                                                                 |
+| `cnrm-system`       | Where [Cloud Native Resource Manager](https://cloud.google.com/config-connector/docs/overview) runs. Managed by Google |
 
 ## Tenants
 All of our tenant's k8s clusters are accessible with our `@nais.io` user.
@@ -19,7 +19,7 @@ All of our tenant's k8s clusters are accessible with our `@nais.io` user.
 However, sometimes we need to access resources _as_ a tenant user.
 These users are created manually by someone with admin privileges to the tenant's admin account (Frode, Johnny, Sten, Vegar, Morten, Trong).
 
-For guides, hints, and tricks on how to navigate between tenants in daily work-flows, see [tenant switching workflows](/docs/daily-workflows/tenant-switching-workflows.md).
+For guides, hints, and tricks on how to navigate between tenants in daily work-flows, see [tenant switching workflows](daily-workflows/tenant-switching-workflows).
 
 ### nais' Google-organization tenants
 Apart from the tenants we offer to our users, we have some additional google organizations for various purposes:
