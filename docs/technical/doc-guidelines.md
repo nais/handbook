@@ -1,4 +1,4 @@
-# NAIS documentation guidelines
+# Nais documentation guidelines
 
 When writing [the documentation](https://github.com/nais/doc) we serve at [doc.nais.io](https://doc.nais.io) / `doc.<tenant>.cloud.nais.io`, we want to make sure that the content we provide helps our users to understand and use the platform we're making.
 
@@ -8,15 +8,15 @@ Some key points to keep in mind when writing the docs are:
 - Less is more: Keep it short and to the point. This makes it easier to sustain high quality over time.
 - We are writing docs for the _users_ of our platform. No one else. We should be empathetic to their needs and understanding of the platform, and be mindful of adding details that are not relevant in the current documentation context
 - [Consistency](#conventions) in style and tone
-- NAIS [Quality](https://diataxis.fr/quality/)
+- Nais [Quality](https://diataxis.fr/quality/)
 
 ## Structure
 
-We structure our content primarily around what services NAIS provide, with some [honest exceptions](#honest-exceptions).
+We structure our content primarily around what services Nais provide, with some [honest exceptions](#honest-exceptions).
 
 Under each service, or category of services, we use Diataxis with the following convention:
 
-The main page for a service is an _Explanation_ of the service. It should give a high-level overview of what the service is, why you would use it, and how it fits into the NAIS ecosystem.
+The main page for a service is an _Explanation_ of the service. It should give a high-level overview of what the service is, why you would use it, and how it fits into the Nais ecosystem.
 
 Example structure:
 

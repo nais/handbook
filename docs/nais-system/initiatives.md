@@ -48,7 +48,7 @@ A sketch of how we imagine solving this. Not a full spec – just enough detail 
 
 Working through this is where you detect obvious showstoppers and new rabbit holes (which then become non-goals). It also surfaces the technical and human impact: what components are introduced or removed, what dependencies change, what new responsibilities we take on.
 
-If the solution impacts or involves parts of NAIS beyond the primary area, make sure the relevant people – especially the anchors – are involved in the shaping.
+If the solution impacts or involves parts of Nais beyond the primary area, make sure the relevant people – especially the anchors – are involved in the shaping.
 
 Rough sketches help. The working group is free to deviate from the possible solution as long as the essence is preserved.
 

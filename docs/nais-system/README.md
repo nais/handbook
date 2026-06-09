@@ -1,6 +1,6 @@
-# NAIS system
+# Nais system
 
-_NAIS system_ is the name of the process we use to develop NAIS.
+_Nais system_ is the name of the process we use to develop Nais.
 
 The process is a naisified version of [Shape Up from 37signals](https://basecamp.com/shapeup), and has been used since the beginning of 2024.
 

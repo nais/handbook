@@ -20,7 +20,7 @@ Nais comes with default domains and certificates for applications under the `clo
 *.intern.dev.example.org  CNAME dev.<tenant>.cloud.nais.io.
 ```
 
-2. Provide the list of domains to the NAIS team.
+2. Provide the list of domains to the Nais team.
 
 ## For Nais
 

@@ -9,7 +9,7 @@ Some examples of daily workflows for guiding unfamiliar Nais members
 ## Daily switching between tenants
 Start the day off with:
 
-1. Log in w/[naisdevice] on the tenant who's cluster you intend to connect to (or NAV tenant if you e.g. wanna check email/calendar)
+1. Log in w/[naisdevice] on the tenant who's cluster you intend to connect to (or Nav tenant if you e.g. wanna check email/calendar)
 1. Set your google project account to your `@nais.io` user: `gcloud config set account <account email>`
 1. Log in w/your `@nais.io` user to `gcloud`: `gcloud auth login --update-adc <account email>`
     1. If not done so before, this is the time to install cluster configs w/[`narc`][narcos], see [`narc kubeconfig`](technical/narcos/reference/kubeconfig)

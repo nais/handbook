@@ -12,7 +12,7 @@ This is an optional feature that is not enabled by default.
 
 The tenant must bring its own identity provider.
 
-Provide the NAIS team with the well-known URL of the identity provider for each cluster, e.g:
+Provide the Nais team with the well-known URL of the identity provider for each cluster, e.g:
 
 ```
 https://idp.example.com/.well-known/openid-configuration
@@ -57,13 +57,13 @@ spec:
     provider: openid
 ```
 
-See the [NAIS application reference](https://doc.nais.io/workloads/application/reference/application-spec/#login) for the complete specifications with all possible options.
+See the [Nais application reference](https://doc.nais.io/workloads/application/reference/application-spec/#login) for the complete specifications with all possible options.
 
 
 Additional documentation:
 
 - [Technical documentation on GitHub](https://github.com/nais/wonderwall/tree/master/docs)
-- [Developer-focused documentation on NAIS](https://doc.nais.io/auth/explanations/#login-proxy)
+- [Developer-focused documentation on Nais](https://doc.nais.io/auth/explanations/#login-proxy)
 
 If you've configured `WONDERWALL_OPENID_WELL_KNOWN_URL`, the application must also allow egress traffic to the matching host:
 
@@ -75,7 +75,7 @@ spec:
         - host: <identity-provider-host>
 ```
 
-## For NAIS
+## For Nais
 
 ### Requirements
 

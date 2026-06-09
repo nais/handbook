@@ -99,7 +99,7 @@ gcloud alpha logging settings update --organization=$ORG_ID --storage-location=e
 
 ### Organization policy for location
 
-Although all resources created by NAIS is located within the EU, teams are still able to create resources anywhere unless an organizational constraint is in place.
+Although all resources created by Nais is located within the EU, teams are still able to create resources anywhere unless an organizational constraint is in place.
 
 <details>
 <summary>Click to see file content</summary>

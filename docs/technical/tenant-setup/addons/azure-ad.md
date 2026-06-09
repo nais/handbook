@@ -20,11 +20,11 @@ You will also need to set up a couple of things within said tenant. We'll guide 
 Azurerator uses [federated credentials](https://learn.microsoft.com/en-us/graph/api/resources/federatedidentitycredentials-overview?view=graph-rest-1.0)
 in order to authenticate itself to your Azure AD tenant, by using tokens issued by Google.
 This removes the need to share client secrets between our organizations.
-The tokens are in turn only issued to Google Service Accounts that exist within the NAIS projects that we've created for your Google organization.
+The tokens are in turn only issued to Google Service Accounts that exist within the Nais projects that we've created for your Google organization.
 
 To set this up, you will need to find some identifiers from within your Google organization:
 
-1. Find the NAIS Google Project IDs:
+1. Find the Nais Google Project IDs:
     1. Use the `gcloud` CLI: `gcloud projects list --filter="project_id ~ ^nais-" --format="value(PROJECT_ID)"`
     2. There should be one project ID for each environment; for example `nais-dev-xxxx` and `nais-prod-xxxx`. Note these down.
 2. For each project ID, find the unique ID for Azurerator's service account:
@@ -111,7 +111,7 @@ Note down the **object ID** for this group.
 
 ---
 
-Once you've got through all of the above, provide the NAIS team with the following information:
+Once you've got through all of the above, provide the Nais team with the following information:
 
 | Property                          | Description                                                                 |
 |:----------------------------------|:----------------------------------------------------------------------------|
@@ -120,7 +120,7 @@ Once you've got through all of the above, provide the NAIS team with the followi
 | Microsoft Graph Object ID         | See [Microsoft Graph Object ID](#microsoft-graph-object-id)                 |
 | Default All-Users Group Object ID | See [Application Access Groups](#application-access-groups)                 |
 
-## For NAIS
+## For Nais
 
 1. Enter the required configuration for `azurerator` in Fasit, using the information given by the tenant
 2. Enable the `azurerator` feature in Fasit

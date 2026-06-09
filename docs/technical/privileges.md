@@ -18,5 +18,5 @@ These users are created manually by someone with admin access to the tenant.
 
 ## Superadmin
 
-In addition to being Nais administrators, we are also responsible for NAV's GCP organization.
+In addition to being Nais administrators, we are also responsible for Nav's GCP organization.
 This requires permissions beyond the nais directory, and a handful of people in the nais team have personal impersonal users secured with a physical key that are able to perform actions at the organization level.

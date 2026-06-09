@@ -1,11 +1,11 @@
 Procedure to follow when upgrading Kafka
 ========================================
 
-Kafka is an important service in NAV, and problems that affect Kafka affects many teams.
+Kafka is an important service in Nav, and problems that affect Kafka affects many teams.
 For that reason we have decided to describe the procedure for upgrading Kafka in detail, to have a playlist to refer to.
 
 The upgrade should be properly announced in #nais-announcements, with a copy to relevant channels, either by link or by copied text.
-For NAV, #kafka is a relevant channel.
+For Nav, #kafka is a relevant channel.
 For any other tenants that use Kafka, the tenant will typically have one support channel which should get a copy of the announcement.
 
 ## 1. Upgrade in dev-nais-dev first

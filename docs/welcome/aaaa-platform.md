@@ -1,4 +1,4 @@
-# NAIS is a AAAA rated platform service
+# Nais is a AAAA rated platform service
 
 The As represent these qualities:
 
@@ -7,9 +7,9 @@ The As represent these qualities:
 - **Automatic:** _working by itself with little or no direct human control._
 - **Accountable:** _required or expected to justify actions or decisions._
 
-## What is NAIS for?
+## What is Nais for?
 
-The NAIS platform is there for the development teams, and aims to offer the best conditions for developing quality welfare services for the Norwegian population.
+The Nais platform is there for the development teams, and aims to offer the best conditions for developing quality welfare services for the Norwegian population.
 We do this by offering solid products that solve real problems at scale.
 The products are based on technology the nais team believes are technologically sustainable.
 By using the platform's products and following the platform standards, the teams can focus on solving high value challenges rather than underlying nuts and bolts.
@@ -33,7 +33,7 @@ As members of the team, we choose which tasks we want to participate in.
 This gives us a varied day to day life, and ownership of the things we work on.
 
 ### Technology
-At NAIS, we try to always choose the best tool for the job.
+At Nais, we try to always choose the best tool for the job.
 We have a low threshold for experimentation, and are not afraid to ditch stuff that doesn't work.
 We take the advice of seasoned adventurers, but at the same time know that we can only make technology choices after building hands-on experience with the alternatives.
 

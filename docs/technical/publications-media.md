@@ -8,7 +8,7 @@ Being a public service we also try to share through talks, conferences and inter
 
 ## Write ups
 
-[NAIS blog](https://nais.io/blog/)
+[Nais blog](https://nais.io/blog/)
 
 ## Presentations
 
@@ -18,7 +18,7 @@ Being a public service we also try to share through talks, conferences and inter
 * [Experiences From Running Istio in a K8s Production Environment
 ](https://www.youtube.com/watch?v=5qrR01n9JyY)
 
-* [NAIS applikasjonsplattform](https://vimeo.com/360816415)
+* [Nais applikasjonsplattform](https://vimeo.com/360816415)
 
 * [Continious Monitoring](https://vimeo.com/182083536)
 

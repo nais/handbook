@@ -1,6 +1,6 @@
-# A NAIS day
+# A Nais day
 
-Every Tuesday in the first week of the cooldown period is a NAIS day.
+Every Tuesday in the first week of the cooldown period is a Nais day.
 
 On this particular Tuesday, those who can attend meet in person at the office.
 

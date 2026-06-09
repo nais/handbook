@@ -1,5 +1,5 @@
-# NAIS Overview
-This document is a high-level overview of the NAIS platform
+# Nais Overview
+This document is a high-level overview of the Nais platform
 
 ## Namespaces
 Over the years we have a number of k8s namespaces that we use for different purposes.
@@ -7,9 +7,9 @@ The ones to know about are:
 
 | Name                | Description                                                                                                            |
 |---------------------|------------------------------------------------------------------------------------------------------------------------|
-| `nais-system`       | Where we deliver NAIS functionality                                                                                    |
-| `nais`              | Team namespace for NAIS. Custom functionality for NAV                                                                  |
-| `nais-verification` | Test applications for verifying NAIS with alerts                                                                       |
+| `nais-system`       | Where we deliver Nais functionality                                                                                    |
+| `nais`              | Team namespace for Nais. Custom functionality for Nav                                                                  |
+| `nais-verification` | Test applications for verifying Nais with alerts                                                                       |
 | `kyverno`           | Only [Kyverno](https://kyverno.io/) is allowed in here                                                                 |
 | `cnrm-system`       | Where [Cloud Native Resource Manager](https://cloud.google.com/config-connector/docs/overview) runs. Managed by Google |
 

@@ -1,4 +1,4 @@
-# A NAIS period
+# A Nais period
 
 A period is eight weeks long: a six-week focus period followed by a two-week cooldown. Everything we plan and do lives within this rhythm.
 
@@ -12,7 +12,7 @@ This is when the planned initiatives are worked on. Every week during the focus 
 
 Cooldown is for resetting and shaping the next period.
 
-- **Tuesday of the first cooldown week**: [NAIS day](nais-day.md)
+- **Tuesday of the first cooldown week**: [Nais day](nais-day.md)
 - **End of the first cooldown week**: cut-off for initiatives that want to be considered for the next period. In practice this means the initiative's PR must be out of draft and have essence, goals, non-goals, approach, and a [size](initiatives.md#size) label.
 - **Thursday of the second cooldown week**: the first draft of the next focus period is announced. This is done by assigning initiative PRs to the new period's milestone. Adjustments to the draft must be made by the end of the week.
 

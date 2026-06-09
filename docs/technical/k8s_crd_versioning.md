@@ -13,7 +13,7 @@ Updating a CRD in Kubernetes involves adding a new version to the CRD, and then 
     - `spoke`s (all versions with `served` set to `true`) model
 
 ## So how does this relate to a `conversion webhook`?
-When using the [https://kubebuilder.io](https://kubebuilder.io)'s controller-runtime, which we leverage in the NAIS platform's [liberator](https://github.com/nais/liberator), a `conversion webhook`[^2]:
+When using the [https://kubebuilder.io](https://kubebuilder.io)'s controller-runtime, which we leverage in the Nais platform's [liberator](https://github.com/nais/liberator), a `conversion webhook`[^2]:
 
 1. will always convert _from_ the `storage == true` version
 1. must be able to convert _to_ **any** of the `served == true` versions

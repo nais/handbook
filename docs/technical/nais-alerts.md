@@ -148,7 +148,7 @@ spec:
         ping: "nais-vakt" # (2)
         namespace: "nais-system"
       annotations:
-        summary: "NAIS deployment canary failure rate is high"
+        summary: "Nais deployment canary failure rate is high"
         description: "{{ $value | humanizePercentage }} of canary deployments are failing"
         consequence: "Teams cannot deploy applications successfully"
         action: |

@@ -35,25 +35,25 @@ An overview of the setup is as follows:
 * Maskinporten client is configured with scopes: `idporten:dcr.write idporten:dcr.read idporten:scopes.write`
 * `business certificates` are registered in Digdir
 
-!!! success "Tenant imports the Client ID's to [Secret Manager](#google-secret-manager) and provide the resource names to NAIS"
+!!! success "Tenant imports the Client ID's to [Secret Manager](#google-secret-manager) and provide the resource names to Nais"
     `projects/<project-id>/secrets/<secret-id>/versions/<version>`
 
 ??? info "Digdirator use of Client ID"
     Digdirator sets the Client ID as the claim `iss` when authenticating against Digdir self-service API
 
-#### NAIS configuration
+#### Nais configuration
 
 We really care about our compadres (tenants) and we think that a separation of concerns is a good & secure way to
 go.
 It also helps us to keep the cluster secure and stable. The configuration setup for Digdirator favor security as
-NAIS never have direct access to your business certificate.
+Nais never have direct access to your business certificate.
 
 When setup in Digdir is confirmed by tenant and before we can enable Digdirator, the following steps must be completed:
 
 ##### Business certificate
 
 ??? info "Update existing certificate"
-    Update of a certificate only requires the tenant to provide NAIS with the new `<version>`
+    Update of a certificate only requires the tenant to provide Nais with the new `<version>`
 
 The tenant upload their `business certificate` to
 [Google Cloud KMS](https://cloud.google.com/kms/docs/how-tos). Digdirator will never have direct access to the certificate.
@@ -64,7 +64,7 @@ An authenticated & authorized Digdirator can only request the `Google KMS` to si
 token with claims, if successful the KMS returns a signed JWT, this JWT is later used to authenticate against Digdir self-service
 API.
 
-!!! success "Certificate is [successfully uploaded](#import-certificates) to Google KMS, provide NAIS with the resource names"
+!!! success "Certificate is [successfully uploaded](#import-certificates) to Google KMS, provide Nais with the resource names"
     `projects/<project-id>/locations/<location>/keyRings/<keyring>/cryptoKeys/<key>/cryptoKeyVersions/<version>`
 
 ##### Certificate chain
@@ -89,7 +89,7 @@ operations.
 But when you do have configuration info like a certificate chain or a client-id, where your software actually needs the
 secret, not cryptographic operations, then `Secret Manager` is designed for that use case.
 
-!!! success "Certificate chains is [successfully uploaded](#import-certificates) to `Secret Manager`, provide NAIS with the resource names"
+!!! success "Certificate chains is [successfully uploaded](#import-certificates) to `Secret Manager`, provide Nais with the resource names"
     `projects/<project-id>/secrets/<secret-id>/versions/<version>`
 
 ###### Example format of a certificate chain
@@ -106,9 +106,9 @@ MIIFZTKK...
 -----END CERTIFICATE-----
 ```
 
-## For NAIS
+## For Nais
 
-When Digdirator is enabled, NAIS configures Digdirator with a service account which holds a set of roles to access Google Cloud KMS and Secret Manager in your
+When Digdirator is enabled, Nais configures Digdirator with a service account which holds a set of roles to access Google Cloud KMS and Secret Manager in your
 cluster project.
 
 To access `Google KMS` the service account is assigned the IAM role `roles/cloudkms.signerVerifier`,
@@ -134,17 +134,17 @@ access the payload of secrets.
     resourcemanager.projects.get
     ```
 
-NAIS will configure Digdirator with the information provided, you relax your cognitive load.
-Configure your [NAIS application](https://docs.nais.io/nais-application/application/) with ID-porten or Maskinporten, push code -> deploy.
-NAIS handles the rest.
+Nais will configure Digdirator with the information provided, you relax your cognitive load.
+Configure your [Nais application](https://docs.nais.io/nais-application/application/) with ID-porten or Maskinporten, push code -> deploy.
+Nais handles the rest.
 
 !!! warning "ID-porten sidecar"
     If you plan to use the [ID-porten sidecar](https://docs.nais.io/security/auth/idporten/sidecar/?h=sidecar), prior to usage, the feature [Wonderwall](https://docs.nais.io/appendix/wonderwall/) must be enabled.
-    Contact NAIS team for more information.
+    Contact Nais team for more information.
 
-## Summary of NAIS configuration
+## Summary of Nais configuration
 
-If we were to translate the above information required by NAIS to configure automated lifecycle of Digdir clients.
+If we were to translate the above information required by Nais to configure automated lifecycle of Digdir clients.
 Translated to yaml, it would look something like this
 
 ```yaml

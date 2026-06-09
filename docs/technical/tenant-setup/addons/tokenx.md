@@ -15,12 +15,12 @@ This is an optional addon in NaaS. It is not enabled by default.
 
 ## For Tenant
 
-Provide the NAIS team with a list of URLs pointing to metadata documents for OAuth 2.0 / OpenID Connect compliant identity providers.
+Provide the Nais team with a list of URLs pointing to metadata documents for OAuth 2.0 / OpenID Connect compliant identity providers.
 This is often referred to as well-known URLs, typically ending in `/.well-known/openid-configuration` or `/.well-known/oauth-authorization-server`
 
 Otherwise, see [TokenX] for usage.
 
-## For NAIS operators
+## For Nais operators
 
 1. Enter the tenant-provided well-known URL(s) in the Fasit configuration.
     - Enter the equivalent hosts for the outbound hosts needed for external access policies.

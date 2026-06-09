@@ -2,7 +2,7 @@
 
 Aiven is a third party service provider that nais uses for some of the features we provide.
 If the tenant wishes to use some of those features, Aiven needs to be enabled for the tenant.
-The tenant does not need to have any interaction with Aiven directly, but the NAIS team will need to set up the
+The tenant does not need to have any interaction with Aiven directly, but the Nais team will need to set up the
 necessary resources.
 
 Aiven provides these services:
@@ -36,7 +36,7 @@ Relevant documentation for applications:
 - [Valkey](https://docs.nais.io/persistence/valkey/)
 
 
-## For NAIS
+## For Nais
 
 - Enable Aiven for the tenant in nais-terraform-modules
 - If the tenant wishes to use Kafka, enable Kafka in nais-terraform-modules

@@ -15,7 +15,7 @@ tags: [github, action, cloud, build, gcp]
 layout: log
 ---
 
-Following today's successful migration of NAIS deploy to GCP, we want to disable functionality related to legacy build systems.
+Following today's successful migration of Nais deploy to GCP, we want to disable functionality related to legacy build systems.
 There has been some instability around GitHub Actions and CircleCI, so we want to move away from those.
 We have evaluated new systems and concluded that we will move all builds to Google Cloud Build.
 We will therefore be disabling support for other build systems.

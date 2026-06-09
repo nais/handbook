@@ -34,7 +34,7 @@ Keep this at a level that is stable across several periods. If it reads like a p
 
 What problem does this solve? What value does it bring – for our users, for the team, for the platform?
 
-A short reference to relevant [NAIS properties](properties.md) is often worthwhile.
+A short reference to relevant [Nais properties](properties.md) is often worthwhile.
 
 ### Goals
 
