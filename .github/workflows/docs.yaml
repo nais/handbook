@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
 permissions:
   contents: read
   pages: write
