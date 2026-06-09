@@ -4,12 +4,7 @@ version = "0.1.0"
 description = "Nais team handbook"
 requires-python = ">=3.11"
 dependencies = [
-    "mkdocs>=1.5.3",
-    "Pygments>=2.19.2",
-    "pymdown-extensions>=10.21.3",
-    "mkdocs-material>=9.7.1",
-    "mkdocs-awesome-pages-plugin>=2.10.1",
-    "mkdocs-git-revision-date-localized-plugin>=1.5.3",
+    "zensical==0.0.44",
 ]
 
 [tool.uv]

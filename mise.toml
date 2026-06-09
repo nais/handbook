@@ -10,7 +10,7 @@ run = "uv sync"
 [tasks.build]
 description = "Build the site"
 depends = ["install"]
-run = "uv run mkdocs build --strict"
+run = "uv run zensical build --strict --clean"
 
 [tasks.check]
 description = "Check the site builds"
@@ -19,7 +19,7 @@ depends = ["build"]
 [tasks.serve]
 description = "Start the development server"
 depends = ["install"]
-run = "uv run mkdocs serve --clean --strict --watch docs/"
+run = "uv run zensical serve"
 
 [tasks.ratchet]
 description = "Pin GitHub Actions versions"

@@ -1,6 +1,6 @@
 # Handbook
 
-Nais team handbook, built with [MkDocs](https://www.mkdocs.org/) and [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
+Nais team handbook, built with [Zensical](https://zensical.org/).
 
 ## Prerequisites
 
