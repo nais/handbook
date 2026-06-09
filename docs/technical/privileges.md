@@ -5,7 +5,7 @@ See [Typical workflow examples](daily-workflows/tenant-switching-workflows) for 
 ## Nais-io user
 
 The nais-io user is used to administer Nais across all tenants.
-This user has very few permissions by default, but you can elevate your access as needed using [narc](./narcos/README.md).
+This user has very few permissions by default, but you can elevate your access as needed using [narc](narcos).
 Be aware that the `reason` field in `narc` commands is mandatory, it is important to justify why you need access to a specific resource, as this is logged and visible to tenants.
 With elevated access, your permissions are expanded for a limited period within the nais directory of the individual tenant.
 

@@ -1,5 +1,5 @@
 ---
-title: Home
+title: A handbook of sorts
 ---
 
 # A handbook of sorts

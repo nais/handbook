@@ -19,7 +19,7 @@ All of our tenant's k8s clusters are accessible with our `@nais.io` user.
 However, sometimes we need to access resources _as_ a tenant user.
 These users are created manually by someone with admin privileges to the tenant's admin account (Frode, Johnny, Sten, Vegar, Morten, Trong).
 
-For guides, hints, and tricks on how to navigate between tenants in daily work-flows, see [tenant switching workflows](daily-workflows/tenant-switching-workflows).
+For guides, hints, and tricks on how to navigate between tenants in daily work-flows, see [tenant switching workflows](/daily-workflows/tenant-switching-workflows).
 
 ### nais' Google-organization tenants
 Apart from the tenants we offer to our users, we have some additional google organizations for various purposes:
