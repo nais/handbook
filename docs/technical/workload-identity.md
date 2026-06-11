@@ -1,6 +1,6 @@
 # Nais Workload Identity
 
-Workloads in Nais Kubernetes clusters are automatically mounted with a Projected Service Account Token (PSAT) that can be used to authenticate with Nais components.
+Workloads (`Application` and `NaisJob` resources) in Nais Kubernetes clusters are automatically mounted with a Projected Service Account Token (PSAT) that can be used to authenticate with Nais components.
 
 See the implementation in [Naiserator](https://github.com/nais/naiserator/blob/05ca9ee1a5b6d72f7f2b6c1cac8ae54338c78f2c/pkg/resourcecreator/serviceaccount/serviceaccount.go) for details.
 
@@ -84,16 +84,182 @@ Validators must:
 
 Cache the JWKS document (e.g. for 5–15 minutes) rather than fetching it on every request. Refresh on signature verification failure to handle key rotation.
 
+### Example: Validating middleware in Go
+
+The [`github.com/coreos/go-oidc/v3/oidc`](https://pkg.go.dev/github.com/coreos/go-oidc/v3/oidc) package handles OIDC discovery, JWKS fetching and caching, signature verification, and validation of the `iss`, `aud`, and time claims for you (validation steps 1–4 above). The remaining step is to validate `sub` and/or the `kubernetes.io` claim yourself (step 5).
+
+The middleware constructor discovers the cluster's OIDC metadata from the issuer and builds a verifier once at startup, then returns an HTTP middleware that verifies the bearer token on each request and puts the resulting claims on the request context:
+
+```go
+package middleware
+
+import (
+	"context"
+	"fmt"
+	"net/http"
+	"strings"
+
+	"github.com/coreos/go-oidc/v3/oidc"
+)
+
+type claims struct {
+	Subject    string `json:"sub"`
+	Kubernetes struct {
+		Namespace      string `json:"namespace"`
+		ServiceAccount struct {
+			Name string `json:"name"`
+			UID  string `json:"uid"`
+		} `json:"serviceaccount"`
+	} `json:"kubernetes.io"`
+}
+
+type ctxAuthKey struct{}
+
+// Authentication builds an HTTP middleware that authenticates requests using a
+// projected ServiceAccount token from the given cluster. The issuer is the
+// `issuer` value from the cluster's OIDC metadata document.
+func Authentication(ctx context.Context, issuer string) (func(http.Handler) http.Handler, error) {
+	provider, err := oidc.NewProvider(ctx, issuer)
+	if err != nil {
+		return nil, fmt.Errorf("initialize OIDC provider: %w", err)
+	}
+
+	verifier := provider.Verifier(&oidc.Config{
+		ClientID: "nais", // verifies that the `aud` claim contains "nais"
+	})
+
+	return func(next http.Handler) http.Handler {
+		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			// The auth scheme is case-insensitive (RFC 7235 §2.1).
+			scheme, bearer, ok := strings.Cut(r.Header.Get("Authorization"), " ")
+			if !ok || !strings.EqualFold(scheme, "Bearer") {
+				http.Error(w, "missing bearer token", http.StatusUnauthorized)
+				return
+			}
+
+			idToken, err := verifier.Verify(r.Context(), bearer)
+			if err != nil {
+				http.Error(w, "invalid token", http.StatusUnauthorized)
+				return
+			}
+
+			var c claims
+			if err := idToken.Claims(&c); err != nil {
+				http.Error(w, "invalid token", http.StatusUnauthorized)
+				return
+			}
+
+			// Apply authorization checks, e.g. require a specific namespace
+			// or service account name.
+			if c.Kubernetes.Namespace == "" || c.Kubernetes.ServiceAccount.Name == "" {
+				http.Error(w, "forbidden", http.StatusForbidden)
+				return
+			}
+
+			ctx := context.WithValue(r.Context(), ctxAuthKey{}, &c)
+			next.ServeHTTP(w, r.WithContext(ctx))
+		})
+	}, nil
+}
+```
+
+If your component must trust more than one cluster, look up the issuer from the unverified token (the `iss` claim) and select the matching verifier before calling `Verify`. Never trust claims from an unverified token for anything other than routing to the correct verifier.
+
 ## Usage for consumer workloads
 
-The PSAT is mounted in the workload's filesystem at the path given by the `NAIS_SERVICE_ACCOUNT_TOKEN_PATH` environment variable.
-
-The token is periodically rotated; re-read the file before use rather than caching its contents.
-
-The PSAT should be considered an opaque token for the consumer. The workload should not attempt to parse or validate the token itself, but rather use it as a bearer token when making requests to Nais components:
+Regardless of how the token is mounted, the PSAT should be considered an **opaque token** for the consumer. The workload should not attempt to parse or validate the token itself, but rather use it as a bearer token when making requests to Nais components:
 
 ```http
 GET /resource HTTP/1.1
 Host: server.example.com
 Authorization: Bearer <PSAT>
 ```
+
+The token is periodically rotated; re-read the token from disk before each use rather than caching its contents.
+
+### For `Application` and `NaisJob` workloads
+
+Nais automatically mounts the PSAT in the workload's filesystem. The path is exposed through the `NAIS_SERVICE_ACCOUNT_TOKEN_PATH` environment variable. No extra configuration is required.
+
+### For raw Kubernetes workloads
+
+Our own internal ("raw") workloads — plain `Pod`, `Deployment`, `Job`, etc. that are not managed by Naiserator — do not get a token mounted automatically. Instead, mount your own PSAT:
+
+```yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: my-workload
+  namespace: my-namespace
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-workload
+  namespace: my-namespace
+spec:
+  serviceAccountName: my-workload
+  containers:
+    - name: my-workload
+      image: my-image
+      volumeMounts:
+        - name: nais-token
+          mountPath: /var/run/secrets/nais.io
+          readOnly: true
+  volumes:
+    - name: nais-token
+      projected:
+        sources:
+          - serviceAccountToken:
+              path: token
+              audience: nais # or the expected audience for the Nais component that the workload calls
+              expirationSeconds: 600
+```
+
+The token is then available as a file at `/var/run/secrets/nais.io/token`.
+
+### Example: Acquiring the token in Go
+
+Read the token from disk on each request so that rotation is picked up automatically. An [`oauth2.TokenSource`](https://pkg.go.dev/golang.org/x/oauth2#TokenSource) that reads the file makes this transparent when combined with `oauth2.NewClient`:
+
+```go
+import (
+	"context"
+	"fmt"
+	"os"
+	"strings"
+
+	"golang.org/x/oauth2"
+)
+
+// fileTokenSource reads a projected service account token from disk on every
+// call, so rotated tokens are picked up without restarting the process.
+type fileTokenSource struct {
+	path string
+}
+
+func (f fileTokenSource) Token() (*oauth2.Token, error) {
+	b, err := os.ReadFile(f.path)
+	if err != nil {
+		return nil, fmt.Errorf("reading token file %q: %w", f.path, err)
+	}
+	return &oauth2.Token{
+		AccessToken: strings.TrimSpace(string(b)),
+		TokenType:   "Bearer",
+	}, nil
+}
+```
+
+Use it to build an HTTP client that automatically attaches the bearer token:
+
+```go
+// For Application/NaisJob: os.Getenv("NAIS_SERVICE_ACCOUNT_TOKEN_PATH")
+// For raw workloads: the projected volume path, e.g. "/var/run/secrets/nais.io/token"
+ts := fileTokenSource{path: os.Getenv("NAIS_SERVICE_ACCOUNT_TOKEN_PATH")}
+
+client := oauth2.NewClient(ctx, ts)
+
+// Requests made with this client carry "Authorization: Bearer <PSAT>".
+resp, err := client.Get("https://server.example.com/resource")
+```
+
