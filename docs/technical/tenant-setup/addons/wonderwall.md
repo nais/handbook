@@ -20,51 +20,14 @@ https://idp.example.com/.well-known/openid-configuration
 
 The given identity provider will be the default for all applications in the cluster using Wonderwall.
 
-#### Secret
+#### Usage by Applications
 
 The tenant must set up a secret for each application that will use Wonderwall.
-The secret must fulfill the following:
+The secret must be in the same namespace as the application.
 
-- Must be in the same namespace as the application
-- Must follow the naming convention
-    ```
-    login-config-<application-name>
-    ```
-- Must contain all the following keys:
-    - `WONDERWALL_OPENID_CLIENT_ID` (e.g. `my-client-id`)
-
-- Must contain at least one of the following:
-    - `WONDERWALL_OPENID_CLIENT_JWK` (this is a private key in JWK format, e.g. `{"kty":"RSA","e":"AQAB","kid":"my-key-id",...}`)
-    - `WONDERWALL_OPENID_CLIENT_SECRET`
-
-The secret should also contain an annotation that automatically reloads the pod when the data changes:
-
-```yaml
-metadata:
-  annotations:
-    reloader.stakater.com/match: "true"
-```
+Follow the [instructions over at the Nais documentation](https://doc.nais.io/auth/how-to/login/).
 
 To override the default identity provider configuration, you can set the `WONDERWALL_OPENID_WELL_KNOWN_URL` key in the same secret.
-
-### Usage by Applications
-
-Configure the application to enable injection of Wonderwall as a sidecar:
-
-```yaml
-spec:
-  login:
-    provider: openid
-```
-
-See the [Nais application reference](https://doc.nais.io/workloads/application/reference/application-spec/#login) for the complete specifications with all possible options.
-
-
-Additional documentation:
-
-- [Technical documentation on GitHub](https://github.com/nais/wonderwall/tree/master/docs)
-- [Developer-focused documentation on Nais](https://doc.nais.io/auth/explanations/#login-proxy)
-
 If you've configured `WONDERWALL_OPENID_WELL_KNOWN_URL`, the application must also allow egress traffic to the matching host:
 
 ```yaml
@@ -81,9 +44,9 @@ spec:
 
 - [Aiven](aiven.md) must be enabled for the tenant.
 
-### Enable the Wonderwall feature flag in naiserator
+### 1. Enable the Wonderwall feature flag in Fasit for Naiserator
 
-### Enable the Wonderwall feature in Fasit
+### 2. Enable the Wonderwall feature in Fasit
 
 - Configure `aiven.redisPlan` (e.g. `hobbyist` for development, `startup-4` for production)
 - Configure `openid.wellKnownUrl` provided by the tenant (e.g. `https://idp.example.com/.well-known/openid-configuration`)
