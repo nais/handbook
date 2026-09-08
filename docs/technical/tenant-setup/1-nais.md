@@ -5,14 +5,15 @@
 In [nais-terraform-modules](https://github.com/nais/nais-terraform-modules)
 
 Add the new tenant to `serviceaccounts.tf`.
-
-The name you choose here will be the $NAIS_TENANT_ALIAS used in the next step.
+The name chosen here will be the `$NAIS_TENANT_ALIAS` used in the next step.
 
 Create a PR and let Atlantis plan and apply the changes.
 
 ## Add the new tenant to the Nais billing account
 
-- Billing -> Account Management -> Right side menu (Show info panel) -> Add principal
+First make one out of the nais billing-account admins do this:
+- https://console.cloud.google.com/billing/
+  - Billing -> Account Management -> Right side menu (Show info panel) -> Add principal
 
 Add `nais-tf-<TENANT>@nais-io.iam.gserviceaccount.com` as Billing Account User
 
@@ -20,6 +21,7 @@ Add `nais-tf-<TENANT>@nais-io.iam.gserviceaccount.com` as Billing Account User
 
 Make sure we have IP-ranges that do not overlap with the tenant's existing infrastructure.
 If the tenant requires connectivity with external
+
 ### Example ranges
 
 ```text
