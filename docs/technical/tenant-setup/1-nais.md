@@ -1,4 +1,4 @@
-# Step 1 - Nais-team preparations
+# Step 1 - Nais: preparations
 
 ## Create the terraform service user
 

@@ -1,4 +1,4 @@
-# Step 5 - Tenant post terraforming
+# Step 5 - Tenant: post terraforming
 
 ### Set up domain-wide delegation (in tenant admin.google.com)
 

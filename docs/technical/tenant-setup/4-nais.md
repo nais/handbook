@@ -1,4 +1,4 @@
-# Step 4 - Nais post terraforming
+# Step 4 - Nais: post terraforming
 
 ## Add the API reconcilers user to the billing account
 

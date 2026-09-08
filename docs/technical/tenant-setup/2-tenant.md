@@ -1,4 +1,4 @@
-# Step 2 - Tenant preparations
+# Step 2 - Tenant: preparations
 
 !!! note
     This step is done by the tenant administrators, and is typically done in collaboration with the Nais team.
