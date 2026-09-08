@@ -14,7 +14,7 @@ Create a PR and let Atlantis plan and apply the changes.
 Use your NAV GCP account to do this:
 
 - https://console.cloud.google.com/billing/
-  - Billing -> Account Management -> Right side menu (Show info panel) -> Add principal
+   - Billing -> Account Management -> Right side menu (Show info panel) -> Add principal
 
 Add `nais-tf-<TENANT>@nais-io.iam.gserviceaccount.com` as Billing Account User
 
