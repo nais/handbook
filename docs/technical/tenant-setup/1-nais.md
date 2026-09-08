@@ -11,7 +11,8 @@ Create a PR and let Atlantis plan and apply the changes.
 
 ## Add the new tenant to the Nais billing account
 
-First make one out of the nais billing-account admins do this:
+Use your NAV GCP account to do this:
+
 - https://console.cloud.google.com/billing/
   - Billing -> Account Management -> Right side menu (Show info panel) -> Add principal
 
