@@ -1,5 +1,8 @@
 # Step 5 - Tenant: post terraforming
 
+!!! note
+    This step is done by the tenant administrators.
+
 ### Set up domain-wide delegation (in tenant admin.google.com)
 
 Nais performs some operations on behalf of the Nais admin user mentioned above. For this to work the, this user needs domain-wide delegation with some scopes. This must be manually set up in the Google Admin console:

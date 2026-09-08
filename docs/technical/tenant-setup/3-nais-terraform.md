@@ -12,7 +12,7 @@ Here we describe the steps required to run through the terraform as this is not 
       1. CIDR routing ranges per env
       1. If they want "cost viewing" (BQ) experience, a `tenant_cost_viewer_group` must be created by tenant
 1. Update the naas.tf and main.tf files to represent desired reality.
-   - to maximize profit, wait with adding domains that require manual certificates.
+    - to maximize profit, wait with adding domains that require manual certificates.
 1. Add the new tenant to atlantis.yaml
 
 ## console.cloud.google.com -> nais-io project
