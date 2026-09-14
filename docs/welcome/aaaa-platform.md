@@ -1,11 +1,7 @@
-# Nais is a AAAA rated platform service
+# Nais manifest
 
-The As represent these qualities:
-
-- **Autogenous:** _produced independently of external influence or aid_
-- **Advantageous:** _involving or creating favourable circumstances that increase the chances of success or effectiveness._
-- **Automatic:** _working by itself with little or no direct human control._
-- **Accountable:** _required or expected to justify actions or decisions._
+This page covers why we're here and what motivates us as a team. For the properties we prioritize
+by when deciding what to build and how, see [Properties of Nais](../nais-system/properties.md).
 
 ## What is Nais for?
 
