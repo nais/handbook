@@ -4,19 +4,27 @@ Here we describe the steps required to run through the terraform as this is not 
 
 ## Nais-terraform-modules repository
 
-1. Copy an existing tenant folder to get have naas.tf and main.tf as templates.
+1. Copy an existing tenant folder to get have `naas.tf` and `main.tf` as templates.
    - A (non-exhaustive) list of things needed:
       1. Their "nais folder ID"
       1. GitHub org name
       1. GCP org ID
       1. CIDR routing ranges per env
       1. If they want "cost viewing" (BQ) experience, a `tenant_cost_viewer_group` must be created by tenant
-1. Update the naas.tf and main.tf files to represent desired reality.
+1. Update the `naas.tf` and `main.tf` files to represent desired reality.
+    - Comment out the part about internal and external load balancers, as they need to be running in the cluster first (they create the NEG in GCP).
     - To maximize profit, wait with adding domains that require manual certificates.
-1. Add the new tenant to atlantis.yaml
+1. Add the new tenant to `atlantis.yaml`
 1. `naisd` must be manually deployed with helm to each new tenant cluster before fasit will work
     - Remember to set the `--version` flag for the fasit helm chart
+	
+!!! info
+    This process will most likely not run on the first try, maybe not even the second try.
 
 ## console.cloud.google.com -> nais-io project
 
-1. Add `nais-tf-<tenant>@nais-io.iam.gserviceaccount.com` by visiting the `https://search.google.com/search-console?resource_id=sc-domain%3Adoc.<tenant>.cloud.nais.io` domain with your Nav (not Nais) user.
+While you work on applying the changes in the Terraform, when the `nais-tf-<tenant>` user is made, you can do the following step:
+
+1. Go to `https://search.google.com/search-console?resource_id=sc-domain%3Adoc.<tenant>.cloud.nais.io`.
+   - Log in with your Nav user (@nav.no).
+1. Add `nais-tf-<tenant>@nais-io.iam.gserviceaccount.com` to the new domain
