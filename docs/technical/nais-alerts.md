@@ -8,7 +8,7 @@ This document describes how we currently do alerting in Nais.
 
 We use Slack as the delivery mechanism for alerts, similar to what we provide for the teams.
 
-The primary channel for alerts is #naas-alerts. This channel is monitored by the whole team during working hours, and by Naisvakt 24/7.
+The primary channels for alerts is #naas-alerts and #nais-alerts-info. These channels is monitored by the whole team during working hours. Naisvakt monitors #naas-alerts 24/7.
 
 ## Levels of criticality
 
@@ -38,8 +38,8 @@ Examples: `Disk usage above 80%`, `Certificate expiring in 14 days`
 
 ### Info
 
-Informational alerts that do not require immediate action/handling, but are important to know about. These go into the `#naas-alerts-info` channel.
-Examples: `etcd latency alert`, we can't do anything about it, but it's good to know.
+Informational alerts that do not require immediate action/handling, but are important to know about. These go into the `#nais-alerts-info` channel.
+Examples: `etcd latency alert`, we can't do anything about it, but it's good to know. This should be used sparingly, and only for things that are important to know about. 
 
 ## Alert Rules
 
@@ -89,7 +89,7 @@ spec:
 
 ### Info level alerts
 
-For informational alerts that should go to `#naas-alerts-info`, add these labels:
+For informational alerts that should go to `#nais-alerts-info`, add these labels:
 
 ``` { .yaml .annotate }
 apiVersion: monitoring.coreos.com/v1
@@ -108,7 +108,7 @@ spec:
         severity: "info" # (1)
         namespace: "nais-system"
         alert_type: "custom" # (2)
-        channel: "naas-alerts-info" # (3)
+        channel: "nais-alerts-info" # (3)
       annotations:
         summary: "etcd disk latency is high"
         description: "etcd WAL fsync latency is {{ $value }}s (99th percentile)"
