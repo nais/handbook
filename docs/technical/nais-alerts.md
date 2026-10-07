@@ -1,8 +1,5 @@
 # Nais alerts
 
-!!! info
-    Status: Draft
-
 When developing and operating Nais features, we often need to add alerts so we're able to respond quickly if something unexpected or undesirable should happen.
 
 This document describes how we currently do alerting in Nais.
@@ -41,7 +38,7 @@ Examples: `Disk usage above 80%`, `Certificate expiring in 14 days`
 
 ### Info
 
-Informational alerts that do not require immediate action/handling, but are important to know about.
+Informational alerts that do not require immediate action/handling, but are important to know about. These go into the `#naas-alerts-info` channel.
 Examples: `etcd latency alert`, we can't do anything about it, but it's good to know.
 
 ## Alert Rules
@@ -92,7 +89,7 @@ spec:
 
 ### Info level alerts
 
-For informational alerts that should go to `#nais-alerts-info`, add these labels:
+For informational alerts that should go to `#naas-alerts-info`, add these labels:
 
 ``` { .yaml .annotate }
 apiVersion: monitoring.coreos.com/v1
@@ -111,7 +108,7 @@ spec:
         severity: "info" # (1)
         namespace: "nais-system"
         alert_type: "custom" # (2)
-        channel: "nais-alerts-info" # (3)
+        channel: "naas-alerts-info" # (3)
       annotations:
         summary: "etcd disk latency is high"
         description: "etcd WAL fsync latency is {{ $value }}s (99th percentile)"
