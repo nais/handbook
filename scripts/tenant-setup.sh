@@ -13,81 +13,80 @@ fi
 ORG_ID=$1
 NAIS_TENANT_ALIAS=$2
 
+echo "Creating the Nais users permissions file"
 cat <<EOF > nais-user-permissions.json
     {
       "bindings": [
         {
           "members": [
-            "serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com"
+            "serviceAccount:nais-tf-${NAIS_TENANT_ALIAS}@nais-io.iam.gserviceaccount.com"
           ],
           "role": "roles/artifactregistry.admin"
         },
         {
           "members": [
-            "serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com"
+            "serviceAccount:nais-tf-${NAIS_TENANT_ALIAS}@nais-io.iam.gserviceaccount.com"
           ],
           "role": "roles/compute.admin"
         },
         {
           "members": [
-            "serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com"
+            "serviceAccount:nais-tf-${NAIS_TENANT_ALIAS}@nais-io.iam.gserviceaccount.com"
           ],
           "role": "roles/container.admin"
         },
         {
           "members": [
-            "serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com"
+            "serviceAccount:nais-tf-${NAIS_TENANT_ALIAS}@nais-io.iam.gserviceaccount.com"
           ],
           "role": "roles/dns.admin"
         },
         {
           "members": [
-            "serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com"
+            "serviceAccount:nais-tf-${NAIS_TENANT_ALIAS}@nais-io.iam.gserviceaccount.com"
           ],
           "role": "roles/logging.admin"
         },
         {
           "members": [
-            "serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com"
+            "serviceAccount:nais-tf-${NAIS_TENANT_ALIAS}@nais-io.iam.gserviceaccount.com"
           ],
           "role": "roles/resourcemanager.folderCreator"
         },
         {
           "members": [
-            "serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com"
+            "serviceAccount:nais-tf-${NAIS_TENANT_ALIAS}@nais-io.iam.gserviceaccount.com"
           ],
           "role": "roles/resourcemanager.folderIamAdmin"
         },
         {
           "members": [
-            "serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com"
+            "serviceAccount:nais-tf-${NAIS_TENANT_ALIAS}@nais-io.iam.gserviceaccount.com"
           ],
           "role": "roles/resourcemanager.projectCreator"
         },
         {
           "members": [
-            "serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com"
+            "serviceAccount:nais-tf-${NAIS_TENANT_ALIAS}@nais-io.iam.gserviceaccount.com"
           ],
           "role": "roles/privilegedaccessmanager.admin"
         },
         {
           "members": [
-            "serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com"
+            "serviceAccount:nais-tf-${NAIS_TENANT_ALIAS}@nais-io.iam.gserviceaccount.com"
           ],
           "role": "roles/serviceusage.serviceUsageAdmin"
         },
         {
           "members": [
-            "serviceAccount:nais-tf-__TENANTNAME__@nais-io.iam.gserviceaccount.com"
+            "serviceAccount:nais-tf-${NAIS_TENANT_ALIAS}@nais-io.iam.gserviceaccount.com"
           ],
           "role": "roles/iam.serviceAccountKeyAdmin"
         }
       ]
     }
 EOF
-
-echo "Creating the Nais users permissions file"
-sed -i "s/__TENANTNAME__/$NAIS_TENANT_ALIAS/g" nais-user-permissions.json && echo "✔️ Permissions file created"
+echo "✔️ Permissions file created"
 
 echo "Allowing nais.io domain to be used to log into VMs. Note: does not grant permissions to VMs, just the possibility for the users to come from this domain."
 gcloud organizations add-iam-policy-binding "$ORG_ID" --member="domain:nais.io" --role="roles/compute.osLoginExternalUser" && echo "✔️ nais.io domain allowed to log into VMs"
