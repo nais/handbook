@@ -26,5 +26,5 @@ Here we describe the steps required to run through the terraform as this is not 
 While you work on applying the changes in the Terraform, when the `nais-tf-<tenant>` user is made, you can do the following step:
 
 1. Go to `https://search.google.com/search-console?resource_id=sc-domain%3Adoc.<tenant>.cloud.nais.io`.
-   - Log in with your Nav user (@nav.no).
-1. Add `nais-tf-<tenant>@nais-io.iam.gserviceaccount.com` to the new domain
+   - Log in with a user that has access (@nav.no or @nais.io).
+1. Add `nais-tf-<tenant>@nais-io.iam.gserviceaccount.com` to the new domain with the `Eier`/`Owner` permission.
