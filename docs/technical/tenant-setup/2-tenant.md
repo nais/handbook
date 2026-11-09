@@ -18,7 +18,10 @@ The tenant administrator that will perform the following commands will need thes
 
 ### Disable `Domain restricted sharing` policy
 
-Domain restricted sharing must be disabled to allow SA's from other domains, as well as being able to create public resources. See [Google documentation](https://cloud.google.com/resource-manager/docs/organization-policy/restricting-domains#configure-exceptions) for more information.
+Domain restricted sharing must be disabled to allow SA's from other domains, as well as being able to create public resources (`allUsers` and `allAuthenticatedUsers`).
+See [Google documentation](https://cloud.google.com/resource-manager/docs/organization-policy/restricting-domains#configure-exceptions) for more information.
+
+After [step 3](3-nais-terraform.md) is done, the policy can be restricted to just the `nais-management-xxxx` project.
 
 1. Select the top-level organization in the Google Cloud Console
 1. Go to `IAM & Admin` -> `Organization policies`

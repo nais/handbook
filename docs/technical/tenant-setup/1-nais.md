@@ -1,6 +1,6 @@
 # Step 1 - Nais: preparations
 
-## Create the terraform service user
+## Create the Atlantis service user
 
 In [nais-terraform-modules](https://github.com/nais/nais-terraform-modules):
 
@@ -16,7 +16,10 @@ Use your Nav GCP (@nav.no) account to do this:
 - https://console.cloud.google.com/billing/
     - Billing -> Account Management -> Right side menu (Show info panel) -> Add principal
 
-Add `nais-tf-<TENANT>@nais-io.iam.gserviceaccount.com` as Billing Account User
+Add `nais-tf-<TENANT>@nais-io.iam.gserviceaccount.com` as `Billing Account User`.
+
+!!! note
+    For bring your own billing account tenant, _they_ need to run this step.
 
 ## Decide cluster IP-ranges
 
@@ -53,3 +56,9 @@ Prod
   shared_vpc_ip_cidr_start = "100.71.16.0"
   aiven_vpc_cidr           = "10.17.9.0/24"
 ```
+
+## Cloud Armor tier (bring your own billing account)
+
+If the new tenant has their own billing account, find out which Cloud Armor tier they have.
+Nav is set up with enterprise, but the default is standard.
+We recommend enterprise, but it's for now not required.

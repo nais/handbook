@@ -6,11 +6,12 @@ Here we describe the steps required to run through the terraform as this is not 
 
 1. Copy an existing tenant folder to get have `naas.tf` and `main.tf` as templates.
    - A (non-exhaustive) list of things needed:
-      1. Their "nais folder ID"
+      1. Their "Nais folder ID"
       1. GitHub org name
       1. GCP org ID
       1. CIDR routing ranges per env
       1. If they want "cost viewing" (BQ) experience, a `tenant_cost_viewer_group` must be created by tenant
+	  1. For bring your own billing account tenants, without Cloud Armor enterprise, set `cloud_armor_tier` in each project to `CA_STANDARD`
 1. Update the `naas.tf` and `main.tf` files to represent desired reality.
     - Comment out the part about internal and external load balancers, as they need to be running in the cluster first (they create the NEG in GCP).
     - To maximize profit, wait with adding domains that require manual certificates.
