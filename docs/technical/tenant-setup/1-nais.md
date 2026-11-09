@@ -35,7 +35,7 @@ Management
   svc_ip_cidr_range       = "192.168.0.0/21"
   master_ip_cidr_range    = "172.16.0.0/28"
   loadbalancer_cidr_range = "100.64.0.0/24"
-  aiven_vpc_cidr_range    = "10.10.1.0/24"
+  aiven_vpc_cidr_range    = "10.10.128.0/24"
   psa_ip_cidr_range       = "100.65.0.0/24"
 
 Dev
@@ -45,7 +45,7 @@ Dev
   master_ip_cidr_range     = "172.16.0.16/28"
   loadbalancer_cidr_range  = "100.64.1.0/24"
   shared_vpc_ip_cidr_start = "100.71.0.0"
-  aiven_vpc_cidr           = "10.17.8.0/24"
+  aiven_vpc_cidr           = "10.20.129.0/24"
 
 Prod
   ip_cidr_range            = "10.17.4.0/23"
@@ -54,7 +54,7 @@ Prod
   master_ip_cidr_range     = "172.16.0.32/28"
   loadbalancer_cidr_range  = "100.64.2.0/24"
   shared_vpc_ip_cidr_start = "100.71.16.0"
-  aiven_vpc_cidr           = "10.17.9.0/24"
+  aiven_vpc_cidr           = "10.20.130.0/24"
 ```
 
 ## Cloud Armor tier (bring your own billing account)
