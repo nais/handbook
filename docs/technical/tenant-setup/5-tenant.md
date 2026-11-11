@@ -22,3 +22,6 @@ Nais performs some operations on behalf of the Nais admin user mentioned above. 
 After this is done you should see something like the following:
 
 ![Screenshot of the Domain-wide Delegation screen in the Google Admin console](../../assets/domainwidedelegation-screenshot.png)
+
+1. We recommend enabling [Google Access Approval](https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview) for your organization. 
+   This will log Google Access to your resources and require Google to get approval before accessing them.
