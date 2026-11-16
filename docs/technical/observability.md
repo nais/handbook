@@ -54,6 +54,10 @@ The observability stack in nais consists of the following components:
 
 </div>
 
+## Grafana dashboards
+
+[grafana-git-sync](https://github.com/nais/grafana-git-sync) configures read-only dashboard sync from `grafana/` on the default branch of repositories accessible to its [GitHub App installation](https://github.com/organizations/nais/settings/installations/181563593). Changes must be made in Git; Grafana may report the connection as unhealthy even while syncing works. Example: [nais/cli dashboards](https://github.com/nais/cli/tree/main/grafana).
+
 ## OpenTelemetry Collector
 
 The OpenTelemetry Collector is a vendor-agnostic, open-source telemetry collector that can be used to collect, process, and export telemetry data. It is a powerful tool that can be used to collect logs, metrics, and traces from a variety of sources and export them to a variety of destinations.
