@@ -12,22 +12,20 @@ The Postgres resources use `nais.io/v1`:
 
 | Resource | Responsibility |
 |----------|----------------|
-| `Postgres` | The logical database. Creates a default `main` branch and selects the active branch. |
-| `PostgresBranch` | An independent, writable database backed by its own CNPG cluster, storage and backup history. Managed by the platform, not a user-authored manifest. |
-| `PostgresBinding` | Connects an Application or Job to a branch through database roles, connection Secrets and NetworkPolicies. |
-| `PostgresAccess` | Grants a person time-limited access to a specific branch. |
+| `Postgres` | A database. Directly owns its CNPG cluster, storage and backup resources. |
+| `PostgresBinding` | Connects an Application or Job to a Postgres through database roles, connection Secrets and NetworkPolicies. |
+| `PostgresAccess` | Grants a person time-limited access to a Postgres. |
 
 ```mermaid
 flowchart LR
-    postgres[Postgres] --> branch[PostgresBranch]
-    branch --> cluster[CNPG Cluster]
+    postgres[Postgres] --> cluster[CNPG Cluster]
     workload[Application / Job] --> binding[PostgresBinding]
-    binding --> branch
+    binding --> postgres
     person[Personal access] --> access[PostgresAccess]
-    access --> branch
+    access --> postgres
 ```
 
-A branch is a separate database history, not a PostgreSQL replica or a Git-style mergeable branch. Workload bindings follow the active branch unless explicitly pinned to another branch.
+Each Postgres is independent. Workloads and personal access reference the database directly.
 
 Who owns what
 -------------
@@ -43,16 +41,16 @@ Workload and personal access
 
 For workloads, Naiserator creates `PostgresBinding` resources from Application and Job declarations. pgrator supplies database credentials using client certificates and limits network access to the relevant workloads. Workloads consume connection Secrets rather than managing CNPG roles themselves.
 
-For people, the Nais API authorizes the request and creates a `PostgresAccess`. pgrator prepares a personal database role, short-lived password and a `RelayAccess` mapping for the selected branch. The CLI exposes a local listener and forwards traffic through [relay](https://github.com/nais/relay); PostgreSQL TLS remains end-to-end.
+For people, the Nais API authorizes the request and creates a `PostgresAccess`. pgrator prepares a personal database role, short-lived password and a `RelayAccess` mapping for the selected database. The CLI exposes a local listener and forwards traffic through [relay](https://github.com/nais/relay); PostgreSQL TLS remains end-to-end.
 
 Platform login authorizes the access request; PostgreSQL authenticates the personal connection with SCRAM credentials, not OAuth. Access expires without deleting database objects owned by the personal role. Expiry is not a hard cutoff for existing SQL sessions.
 
 Backup and recovery
 -------------------
 
-Base backups and archived WAL support point-in-time recovery. Recovery creates a new branch at a specified time without overwriting the source branch or changing which branch workloads use.
+Base backups and archived WAL support point-in-time recovery (PITR). Recovery creates a new, independent Postgres with the source database's data at an explicitly selected time. It does not overwrite the source or move applications.
 
-Activating a recovered branch is a separate operation. Binding updates and workload reconnections are asynchronous, so activation is not an atomic application cutover.
+Using the recovered database requires explicitly updating workload references. This is not an in-place restore or an automatic cutover. See the [PITR contract](https://github.com/nais/pgrator/blob/main/doc/postgres-pitr.md) for recovery constraints and lifecycle details.
 
 Sources of truth
 ----------------
