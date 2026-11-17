@@ -19,3 +19,10 @@ This handbook is an attempt at bringing some of the silent knowledge to an audib
 To get you started we recommend that you familiarize yourself with our [manifest](welcome/aaaa-platform) — why we're here and what motivates us — and our [properties](nais-system/properties) — what we prioritize by when deciding what to build.
 
 So now that have you have memorized the manifest, properties and documentation we can get into it all.
+
+## Agent skills
+
+[nais/skills](https://github.com/nais/skills) is our shared collection of
+small, task-specific instructions for coding agents. Use and contribute
+skills for recurring tasks that benefit from Nais-specific knowledge.
+See the repository for available skills and setup instructions.
