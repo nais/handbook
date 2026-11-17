@@ -1,7 +1,7 @@
 [tools]
 python = "latest"
 uv = "latest"
-"go:github.com/sethvargo/ratchet" = "latest"
+"go:github.com/sethvargo/ratchet" = "0.12.0"
 
 [tasks.install]
 description = "Install dependencies"
