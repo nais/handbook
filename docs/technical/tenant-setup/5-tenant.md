@@ -25,3 +25,13 @@ After this is done you should see something like the following:
 
 1. We recommend enabling [Google Access Approval](https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview) for your organization. 
    This will log Google Access to your resources and require Google to get approval before accessing them.
+
+### Export billing data (tenants with their own billing account)
+
+To present your cost data in Nais Console, your Cloud Billing data must be exported to a BigQuery dataset.
+
+1. Set up [Cloud Billing data export to BigQuery](https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup)
+    - We recommend creating a dedicated project for this export
+    - Enable the **Detailed usage cost data** export
+1. When the dataset is created, grant `nais-billing@nais.io` the `BigQuery Data Viewer` role on the dataset
+1. Notify the Nais team and include the project ID and dataset name
