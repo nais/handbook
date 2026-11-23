@@ -43,6 +43,17 @@ This can be done using the Google Cloud Shell, or locally if you have `gcloud` i
 !!! note
     After running the script, you need to share both `ORG_ID` and `NAIS_FOLDER_ID` with the Nais-team.
 
+### Enable Security Command Center (tenants with their own billing account)
+
+Nais pulls vulnerability findings for all cluster projects from [Security Command Center](https://cloud.google.com/security/products/security-command-center).
+Security Command Center must be activated at the **organization level**, the Standard tier is free and sufficient.
+
+1. Go to [Security Command Center](https://console.cloud.google.com/security/command-center) with the organization selected
+1. Follow the activation flow and choose the **Standard** tier (requires the `Security Center Admin` role on the organization)
+1. Note which data location you choose (e.g. `eu`) and share it with the Nais team. We recommend `eu`.
+
+Activation at the organization level covers all current and future projects, so this can be done before any Nais projects exist.
+
 ## Teams and users (admin google com)
 
 ### Create Kubernetes security group
