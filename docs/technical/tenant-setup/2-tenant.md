@@ -22,7 +22,7 @@ Domain restricted sharing must be disabled to allow SA's from other domains, as 
 See [Google documentation](https://cloud.google.com/resource-manager/docs/organization-policy/restricting-domains#configure-exceptions) for more information.
 
 !!! note
-    After [step 3](3-nais-terraform.md) is done, the policy can be restricted to just the `nais-management-xxxx` project.
+    After [step 3](3-nais-terraform.md) is done, the policy can be re-enabled with some exceptions, see [step 5](5-tenant.md#re-enable-domain-restricted-sharing-optional).
 
 1. Select the top-level organization in the Google Cloud Console
 1. Go to `IAM & Admin` -> `Organization policies`

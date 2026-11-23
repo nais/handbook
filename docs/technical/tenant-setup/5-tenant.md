@@ -26,6 +26,32 @@ After this is done you should see something like the following:
 1. We recommend enabling [Google Access Approval](https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview) for your organization. 
    This will log Google Access to your resources and require Google to get approval before accessing them.
 
+### Re-enable domain restricted sharing (optional)
+
+During onboarding domain restricted sharing was disabled.
+You may now re-enable it, with two exceptions:
+
+- The `nais-management-xxxx` project must still allow service accounts from other domains, as well as public resources (`allUsers` and `allAuthenticatedUsers`).
+- The Nais folder must allow `nais.io` users, otherwise the Nais team can not grant them self admin in the projects.
+
+To allow nais.io on just the Nais folder, while keeping the rest of the organization restricted:
+
+```yaml title="nais-drs.yaml"
+name: folders/<NAIS_FOLDER_ID>/policies/iam.allowedPolicyMemberDomains
+spec:
+  inheritFromParent: true
+  rules:
+    - values:
+        allowedValues:
+          - is:C00xgb366 # nais.io Cloud Identity customer ID
+```
+
+```bash
+gcloud org-policies set-policy nais-drs.yaml
+```
+
+The `inheritFromParent` setting merges this exception with your organization-wide policy instead of replacing it.
+
 ### Export billing data (tenants with their own billing account)
 
 To present your cost data in Nais Console, your Cloud Billing data must be exported to a BigQuery dataset.
